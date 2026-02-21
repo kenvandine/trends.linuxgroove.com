@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Test script for LinuxGroove adapters"""
+"""Test script for Linux Groove Market Trends adapters"""
 
 import sys
 from datetime import datetime

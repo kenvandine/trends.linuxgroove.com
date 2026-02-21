@@ -1,4 +1,4 @@
-# LinuxGroove Installation Guide
+# Linux Groove Market Trends Installation Guide
 
 ## Prerequisites
 

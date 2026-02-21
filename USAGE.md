@@ -1,4 +1,4 @@
-# LinuxGroove Usage Guide
+# Linux Groove Market Trends Usage Guide
 
 ## Quick Start
 

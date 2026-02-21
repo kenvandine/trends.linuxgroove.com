@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Linux Groove Market Trends</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    /* ── Design tokens ── */
+    :root {
+      --bg:           #0f1117;
+      --surface:      #1a1d26;
+      --surface2:     #22263a;
+      --border:       #2e3348;
+      --text:         #e2e8f0;
+      --text-muted:   #8892a4;
+      --accent:       #7c6af9;
+      --accent-hover: #9785ff;
+
+      /* Source colours */
+      --steam-h:      210; /* blue family */
+      --sc-h:         145; /* green family */
+      --dap-h:        30;  /* orange family */
+
+      /* Per-source, per-OS colours (HSL) */
+      --steam-linux:       hsl(210, 85%, 60%);
+      --steam-windows:     hsl(210, 55%, 75%);
+      --steam-mac:         hsl(210, 40%, 45%);
+      --sc-linux:          hsl(145, 65%, 50%);
+      --sc-windows:        hsl(145, 45%, 68%);
+      --sc-mac:            hsl(145, 40%, 38%);
+      --dap-linux:         hsl(30,  85%, 58%);
+      --dap-windows:       hsl(30,  60%, 74%);
+      --dap-mac:           hsl(30,  45%, 42%);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── Layout ── */
+    .app {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+
+    /* ── Header ── */
+    header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .logo { font-size: 28px; line-height: 1; }
+    header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+    header p {
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+    .last-updated {
+      margin-left: auto;
+      text-align: right;
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    /* ── Controls ── */
+    .controls {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .control-group label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-muted);
+    }
+
+    .btn-row { display: flex; gap: 6px; flex-wrap: wrap; }
+
+    /* Timeframe buttons */
+    .btn-time {
+      padding: 5px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background .15s, border-color .15s, color .15s;
+    }
+    .btn-time:hover { border-color: var(--accent); color: var(--accent-hover); }
+    .btn-time.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    /* Source / OS toggle chips */
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      color: var(--text-muted);
+      font-size: 13px;
+      cursor: pointer;
+      transition: background .15s, border-color .15s, color .15s;
+      user-select: none;
+    }
+    .chip:hover { border-color: var(--accent); color: var(--text); }
+    .chip.active {
+      color: var(--text);
+      border-color: transparent;
+    }
+    .chip-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── Chart card ── */
+    .chart-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .chart-wrap { position: relative; height: 380px; }
+
+    .no-data {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 15px;
+    }
+
+    /* ── Stats table ── */
+    .stats-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .stats-card h2 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin-bottom: 14px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    th {
+      text-align: left;
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 12px;
+      padding: 6px 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--surface2); }
+
+    .source-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 500;
+    }
+
+    .pct-cell { font-variant-numeric: tabular-nums; }
+    .trend-up   { color: #4ade80; }
+    .trend-down { color: #f87171; }
+    .trend-flat { color: var(--text-muted); }
+
+    /* ── Info cards ── */
+    .sources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .source-info-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .source-info-card h3 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .source-info-card p {
+      color: var(--text-muted);
+      font-size: 12px;
+      margin-bottom: 6px;
+    }
+    .source-info-card a {
+      color: var(--accent);
+      font-size: 12px;
+      text-decoration: none;
+    }
+    .source-info-card a:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 12px;
+      margin-top: 8px;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ── Loading overlay ── */
+    #loading {
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      font-size: 16px;
+      z-index: 999;
+    }
+    #loading.hidden { display: none; }
+    .spinner {
+      width: 36px; height: 36px;
+      border: 3px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin .7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Error banner ── */
+    .error-banner {
+      background: #2d1a1a;
+      border: 1px solid #5c2a2a;
+      border-radius: 8px;
+      padding: 12px 16px;
+      color: #fca5a5;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+    .error-banner.hidden { display: none; }
+
+    @media (max-width: 640px) {
+      header { flex-wrap: wrap; }
+      .last-updated { margin-left: 0; text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Loading overlay -->
+<div id="loading">
+  <div class="spinner"></div>
+  <span>Loading data…</span>
+</div>
+
+<div class="app">
+  <header>
+    <span class="logo">🐧</span>
+    <div>
+      <h1>Linux Groove</h1>
+      <p>Market Trends</p>
+    </div>
+    <div class="last-updated" id="last-updated"></div>
+  </header>
+
+  <!-- Error banner (hidden by default) -->
+  <div class="error-banner hidden" id="error-banner"></div>
+
+  <!-- Controls -->
+  <div class="controls">
+    <!-- Timeframe -->
+    <div class="control-group">
+      <label>Timeframe</label>
+      <div class="btn-row" id="timeframe-btns">
+        <button class="btn-time" data-months="12">1Y</button>
+        <button class="btn-time" data-months="36">3Y</button>
+        <button class="btn-time" data-months="60">5Y</button>
+        <button class="btn-time active" data-months="0">Max</button>
+      </div>
+    </div>
+
+    <!-- Data sources -->
+    <div class="control-group" id="source-group">
+      <label>Data Sources</label>
+      <div class="btn-row" id="source-chips"></div>
+    </div>
+
+    <!-- OS types -->
+    <div class="control-group">
+      <label>Operating Systems</label>
+      <div class="btn-row" id="os-chips">
+        <span class="chip active" data-os="linux" style="--chip-color: hsl(145,65%,50%)">
+          <span class="chip-dot" style="background:hsl(145,65%,50%)"></span>Linux
+        </span>
+        <span class="chip" data-os="windows" style="--chip-color: hsl(210,55%,75%)">
+          <span class="chip-dot" style="background:hsl(210,55%,75%)"></span>Windows
+        </span>
+        <span class="chip" data-os="mac" style="--chip-color: hsl(30,60%,62%)">
+          <span class="chip-dot" style="background:hsl(30,60%,62%)"></span>macOS
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chart -->
+  <div class="chart-card">
+    <div class="chart-wrap">
+      <canvas id="chart"></canvas>
+      <div class="no-data hidden" id="no-data">No data to display for this selection.</div>
+    </div>
+  </div>
+
+  <!-- Stats table -->
+  <div class="stats-card">
+    <h2>Latest Readings</h2>
+    <table id="stats-table">
+      <thead>
+        <tr>
+          <th>Source</th>
+          <th>Period</th>
+          <th>Linux</th>
+          <th>Windows</th>
+          <th>macOS</th>
+          <th>MoM Change (Linux)</th>
+        </tr>
+      </thead>
+      <tbody id="stats-body"></tbody>
+    </table>
+  </div>
+
+  <!-- Source info cards -->
+  <div class="sources-grid" id="sources-grid"></div>
+
+  <footer>
+    <p>Data aggregated from public sources. See each source for methodology. &nbsp;|&nbsp;
+    <a href="https://trends.linuxgroove.com" target="_blank">trends.linuxgroove.com</a> &nbsp;|&nbsp;
+    <a href="https://github.com/kenvandine/trends.linuxgroove.com" target="_blank">GitHub</a></p>
+  </footer>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════════
+   CONFIG — edit here to add new sources or OS types in future
+   ═══════════════════════════════════════════════════════════════════ */
+const SOURCE_CONFIG = {
+  Steam: {
+    label: "Steam",
+    colors: {
+      linux:   "hsl(210,85%,60%)",
+      windows: "hsl(210,55%,75%)",
+      mac:     "hsl(210,40%,48%)",
+    },
+    chipColor: "hsl(210,85%,60%)",
+  },
+  StatCounter: {
+    label: "StatCounter",
+    colors: {
+      linux:   "hsl(145,65%,50%)",
+      windows: "hsl(145,45%,68%)",
+      mac:     "hsl(145,40%,38%)",
+    },
+    chipColor: "hsl(145,65%,50%)",
+  },
+  DAP: {
+    label: "DAP (US Gov)",
+    colors: {
+      linux:   "hsl(30,85%,58%)",
+      windows: "hsl(30,60%,74%)",
+      mac:     "hsl(30,45%,42%)",
+    },
+    chipColor: "hsl(30,85%,58%)",
+  },
+};
+
+const OS_CONFIG = {
+  linux:   { label: "Linux",   field: "linux_share",   dash: [] },
+  windows: { label: "Windows", field: "windows_share", dash: [6, 3] },
+  mac:     { label: "macOS",   field: "mac_share",     dash: [2, 3] },
+};
+
+/* ═══════════════════════════════════════════════════════════════════
+   STATE
+   ═══════════════════════════════════════════════════════════════════ */
+let allData      = [];       // raw data points from combined.json
+let manifest     = {};       // manifest.json content
+let chart        = null;     // Chart.js instance
+let activeMonths = 0;        // 0 = all time
+let activeSources = new Set();
+let activeOSes   = new Set(["linux"]);
+
+/* ═══════════════════════════════════════════════════════════════════
+   INIT
+   ═══════════════════════════════════════════════════════════════════ */
+async function init() {
+  try {
+    // Probe for the data directory — works regardless of where the HTTP
+    // server is rooted (project root, web/ subdir, etc.)
+    const base = await detectDataBase();
+
+    // Load manifest first (for source metadata)
+    try {
+      const mRes = await fetch(`${base}/manifest.json`);
+      if (mRes.ok) manifest = await mRes.json();
+    } catch (_) { /* manifest optional */ }
+
+    // Load combined data
+    const dRes = await fetch(`${base}/combined.json`);
+    if (!dRes.ok) throw new Error(`Could not load combined.json (${dRes.status})`);
+    const combined = await dRes.json();
+    allData = combined.data || [];
+
+    if (combined.metadata?.last_updated) {
+      document.getElementById("last-updated").textContent =
+        "Updated: " + formatDate(combined.metadata.last_updated);
+    }
+
+    buildSourceChips();
+    buildSourceInfoCards();
+    buildChart();
+    render();
+
+  } catch (err) {
+    showError(`Failed to load data: ${err.message}. Run the data collection script first, then serve via HTTP from either the project root or the web/ directory.`);
+  } finally {
+    document.getElementById("loading").classList.add("hidden");
+  }
+}
+
+async function detectDataBase() {
+  // Try candidate paths in preference order.
+  // "data" works in both cases: via the web/data symlink when serving from
+  // the web/ directory, and directly when serving from the project root.
+  // "../data" is the fallback for serving from project root without the symlink.
+  for (const candidate of ["data", "../data"]) {
+    try {
+      const r = await fetch(`${candidate}/combined.json`, { method: "HEAD" });
+      if (r.ok) return candidate;
+    } catch (_) { /* try next */ }
+  }
+  return "../data"; // fall through — fetch will produce a clear error
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   BUILD UI COMPONENTS
+   ═══════════════════════════════════════════════════════════════════ */
+function buildSourceChips() {
+  // Determine which sources are actually in the data
+  const sourcesInData = [...new Set(allData.map(d => d.source))].sort();
+  activeSources = new Set(sourcesInData); // all on by default
+
+  const container = document.getElementById("source-chips");
+  container.innerHTML = "";
+
+  sourcesInData.forEach(src => {
+    const cfg = SOURCE_CONFIG[src] || { label: src, chipColor: "#888" };
+    const chip = document.createElement("span");
+    chip.className = "chip active";
+    chip.dataset.source = src;
+    chip.innerHTML = `
+      <span class="chip-dot" style="background:${cfg.chipColor}"></span>${cfg.label}`;
+    chip.addEventListener("click", () => toggleSource(src, chip));
+    container.appendChild(chip);
+  });
+}
+
+function buildSourceInfoCards() {
+  const grid = document.getElementById("sources-grid");
+  grid.innerHTML = "";
+
+  const sourcesInData = [...new Set(allData.map(d => d.source))];
+  sourcesInData.forEach(src => {
+    const meta = manifest?.sources?.[src.toLowerCase()] || {};
+    const cfg  = SOURCE_CONFIG[src] || { chipColor: "#888", label: src };
+    const card = document.createElement("div");
+    card.className = "source-info-card";
+    card.innerHTML = `
+      <h3>
+        <span class="chip-dot" style="background:${cfg.chipColor};width:10px;height:10px;border-radius:50%;display:inline-block;"></span>
+        ${meta.name || src}
+      </h3>
+      <p>${meta.description || ""}</p>
+      ${meta.methodology ? `<p><em>${meta.methodology}</em></p>` : ""}
+      ${meta.url ? `<a href="${meta.url}" target="_blank" rel="noopener">${meta.url}</a>` : ""}
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function buildChart() {
+  const ctx = document.getElementById("chart").getContext("2d");
+  chart = new Chart(ctx, {
+    type: "line",
+    data: { labels: [], datasets: [] },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: "index", intersect: false },
+      plugins: {
+        legend: {
+          display: true,
+          position: "top",
+          labels: {
+            color: "#8892a4",
+            boxWidth: 20,
+            padding: 16,
+            font: { size: 12 },
+            usePointStyle: true,
+            pointStyleWidth: 16,
+          },
+        },
+        tooltip: {
+          backgroundColor: "#1a1d26",
+          borderColor: "#2e3348",
+          borderWidth: 1,
+          titleColor: "#e2e8f0",
+          bodyColor: "#8892a4",
+          callbacks: {
+            label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y?.toFixed(2) ?? "N/A"}%`,
+          },
+        },
+      },
+      scales: {
+        x: {
+          grid: { color: "#1e2230" },
+          ticks: { color: "#8892a4", maxTicksLimit: 18, maxRotation: 45 },
+        },
+        y: {
+          grid: { color: "#1e2230" },
+          ticks: {
+            color: "#8892a4",
+            callback: v => v + "%",
+          },
+          min: 0,
+        },
+      },
+    },
+  });
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   RENDER
+   ═══════════════════════════════════════════════════════════════════ */
+function render() {
+  const filtered = filterData();
+  const labels   = buildLabels(filtered);
+  const datasets = buildDatasets(filtered, labels);
+
+  const noData = document.getElementById("no-data");
+  if (datasets.length === 0) {
+    noData.classList.remove("hidden");
+  } else {
+    noData.classList.add("hidden");
+  }
+
+  chart.data.labels   = labels;
+  chart.data.datasets = datasets;
+  chart.update();
+
+  renderStats(filtered);
+}
+
+function filterData() {
+  let data = allData.filter(d => activeSources.has(d.source));
+
+  if (activeMonths > 0) {
+    const cutoff = new Date();
+    cutoff.setMonth(cutoff.getMonth() - activeMonths);
+    const cutoffStr = cutoff.toISOString().slice(0, 7); // YYYY-MM
+    data = data.filter(d => d.date.slice(0, 7) >= cutoffStr);
+  }
+
+  return data;
+}
+
+function buildLabels(data) {
+  // Unique sorted dates as "YYYY-MM"
+  return [...new Set(data.map(d => d.date.slice(0, 7)))].sort();
+}
+
+function buildDatasets(data, labels) {
+  const datasets = [];
+
+  // Group data by source
+  const bySource = {};
+  data.forEach(d => {
+    if (!bySource[d.source]) bySource[d.source] = {};
+    bySource[d.source][d.date.slice(0, 7)] = d;
+  });
+
+  Object.entries(bySource).forEach(([src, byDate]) => {
+    const cfg = SOURCE_CONFIG[src] || { label: src, colors: { linux: "#888", windows: "#aaa", mac: "#ccc" } };
+
+    activeOSes.forEach(osKey => {
+      const osCfg = OS_CONFIG[osKey];
+      if (!osCfg) return;
+
+      // Check if any data point for this source has this field
+      const hasField = Object.values(byDate).some(d => d[osCfg.field] != null);
+      if (!hasField) return;
+
+      const color = cfg.colors[osKey] || "#888";
+      const dataArr = labels.map(lbl => {
+        const pt = byDate[lbl];
+        return pt?.[osCfg.field] ?? null;
+      });
+
+      datasets.push({
+        label: `${cfg.label} — ${osCfg.label}`,
+        data: dataArr,
+        borderColor: color,
+        backgroundColor: color.replace("hsl", "hsla").replace(")", ",0.12)"),
+        pointRadius: labels.length > 60 ? 0 : 3,
+        pointHoverRadius: 5,
+        borderWidth: 2,
+        borderDash: osCfg.dash,
+        tension: 0.3,
+        spanGaps: true,
+      });
+    });
+  });
+
+  return datasets;
+}
+
+function renderStats(data) {
+  const tbody = document.getElementById("stats-body");
+  tbody.innerHTML = "";
+
+  // Get the latest data point per source
+  const sources = [...new Set(data.map(d => d.source))];
+
+  sources.forEach(src => {
+    const srcData = data.filter(d => d.source === src).sort((a, b) => a.date.localeCompare(b.date));
+    if (srcData.length === 0) return;
+
+    const latest  = srcData[srcData.length - 1];
+    const prev    = srcData.length > 1 ? srcData[srcData.length - 2] : null;
+    const cfg     = SOURCE_CONFIG[src] || { chipColor: "#888", label: src };
+
+    const linuxCur  = latest.linux_share ?? null;
+    const winCur    = latest.windows_share ?? null;
+    const macCur    = latest.mac_share ?? null;
+    const linuxPrev = prev?.linux_share ?? null;
+
+    const momDelta = (linuxCur != null && linuxPrev != null)
+      ? (linuxCur - linuxPrev)
+      : null;
+
+    const momClass = momDelta == null ? "trend-flat"
+                   : momDelta > 0    ? "trend-up"
+                   : momDelta < 0    ? "trend-down"
+                   : "trend-flat";
+    const momStr   = momDelta == null ? "—"
+                   : (momDelta > 0 ? "+" : "") + momDelta.toFixed(2) + "%";
+
+    const periodStr = formatMonthLabel(latest.date.slice(0, 7));
+
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>
+        <span class="source-badge">
+          <span style="width:10px;height:10px;border-radius:50%;background:${cfg.chipColor};display:inline-block;flex-shrink:0;"></span>
+          ${cfg.label}
+        </span>
+      </td>
+      <td>${periodStr}</td>
+      <td class="pct-cell">${pctCell(linuxCur)}</td>
+      <td class="pct-cell">${pctCell(winCur)}</td>
+      <td class="pct-cell">${pctCell(macCur)}</td>
+      <td class="pct-cell ${momClass}">${momStr}</td>
+    `;
+    tbody.appendChild(row);
+  });
+
+  if (tbody.children.length === 0) {
+    const row = document.createElement("tr");
+    row.innerHTML = `<td colspan="6" style="color:var(--text-muted);text-align:center">No data for current selection</td>`;
+    tbody.appendChild(row);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   EVENT HANDLERS
+   ═══════════════════════════════════════════════════════════════════ */
+document.getElementById("timeframe-btns").addEventListener("click", e => {
+  const btn = e.target.closest(".btn-time");
+  if (!btn) return;
+  document.querySelectorAll(".btn-time").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  activeMonths = parseInt(btn.dataset.months, 10);
+  render();
+});
+
+document.getElementById("source-chips").addEventListener("click", e => {
+  const chip = e.target.closest(".chip[data-source]");
+  if (chip) toggleSource(chip.dataset.source, chip);
+});
+
+document.getElementById("os-chips").addEventListener("click", e => {
+  const chip = e.target.closest(".chip[data-os]");
+  if (!chip) return;
+  const os = chip.dataset.os;
+  if (activeOSes.has(os)) {
+    if (activeOSes.size === 1) return; // keep at least one
+    activeOSes.delete(os);
+    chip.classList.remove("active");
+  } else {
+    activeOSes.add(os);
+    chip.classList.add("active");
+  }
+  render();
+});
+
+function toggleSource(src, chip) {
+  if (activeSources.has(src)) {
+    if (activeSources.size === 1) return; // keep at least one
+    activeSources.delete(src);
+    chip.classList.remove("active");
+  } else {
+    activeSources.add(src);
+    chip.classList.add("active");
+  }
+  render();
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   HELPERS
+   ═══════════════════════════════════════════════════════════════════ */
+function pctCell(val) {
+  return val != null ? val.toFixed(2) + "%" : "<span style='color:var(--text-muted)'>—</span>";
+}
+
+function formatMonthLabel(ym) {
+  const [year, month] = ym.split("-");
+  const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  return `${months[parseInt(month, 10) - 1]} ${year}`;
+}
+
+function formatDate(iso) {
+  try {
+    return new Date(iso).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
+  } catch { return iso; }
+}
+
+function showError(msg) {
+  const el = document.getElementById("error-banner");
+  el.textContent = msg;
+  el.classList.remove("hidden");
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   BOOT
+   ═══════════════════════════════════════════════════════════════════ */
+init();
+</script>
+</body>
+</html>

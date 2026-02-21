@@ -1,6 +1,6 @@
-# Contributing to LinuxGroove
+# Contributing to Linux Groove Market Trends
 
-Thank you for your interest in contributing to LinuxGroove! This document provides guidelines for contributing to the project.
+Thank you for your interest in contributing to Linux Groove Market Trends! This document provides guidelines for contributing to the project.
 
 ## Code of Conduct
 

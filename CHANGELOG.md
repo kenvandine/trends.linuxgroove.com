@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to LinuxGroove will be documented in this file.
+All notable changes to Linux Groove Market Trends will be documented in this file.
 
 ## [0.2.0] - 2025-06-30
 

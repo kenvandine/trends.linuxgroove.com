@@ -88,6 +88,7 @@ def load_and_visualize_data(data_dir="data", start_date=None, end_date=None):
     plt.legend()
     plt.grid(True, alpha=0.3)
     plt.xticks(rotation=45)
+    plt.ylim(0, 50)
     plt.tight_layout()
     plt.savefig("linux_share_trend.png")
     plt.show()
@@ -113,7 +114,7 @@ if __name__ == "__main__":
     import sys
     import argparse
 
-    parser = argparse.ArgumentParser(description="Visualize LinuxGroove data")
+    parser = argparse.ArgumentParser(description="Visualize Linux Groove Market Trends data")
     parser.add_argument(
         "--range-from", "-f", help="Start date for visualization (YYYY-MM-DD format)"
     )

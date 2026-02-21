@@ -6,56 +6,70 @@ from src.adapters.statcounter_adapter import StatCounterAdapter
 from src.adapters.dap_adapter import DAPAdapter
 from src.storage.json_storage_handler import JSONStorageHandler
 
-class LinuxGrooveEngine:
-    """Main engine for LinuxGroove data aggregation"""
-    
+
+class MarketTrendsEngine:
+    """Main engine for Linux Groove Market Trends data aggregation."""
+
     def __init__(self):
         self.adapters = [
             SteamAdapter(),
             StatCounterAdapter(),
-            DAPAdapter()
+            DAPAdapter(),
         ]
         self.storage = JSONStorageHandler()
-        
+
     def collect_data(self, start_date=None, end_date=None, source=None):
-        """Collect data from all adapters
-        
+        """Collect data from all (or a specific) adapter.
+
+        After collection, regenerates manifest.json and combined.json so the
+        web UI always reflects the latest data.
+
         Args:
-            start_date: Optional start date for date range (YYYY-MM-DD format)
-            end_date: Optional end date for date range (YYYY-MM-DD format)
-            source: Optional specific adapter name to collect from
+            start_date: Optional start date (YYYY-MM-DD).
+            end_date: Optional end date (YYYY-MM-DD).
+            source: Optional adapter name to collect from ('steam', 'statcounter', 'dap').
         """
-        print(f"Collecting data from all sources...")
+        print("Collecting data from sources...")
         if start_date:
             print(f"Date range: {start_date} to {end_date}")
-        
-        adapters_to_collect = self.adapters
+
+        adapters_to_run = self.adapters
         if source:
-            adapters_to_collect = [a for a in self.adapters if a.name.lower() == source.lower()]
-            if not adapters_to_collect:
-                print(f"Adapter '{source}' not found")
+            adapters_to_run = [a for a in self.adapters if a.name.lower() == source.lower()]
+            if not adapters_to_run:
+                print(f"Unknown adapter '{source}'. Available: steam, statcounter, dap")
                 return
-        
-        for adapter in adapters_to_collect:
+
+        for adapter in adapters_to_run:
+            print(f"\n[{adapter.name}]")
             try:
-                print(f"Collecting data from {adapter.name}...")
                 data = adapter.fetch_data(start_date, end_date)
                 if data:
                     self.storage.store_data(data)
-                    print(f"Stored {len(data)} data points from {adapter.name}")
+                    print(f"  Stored {len(data)} data point(s)")
                 else:
-                    print(f"No data collected from {adapter.name}")
+                    print(f"  No data returned")
             except Exception as e:
-                print(f"Error collecting data from {adapter.name}: {str(e)}")
-        
-        print("Data collection completed.")
-        
+                print(f"  Error: {e}")
+
+        print("\nRegenerating manifest and combined data file...")
+        self.storage.generate_manifest()
+        self.storage.generate_combined()
+        print("Done.")
+
     def get_data(self, source_id=None, start_date=None, end_date=None):
-        """Retrieve data from storage
-        
+        """Retrieve stored data.
+
         Args:
-            source_id: Optional source ID to filter by
-            start_date: Optional start date for date range (YYYY-MM-DD format)
-            end_date: Optional end date for date range (YYYY-MM-DD format)
+            source_id: Optional source filter ('steam', 'statcounter', 'dap').
+            start_date: Optional start date (YYYY-MM-DD).
+            end_date: Optional end date (YYYY-MM-DD).
         """
         return self.storage.get_data(source_id, start_date, end_date)
+
+    def rebuild_index(self):
+        """Regenerate manifest.json and combined.json from existing stored data."""
+        print("Rebuilding index from stored data...")
+        self.storage.generate_manifest()
+        self.storage.generate_combined()
+        print("Done.")
