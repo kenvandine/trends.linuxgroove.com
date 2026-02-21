@@ -28,13 +28,9 @@ jobs:
 
       - name: Build site directory
         run: |
-          # Combine web/ (the UI) and data/ (the JSON files) into one deployable directory.
-          # The web UI probes for data/ relative to itself, so both must be at the same level.
+          # cp -r follows the web/data symlink, so data/ lands in _site/data/ automatically.
           mkdir -p _site
           cp -r web/. _site/
-          cp -r data _site/data
-          # Remove the local-dev symlink if present (replaced by the real copy above)
-          rm -f _site/data/data
 
       - name: Add .nojekyll
         run: touch _site/.nojekyll
