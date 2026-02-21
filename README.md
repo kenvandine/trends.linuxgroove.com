@@ -14,16 +14,18 @@ Linux Groove Market Trends collects OS market share data from three public sourc
 | [StatCounter Global Stats](https://gs.statcounter.com/) | Desktop web traffic OS share (worldwide) | 2018 – present |
 | [US Digital Analytics Program](https://analytics.usa.gov/) | OS share across US federal websites (all devices) | Current period only |
 
-## Screenshots / Demo
+## Hosting
 
-Serve locally — either of these works:
+**GitHub Pages** — the included workflow (`.github/workflows/pages.yml`) deploys automatically on every push to `main`. In your repository settings, set Pages source to **GitHub Actions**.
+
+**Local development** — either of these works:
 
 ```bash
 # From the project root
 python3 -m http.server 8000
 # → http://localhost:8000/web/
 
-# Or from inside the web/ directory
+# Or from inside the web/ directory (uses the web/data symlink)
 cd web && python3 -m http.server 8000
 # → http://localhost:8000/
 ```
