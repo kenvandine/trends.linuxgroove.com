@@ -1,0 +1,25 @@
+# Files that should be ignored by goose
+# This prevents access to sensitive files
+
+# Secrets
+secrets/
+credentials/
+keys/
+
+# Configuration
+config/secrets.json
+config/credentials.json
+
+# Logs
+logs/
+*.log
+
+# Backup files
+*.bak
+*.backup
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
