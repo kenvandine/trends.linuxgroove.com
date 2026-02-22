@@ -198,7 +198,7 @@ class JSONStorageHandler:
                     "from": dates_seen[0] if dates_seen else None,
                     "to": dates_seen[-1] if dates_seen else None,
                 },
-                "fields": ["linux_share", "windows_share", "mac_share", "chromeos_share", "other_share"],
+                "fields": ["linux_share", "windows_share", "mac_share", "chromeos_share", "wsl_share", "other_share"],
             },
             "data": all_data,
         }

@@ -2,9 +2,9 @@
   {
     "source": "StackOverflow",
     "date": "2022-06-01",
-    "linux_share": 39.54,
+    "linux_share": 47.13,
     "details": {
-      "Linux": 39.54,
+      "Linux": 47.13,
       "Windows": 61.26,
       "macOS": 30.54,
       "WSL": 14.74,
@@ -13,6 +13,7 @@
     },
     "windows_share": 61.26,
     "mac_share": 30.54,
-    "other_share": 0
+    "other_share": 0,
+    "wsl_share": 14.74
   }
 ]

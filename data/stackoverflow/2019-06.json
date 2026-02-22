@@ -13,6 +13,7 @@
     },
     "windows_share": 46.93,
     "mac_share": 26.49,
-    "other_share": 1.3
+    "other_share": 1.3,
+    "wsl_share": 0.0
   }
 ]

@@ -230,6 +230,7 @@ class StackOverflowAdapter(BaseAdapter):
             "linux_share":   linux_pct,
             "windows_share": windows_pct,
             "mac_share":     mac_pct,
+            "wsl_share":     wsl_pct,
             "other_share":   other_pct,
             "details": {
                 "Linux":             linux_pct,

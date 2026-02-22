@@ -13,6 +13,7 @@
     },
     "windows_share": 36.44,
     "mac_share": 21.04,
-    "other_share": 6.23
+    "other_share": 6.23,
+    "wsl_share": 10.21
   }
 ]

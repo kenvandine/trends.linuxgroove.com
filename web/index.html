@@ -388,6 +388,9 @@
         <span class="chip" data-os="mac" style="--chip-color: hsl(30,60%,62%)">
           <span class="chip-dot" style="background:hsl(30,60%,62%)"></span>macOS
         </span>
+        <span class="chip" data-os="wsl" style="--chip-color: hsl(185,65%,48%)">
+          <span class="chip-dot" style="background:hsl(185,65%,48%)"></span>WSL
+        </span>
       </div>
     </div>
 
@@ -485,6 +488,7 @@ const SOURCE_CONFIG = {
       linux:   "hsl(15,80%,55%)",
       windows: "hsl(15,55%,72%)",
       mac:     "hsl(15,45%,40%)",
+      wsl:     "hsl(185,65%,48%)",
     },
     chipColor: "hsl(15,80%,55%)",
   },
@@ -494,6 +498,7 @@ const OS_CONFIG = {
   linux:   { label: "Linux",   field: "linux_share",   dash: [] },
   windows: { label: "Windows", field: "windows_share", dash: [6, 3] },
   mac:     { label: "macOS",   field: "mac_share",     dash: [2, 3] },
+  wsl:     { label: "WSL",     field: "wsl_share",     dash: [4, 2] },
 };
 
 /* ═══════════════════════════════════════════════════════════════════
