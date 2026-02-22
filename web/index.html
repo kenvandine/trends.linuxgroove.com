@@ -141,19 +141,24 @@
       color: var(--text-muted);
       font-size: 13px;
       cursor: pointer;
-      transition: background .15s, border-color .15s, color .15s;
+      transition: opacity .15s, border-color .15s, color .15s;
       user-select: none;
+      opacity: 0.4;
     }
-    .chip:hover { border-color: var(--accent); color: var(--text); }
+    .chip:hover { opacity: 0.7; border-color: var(--accent); color: var(--text); }
     .chip.active {
+      opacity: 1;
       color: var(--text);
-      border-color: transparent;
+      border-color: var(--chip-color, var(--accent));
     }
     .chip-dot {
       width: 8px; height: 8px;
       border-radius: 50%;
       flex-shrink: 0;
+      filter: grayscale(1);
+      transition: filter .15s;
     }
+    .chip.active .chip-dot { filter: none; }
 
     /* ── Chart card ── */
     .chart-card {
@@ -542,6 +547,7 @@ function buildSourceChips() {
     const chip = document.createElement("span");
     chip.className = "chip active";
     chip.dataset.source = src;
+    chip.style.setProperty("--chip-color", cfg.chipColor);
     chip.innerHTML = `
       <span class="chip-dot" style="background:${cfg.chipColor}"></span>${cfg.label}`;
     chip.addEventListener("click", () => toggleSource(src, chip));
