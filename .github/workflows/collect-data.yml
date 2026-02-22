@@ -1,0 +1,91 @@
+name: Collect Data and Deploy
+
+on:
+  schedule:
+    - cron: '0 8 1 * *'  # 08:00 UTC on the 1st of every month
+  workflow_dispatch:
+    inputs:
+      source:
+        description: 'Source to collect (leave blank for all)'
+        required: false
+        default: ''
+        type: choice
+        options:
+          - ''
+          - steam
+          - statcounter
+          - dap
+
+# Needs write access to commit data files back to main.
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Queue behind any in-progress Pages deployment; never cancel a running deploy.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  collect-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Collect data
+        env:
+          DAP_API_KEY: ${{ secrets.DAP_API_KEY }}
+        run: |
+          SOURCE="${{ github.event.inputs.source }}"
+          if [ -n "$SOURCE" ]; then
+            python3 -m src.main --source "$SOURCE"
+          else
+            python3 -m src.main
+          fi
+
+      - name: Commit new data to main
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "No new data — skipping commit"
+          else
+            git commit -m "data: automated collection $(date -u +'%Y-%m-%d')"
+            git push
+          fi
+
+      - name: Build site directory
+        run: |
+          # cp -r follows the web/data symlink, so data/ lands in _site/data/ automatically.
+          mkdir -p _site
+          cp -r web/. _site/
+
+      - name: Add .nojekyll
+        run: touch _site/.nojekyll
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
