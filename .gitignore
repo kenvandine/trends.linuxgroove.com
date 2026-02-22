@@ -59,6 +59,8 @@ htmlcov/
 # Project specific
 *.png
 !web/linuxgroove.png
+!web/favicon.ico
+!web/favicon-192.png
 *.svg
 *.pdf
 
