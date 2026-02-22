@@ -58,6 +58,7 @@ htmlcov/
 
 # Project specific
 *.png
+!web/linuxgroove.png
 *.svg
 *.pdf
 
