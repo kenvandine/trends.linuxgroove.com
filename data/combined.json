@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-02-22T02:41:04Z",
+    "last_updated": "2026-02-22T02:45:15Z",
     "sources": [
       "Cloudflare",
       "DAP",
@@ -1952,6 +1952,21 @@
       "other_share": 55.67
     },
     {
+      "source": "StackOverflow",
+      "date": "2022-06-01",
+      "linux_share": 47.13,
+      "details": {
+        "Linux": 47.13,
+        "Windows": 62.7,
+        "macOS": 30.54,
+        "Other": 0,
+        "total_respondents": 72746
+      },
+      "windows_share": 62.7,
+      "mac_share": 30.54,
+      "other_share": 0
+    },
+    {
       "source": "StatCounter",
       "date": "2022-06-01",
       "linux_share": 2.42,
@@ -2535,6 +2550,21 @@
       "mac_share": 9.56,
       "chromeos_share": 0.89,
       "other_share": 57.36
+    },
+    {
+      "source": "StackOverflow",
+      "date": "2023-06-01",
+      "linux_share": 50.79,
+      "details": {
+        "Linux": 50.79,
+        "Windows": 60.11,
+        "macOS": 32.07,
+        "Other": 0,
+        "total_respondents": 88565
+      },
+      "windows_share": 60.11,
+      "mac_share": 32.07,
+      "other_share": 0
     },
     {
       "source": "StatCounter",
@@ -3280,6 +3310,21 @@
       "mac_share": 9.81,
       "chromeos_share": 0.86,
       "other_share": 55.08
+    },
+    {
+      "source": "StackOverflow",
+      "date": "2024-06-01",
+      "linux_share": 47.89,
+      "details": {
+        "Linux": 47.89,
+        "Windows": 54.61,
+        "macOS": 28.65,
+        "Other": 0,
+        "total_respondents": 65035
+      },
+      "windows_share": 54.61,
+      "mac_share": 28.65,
+      "other_share": 0
     },
     {
       "source": "StatCounter",
@@ -4054,6 +4099,21 @@
       "mac_share": 10.32,
       "chromeos_share": 0.84,
       "other_share": 53.47
+    },
+    {
+      "source": "StackOverflow",
+      "date": "2025-06-01",
+      "linux_share": 35.65,
+      "details": {
+        "Linux": 35.65,
+        "Windows": 37.09,
+        "macOS": 21.04,
+        "Other": 6.22,
+        "total_respondents": 49191
+      },
+      "windows_share": 37.09,
+      "mac_share": 21.04,
+      "other_share": 6.22
     },
     {
       "source": "StatCounter",
