@@ -1,0 +1,19 @@
+[
+  {
+    "source": "Steam",
+    "date": "2025-07-01",
+    "linux_share": 2.69,
+    "details": {
+      "\"Arch Linux\" 64 bit": 0.27,
+      "Linux Mint 22.1 64 bit": 0.21,
+      "Ubuntu Core 22 64 bit": 0.12,
+      "Ubuntu 24.04.2 LTS 64 bit": 0.12,
+      "\"EndeavourOS Linux\" 64 bit": 0.07,
+      "\"Manjaro Linux\" 64 bit": 0.07,
+      "Debian GNU/Linux 12 (bookworm) 64 bit": 0.05
+    },
+    "windows_share": 95.45,
+    "mac_share": 1.85,
+    "other_share": 0.01
+  }
+]

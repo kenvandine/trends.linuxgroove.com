@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-02-22T01:34:27Z",
+    "last_updated": "2026-02-22T01:44:01Z",
     "sources": [
       "DAP",
       "StatCounter",
@@ -375,6 +375,21 @@
       "mac_share": 13.22,
       "chromeos_share": 0.86,
       "other_share": 5.89
+    },
+    {
+      "source": "Steam",
+      "date": "2019-08-01",
+      "linux_share": 0.79,
+      "details": {
+        "Ubuntu 18.04.2 LTS 64 bit": 0.18,
+        "Ubuntu 19.04 64 bit": 0.09,
+        "\"Manjaro Linux\" 64 bit": 0.07,
+        "Linux Mint 19.1 Tessa 64 bit": 0.06,
+        "Linux 64 bit": 0.05
+      },
+      "windows_share": 96.28,
+      "mac_share": 2.93,
+      "other_share": 0.0
     },
     {
       "source": "DAP",
@@ -1050,6 +1065,21 @@
       "other_share": 6.52
     },
     {
+      "source": "Steam",
+      "date": "2020-11-01",
+      "linux_share": 0.94,
+      "details": {
+        "Ubuntu 20.04.1 LTS 64 bit": 0.19,
+        "\"Arch Linux\" 64 bit": 0.11,
+        "\"Manjaro Linux\" 64 bit": 0.11,
+        "Ubuntu 18.04.5 LTS 64 bit": 0.07,
+        "Linux Mint 20 64 bit": 0.05
+      },
+      "windows_share": 95.61,
+      "mac_share": 3.46,
+      "other_share": 0.0
+    },
+    {
       "source": "DAP",
       "date": "2020-12-01",
       "linux_share": 0.81,
@@ -1129,6 +1159,19 @@
       "other_share": 3.01
     },
     {
+      "source": "Steam",
+      "date": "2021-01-01",
+      "linux_share": 0.74,
+      "details": {
+        "Ubuntu 20.04.1 LTS 64 bit": 0.18,
+        "\"Arch Linux\" 64 bit": 0.08,
+        "\"Manjaro Linux\" 64 bit": 0.08
+      },
+      "windows_share": 96.51,
+      "mac_share": 2.74,
+      "other_share": 0.01
+    },
+    {
       "source": "DAP",
       "date": "2021-02-01",
       "linux_share": 0.84,
@@ -1159,6 +1202,19 @@
       "mac_share": 16.74,
       "chromeos_share": 1.99,
       "other_share": 3.41
+    },
+    {
+      "source": "Steam",
+      "date": "2021-02-01",
+      "linux_share": 0.78,
+      "details": {
+        "Ubuntu 20.04.1 LTS 64 bit": 0.18,
+        "\"Arch Linux\" 64 bit": 0.09,
+        "\"Manjaro Linux\" 64 bit": 0.08
+      },
+      "windows_share": 96.41,
+      "mac_share": 2.82,
+      "other_share": 0.0
     },
     {
       "source": "DAP",
@@ -1225,6 +1281,19 @@
       "other_share": 4.84
     },
     {
+      "source": "Steam",
+      "date": "2021-04-01",
+      "linux_share": 0.85,
+      "details": {
+        "Ubuntu 20.04.2 LTS 64 bit": 0.17,
+        "\"Arch Linux\" 64 bit": 0.1,
+        "\"Manjaro Linux\" 64 bit": 0.09
+      },
+      "windows_share": 96.17,
+      "mac_share": 2.98,
+      "other_share": 0.0
+    },
+    {
       "source": "DAP",
       "date": "2021-05-01",
       "linux_share": 0.94,
@@ -1257,6 +1326,20 @@
       "other_share": 5.95
     },
     {
+      "source": "Steam",
+      "date": "2021-05-01",
+      "linux_share": 0.85,
+      "details": {
+        "Ubuntu 20.04.2 LTS 64 bit": 0.19,
+        "\"Arch Linux\" 64 bit": 0.1,
+        "\"Manjaro Linux\" 64 bit": 0.1,
+        "Linux Mint 20.1 64 bit": 0.05
+      },
+      "windows_share": 96.27,
+      "mac_share": 2.88,
+      "other_share": 0.0
+    },
+    {
       "source": "DAP",
       "date": "2021-06-01",
       "linux_share": 1.04,
@@ -1287,6 +1370,20 @@
       "mac_share": 15.56,
       "chromeos_share": 1.51,
       "other_share": 7.28
+    },
+    {
+      "source": "Steam",
+      "date": "2021-06-01",
+      "linux_share": 0.85,
+      "details": {
+        "Ubuntu 20.04.2 LTS 64 bit": 0.19,
+        "\"Arch Linux\" 64 bit": 0.1,
+        "\"Manjaro Linux\" 64 bit": 0.1,
+        "Linux Mint 20.1 64 bit": 0.05
+      },
+      "windows_share": 96.27,
+      "mac_share": 2.88,
+      "other_share": 0.0
     },
     {
       "source": "DAP",
@@ -1353,6 +1450,21 @@
       "other_share": 3.62
     },
     {
+      "source": "Steam",
+      "date": "2021-08-01",
+      "linux_share": 1.0,
+      "details": {
+        "Ubuntu 20.04.2 LTS 64 bit": 0.19,
+        "\"Manjaro Linux\" 64 bit": 0.11,
+        "\"Arch Linux\" 64 bit": 0.1,
+        "Ubuntu 21.04 64 bit": 0.06,
+        "Linux Mint 20.1 64 bit": 0.05
+      },
+      "windows_share": 96.49,
+      "mac_share": 2.51,
+      "other_share": 0.0
+    },
+    {
       "source": "DAP",
       "date": "2021-09-01",
       "linux_share": 1.21,
@@ -1383,6 +1495,21 @@
       "mac_share": 15.93,
       "chromeos_share": 2.59,
       "other_share": 3.75
+    },
+    {
+      "source": "Steam",
+      "date": "2021-09-01",
+      "linux_share": 1.02,
+      "details": {
+        "Ubuntu 20.04.2 LTS 64 bit": 0.16,
+        "\"Manjaro Linux\" 64 bit": 0.13,
+        "\"Arch Linux\" 64 bit": 0.11,
+        "Ubuntu 21.04 64 bit": 0.07,
+        "Linux Mint 20.2 64 bit": 0.05
+      },
+      "windows_share": 96.49,
+      "mac_share": 2.49,
+      "other_share": 0.0
     },
     {
       "source": "DAP",
@@ -1417,6 +1544,21 @@
       "other_share": 4.25
     },
     {
+      "source": "Steam",
+      "date": "2021-10-01",
+      "linux_share": 1.05,
+      "details": {
+        "Ubuntu 20.04.3 LTS 64 bit": 0.16,
+        "\"Manjaro Linux\" 64 bit": 0.14,
+        "\"Arch Linux\" 64 bit": 0.12,
+        "Ubuntu 21.04 64 bit": 0.07,
+        "Linux Mint 20.2 64 bit": 0.06
+      },
+      "windows_share": 96.47,
+      "mac_share": 2.47,
+      "other_share": 0.01
+    },
+    {
       "source": "DAP",
       "date": "2021-11-01",
       "linux_share": 1.2,
@@ -1447,6 +1589,21 @@
       "mac_share": 16.04,
       "chromeos_share": 2.6,
       "other_share": 5.0
+    },
+    {
+      "source": "Steam",
+      "date": "2021-11-01",
+      "linux_share": 1.13,
+      "details": {
+        "Ubuntu 20.04.3 LTS 64 bit": 0.19,
+        "\"Manjaro Linux\" 64 bit": 0.13,
+        "\"Arch Linux\" 64 bit": 0.13,
+        "Linux Mint 20.2 64 bit": 0.07,
+        "Ubuntu 21.04 64 bit": 0.06
+      },
+      "windows_share": 96.32,
+      "mac_share": 2.56,
+      "other_share": 0.0
     },
     {
       "source": "DAP",
@@ -1481,6 +1638,22 @@
       "other_share": 6.68
     },
     {
+      "source": "Steam",
+      "date": "2021-12-01",
+      "linux_share": 1.16,
+      "details": {
+        "Ubuntu 20.04.3 LTS 64 bit": 0.19,
+        "\"Manjaro Linux\" 64 bit": 0.15,
+        "\"Arch Linux\" 64 bit": 0.14,
+        "Linux Mint 20.2 64 bit": 0.08,
+        "Ubuntu 21.10 64 bit": 0.06,
+        "Linux 5.x 64 bit": 0.05
+      },
+      "windows_share": 96.14,
+      "mac_share": 2.7,
+      "other_share": 0.0
+    },
+    {
       "source": "DAP",
       "date": "2022-01-01",
       "linux_share": 0.92,
@@ -1511,6 +1684,21 @@
       "mac_share": 15.85,
       "chromeos_share": 2.6,
       "other_share": 3.87
+    },
+    {
+      "source": "Steam",
+      "date": "2022-01-01",
+      "linux_share": 1.11,
+      "details": {
+        "Ubuntu 20.04.3 LTS 64 bit": 0.2,
+        "\"Manjaro Linux\" 64 bit": 0.13,
+        "\"Arch Linux\" 64 bit": 0.13,
+        "Linux Mint 20.2 64 bit": 0.08,
+        "Ubuntu 21.10 64 bit": 0.07
+      },
+      "windows_share": 96.19,
+      "mac_share": 2.7,
+      "other_share": 0.0
     },
     {
       "source": "DAP",
@@ -1590,6 +1778,21 @@
       "mac_share": 15.32,
       "chromeos_share": 2.79,
       "other_share": 3.85
+    },
+    {
+      "source": "Steam",
+      "date": "2022-03-01",
+      "linux_share": 1.06,
+      "details": {
+        "Ubuntu 20.04.3 LTS 64 bit": 0.19,
+        "\"Manjaro Linux\" 64 bit": 0.13,
+        "\"Arch Linux\" 64 bit": 0.12,
+        "Ubuntu 21.10 64 bit": 0.07,
+        "Linux Mint 20.2 64 bit": 0.05
+      },
+      "windows_share": 96.17,
+      "mac_share": 2.77,
+      "other_share": 0.0
     },
     {
       "source": "DAP",
@@ -3331,6 +3534,23 @@
       "other_share": 9.64
     },
     {
+      "source": "Steam",
+      "date": "2025-07-01",
+      "linux_share": 2.69,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.27,
+        "Linux Mint 22.1 64 bit": 0.21,
+        "Ubuntu Core 22 64 bit": 0.12,
+        "Ubuntu 24.04.2 LTS 64 bit": 0.12,
+        "\"EndeavourOS Linux\" 64 bit": 0.07,
+        "\"Manjaro Linux\" 64 bit": 0.07,
+        "Debian GNU/Linux 12 (bookworm) 64 bit": 0.05
+      },
+      "windows_share": 95.45,
+      "mac_share": 1.85,
+      "other_share": 0.01
+    },
+    {
       "source": "DAP",
       "date": "2025-08-01",
       "linux_share": 3.74,
@@ -3414,6 +3634,24 @@
       "mac_share": 12.9,
       "chromeos_share": 1.62,
       "other_share": 11.33
+    },
+    {
+      "source": "Steam",
+      "date": "2025-09-01",
+      "linux_share": 2.64,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.29,
+        "Linux Mint 22.1 64 bit": 0.22,
+        "Ubuntu Core 22 64 bit": 0.11,
+        "Ubuntu 24.04.2 LTS 64 bit": 0.07,
+        "\"EndeavourOS Linux\" 64 bit": 0.06,
+        "\"Manjaro Linux\" 64 bit": 0.06,
+        "Fedora Linux 42 (Workstation Edition) 64 bit": 0.06,
+        "\"Fedora Linux 42 (KDE Plasma Desktop Edition)\" 64 bit": 0.05
+      },
+      "windows_share": 95.59,
+      "mac_share": 1.77,
+      "other_share": 0.0
     },
     {
       "source": "DAP",
@@ -3501,6 +3739,25 @@
       "other_share": 13.14
     },
     {
+      "source": "Steam",
+      "date": "2025-11-01",
+      "linux_share": 3.05,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.31,
+        "Linux Mint 22.2 64 bit": 0.2,
+        "Ubuntu Core 22 64 bit": 0.14,
+        "Ubuntu 24.04.3 LTS 64 bit": 0.11,
+        "Linux Mint 22.1 64 bit": 0.08,
+        "\"EndeavourOS Linux\" 64 bit": 0.07,
+        "\"Fedora Linux 42 (KDE Plasma Desktop Edition)\" 64 bit": 0.06,
+        "\"Manjaro Linux\" 64 bit": 0.06,
+        "Fedora Linux 42 (Workstation Edition) 64 bit": 0.05
+      },
+      "windows_share": 94.84,
+      "mac_share": 2.11,
+      "other_share": 0.0
+    },
+    {
       "source": "DAP",
       "date": "2025-12-01",
       "linux_share": 2.57,
@@ -3532,6 +3789,25 @@
       "mac_share": 12.46,
       "chromeos_share": 1.23,
       "other_share": 15.98
+    },
+    {
+      "source": "Steam",
+      "date": "2025-12-01",
+      "linux_share": 3.05,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.31,
+        "Linux Mint 22.2 64 bit": 0.2,
+        "Ubuntu Core 22 64 bit": 0.14,
+        "Ubuntu 24.04.3 LTS 64 bit": 0.11,
+        "Linux Mint 22.1 64 bit": 0.08,
+        "\"EndeavourOS Linux\" 64 bit": 0.07,
+        "\"Fedora Linux 42 (KDE Plasma Desktop Edition)\" 64 bit": 0.06,
+        "\"Manjaro Linux\" 64 bit": 0.06,
+        "Fedora Linux 42 (Workstation Edition) 64 bit": 0.05
+      },
+      "windows_share": 94.84,
+      "mac_share": 2.11,
+      "other_share": 0.0
     },
     {
       "source": "DAP",

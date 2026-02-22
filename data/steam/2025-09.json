@@ -1,0 +1,20 @@
+[
+  {
+    "source": "Steam",
+    "date": "2025-09-01",
+    "linux_share": 2.64,
+    "details": {
+      "\"Arch Linux\" 64 bit": 0.29,
+      "Linux Mint 22.1 64 bit": 0.22,
+      "Ubuntu Core 22 64 bit": 0.11,
+      "Ubuntu 24.04.2 LTS 64 bit": 0.07,
+      "\"EndeavourOS Linux\" 64 bit": 0.06,
+      "\"Manjaro Linux\" 64 bit": 0.06,
+      "Fedora Linux 42 (Workstation Edition) 64 bit": 0.06,
+      "\"Fedora Linux 42 (KDE Plasma Desktop Edition)\" 64 bit": 0.05
+    },
+    "windows_share": 95.59,
+    "mac_share": 1.77,
+    "other_share": 0.0
+  }
+]
