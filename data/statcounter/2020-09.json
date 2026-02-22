@@ -1,0 +1,18 @@
+[
+  {
+    "source": "StatCounter",
+    "date": "2020-09-01",
+    "linux_share": 1.73,
+    "details": {
+      "Linux": 1.73,
+      "Windows": 77.11,
+      "macOS": 17.57,
+      "ChromeOS": 1.52,
+      "Other": 2.06
+    },
+    "windows_share": 77.11,
+    "mac_share": 17.57,
+    "chromeos_share": 1.52,
+    "other_share": 2.06
+  }
+]
