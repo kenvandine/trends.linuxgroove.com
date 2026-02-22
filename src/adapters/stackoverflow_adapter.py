@@ -166,6 +166,7 @@ class StackOverflowAdapter(BaseAdapter):
 
     def _parse_csv(self, csv_text, year):
         """Parse the survey CSV and extract OS shares."""
+        csv.field_size_limit(10 * 1024 * 1024)  # 10 MB — surveys can have large fields
         reader = csv.DictReader(io.StringIO(csv_text))
         headers = reader.fieldnames or []
 
