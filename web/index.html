@@ -129,6 +129,27 @@
       color: #fff;
     }
 
+    /* Reset / Share action buttons */
+    .btn-action {
+      padding: 5px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background .15s, border-color .15s, color .15s;
+    }
+    .btn-action:hover { border-color: var(--accent); color: var(--text); }
+    .btn-action.share {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    .btn-action.share:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+    .btn-action:disabled { opacity: 0.6; cursor: default; }
+
     /* Source / OS toggle chips */
     .chip {
       display: inline-flex;
@@ -369,6 +390,12 @@
         </span>
       </div>
     </div>
+
+    <!-- Reset / Share -->
+    <div style="margin-left:auto; align-self:flex-end; display:flex; gap:8px;">
+      <button class="btn-action" id="btn-reset">Reset</button>
+      <button class="btn-action share" id="btn-share">Share</button>
+    </div>
   </div>
 
   <!-- Chart -->
@@ -508,6 +535,7 @@ async function init() {
     buildSourceChips();
     buildSourceInfoCards();
     buildChart();
+    applyUrlParams();
     render();
 
   } catch (err) {
@@ -771,6 +799,83 @@ function renderStats(data) {
 }
 
 /* ═══════════════════════════════════════════════════════════════════
+   RESET / SHARE
+   ═══════════════════════════════════════════════════════════════════ */
+function resetView() {
+  // Restore all sources
+  activeSources = new Set([...document.querySelectorAll(".chip[data-source]")].map(c => c.dataset.source));
+  document.querySelectorAll(".chip[data-source]").forEach(c => c.classList.add("active"));
+
+  // Restore Linux-only OS
+  activeOSes = new Set(["linux"]);
+  document.querySelectorAll(".chip[data-os]").forEach(c =>
+    c.classList.toggle("active", c.dataset.os === "linux")
+  );
+
+  // Restore Max timeframe
+  activeMonths = 0;
+  document.querySelectorAll(".btn-time").forEach(b =>
+    b.classList.toggle("active", parseInt(b.dataset.months, 10) === 0)
+  );
+
+  history.replaceState(null, "", window.location.pathname);
+  render();
+}
+
+function shareView() {
+  const params = new URLSearchParams();
+  params.set("sources", [...activeSources].join(","));
+  params.set("os", [...activeOSes].join(","));
+  params.set("months", activeMonths);
+  const url = `${window.location.origin}${window.location.pathname}?${params}`;
+
+  const btn = document.getElementById("btn-share");
+  navigator.clipboard.writeText(url).then(() => {
+    btn.textContent = "Copied!";
+    btn.disabled = true;
+    setTimeout(() => { btn.textContent = "Share"; btn.disabled = false; }, 2000);
+  }).catch(() => {
+    prompt("Copy this link:", url);
+  });
+}
+
+function applyUrlParams() {
+  const params = new URLSearchParams(window.location.search);
+
+  if (params.has("sources")) {
+    const requested = new Set(params.get("sources").split(",").map(s => s.trim()).filter(Boolean));
+    const valid = [...requested].filter(s => activeSources.has(s));
+    if (valid.length > 0) {
+      activeSources = new Set(valid);
+      document.querySelectorAll(".chip[data-source]").forEach(c =>
+        c.classList.toggle("active", activeSources.has(c.dataset.source))
+      );
+    }
+  }
+
+  if (params.has("os")) {
+    const requested = new Set(params.get("os").split(",").map(s => s.trim()).filter(Boolean));
+    const valid = [...requested].filter(os => OS_CONFIG[os]);
+    if (valid.length > 0) {
+      activeOSes = new Set(valid);
+      document.querySelectorAll(".chip[data-os]").forEach(c =>
+        c.classList.toggle("active", activeOSes.has(c.dataset.os))
+      );
+    }
+  }
+
+  if (params.has("months")) {
+    const m = parseInt(params.get("months"), 10);
+    if (!isNaN(m)) {
+      activeMonths = m;
+      document.querySelectorAll(".btn-time").forEach(b =>
+        b.classList.toggle("active", parseInt(b.dataset.months, 10) === m)
+      );
+    }
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
    EVENT HANDLERS
    ═══════════════════════════════════════════════════════════════════ */
 document.getElementById("timeframe-btns").addEventListener("click", e => {
@@ -813,6 +918,9 @@ function toggleSource(src, chip) {
   }
   render();
 }
+
+document.getElementById("btn-reset").addEventListener("click", resetView);
+document.getElementById("btn-share").addEventListener("click", shareView);
 
 /* ═══════════════════════════════════════════════════════════════════
    HELPERS
