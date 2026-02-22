@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-02-22T01:52:22Z",
+    "last_updated": "2026-02-22T01:54:39Z",
     "sources": [
       "DAP",
       "StatCounter",
@@ -8,7 +8,7 @@
     ],
     "date_range": {
       "from": "2019-01-01",
-      "to": "2026-02-01"
+      "to": "2026-01-01"
     },
     "fields": [
       "linux_share",
@@ -3986,38 +3986,6 @@
       "windows_share": 94.62,
       "mac_share": 2.01,
       "other_share": 0.0
-    },
-    {
-      "source": "DAP",
-      "date": "2026-02-01",
-      "linux_share": 3.13,
-      "details": {
-        "Linux": 3.13,
-        "Windows": 46.48,
-        "macOS": 12.74,
-        "ChromeOS": 2.11,
-        "Mobile (Android/iOS)": 35.51
-      },
-      "windows_share": 46.48,
-      "mac_share": 12.74,
-      "chromeos_share": 2.11,
-      "other_share": 35.53
-    },
-    {
-      "source": "StatCounter",
-      "date": "2026-02-01",
-      "linux_share": 2.82,
-      "details": {
-        "Linux": 2.82,
-        "Windows": 68.25,
-        "macOS": 11.82,
-        "ChromeOS": 1.42,
-        "Other": 15.69
-      },
-      "windows_share": 68.25,
-      "mac_share": 11.82,
-      "chromeos_share": 1.42,
-      "other_share": 15.69
     }
   ]
 }
