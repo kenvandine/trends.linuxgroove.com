@@ -1,0 +1,17 @@
+[
+  {
+    "source": "StackOverflow",
+    "date": "2021-06-01",
+    "linux_share": 28.56,
+    "details": {
+      "Linux": 28.56,
+      "Windows": 48.54,
+      "macOS": 25.15,
+      "Other": 0,
+      "total_respondents": 83439
+    },
+    "windows_share": 48.54,
+    "mac_share": 25.15,
+    "other_share": 0
+  }
+]

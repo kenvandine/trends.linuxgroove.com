@@ -4,6 +4,8 @@ from datetime import datetime
 from src.adapters.steam_adapter import SteamAdapter
 from src.adapters.statcounter_adapter import StatCounterAdapter
 from src.adapters.dap_adapter import DAPAdapter
+from src.adapters.cloudflare_adapter import CloudflareAdapter
+from src.adapters.stackoverflow_adapter import StackOverflowAdapter
 from src.storage.json_storage_handler import JSONStorageHandler
 
 
@@ -15,6 +17,8 @@ class MarketTrendsEngine:
             SteamAdapter(),
             StatCounterAdapter(),
             DAPAdapter(),
+            CloudflareAdapter(),
+            StackOverflowAdapter(),
         ]
         self.storage = JSONStorageHandler()
 
@@ -37,7 +41,8 @@ class MarketTrendsEngine:
         if source:
             adapters_to_run = [a for a in self.adapters if a.name.lower() == source.lower()]
             if not adapters_to_run:
-                print(f"Unknown adapter '{source}'. Available: steam, statcounter, dap")
+                names = ", ".join(a.name.lower() for a in self.adapters)
+                print(f"Unknown adapter '{source}'. Available: {names}")
                 return
 
         for adapter in adapters_to_run:

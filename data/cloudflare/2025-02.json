@@ -1,0 +1,18 @@
+[
+  {
+    "source": "Cloudflare",
+    "date": "2025-02-01",
+    "linux_share": 2.62,
+    "details": {
+      "Linux": 2.62,
+      "Windows": 33.27,
+      "macOS": 0.0,
+      "Android": 35.42,
+      "iOS": 19.97,
+      "Other": 0.0
+    },
+    "windows_share": 33.27,
+    "mac_share": 0.0,
+    "other_share": 55.39
+  }
+]

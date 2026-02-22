@@ -33,6 +33,24 @@ SOURCE_METADATA = {
         "covers": "all_devices",
         "region": "us",
     },
+    "cloudflare": {
+        "id": "cloudflare",
+        "name": "Cloudflare Radar",
+        "description": "OS share across all HTTP traffic observed by Cloudflare (all devices, worldwide)",
+        "url": "https://radar.cloudflare.com/",
+        "methodology": "Aggregated from Cloudflare's global network traffic",
+        "covers": "all_devices",
+        "region": "global",
+    },
+    "stackoverflow": {
+        "id": "stackoverflow",
+        "name": "Stack Overflow Survey",
+        "description": "OS used for personal use among software developers (annual survey)",
+        "url": "https://insights.stackoverflow.com/survey",
+        "methodology": "Self-reported annual survey of ~65,000 developers worldwide",
+        "covers": "desktop",
+        "region": "global",
+    },
 }
 
 
@@ -41,7 +59,7 @@ class JSONStorageHandler:
 
     def __init__(self, data_dir="data"):
         self.data_dir = Path(data_dir)
-        for subdir in ["steam", "statcounter", "dap"]:
+        for subdir in ["steam", "statcounter", "dap", "cloudflare", "stackoverflow"]:
             (self.data_dir / subdir).mkdir(parents=True, exist_ok=True)
 
     def _source_dir(self, source_name):
@@ -50,6 +68,8 @@ class JSONStorageHandler:
             "Steam": "steam",
             "StatCounter": "statcounter",
             "DAP": "dap",
+            "Cloudflare": "cloudflare",
+            "StackOverflow": "stackoverflow",
         }
         return mapping.get(source_name, source_name.lower())
 
@@ -87,7 +107,7 @@ class JSONStorageHandler:
 
     def get_data(self, source_id=None, start_date=None, end_date=None):
         """Retrieve data points filtered by source and/or date range."""
-        source_dirs = [source_id.lower()] if source_id else ["steam", "statcounter", "dap"]
+        source_dirs = [source_id.lower()] if source_id else ["steam", "statcounter", "dap", "cloudflare", "stackoverflow"]
         data = []
 
         for source_dir in source_dirs:

@@ -1,8 +1,10 @@
 {
   "metadata": {
-    "last_updated": "2026-02-22T01:54:39Z",
+    "last_updated": "2026-02-22T02:41:04Z",
     "sources": [
+      "Cloudflare",
       "DAP",
+      "StackOverflow",
       "StatCounter",
       "Steam"
     ],
@@ -265,6 +267,21 @@
       "mac_share": 8.1,
       "chromeos_share": 0.74,
       "other_share": 51.32
+    },
+    {
+      "source": "StackOverflow",
+      "date": "2019-06-01",
+      "linux_share": 25.28,
+      "details": {
+        "Linux": 25.28,
+        "Windows": 46.93,
+        "macOS": 26.49,
+        "Other": 1.3,
+        "total_respondents": 88883
+      },
+      "windows_share": 46.93,
+      "mac_share": 26.49,
+      "other_share": 1.3
     },
     {
       "source": "StatCounter",
@@ -829,6 +846,21 @@
       "other_share": 55.52
     },
     {
+      "source": "StackOverflow",
+      "date": "2020-06-01",
+      "linux_share": 23.16,
+      "details": {
+        "Linux": 23.16,
+        "Windows": 42.15,
+        "macOS": 21.83,
+        "Other": 12.86,
+        "total_respondents": 64461
+      },
+      "windows_share": 42.15,
+      "mac_share": 21.83,
+      "other_share": 12.86
+    },
+    {
       "source": "StatCounter",
       "date": "2020-06-01",
       "linux_share": 1.69,
@@ -1354,6 +1386,21 @@
       "mac_share": 9.66,
       "chromeos_share": 0.82,
       "other_share": 56.16
+    },
+    {
+      "source": "StackOverflow",
+      "date": "2021-06-01",
+      "linux_share": 28.56,
+      "details": {
+        "Linux": 28.56,
+        "Windows": 48.54,
+        "macOS": 25.15,
+        "Other": 0,
+        "total_respondents": 83439
+      },
+      "windows_share": 48.54,
+      "mac_share": 25.15,
+      "other_share": 0
     },
     {
       "source": "StatCounter",
@@ -2396,6 +2443,22 @@
       "other_share": 0.0
     },
     {
+      "source": "Cloudflare",
+      "date": "2023-05-01",
+      "linux_share": 4.31,
+      "details": {
+        "Linux": 4.31,
+        "Windows": 30.38,
+        "macOS": 0.0,
+        "Android": 40.4,
+        "iOS": 17.48,
+        "Other": 0.0
+      },
+      "windows_share": 30.38,
+      "mac_share": 0.0,
+      "other_share": 57.88
+    },
+    {
       "source": "DAP",
       "date": "2023-05-01",
       "linux_share": 1.64,
@@ -2440,6 +2503,22 @@
       "windows_share": 96.38,
       "mac_share": 2.3,
       "other_share": 0.0
+    },
+    {
+      "source": "Cloudflare",
+      "date": "2023-06-01",
+      "linux_share": 2.78,
+      "details": {
+        "Linux": 2.78,
+        "Windows": 31.55,
+        "macOS": 0.0,
+        "Android": 39.1,
+        "iOS": 18.02,
+        "Other": 0.0
+      },
+      "windows_share": 31.55,
+      "mac_share": 0.0,
+      "other_share": 57.12
     },
     {
       "source": "DAP",
@@ -2488,6 +2567,22 @@
       "other_share": 0.0
     },
     {
+      "source": "Cloudflare",
+      "date": "2023-07-01",
+      "linux_share": 2.54,
+      "details": {
+        "Linux": 2.54,
+        "Windows": 32.26,
+        "macOS": 0.0,
+        "Android": 38.37,
+        "iOS": 17.73,
+        "Other": 0.0
+      },
+      "windows_share": 32.26,
+      "mac_share": 0.0,
+      "other_share": 56.1
+    },
+    {
       "source": "DAP",
       "date": "2023-07-01",
       "linux_share": 1.91,
@@ -2532,6 +2627,22 @@
       "windows_share": 96.77,
       "mac_share": 1.79,
       "other_share": 0.0
+    },
+    {
+      "source": "Cloudflare",
+      "date": "2023-08-01",
+      "linux_share": 2.58,
+      "details": {
+        "Linux": 2.58,
+        "Windows": 33.65,
+        "macOS": 0.0,
+        "Android": 37.7,
+        "iOS": 17.26,
+        "Other": 0.0
+      },
+      "windows_share": 33.65,
+      "mac_share": 0.0,
+      "other_share": 54.96
     },
     {
       "source": "DAP",
@@ -2580,6 +2691,22 @@
       "other_share": 0.0
     },
     {
+      "source": "Cloudflare",
+      "date": "2023-09-01",
+      "linux_share": 2.75,
+      "details": {
+        "Linux": 2.75,
+        "Windows": 33.01,
+        "macOS": 0.0,
+        "Android": 37.97,
+        "iOS": 17.74,
+        "Other": 0.0
+      },
+      "windows_share": 33.01,
+      "mac_share": 0.0,
+      "other_share": 55.72
+    },
+    {
       "source": "DAP",
       "date": "2023-09-01",
       "linux_share": 2.12,
@@ -2624,6 +2751,22 @@
       "windows_share": 96.21,
       "mac_share": 1.84,
       "other_share": 0.0
+    },
+    {
+      "source": "Cloudflare",
+      "date": "2023-10-01",
+      "linux_share": 2.66,
+      "details": {
+        "Linux": 2.66,
+        "Windows": 33.51,
+        "macOS": 0.0,
+        "Android": 37.37,
+        "iOS": 17.94,
+        "Other": 0.0
+      },
+      "windows_share": 33.51,
+      "mac_share": 0.0,
+      "other_share": 55.31
     },
     {
       "source": "DAP",
@@ -2673,6 +2816,22 @@
       "other_share": 0.0
     },
     {
+      "source": "Cloudflare",
+      "date": "2023-11-01",
+      "linux_share": 2.95,
+      "details": {
+        "Linux": 2.95,
+        "Windows": 33.77,
+        "macOS": 0.0,
+        "Android": 35.86,
+        "iOS": 18.46,
+        "Other": 0.0
+      },
+      "windows_share": 33.77,
+      "mac_share": 0.0,
+      "other_share": 54.33
+    },
+    {
       "source": "DAP",
       "date": "2023-11-01",
       "linux_share": 2.56,
@@ -2717,6 +2876,22 @@
       "windows_share": 96.94,
       "mac_share": 1.43,
       "other_share": 0.0
+    },
+    {
+      "source": "Cloudflare",
+      "date": "2023-12-01",
+      "linux_share": 2.17,
+      "details": {
+        "Linux": 2.17,
+        "Windows": 34.77,
+        "macOS": 0.0,
+        "Android": 36.2,
+        "iOS": 17.66,
+        "Other": 0.0
+      },
+      "windows_share": 34.77,
+      "mac_share": 0.0,
+      "other_share": 53.86
     },
     {
       "source": "DAP",
@@ -2765,6 +2940,22 @@
       "other_share": 0.0
     },
     {
+      "source": "Cloudflare",
+      "date": "2024-01-01",
+      "linux_share": 2.43,
+      "details": {
+        "Linux": 2.43,
+        "Windows": 39.32,
+        "macOS": 0.0,
+        "Android": 34.07,
+        "iOS": 16.41,
+        "Other": 0.0
+      },
+      "windows_share": 39.32,
+      "mac_share": 0.0,
+      "other_share": 50.48
+    },
+    {
       "source": "DAP",
       "date": "2024-01-01",
       "linux_share": 2.27,
@@ -2809,6 +3000,22 @@
       "windows_share": 96.56,
       "mac_share": 1.53,
       "other_share": 0.0
+    },
+    {
+      "source": "Cloudflare",
+      "date": "2024-02-01",
+      "linux_share": 2.65,
+      "details": {
+        "Linux": 2.65,
+        "Windows": 36.21,
+        "macOS": 0.0,
+        "Android": 36.01,
+        "iOS": 17.17,
+        "Other": 0.0
+      },
+      "windows_share": 36.21,
+      "mac_share": 0.0,
+      "other_share": 53.18
     },
     {
       "source": "DAP",
@@ -2857,6 +3064,22 @@
       "other_share": 0.0
     },
     {
+      "source": "Cloudflare",
+      "date": "2024-03-01",
+      "linux_share": 2.19,
+      "details": {
+        "Linux": 2.19,
+        "Windows": 35.86,
+        "macOS": 0.0,
+        "Android": 36.51,
+        "iOS": 17.43,
+        "Other": 0.0
+      },
+      "windows_share": 35.86,
+      "mac_share": 0.0,
+      "other_share": 53.94
+    },
+    {
       "source": "DAP",
       "date": "2024-03-01",
       "linux_share": 2.19,
@@ -2901,6 +3124,22 @@
       "windows_share": 96.91,
       "mac_share": 1.32,
       "other_share": 0.01
+    },
+    {
+      "source": "Cloudflare",
+      "date": "2024-04-01",
+      "linux_share": 2.43,
+      "details": {
+        "Linux": 2.43,
+        "Windows": 35.37,
+        "macOS": 0.0,
+        "Android": 36.44,
+        "iOS": 17.52,
+        "Other": 0.0
+      },
+      "windows_share": 35.37,
+      "mac_share": 0.0,
+      "other_share": 53.96
     },
     {
       "source": "DAP",
@@ -2949,6 +3188,22 @@
       "other_share": 0.01
     },
     {
+      "source": "Cloudflare",
+      "date": "2024-05-01",
+      "linux_share": 2.55,
+      "details": {
+        "Linux": 2.55,
+        "Windows": 34.31,
+        "macOS": 0.0,
+        "Android": 37.16,
+        "iOS": 17.85,
+        "Other": 0.0
+      },
+      "windows_share": 34.31,
+      "mac_share": 0.0,
+      "other_share": 55.01
+    },
+    {
       "source": "DAP",
       "date": "2024-05-01",
       "linux_share": 2.51,
@@ -2993,6 +3248,22 @@
       "windows_share": 96.67,
       "mac_share": 1.38,
       "other_share": 0.01
+    },
+    {
+      "source": "Cloudflare",
+      "date": "2024-06-01",
+      "linux_share": 2.46,
+      "details": {
+        "Linux": 2.46,
+        "Windows": 33.52,
+        "macOS": 0.0,
+        "Android": 38.16,
+        "iOS": 18.23,
+        "Other": 0.0
+      },
+      "windows_share": 33.52,
+      "mac_share": 0.0,
+      "other_share": 56.38
     },
     {
       "source": "DAP",
@@ -3042,6 +3313,22 @@
       "other_share": 0.0
     },
     {
+      "source": "Cloudflare",
+      "date": "2024-07-01",
+      "linux_share": 2.03,
+      "details": {
+        "Linux": 2.03,
+        "Windows": 33.48,
+        "macOS": 0.0,
+        "Android": 38.56,
+        "iOS": 18.52,
+        "Other": 0.0
+      },
+      "windows_share": 33.48,
+      "mac_share": 0.0,
+      "other_share": 57.08
+    },
+    {
       "source": "DAP",
       "date": "2024-07-01",
       "linux_share": 2.64,
@@ -3088,6 +3375,22 @@
       "windows_share": 96.61,
       "mac_share": 1.31,
       "other_share": 0.0
+    },
+    {
+      "source": "Cloudflare",
+      "date": "2024-08-01",
+      "linux_share": 2.04,
+      "details": {
+        "Linux": 2.04,
+        "Windows": 32.23,
+        "macOS": 0.0,
+        "Android": 39.33,
+        "iOS": 18.78,
+        "Other": 0.0
+      },
+      "windows_share": 32.23,
+      "mac_share": 0.0,
+      "other_share": 58.11
     },
     {
       "source": "DAP",
@@ -3139,6 +3442,22 @@
       "other_share": 0.0
     },
     {
+      "source": "Cloudflare",
+      "date": "2024-09-01",
+      "linux_share": 2.26,
+      "details": {
+        "Linux": 2.26,
+        "Windows": 33.44,
+        "macOS": 0.0,
+        "Android": 38.37,
+        "iOS": 17.77,
+        "Other": 0.0
+      },
+      "windows_share": 33.44,
+      "mac_share": 0.0,
+      "other_share": 56.14
+    },
+    {
       "source": "DAP",
       "date": "2024-09-01",
       "linux_share": 2.71,
@@ -3186,6 +3505,22 @@
       "windows_share": 96.55,
       "mac_share": 1.37,
       "other_share": 0.0
+    },
+    {
+      "source": "Cloudflare",
+      "date": "2024-10-01",
+      "linux_share": 2.45,
+      "details": {
+        "Linux": 2.45,
+        "Windows": 34.37,
+        "macOS": 0.0,
+        "Android": 36.65,
+        "iOS": 17.95,
+        "Other": 0.0
+      },
+      "windows_share": 34.37,
+      "mac_share": 0.0,
+      "other_share": 54.59
     },
     {
       "source": "DAP",
@@ -3237,6 +3572,22 @@
       "other_share": 0.0
     },
     {
+      "source": "Cloudflare",
+      "date": "2024-11-01",
+      "linux_share": 2.32,
+      "details": {
+        "Linux": 2.32,
+        "Windows": 33.23,
+        "macOS": 0.0,
+        "Android": 36.59,
+        "iOS": 18.96,
+        "Other": 0.0
+      },
+      "windows_share": 33.23,
+      "mac_share": 0.0,
+      "other_share": 55.55
+    },
+    {
       "source": "DAP",
       "date": "2024-11-01",
       "linux_share": 2.84,
@@ -3283,6 +3634,22 @@
       "windows_share": 96.61,
       "mac_share": 1.39,
       "other_share": 0.0
+    },
+    {
+      "source": "Cloudflare",
+      "date": "2024-12-01",
+      "linux_share": 2.2,
+      "details": {
+        "Linux": 2.2,
+        "Windows": 33.07,
+        "macOS": 0.0,
+        "Android": 36.72,
+        "iOS": 19.74,
+        "Other": 0.0
+      },
+      "windows_share": 33.07,
+      "mac_share": 0.0,
+      "other_share": 56.46
     },
     {
       "source": "DAP",
@@ -3333,6 +3700,22 @@
       "other_share": 0.0
     },
     {
+      "source": "Cloudflare",
+      "date": "2025-01-01",
+      "linux_share": 2.3,
+      "details": {
+        "Linux": 2.3,
+        "Windows": 34.25,
+        "macOS": 0.0,
+        "Android": 35.01,
+        "iOS": 19.94,
+        "Other": 0.0
+      },
+      "windows_share": 34.25,
+      "mac_share": 0.0,
+      "other_share": 54.95
+    },
+    {
       "source": "DAP",
       "date": "2025-01-01",
       "linux_share": 2.61,
@@ -3379,6 +3762,22 @@
       "windows_share": 96.56,
       "mac_share": 1.41,
       "other_share": 0.0
+    },
+    {
+      "source": "Cloudflare",
+      "date": "2025-02-01",
+      "linux_share": 2.62,
+      "details": {
+        "Linux": 2.62,
+        "Windows": 33.27,
+        "macOS": 0.0,
+        "Android": 35.42,
+        "iOS": 19.97,
+        "Other": 0.0
+      },
+      "windows_share": 33.27,
+      "mac_share": 0.0,
+      "other_share": 55.39
     },
     {
       "source": "DAP",
@@ -3429,6 +3828,22 @@
       "other_share": 0.0
     },
     {
+      "source": "Cloudflare",
+      "date": "2025-03-01",
+      "linux_share": 2.39,
+      "details": {
+        "Linux": 2.39,
+        "Windows": 33.59,
+        "macOS": 0.0,
+        "Android": 35.35,
+        "iOS": 19.61,
+        "Other": 0.0
+      },
+      "windows_share": 33.59,
+      "mac_share": 0.0,
+      "other_share": 54.96
+    },
+    {
       "source": "DAP",
       "date": "2025-03-01",
       "linux_share": 3.1,
@@ -3474,6 +3889,22 @@
       "windows_share": 97.58,
       "mac_share": 0.97,
       "other_share": 0.0
+    },
+    {
+      "source": "Cloudflare",
+      "date": "2025-04-01",
+      "linux_share": 2.93,
+      "details": {
+        "Linux": 2.93,
+        "Windows": 33.05,
+        "macOS": 0.0,
+        "Android": 35.65,
+        "iOS": 19.12,
+        "Other": 0.0
+      },
+      "windows_share": 33.05,
+      "mac_share": 0.0,
+      "other_share": 54.77
     },
     {
       "source": "DAP",
@@ -3526,6 +3957,22 @@
       "other_share": 0.0
     },
     {
+      "source": "Cloudflare",
+      "date": "2025-05-01",
+      "linux_share": 2.65,
+      "details": {
+        "Linux": 2.65,
+        "Windows": 33.1,
+        "macOS": 0.0,
+        "Android": 35.82,
+        "iOS": 19.32,
+        "Other": 0.0
+      },
+      "windows_share": 33.1,
+      "mac_share": 0.0,
+      "other_share": 55.14
+    },
+    {
       "source": "DAP",
       "date": "2025-05-01",
       "linux_share": 3.44,
@@ -3574,6 +4021,22 @@
       "windows_share": 96.1,
       "mac_share": 1.62,
       "other_share": 0.01
+    },
+    {
+      "source": "Cloudflare",
+      "date": "2025-06-01",
+      "linux_share": 2.94,
+      "details": {
+        "Linux": 2.94,
+        "Windows": 33.0,
+        "macOS": 0.0,
+        "Android": 35.74,
+        "iOS": 19.27,
+        "Other": 0.0
+      },
+      "windows_share": 33.0,
+      "mac_share": 0.0,
+      "other_share": 55.0
     },
     {
       "source": "DAP",
@@ -3626,6 +4089,22 @@
       "other_share": 0.01
     },
     {
+      "source": "Cloudflare",
+      "date": "2025-07-01",
+      "linux_share": 2.58,
+      "details": {
+        "Linux": 2.58,
+        "Windows": 33.32,
+        "macOS": 0.0,
+        "Android": 35.31,
+        "iOS": 19.61,
+        "Other": 0.0
+      },
+      "windows_share": 33.32,
+      "mac_share": 0.0,
+      "other_share": 54.91
+    },
+    {
       "source": "DAP",
       "date": "2025-07-01",
       "linux_share": 3.25,
@@ -3673,6 +4152,22 @@
       "windows_share": 95.45,
       "mac_share": 1.85,
       "other_share": 0.01
+    },
+    {
+      "source": "Cloudflare",
+      "date": "2025-08-01",
+      "linux_share": 2.48,
+      "details": {
+        "Linux": 2.48,
+        "Windows": 33.6,
+        "macOS": 0.0,
+        "Android": 34.71,
+        "iOS": 19.61,
+        "Other": 0.0
+      },
+      "windows_share": 33.6,
+      "mac_share": 0.0,
+      "other_share": 54.32
     },
     {
       "source": "DAP",
@@ -3728,6 +4223,22 @@
       "other_share": 0.0
     },
     {
+      "source": "Cloudflare",
+      "date": "2025-09-01",
+      "linux_share": 2.64,
+      "details": {
+        "Linux": 2.64,
+        "Windows": 34.97,
+        "macOS": 0.0,
+        "Android": 34.02,
+        "iOS": 18.21,
+        "Other": 0.0
+      },
+      "windows_share": 34.97,
+      "mac_share": 0.0,
+      "other_share": 52.23
+    },
+    {
       "source": "DAP",
       "date": "2025-09-01",
       "linux_share": 3.38,
@@ -3776,6 +4287,22 @@
       "windows_share": 95.59,
       "mac_share": 1.77,
       "other_share": 0.0
+    },
+    {
+      "source": "Cloudflare",
+      "date": "2025-10-01",
+      "linux_share": 2.71,
+      "details": {
+        "Linux": 2.71,
+        "Windows": 34.6,
+        "macOS": 0.0,
+        "Android": 35.06,
+        "iOS": 17.8,
+        "Other": 0.0
+      },
+      "windows_share": 34.6,
+      "mac_share": 0.0,
+      "other_share": 52.86
     },
     {
       "source": "DAP",
@@ -3830,6 +4357,22 @@
       "other_share": 0.01
     },
     {
+      "source": "Cloudflare",
+      "date": "2025-11-01",
+      "linux_share": 2.56,
+      "details": {
+        "Linux": 2.56,
+        "Windows": 34.48,
+        "macOS": 0.0,
+        "Android": 34.64,
+        "iOS": 18.48,
+        "Other": 0.0
+      },
+      "windows_share": 34.48,
+      "mac_share": 0.0,
+      "other_share": 53.12
+    },
+    {
       "source": "DAP",
       "date": "2025-11-01",
       "linux_share": 3.11,
@@ -3882,6 +4425,22 @@
       "other_share": 0.0
     },
     {
+      "source": "Cloudflare",
+      "date": "2025-12-01",
+      "linux_share": 2.42,
+      "details": {
+        "Linux": 2.42,
+        "Windows": 33.69,
+        "macOS": 0.0,
+        "Android": 36.05,
+        "iOS": 18.44,
+        "Other": 0.0
+      },
+      "windows_share": 33.69,
+      "mac_share": 0.0,
+      "other_share": 54.49
+    },
+    {
       "source": "DAP",
       "date": "2025-12-01",
       "linux_share": 2.57,
@@ -3932,6 +4491,22 @@
       "windows_share": 94.84,
       "mac_share": 2.11,
       "other_share": 0.0
+    },
+    {
+      "source": "Cloudflare",
+      "date": "2026-01-01",
+      "linux_share": 2.35,
+      "details": {
+        "Linux": 2.35,
+        "Windows": 33.74,
+        "macOS": 0.0,
+        "Android": 35.84,
+        "iOS": 18.41,
+        "Other": 0.0
+      },
+      "windows_share": 33.74,
+      "mac_share": 0.0,
+      "other_share": 54.25
     },
     {
       "source": "DAP",

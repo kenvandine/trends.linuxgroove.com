@@ -31,6 +31,13 @@ Examples:
   # Requires: export DAP_API_KEY=your_key   (register free at https://api.data.gov/signup/)
   python3 -m src.main --source dap --range-from 2018-01-01 --range-to 2026-02-01
 
+  # Backfill Cloudflare Radar history (monthly, all devices; data available from ~2022-09)
+  # Requires: export CLOUDFLARE_RADAR_API_KEY=your_token  (free at https://developers.cloudflare.com/radar/get-started/first-request/)
+  python3 -m src.main --source cloudflare --range-from 2022-09-01 --range-to 2026-02-01
+
+  # Backfill Stack Overflow Developer Survey history (annual, 2017-present)
+  python3 -m src.main --source stackoverflow --range-from 2017-01-01 --range-to 2026-01-01
+
   # Collect from a single source
   python3 -m src.main --source steam
 
@@ -44,7 +51,7 @@ Examples:
     parser.add_argument("--month", "-m", help="Collect a single month (YYYY-MM)")
     parser.add_argument(
         "--source", "-s",
-        choices=["steam", "statcounter", "dap"],
+        choices=["steam", "statcounter", "dap", "cloudflare", "stackoverflow"],
         help="Only collect from this source",
     )
     parser.add_argument(
