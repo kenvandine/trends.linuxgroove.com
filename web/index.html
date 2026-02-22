@@ -550,7 +550,6 @@ function buildSourceChips() {
     chip.style.setProperty("--chip-color", cfg.chipColor);
     chip.innerHTML = `
       <span class="chip-dot" style="background:${cfg.chipColor}"></span>${cfg.label}`;
-    chip.addEventListener("click", () => toggleSource(src, chip));
     container.appendChild(chip);
   });
 }
