@@ -1,0 +1,19 @@
+[
+  {
+    "source": "DAP",
+    "date": "2025-11-01",
+    "linux_share": 3.11,
+    "details": {
+      "Linux": 3.11,
+      "Windows": 41.7,
+      "macOS": 11.22,
+      "ChromeOS": 1.41,
+      "Mobile (Android/iOS)": 40.29,
+      "Linux x86_64": 0.0
+    },
+    "windows_share": 41.7,
+    "mac_share": 11.22,
+    "chromeos_share": 1.41,
+    "other_share": 42.55
+  }
+]

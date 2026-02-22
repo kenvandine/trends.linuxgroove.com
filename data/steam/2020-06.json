@@ -1,0 +1,18 @@
+[
+  {
+    "source": "Steam",
+    "date": "2020-06-01",
+    "linux_share": 0.91,
+    "details": {
+      "Ubuntu 18.04.4 LTS 64 bit": 0.15,
+      "\"Manjaro Linux\" 64 bit": 0.1,
+      "Ubuntu 20.04 LTS 64 bit": 0.1,
+      "\"Arch Linux\" 64 bit": 0.1,
+      "Linux Mint 19.3 Tricia 64 bit": 0.07,
+      "Ubuntu 19.10 64 bit": 0.07
+    },
+    "windows_share": 95.05,
+    "mac_share": 4.04,
+    "other_share": 0.0
+  }
+]

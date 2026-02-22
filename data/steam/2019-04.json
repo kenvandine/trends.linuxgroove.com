@@ -1,0 +1,16 @@
+[
+  {
+    "source": "Steam",
+    "date": "2019-04-01",
+    "linux_share": 0.82,
+    "details": {
+      "Ubuntu 18.04.2 LTS 64 bit": 0.19,
+      "Linux 4.x 64 bit": 0.07,
+      "Ubuntu 18.10 64 bit": 0.07,
+      "\"Manjaro Linux\" 64 bit": 0.06
+    },
+    "windows_share": 95.91,
+    "mac_share": 3.27,
+    "other_share": 0.0
+  }
+]

@@ -21,8 +21,15 @@ Examples:
   # Collect data for a specific month
   python3 -m src.main --month 2025-06
 
-  # Collect a historical date range (StatCounter supports this)
-  python3 -m src.main --source statcounter --range-from 2019-01-01 --range-to 2026-02-01
+  # Backfill StatCounter history (2018-present)
+  python3 -m src.main --source statcounter --range-from 2018-01-01 --range-to 2026-02-01
+
+  # Backfill Steam history via Wayback Machine (2014-present, ~2s per month)
+  python3 -m src.main --source steam --range-from 2014-01-01 --range-to 2026-02-01
+
+  # Backfill DAP history via GSA API (2018-present)
+  # Requires: export DAP_API_KEY=your_key   (register free at https://api.data.gov/signup/)
+  python3 -m src.main --source dap --range-from 2018-01-01 --range-to 2026-02-01
 
   # Collect from a single source
   python3 -m src.main --source steam

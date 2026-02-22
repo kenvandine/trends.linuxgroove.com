@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-02-21T23:10:47Z",
+    "last_updated": "2026-02-22T01:34:27Z",
     "sources": [
       "DAP",
       "StatCounter",
@@ -20,6 +20,22 @@
   },
   "data": [
     {
+      "source": "DAP",
+      "date": "2019-01-01",
+      "linux_share": 0.52,
+      "details": {
+        "Linux": 0.52,
+        "Windows": 40.84,
+        "macOS": 7.97,
+        "ChromeOS": 1.46,
+        "Mobile (Android/iOS)": 49.19
+      },
+      "windows_share": 40.84,
+      "mac_share": 7.97,
+      "chromeos_share": 1.46,
+      "other_share": 49.19
+    },
+    {
       "source": "StatCounter",
       "date": "2019-01-01",
       "linux_share": 1.61,
@@ -34,6 +50,36 @@
       "mac_share": 12.33,
       "chromeos_share": 1.17,
       "other_share": 9.43
+    },
+    {
+      "source": "Steam",
+      "date": "2019-01-01",
+      "linux_share": 0.8,
+      "details": {
+        "Ubuntu 18.04.1 LTS 64 bit": 0.24,
+        "Linux 4.x 64 bit": 0.09,
+        "Linux Mint 19 Tara 64 bit": 0.06,
+        "Ubuntu 16.04.5 LTS 64 bit": 0.05
+      },
+      "windows_share": 96.0,
+      "mac_share": 3.2,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2019-02-01",
+      "linux_share": 0.48,
+      "details": {
+        "Linux": 0.48,
+        "Windows": 36.06,
+        "macOS": 6.94,
+        "ChromeOS": 1.38,
+        "Mobile (Android/iOS)": 55.13
+      },
+      "windows_share": 36.06,
+      "mac_share": 6.94,
+      "chromeos_share": 1.38,
+      "other_share": 55.13
     },
     {
       "source": "StatCounter",
@@ -52,6 +98,37 @@
       "other_share": 9.53
     },
     {
+      "source": "Steam",
+      "date": "2019-02-01",
+      "linux_share": 0.82,
+      "details": {
+        "Ubuntu 18.04.1 LTS 64 bit": 0.24,
+        "Linux 4.x 64 bit": 0.09,
+        "Ubuntu 18.10 64 bit": 0.06,
+        "Ubuntu 16.04.5 LTS 64 bit": 0.05,
+        "\"Manjaro Linux\" 64 bit": 0.05
+      },
+      "windows_share": 95.92,
+      "mac_share": 3.27,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2019-03-01",
+      "linux_share": 0.53,
+      "details": {
+        "Linux": 0.53,
+        "Windows": 40.09,
+        "macOS": 8.64,
+        "ChromeOS": 1.44,
+        "Mobile (Android/iOS)": 49.28
+      },
+      "windows_share": 40.09,
+      "mac_share": 8.64,
+      "chromeos_share": 1.44,
+      "other_share": 49.28
+    },
+    {
       "source": "StatCounter",
       "date": "2019-03-01",
       "linux_share": 1.7,
@@ -66,6 +143,35 @@
       "mac_share": 14.35,
       "chromeos_share": 1.28,
       "other_share": 3.22
+    },
+    {
+      "source": "Steam",
+      "date": "2019-03-01",
+      "linux_share": 0.77,
+      "details": {
+        "Ubuntu 18.04.1 LTS 64 bit": 0.18,
+        "Linux 4.x 64 bit": 0.09,
+        "Ubuntu 18.10 64 bit": 0.06
+      },
+      "windows_share": 96.12,
+      "mac_share": 3.11,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2019-04-01",
+      "linux_share": 0.58,
+      "details": {
+        "Linux": 0.58,
+        "Windows": 40.94,
+        "macOS": 9.09,
+        "ChromeOS": 1.46,
+        "Mobile (Android/iOS)": 47.9
+      },
+      "windows_share": 40.94,
+      "mac_share": 9.09,
+      "chromeos_share": 1.46,
+      "other_share": 47.91
     },
     {
       "source": "StatCounter",
@@ -84,6 +190,36 @@
       "other_share": 3.64
     },
     {
+      "source": "Steam",
+      "date": "2019-04-01",
+      "linux_share": 0.82,
+      "details": {
+        "Ubuntu 18.04.2 LTS 64 bit": 0.19,
+        "Linux 4.x 64 bit": 0.07,
+        "Ubuntu 18.10 64 bit": 0.07,
+        "\"Manjaro Linux\" 64 bit": 0.06
+      },
+      "windows_share": 95.91,
+      "mac_share": 3.27,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2019-05-01",
+      "linux_share": 0.67,
+      "details": {
+        "Linux": 0.67,
+        "Windows": 39.84,
+        "macOS": 8.34,
+        "ChromeOS": 1.51,
+        "Mobile (Android/iOS)": 49.62
+      },
+      "windows_share": 39.84,
+      "mac_share": 8.34,
+      "chromeos_share": 1.51,
+      "other_share": 49.63
+    },
+    {
       "source": "StatCounter",
       "date": "2019-05-01",
       "linux_share": 1.55,
@@ -98,6 +234,37 @@
       "mac_share": 13.89,
       "chromeos_share": 1.35,
       "other_share": 4.32
+    },
+    {
+      "source": "Steam",
+      "date": "2019-05-01",
+      "linux_share": 0.81,
+      "details": {
+        "Ubuntu 18.04.2 LTS 64 bit": 0.2,
+        "Linux 64 bit": 0.07,
+        "Ubuntu 18.10 64 bit": 0.07,
+        "\"Manjaro Linux\" 64 bit": 0.06,
+        "Linux Mint 19.1 Tessa 64 bit": 0.05
+      },
+      "windows_share": 96.12,
+      "mac_share": 3.06,
+      "other_share": 0.01
+    },
+    {
+      "source": "DAP",
+      "date": "2019-06-01",
+      "linux_share": 0.73,
+      "details": {
+        "Linux": 0.73,
+        "Windows": 39.1,
+        "macOS": 8.1,
+        "ChromeOS": 0.74,
+        "Mobile (Android/iOS)": 51.31
+      },
+      "windows_share": 39.1,
+      "mac_share": 8.1,
+      "chromeos_share": 0.74,
+      "other_share": 51.32
     },
     {
       "source": "StatCounter",
@@ -116,6 +283,37 @@
       "other_share": 5.68
     },
     {
+      "source": "Steam",
+      "date": "2019-06-01",
+      "linux_share": 0.84,
+      "details": {
+        "Ubuntu 18.04.2 LTS 64 bit": 0.2,
+        "Linux 64 bit": 0.08,
+        "\"Manjaro Linux\" 64 bit": 0.07,
+        "Ubuntu 19.04 64 bit": 0.07,
+        "Linux Mint 19.1 Tessa 64 bit": 0.06
+      },
+      "windows_share": 95.9,
+      "mac_share": 3.26,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2019-07-01",
+      "linux_share": 0.84,
+      "details": {
+        "Linux": 0.84,
+        "Windows": 39.21,
+        "macOS": 7.83,
+        "ChromeOS": 0.56,
+        "Mobile (Android/iOS)": 51.53
+      },
+      "windows_share": 39.21,
+      "mac_share": 7.83,
+      "chromeos_share": 0.56,
+      "other_share": 51.54
+    },
+    {
       "source": "StatCounter",
       "date": "2019-07-01",
       "linux_share": 1.65,
@@ -130,6 +328,37 @@
       "mac_share": 13.17,
       "chromeos_share": 0.54,
       "other_share": 7.05
+    },
+    {
+      "source": "Steam",
+      "date": "2019-07-01",
+      "linux_share": 0.84,
+      "details": {
+        "Ubuntu 18.04.2 LTS 64 bit": 0.2,
+        "Linux 64 bit": 0.08,
+        "\"Manjaro Linux\" 64 bit": 0.07,
+        "Ubuntu 19.04 64 bit": 0.07,
+        "Linux Mint 19.1 Tessa 64 bit": 0.06
+      },
+      "windows_share": 95.9,
+      "mac_share": 3.26,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2019-08-01",
+      "linux_share": 0.8,
+      "details": {
+        "Linux": 0.8,
+        "Windows": 38.98,
+        "macOS": 7.74,
+        "ChromeOS": 0.76,
+        "Mobile (Android/iOS)": 51.69
+      },
+      "windows_share": 38.98,
+      "mac_share": 7.74,
+      "chromeos_share": 0.76,
+      "other_share": 51.7
     },
     {
       "source": "StatCounter",
@@ -148,6 +377,22 @@
       "other_share": 5.89
     },
     {
+      "source": "DAP",
+      "date": "2019-09-01",
+      "linux_share": 0.89,
+      "details": {
+        "Linux": 0.89,
+        "Windows": 38.81,
+        "macOS": 8.42,
+        "ChromeOS": 1.3,
+        "Mobile (Android/iOS)": 50.55
+      },
+      "windows_share": 38.81,
+      "mac_share": 8.42,
+      "chromeos_share": 1.3,
+      "other_share": 50.56
+    },
+    {
       "source": "StatCounter",
       "date": "2019-09-01",
       "linux_share": 1.74,
@@ -162,6 +407,37 @@
       "mac_share": 14.37,
       "chromeos_share": 1.48,
       "other_share": 3.33
+    },
+    {
+      "source": "Steam",
+      "date": "2019-09-01",
+      "linux_share": 0.79,
+      "details": {
+        "Ubuntu 18.04.2 LTS 64 bit": 0.18,
+        "Ubuntu 19.04 64 bit": 0.09,
+        "\"Manjaro Linux\" 64 bit": 0.07,
+        "Linux Mint 19.1 Tessa 64 bit": 0.06,
+        "Linux 64 bit": 0.05
+      },
+      "windows_share": 96.28,
+      "mac_share": 2.93,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2019-10-01",
+      "linux_share": 0.96,
+      "details": {
+        "Linux": 0.96,
+        "Windows": 40.26,
+        "macOS": 9.77,
+        "ChromeOS": 1.55,
+        "Mobile (Android/iOS)": 47.44
+      },
+      "windows_share": 40.26,
+      "mac_share": 9.77,
+      "chromeos_share": 1.55,
+      "other_share": 47.45
     },
     {
       "source": "StatCounter",
@@ -180,6 +456,36 @@
       "other_share": 2.81
     },
     {
+      "source": "Steam",
+      "date": "2019-10-01",
+      "linux_share": 0.83,
+      "details": {
+        "Ubuntu 18.04.3 LTS 64 bit": 0.16,
+        "Ubuntu 19.04 64 bit": 0.09,
+        "\"Arch Linux\" 64 bit": 0.09,
+        "\"Manjaro Linux\" 64 bit": 0.08
+      },
+      "windows_share": 96.1,
+      "mac_share": 3.07,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2019-11-01",
+      "linux_share": 1.04,
+      "details": {
+        "Linux": 1.04,
+        "Windows": 39.8,
+        "macOS": 10.39,
+        "ChromeOS": 1.52,
+        "Mobile (Android/iOS)": 47.24
+      },
+      "windows_share": 39.8,
+      "mac_share": 10.39,
+      "chromeos_share": 1.52,
+      "other_share": 47.25
+    },
+    {
       "source": "StatCounter",
       "date": "2019-11-01",
       "linux_share": 1.82,
@@ -194,6 +500,36 @@
       "mac_share": 16.73,
       "chromeos_share": 1.54,
       "other_share": 2.67
+    },
+    {
+      "source": "Steam",
+      "date": "2019-11-01",
+      "linux_share": 0.83,
+      "details": {
+        "Ubuntu 18.04.3 LTS 64 bit": 0.16,
+        "Ubuntu 19.04 64 bit": 0.09,
+        "\"Arch Linux\" 64 bit": 0.09,
+        "\"Manjaro Linux\" 64 bit": 0.08
+      },
+      "windows_share": 96.1,
+      "mac_share": 3.07,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2019-12-01",
+      "linux_share": 0.99,
+      "details": {
+        "Linux": 0.99,
+        "Windows": 36.46,
+        "macOS": 9.57,
+        "ChromeOS": 1.25,
+        "Mobile (Android/iOS)": 51.72
+      },
+      "windows_share": 36.46,
+      "mac_share": 9.57,
+      "chromeos_share": 1.25,
+      "other_share": 51.72
     },
     {
       "source": "StatCounter",
@@ -212,6 +548,37 @@
       "other_share": 2.61
     },
     {
+      "source": "Steam",
+      "date": "2019-12-01",
+      "linux_share": 0.81,
+      "details": {
+        "Ubuntu 18.04.3 LTS 64 bit": 0.17,
+        "\"Arch Linux\" 64 bit": 0.09,
+        "\"Manjaro Linux\" 64 bit": 0.09,
+        "Ubuntu 19.10 64 bit": 0.06,
+        "Linux Mint 19.2 Tina 64 bit": 0.05
+      },
+      "windows_share": 96.28,
+      "mac_share": 2.92,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2020-01-01",
+      "linux_share": 0.99,
+      "details": {
+        "Linux": 0.99,
+        "Windows": 38.31,
+        "macOS": 9.61,
+        "ChromeOS": 1.46,
+        "Mobile (Android/iOS)": 49.62
+      },
+      "windows_share": 38.31,
+      "mac_share": 9.61,
+      "chromeos_share": 1.46,
+      "other_share": 49.62
+    },
+    {
       "source": "StatCounter",
       "date": "2020-01-01",
       "linux_share": 1.9,
@@ -226,6 +593,36 @@
       "mac_share": 17.04,
       "chromeos_share": 1.52,
       "other_share": 1.85
+    },
+    {
+      "source": "Steam",
+      "date": "2020-01-01",
+      "linux_share": 0.67,
+      "details": {
+        "Ubuntu 18.04.3 LTS 64 bit": 0.14,
+        "\"Arch Linux\" 64 bit": 0.07,
+        "\"Manjaro Linux\" 64 bit": 0.07,
+        "Ubuntu 19.10 64 bit": 0.07
+      },
+      "windows_share": 96.86,
+      "mac_share": 2.47,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2020-02-01",
+      "linux_share": 0.92,
+      "details": {
+        "Linux": 0.92,
+        "Windows": 34.26,
+        "macOS": 8.85,
+        "ChromeOS": 1.37,
+        "Mobile (Android/iOS)": 54.59
+      },
+      "windows_share": 34.26,
+      "mac_share": 8.85,
+      "chromeos_share": 1.37,
+      "other_share": 54.59
     },
     {
       "source": "StatCounter",
@@ -244,6 +641,37 @@
       "other_share": 1.69
     },
     {
+      "source": "Steam",
+      "date": "2020-02-01",
+      "linux_share": 0.9,
+      "details": {
+        "Ubuntu 18.04.3 LTS 64 bit": 0.2,
+        "\"Arch Linux\" 64 bit": 0.1,
+        "Ubuntu 19.10 64 bit": 0.09,
+        "\"Manjaro Linux\" 64 bit": 0.09,
+        "Linux Mint 19.3 Tricia 64 bit": 0.05
+      },
+      "windows_share": 96.09,
+      "mac_share": 3.01,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2020-03-01",
+      "linux_share": 0.91,
+      "details": {
+        "Linux": 0.91,
+        "Windows": 33.21,
+        "macOS": 9.68,
+        "ChromeOS": 1.11,
+        "Mobile (Android/iOS)": 55.1
+      },
+      "windows_share": 33.21,
+      "mac_share": 9.68,
+      "chromeos_share": 1.11,
+      "other_share": 55.1
+    },
+    {
       "source": "StatCounter",
       "date": "2020-03-01",
       "linux_share": 1.71,
@@ -258,6 +686,38 @@
       "mac_share": 18.34,
       "chromeos_share": 1.24,
       "other_share": 1.62
+    },
+    {
+      "source": "Steam",
+      "date": "2020-03-01",
+      "linux_share": 0.83,
+      "details": {
+        "Ubuntu 19.10 64 bit": 0.1,
+        "\"Arch Linux\" 64 bit": 0.09,
+        "\"Manjaro Linux\" 64 bit": 0.09,
+        "Ubuntu 18.04.4 LTS 64 bit": 0.09,
+        "Ubuntu 18.04.3 LTS 64 bit": 0.09,
+        "Linux Mint 19.3 Tricia 64 bit": 0.06
+      },
+      "windows_share": 96.02,
+      "mac_share": 3.15,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2020-04-01",
+      "linux_share": 0.68,
+      "details": {
+        "Linux": 0.68,
+        "Windows": 28.74,
+        "macOS": 9.51,
+        "ChromeOS": 1.0,
+        "Mobile (Android/iOS)": 60.05
+      },
+      "windows_share": 28.74,
+      "mac_share": 9.51,
+      "chromeos_share": 1.0,
+      "other_share": 60.05
     },
     {
       "source": "StatCounter",
@@ -276,6 +736,37 @@
       "other_share": 1.76
     },
     {
+      "source": "Steam",
+      "date": "2020-04-01",
+      "linux_share": 0.87,
+      "details": {
+        "Ubuntu 18.04.4 LTS 64 bit": 0.15,
+        "Ubuntu 19.10 64 bit": 0.1,
+        "\"Manjaro Linux\" 64 bit": 0.1,
+        "\"Arch Linux\" 64 bit": 0.09,
+        "Linux Mint 19.3 Tricia 64 bit": 0.06
+      },
+      "windows_share": 95.33,
+      "mac_share": 3.8,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2020-05-01",
+      "linux_share": 0.59,
+      "details": {
+        "Linux": 0.59,
+        "Windows": 29.96,
+        "macOS": 9.83,
+        "ChromeOS": 0.96,
+        "Mobile (Android/iOS)": 58.63
+      },
+      "windows_share": 29.96,
+      "mac_share": 9.83,
+      "chromeos_share": 0.96,
+      "other_share": 58.64
+    },
+    {
       "source": "StatCounter",
       "date": "2020-05-01",
       "linux_share": 1.68,
@@ -290,6 +781,37 @@
       "mac_share": 18.38,
       "chromeos_share": 1.06,
       "other_share": 1.85
+    },
+    {
+      "source": "Steam",
+      "date": "2020-05-01",
+      "linux_share": 0.89,
+      "details": {
+        "Ubuntu 18.04.4 LTS 64 bit": 0.18,
+        "Ubuntu 19.10 64 bit": 0.11,
+        "\"Manjaro Linux\" 64 bit": 0.1,
+        "\"Arch Linux\" 64 bit": 0.09,
+        "Linux Mint 19.3 Tricia 64 bit": 0.07
+      },
+      "windows_share": 95.06,
+      "mac_share": 4.05,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2020-06-01",
+      "linux_share": 0.79,
+      "details": {
+        "Linux": 0.79,
+        "Windows": 33.02,
+        "macOS": 9.93,
+        "ChromeOS": 0.73,
+        "Mobile (Android/iOS)": 55.52
+      },
+      "windows_share": 33.02,
+      "mac_share": 9.93,
+      "chromeos_share": 0.73,
+      "other_share": 55.52
     },
     {
       "source": "StatCounter",
@@ -308,6 +830,38 @@
       "other_share": 2.07
     },
     {
+      "source": "Steam",
+      "date": "2020-06-01",
+      "linux_share": 0.91,
+      "details": {
+        "Ubuntu 18.04.4 LTS 64 bit": 0.15,
+        "\"Manjaro Linux\" 64 bit": 0.1,
+        "Ubuntu 20.04 LTS 64 bit": 0.1,
+        "\"Arch Linux\" 64 bit": 0.1,
+        "Linux Mint 19.3 Tricia 64 bit": 0.07,
+        "Ubuntu 19.10 64 bit": 0.07
+      },
+      "windows_share": 95.05,
+      "mac_share": 4.04,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2020-07-01",
+      "linux_share": 0.85,
+      "details": {
+        "Linux": 0.85,
+        "Windows": 32.06,
+        "macOS": 9.76,
+        "ChromeOS": 0.66,
+        "Mobile (Android/iOS)": 56.67
+      },
+      "windows_share": 32.06,
+      "mac_share": 9.76,
+      "chromeos_share": 0.66,
+      "other_share": 56.67
+    },
+    {
       "source": "StatCounter",
       "date": "2020-07-01",
       "linux_share": 1.85,
@@ -322,6 +876,22 @@
       "mac_share": 17.07,
       "chromeos_share": 0.67,
       "other_share": 2.69
+    },
+    {
+      "source": "DAP",
+      "date": "2020-08-01",
+      "linux_share": 0.81,
+      "details": {
+        "Linux": 0.81,
+        "Windows": 32.38,
+        "macOS": 9.93,
+        "ChromeOS": 0.77,
+        "Mobile (Android/iOS)": 56.09
+      },
+      "windows_share": 32.38,
+      "mac_share": 9.93,
+      "chromeos_share": 0.77,
+      "other_share": 56.09
     },
     {
       "source": "StatCounter",
@@ -340,6 +910,37 @@
       "other_share": 3.1
     },
     {
+      "source": "Steam",
+      "date": "2020-08-01",
+      "linux_share": 0.86,
+      "details": {
+        "Ubuntu 20.04 LTS 64 bit": 0.17,
+        "Ubuntu 18.04.4 LTS 64 bit": 0.11,
+        "\"Manjaro Linux\" 64 bit": 0.1,
+        "\"Arch Linux\" 64 bit": 0.09,
+        "Linux Mint 19.3 Tricia 64 bit": 0.05
+      },
+      "windows_share": 95.94,
+      "mac_share": 3.2,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2020-09-01",
+      "linux_share": 0.84,
+      "details": {
+        "Linux": 0.84,
+        "Windows": 34.28,
+        "macOS": 10.76,
+        "ChromeOS": 1.26,
+        "Mobile (Android/iOS)": 52.84
+      },
+      "windows_share": 34.28,
+      "mac_share": 10.76,
+      "chromeos_share": 1.26,
+      "other_share": 52.84
+    },
+    {
       "source": "StatCounter",
       "date": "2020-09-01",
       "linux_share": 1.73,
@@ -354,6 +955,36 @@
       "mac_share": 17.57,
       "chromeos_share": 1.52,
       "other_share": 2.06
+    },
+    {
+      "source": "Steam",
+      "date": "2020-09-01",
+      "linux_share": 0.89,
+      "details": {
+        "Ubuntu 20.04.1 LTS 64 bit": 0.16,
+        "\"Manjaro Linux\" 64 bit": 0.11,
+        "\"Arch Linux\" 64 bit": 0.1,
+        "Ubuntu 18.04.4 LTS 64 bit": 0.07
+      },
+      "windows_share": 95.76,
+      "mac_share": 3.34,
+      "other_share": 0.01
+    },
+    {
+      "source": "DAP",
+      "date": "2020-10-01",
+      "linux_share": 0.98,
+      "details": {
+        "Linux": 0.98,
+        "Windows": 35.46,
+        "macOS": 10.95,
+        "ChromeOS": 1.4,
+        "Mobile (Android/iOS)": 51.2
+      },
+      "windows_share": 35.46,
+      "mac_share": 10.95,
+      "chromeos_share": 1.4,
+      "other_share": 51.2
     },
     {
       "source": "StatCounter",
@@ -372,6 +1003,37 @@
       "other_share": 2.93
     },
     {
+      "source": "Steam",
+      "date": "2020-10-01",
+      "linux_share": 0.94,
+      "details": {
+        "Ubuntu 20.04.1 LTS 64 bit": 0.19,
+        "\"Arch Linux\" 64 bit": 0.11,
+        "\"Manjaro Linux\" 64 bit": 0.11,
+        "Ubuntu 18.04.5 LTS 64 bit": 0.07,
+        "Linux Mint 20 64 bit": 0.05
+      },
+      "windows_share": 95.61,
+      "mac_share": 3.46,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2020-11-01",
+      "linux_share": 1.06,
+      "details": {
+        "Linux": 1.06,
+        "Windows": 35.32,
+        "macOS": 11.15,
+        "ChromeOS": 1.36,
+        "Mobile (Android/iOS)": 51.1
+      },
+      "windows_share": 35.32,
+      "mac_share": 11.15,
+      "chromeos_share": 1.36,
+      "other_share": 51.1
+    },
+    {
       "source": "StatCounter",
       "date": "2020-11-01",
       "linux_share": 1.8,
@@ -386,6 +1048,22 @@
       "mac_share": 16.54,
       "chromeos_share": 1.92,
       "other_share": 6.52
+    },
+    {
+      "source": "DAP",
+      "date": "2020-12-01",
+      "linux_share": 0.81,
+      "details": {
+        "Linux": 0.81,
+        "Windows": 29.06,
+        "macOS": 9.89,
+        "ChromeOS": 1.04,
+        "Mobile (Android/iOS)": 59.19
+      },
+      "windows_share": 29.06,
+      "mac_share": 9.89,
+      "chromeos_share": 1.04,
+      "other_share": 59.19
     },
     {
       "source": "StatCounter",
@@ -404,6 +1082,37 @@
       "other_share": 2.69
     },
     {
+      "source": "Steam",
+      "date": "2020-12-01",
+      "linux_share": 0.9,
+      "details": {
+        "Ubuntu 20.04.1 LTS 64 bit": 0.2,
+        "\"Manjaro Linux\" 64 bit": 0.11,
+        "\"Arch Linux\" 64 bit": 0.1,
+        "Linux Mint 20 64 bit": 0.06,
+        "Ubuntu 18.04.5 LTS 64 bit": 0.06
+      },
+      "windows_share": 95.73,
+      "mac_share": 3.37,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2021-01-01",
+      "linux_share": 0.78,
+      "details": {
+        "Linux": 0.78,
+        "Windows": 28.17,
+        "macOS": 9.06,
+        "ChromeOS": 1.16,
+        "Mobile (Android/iOS)": 60.81
+      },
+      "windows_share": 28.17,
+      "mac_share": 9.06,
+      "chromeos_share": 1.16,
+      "other_share": 60.81
+    },
+    {
       "source": "StatCounter",
       "date": "2021-01-01",
       "linux_share": 1.91,
@@ -418,6 +1127,22 @@
       "mac_share": 16.91,
       "chromeos_share": 1.91,
       "other_share": 3.01
+    },
+    {
+      "source": "DAP",
+      "date": "2021-02-01",
+      "linux_share": 0.84,
+      "details": {
+        "Linux": 0.84,
+        "Windows": 31.22,
+        "macOS": 10.23,
+        "ChromeOS": 1.37,
+        "Mobile (Android/iOS)": 56.32
+      },
+      "windows_share": 31.22,
+      "mac_share": 10.23,
+      "chromeos_share": 1.37,
+      "other_share": 56.33
     },
     {
       "source": "StatCounter",
@@ -436,6 +1161,22 @@
       "other_share": 3.41
     },
     {
+      "source": "DAP",
+      "date": "2021-03-01",
+      "linux_share": 0.69,
+      "details": {
+        "Linux": 0.69,
+        "Windows": 27.71,
+        "macOS": 8.7,
+        "ChromeOS": 1.22,
+        "Mobile (Android/iOS)": 61.66
+      },
+      "windows_share": 27.71,
+      "mac_share": 8.7,
+      "chromeos_share": 1.22,
+      "other_share": 61.66
+    },
+    {
       "source": "StatCounter",
       "date": "2021-03-01",
       "linux_share": 1.97,
@@ -450,6 +1191,22 @@
       "mac_share": 16.48,
       "chromeos_share": 2.09,
       "other_share": 3.91
+    },
+    {
+      "source": "DAP",
+      "date": "2021-04-01",
+      "linux_share": 0.83,
+      "details": {
+        "Linux": 0.83,
+        "Windows": 30.91,
+        "macOS": 9.89,
+        "ChromeOS": 1.32,
+        "Mobile (Android/iOS)": 57.03
+      },
+      "windows_share": 30.91,
+      "mac_share": 9.89,
+      "chromeos_share": 1.32,
+      "other_share": 57.03
     },
     {
       "source": "StatCounter",
@@ -468,6 +1225,22 @@
       "other_share": 4.84
     },
     {
+      "source": "DAP",
+      "date": "2021-05-01",
+      "linux_share": 0.94,
+      "details": {
+        "Linux": 0.94,
+        "Windows": 31.71,
+        "macOS": 10.0,
+        "ChromeOS": 1.36,
+        "Mobile (Android/iOS)": 55.98
+      },
+      "windows_share": 31.71,
+      "mac_share": 10.0,
+      "chromeos_share": 1.36,
+      "other_share": 55.98
+    },
+    {
       "source": "StatCounter",
       "date": "2021-05-01",
       "linux_share": 2.38,
@@ -482,6 +1255,22 @@
       "mac_share": 15.87,
       "chromeos_share": 2.27,
       "other_share": 5.95
+    },
+    {
+      "source": "DAP",
+      "date": "2021-06-01",
+      "linux_share": 1.04,
+      "details": {
+        "Linux": 1.04,
+        "Windows": 32.3,
+        "macOS": 9.66,
+        "ChromeOS": 0.82,
+        "Mobile (Android/iOS)": 56.16
+      },
+      "windows_share": 32.3,
+      "mac_share": 9.66,
+      "chromeos_share": 0.82,
+      "other_share": 56.16
     },
     {
       "source": "StatCounter",
@@ -500,6 +1289,22 @@
       "other_share": 7.28
     },
     {
+      "source": "DAP",
+      "date": "2021-07-01",
+      "linux_share": 1.04,
+      "details": {
+        "Linux": 1.04,
+        "Windows": 30.86,
+        "macOS": 9.5,
+        "ChromeOS": 0.65,
+        "Mobile (Android/iOS)": 57.93
+      },
+      "windows_share": 30.86,
+      "mac_share": 9.5,
+      "chromeos_share": 0.65,
+      "other_share": 57.93
+    },
+    {
       "source": "StatCounter",
       "date": "2021-07-01",
       "linux_share": 2.38,
@@ -514,6 +1319,22 @@
       "mac_share": 15.43,
       "chromeos_share": 1.21,
       "other_share": 7.94
+    },
+    {
+      "source": "DAP",
+      "date": "2021-08-01",
+      "linux_share": 1.06,
+      "details": {
+        "Linux": 1.06,
+        "Windows": 30.8,
+        "macOS": 9.79,
+        "ChromeOS": 0.83,
+        "Mobile (Android/iOS)": 57.5
+      },
+      "windows_share": 30.8,
+      "mac_share": 9.79,
+      "chromeos_share": 0.83,
+      "other_share": 57.5
     },
     {
       "source": "StatCounter",
@@ -532,6 +1353,22 @@
       "other_share": 3.62
     },
     {
+      "source": "DAP",
+      "date": "2021-09-01",
+      "linux_share": 1.21,
+      "details": {
+        "Linux": 1.21,
+        "Windows": 32.76,
+        "macOS": 10.41,
+        "ChromeOS": 1.41,
+        "Mobile (Android/iOS)": 54.19
+      },
+      "windows_share": 32.76,
+      "mac_share": 10.41,
+      "chromeos_share": 1.41,
+      "other_share": 54.19
+    },
+    {
       "source": "StatCounter",
       "date": "2021-09-01",
       "linux_share": 2.33,
@@ -546,6 +1383,22 @@
       "mac_share": 15.93,
       "chromeos_share": 2.59,
       "other_share": 3.75
+    },
+    {
+      "source": "DAP",
+      "date": "2021-10-01",
+      "linux_share": 1.38,
+      "details": {
+        "Linux": 1.38,
+        "Windows": 34.46,
+        "macOS": 10.85,
+        "ChromeOS": 1.59,
+        "Mobile (Android/iOS)": 51.72
+      },
+      "windows_share": 34.46,
+      "mac_share": 10.85,
+      "chromeos_share": 1.59,
+      "other_share": 51.72
     },
     {
       "source": "StatCounter",
@@ -564,6 +1417,22 @@
       "other_share": 4.25
     },
     {
+      "source": "DAP",
+      "date": "2021-11-01",
+      "linux_share": 1.2,
+      "details": {
+        "Linux": 1.2,
+        "Windows": 34.02,
+        "macOS": 11.2,
+        "ChromeOS": 1.63,
+        "Mobile (Android/iOS)": 51.95
+      },
+      "windows_share": 34.02,
+      "mac_share": 11.2,
+      "chromeos_share": 1.63,
+      "other_share": 51.95
+    },
+    {
       "source": "StatCounter",
       "date": "2021-11-01",
       "linux_share": 2.08,
@@ -578,6 +1447,22 @@
       "mac_share": 16.04,
       "chromeos_share": 2.6,
       "other_share": 5.0
+    },
+    {
+      "source": "DAP",
+      "date": "2021-12-01",
+      "linux_share": 1.08,
+      "details": {
+        "Linux": 1.08,
+        "Windows": 29.9,
+        "macOS": 10.16,
+        "ChromeOS": 1.29,
+        "Mobile (Android/iOS)": 57.55
+      },
+      "windows_share": 29.9,
+      "mac_share": 10.16,
+      "chromeos_share": 1.29,
+      "other_share": 57.55
     },
     {
       "source": "StatCounter",
@@ -596,6 +1481,22 @@
       "other_share": 6.68
     },
     {
+      "source": "DAP",
+      "date": "2022-01-01",
+      "linux_share": 0.92,
+      "details": {
+        "Linux": 0.92,
+        "Windows": 29.4,
+        "macOS": 10.16,
+        "ChromeOS": 1.41,
+        "Mobile (Android/iOS)": 58.08
+      },
+      "windows_share": 29.4,
+      "mac_share": 10.16,
+      "chromeos_share": 1.41,
+      "other_share": 58.08
+    },
+    {
       "source": "StatCounter",
       "date": "2022-01-01",
       "linux_share": 2.19,
@@ -610,6 +1511,22 @@
       "mac_share": 15.85,
       "chromeos_share": 2.6,
       "other_share": 3.87
+    },
+    {
+      "source": "DAP",
+      "date": "2022-02-01",
+      "linux_share": 0.99,
+      "details": {
+        "Linux": 0.99,
+        "Windows": 30.68,
+        "macOS": 10.24,
+        "ChromeOS": 1.62,
+        "Mobile (Android/iOS)": 56.46
+      },
+      "windows_share": 30.68,
+      "mac_share": 10.24,
+      "chromeos_share": 1.62,
+      "other_share": 56.46
     },
     {
       "source": "StatCounter",
@@ -628,6 +1545,37 @@
       "other_share": 3.33
     },
     {
+      "source": "Steam",
+      "date": "2022-02-01",
+      "linux_share": 1.06,
+      "details": {
+        "Ubuntu 20.04.3 LTS 64 bit": 0.19,
+        "\"Manjaro Linux\" 64 bit": 0.13,
+        "\"Arch Linux\" 64 bit": 0.12,
+        "Ubuntu 21.10 64 bit": 0.07,
+        "Linux Mint 20.2 64 bit": 0.05
+      },
+      "windows_share": 96.17,
+      "mac_share": 2.77,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2022-03-01",
+      "linux_share": 0.99,
+      "details": {
+        "Linux": 0.99,
+        "Windows": 33.62,
+        "macOS": 10.81,
+        "ChromeOS": 1.72,
+        "Mobile (Android/iOS)": 52.84
+      },
+      "windows_share": 33.62,
+      "mac_share": 10.81,
+      "chromeos_share": 1.72,
+      "other_share": 52.84
+    },
+    {
       "source": "StatCounter",
       "date": "2022-03-01",
       "linux_share": 2.36,
@@ -642,6 +1590,22 @@
       "mac_share": 15.32,
       "chromeos_share": 2.79,
       "other_share": 3.85
+    },
+    {
+      "source": "DAP",
+      "date": "2022-04-01",
+      "linux_share": 1.22,
+      "details": {
+        "Linux": 1.22,
+        "Windows": 33.32,
+        "macOS": 11.27,
+        "ChromeOS": 1.63,
+        "Mobile (Android/iOS)": 52.53
+      },
+      "windows_share": 33.32,
+      "mac_share": 11.27,
+      "chromeos_share": 1.63,
+      "other_share": 52.54
     },
     {
       "source": "StatCounter",
@@ -660,6 +1624,37 @@
       "other_share": 4.99
     },
     {
+      "source": "Steam",
+      "date": "2022-04-01",
+      "linux_share": 1.0,
+      "details": {
+        "Ubuntu 20.04.4 LTS 64 bit": 0.13,
+        "\"Manjaro Linux\" 64 bit": 0.12,
+        "\"Arch Linux\" 64 bit": 0.12,
+        "Ubuntu 21.10 64 bit": 0.07,
+        "Linux Mint 20.3 64 bit": 0.07
+      },
+      "windows_share": 96.57,
+      "mac_share": 2.43,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2022-05-01",
+      "linux_share": 1.42,
+      "details": {
+        "Linux": 1.42,
+        "Windows": 31.96,
+        "macOS": 10.38,
+        "ChromeOS": 1.62,
+        "Mobile (Android/iOS)": 54.6
+      },
+      "windows_share": 31.96,
+      "mac_share": 10.38,
+      "chromeos_share": 1.62,
+      "other_share": 54.6
+    },
+    {
       "source": "StatCounter",
       "date": "2022-05-01",
       "linux_share": 2.45,
@@ -674,6 +1669,37 @@
       "mac_share": 14.98,
       "chromeos_share": 2.22,
       "other_share": 4.83
+    },
+    {
+      "source": "Steam",
+      "date": "2022-05-01",
+      "linux_share": 1.14,
+      "details": {
+        "Ubuntu 20.04.4 LTS 64 bit": 0.16,
+        "\"Arch Linux\" 64 bit": 0.14,
+        "\"Manjaro Linux\" 64 bit": 0.13,
+        "Linux Mint 20.3 64 bit": 0.07,
+        "Ubuntu 21.10 64 bit": 0.06
+      },
+      "windows_share": 96.31,
+      "mac_share": 2.55,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2022-06-01",
+      "linux_share": 1.43,
+      "details": {
+        "Linux": 1.43,
+        "Windows": 32.06,
+        "macOS": 9.96,
+        "ChromeOS": 0.87,
+        "Mobile (Android/iOS)": 55.65
+      },
+      "windows_share": 32.06,
+      "mac_share": 9.96,
+      "chromeos_share": 0.87,
+      "other_share": 55.67
     },
     {
       "source": "StatCounter",
@@ -692,6 +1718,37 @@
       "other_share": 4.89
     },
     {
+      "source": "Steam",
+      "date": "2022-06-01",
+      "linux_share": 1.12,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.14,
+        "Ubuntu 20.04.4 LTS 64 bit": 0.13,
+        "\"Manjaro Linux\" 64 bit": 0.12,
+        "Ubuntu 22.04 LTS 64 bit": 0.09,
+        "Linux Mint 20.3 64 bit": 0.07
+      },
+      "windows_share": 96.68,
+      "mac_share": 2.2,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2022-07-01",
+      "linux_share": 1.45,
+      "details": {
+        "Linux": 1.45,
+        "Windows": 30.62,
+        "macOS": 9.83,
+        "ChromeOS": 0.69,
+        "Mobile (Android/iOS)": 57.38
+      },
+      "windows_share": 30.62,
+      "mac_share": 9.83,
+      "chromeos_share": 0.69,
+      "other_share": 57.4
+    },
+    {
       "source": "StatCounter",
       "date": "2022-07-01",
       "linux_share": 2.76,
@@ -706,6 +1763,37 @@
       "mac_share": 14.51,
       "chromeos_share": 1.5,
       "other_share": 6.01
+    },
+    {
+      "source": "Steam",
+      "date": "2022-07-01",
+      "linux_share": 1.12,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.14,
+        "Ubuntu 20.04.4 LTS 64 bit": 0.13,
+        "\"Manjaro Linux\" 64 bit": 0.12,
+        "Ubuntu 22.04 LTS 64 bit": 0.09,
+        "Linux Mint 20.3 64 bit": 0.07
+      },
+      "windows_share": 96.68,
+      "mac_share": 2.2,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2022-08-01",
+      "linux_share": 1.43,
+      "details": {
+        "Linux": 1.43,
+        "Windows": 31.83,
+        "macOS": 9.83,
+        "ChromeOS": 0.93,
+        "Mobile (Android/iOS)": 55.97
+      },
+      "windows_share": 31.83,
+      "mac_share": 9.83,
+      "chromeos_share": 0.93,
+      "other_share": 55.98
     },
     {
       "source": "StatCounter",
@@ -724,6 +1812,37 @@
       "other_share": 6.2
     },
     {
+      "source": "Steam",
+      "date": "2022-08-01",
+      "linux_share": 1.23,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.17,
+        "\"Manjaro Linux\" 64 bit": 0.14,
+        "Ubuntu 22.04 LTS 64 bit": 0.12,
+        "Ubuntu 20.04.4 LTS 64 bit": 0.11,
+        "Linux Mint 20.3 64 bit": 0.08
+      },
+      "windows_share": 97.03,
+      "mac_share": 1.74,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2022-09-01",
+      "linux_share": 1.42,
+      "details": {
+        "Linux": 1.42,
+        "Windows": 31.75,
+        "macOS": 10.32,
+        "ChromeOS": 1.5,
+        "Mobile (Android/iOS)": 54.98
+      },
+      "windows_share": 31.75,
+      "mac_share": 10.32,
+      "chromeos_share": 1.5,
+      "other_share": 54.99
+    },
+    {
       "source": "StatCounter",
       "date": "2022-09-01",
       "linux_share": 2.8,
@@ -738,6 +1857,37 @@
       "mac_share": 14.86,
       "chromeos_share": 2.41,
       "other_share": 4.87
+    },
+    {
+      "source": "Steam",
+      "date": "2022-09-01",
+      "linux_share": 1.27,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.14,
+        "\"Manjaro Linux\" 64 bit": 0.11,
+        "Ubuntu 22.04.1 LTS 64 bit": 0.1,
+        "Ubuntu 20.04.4 LTS 64 bit": 0.09,
+        "Linux Mint 20.3 64 bit": 0.06
+      },
+      "windows_share": 96.23,
+      "mac_share": 2.5,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2022-10-01",
+      "linux_share": 1.24,
+      "details": {
+        "Linux": 1.24,
+        "Windows": 31.77,
+        "macOS": 10.72,
+        "ChromeOS": 1.63,
+        "Mobile (Android/iOS)": 54.62
+      },
+      "windows_share": 31.77,
+      "mac_share": 10.72,
+      "chromeos_share": 1.63,
+      "other_share": 54.63
     },
     {
       "source": "StatCounter",
@@ -756,6 +1906,22 @@
       "other_share": 3.35
     },
     {
+      "source": "DAP",
+      "date": "2022-11-01",
+      "linux_share": 1.23,
+      "details": {
+        "Linux": 1.23,
+        "Windows": 31.87,
+        "macOS": 10.7,
+        "ChromeOS": 1.63,
+        "Mobile (Android/iOS)": 54.56
+      },
+      "windows_share": 31.87,
+      "mac_share": 10.7,
+      "chromeos_share": 1.63,
+      "other_share": 54.57
+    },
+    {
       "source": "StatCounter",
       "date": "2022-11-01",
       "linux_share": 2.77,
@@ -770,6 +1936,35 @@
       "mac_share": 15.6,
       "chromeos_share": 2.48,
       "other_share": 4.04
+    },
+    {
+      "source": "Steam",
+      "date": "2022-11-01",
+      "linux_share": 1.28,
+      "details": {
+        "Ubuntu 22.04.1 LTS 64 bit": 0.16,
+        "\"Arch Linux\" 64 bit": 0.12,
+        "\"Manjaro Linux\" 64 bit": 0.09
+      },
+      "windows_share": 96.5,
+      "mac_share": 2.23,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2022-12-01",
+      "linux_share": 1.25,
+      "details": {
+        "Linux": 1.25,
+        "Windows": 28.18,
+        "macOS": 9.84,
+        "ChromeOS": 1.35,
+        "Mobile (Android/iOS)": 59.37
+      },
+      "windows_share": 28.18,
+      "mac_share": 9.84,
+      "chromeos_share": 1.35,
+      "other_share": 59.37
     },
     {
       "source": "StatCounter",
@@ -788,6 +1983,36 @@
       "other_share": 4.79
     },
     {
+      "source": "Steam",
+      "date": "2022-12-01",
+      "linux_share": 1.44,
+      "details": {
+        "Ubuntu 22.04.1 LTS 64 bit": 0.16,
+        "\"Arch Linux\" 64 bit": 0.14,
+        "\"Manjaro Linux\" 64 bit": 0.1,
+        "Linux Mint 21 64 bit": 0.06
+      },
+      "windows_share": 96.11,
+      "mac_share": 2.45,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2023-01-01",
+      "linux_share": 1.26,
+      "details": {
+        "Linux": 1.26,
+        "Windows": 30.71,
+        "macOS": 10.45,
+        "ChromeOS": 1.63,
+        "Mobile (Android/iOS)": 55.93
+      },
+      "windows_share": 30.71,
+      "mac_share": 10.45,
+      "chromeos_share": 1.63,
+      "other_share": 55.93
+    },
+    {
       "source": "StatCounter",
       "date": "2023-01-01",
       "linux_share": 2.91,
@@ -802,6 +2027,36 @@
       "mac_share": 15.33,
       "chromeos_share": 2.35,
       "other_share": 5.28
+    },
+    {
+      "source": "Steam",
+      "date": "2023-01-01",
+      "linux_share": 1.38,
+      "details": {
+        "Ubuntu 22.04.1 LTS 64 bit": 0.15,
+        "\"Arch Linux\" 64 bit": 0.13,
+        "\"Manjaro Linux\" 64 bit": 0.09,
+        "Linux Mint 21 64 bit": 0.05
+      },
+      "windows_share": 96.15,
+      "mac_share": 2.48,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2023-02-01",
+      "linux_share": 1.3,
+      "details": {
+        "Linux": 1.3,
+        "Windows": 30.69,
+        "macOS": 10.3,
+        "ChromeOS": 1.68,
+        "Mobile (Android/iOS)": 56.01
+      },
+      "windows_share": 30.69,
+      "mac_share": 10.3,
+      "chromeos_share": 1.68,
+      "other_share": 56.01
     },
     {
       "source": "StatCounter",
@@ -820,6 +2075,36 @@
       "other_share": 6.13
     },
     {
+      "source": "Steam",
+      "date": "2023-02-01",
+      "linux_share": 1.38,
+      "details": {
+        "Ubuntu 22.04.1 LTS 64 bit": 0.16,
+        "\"Arch Linux\" 64 bit": 0.13,
+        "\"Manjaro Linux\" 64 bit": 0.09,
+        "Linux Mint 21.1 64 bit": 0.05
+      },
+      "windows_share": 96.02,
+      "mac_share": 2.61,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2023-03-01",
+      "linux_share": 1.38,
+      "details": {
+        "Linux": 1.38,
+        "Windows": 32.04,
+        "macOS": 10.69,
+        "ChromeOS": 1.71,
+        "Mobile (Android/iOS)": 54.16
+      },
+      "windows_share": 32.04,
+      "mac_share": 10.69,
+      "chromeos_share": 1.71,
+      "other_share": 54.16
+    },
+    {
       "source": "StatCounter",
       "date": "2023-03-01",
       "linux_share": 2.85,
@@ -834,6 +2119,36 @@
       "mac_share": 17.21,
       "chromeos_share": 3.23,
       "other_share": 7.32
+    },
+    {
+      "source": "Steam",
+      "date": "2023-03-01",
+      "linux_share": 1.27,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.13,
+        "Ubuntu 22.04.1 LTS 64 bit": 0.12,
+        "\"Manjaro Linux\" 64 bit": 0.08,
+        "Linux Mint 21.1 64 bit": 0.06
+      },
+      "windows_share": 96.37,
+      "mac_share": 2.37,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2023-04-01",
+      "linux_share": 1.59,
+      "details": {
+        "Linux": 1.59,
+        "Windows": 31.13,
+        "macOS": 10.89,
+        "ChromeOS": 1.65,
+        "Mobile (Android/iOS)": 54.72
+      },
+      "windows_share": 31.13,
+      "mac_share": 10.89,
+      "chromeos_share": 1.65,
+      "other_share": 54.72
     },
     {
       "source": "StatCounter",
@@ -852,6 +2167,35 @@
       "other_share": 13.02
     },
     {
+      "source": "Steam",
+      "date": "2023-04-01",
+      "linux_share": 0.84,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.09,
+        "Ubuntu 22.04.2 LTS 64 bit": 0.08,
+        "\"Manjaro Linux\" 64 bit": 0.06
+      },
+      "windows_share": 97.75,
+      "mac_share": 1.41,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2023-05-01",
+      "linux_share": 1.64,
+      "details": {
+        "Linux": 1.64,
+        "Windows": 31.23,
+        "macOS": 9.98,
+        "ChromeOS": 1.76,
+        "Mobile (Android/iOS)": 55.39
+      },
+      "windows_share": 31.23,
+      "mac_share": 9.98,
+      "chromeos_share": 1.76,
+      "other_share": 55.39
+    },
+    {
       "source": "StatCounter",
       "date": "2023-05-01",
       "linux_share": 2.7,
@@ -866,6 +2210,36 @@
       "mac_share": 18.96,
       "chromeos_share": 3.59,
       "other_share": 12.7
+    },
+    {
+      "source": "Steam",
+      "date": "2023-05-01",
+      "linux_share": 1.32,
+      "details": {
+        "Ubuntu 22.04.2 LTS 64 bit": 0.14,
+        "\"Arch Linux\" 64 bit": 0.13,
+        "\"Manjaro Linux\" 64 bit": 0.08,
+        "Linux Mint 21.1 64 bit": 0.07
+      },
+      "windows_share": 96.38,
+      "mac_share": 2.3,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2023-06-01",
+      "linux_share": 1.69,
+      "details": {
+        "Linux": 1.69,
+        "Windows": 30.48,
+        "macOS": 9.56,
+        "ChromeOS": 0.89,
+        "Mobile (Android/iOS)": 57.36
+      },
+      "windows_share": 30.48,
+      "mac_share": 9.56,
+      "chromeos_share": 0.89,
+      "other_share": 57.36
     },
     {
       "source": "StatCounter",
@@ -884,6 +2258,36 @@
       "other_share": 3.26
     },
     {
+      "source": "Steam",
+      "date": "2023-06-01",
+      "linux_share": 1.47,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.15,
+        "Ubuntu 22.04.2 LTS 64 bit": 0.14,
+        "\"Manjaro Linux\" 64 bit": 0.09,
+        "Linux Mint 21.1 64 bit": 0.08
+      },
+      "windows_share": 96.14,
+      "mac_share": 2.39,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2023-07-01",
+      "linux_share": 1.91,
+      "details": {
+        "Linux": 1.91,
+        "Windows": 29.48,
+        "macOS": 9.51,
+        "ChromeOS": 0.73,
+        "Mobile (Android/iOS)": 58.37
+      },
+      "windows_share": 29.48,
+      "mac_share": 9.51,
+      "chromeos_share": 0.73,
+      "other_share": 58.37
+    },
+    {
       "source": "StatCounter",
       "date": "2023-07-01",
       "linux_share": 3.12,
@@ -898,6 +2302,36 @@
       "mac_share": 20.42,
       "chromeos_share": 3.24,
       "other_share": 3.7
+    },
+    {
+      "source": "Steam",
+      "date": "2023-07-01",
+      "linux_share": 1.44,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.12,
+        "Ubuntu 22.04.2 LTS 64 bit": 0.11,
+        "Linux Mint 21.1 64 bit": 0.07,
+        "\"Manjaro Linux\" 64 bit": 0.06
+      },
+      "windows_share": 96.77,
+      "mac_share": 1.79,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2023-08-01",
+      "linux_share": 2.25,
+      "details": {
+        "Linux": 2.25,
+        "Windows": 28.26,
+        "macOS": 9.03,
+        "ChromeOS": 1.21,
+        "Mobile (Android/iOS)": 59.24
+      },
+      "windows_share": 28.26,
+      "mac_share": 9.03,
+      "chromeos_share": 1.21,
+      "other_share": 59.24
     },
     {
       "source": "StatCounter",
@@ -916,6 +2350,36 @@
       "other_share": 4.04
     },
     {
+      "source": "Steam",
+      "date": "2023-08-01",
+      "linux_share": 1.44,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.12,
+        "Ubuntu 22.04.2 LTS 64 bit": 0.11,
+        "Linux Mint 21.1 64 bit": 0.07,
+        "\"Manjaro Linux\" 64 bit": 0.06
+      },
+      "windows_share": 96.77,
+      "mac_share": 1.79,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2023-09-01",
+      "linux_share": 2.12,
+      "details": {
+        "Linux": 2.12,
+        "Windows": 28.18,
+        "macOS": 9.57,
+        "ChromeOS": 1.87,
+        "Mobile (Android/iOS)": 58.25
+      },
+      "windows_share": 28.18,
+      "mac_share": 9.57,
+      "chromeos_share": 1.87,
+      "other_share": 58.25
+    },
+    {
       "source": "StatCounter",
       "date": "2023-09-01",
       "linux_share": 3.02,
@@ -930,6 +2394,36 @@
       "mac_share": 20.15,
       "chromeos_share": 3.89,
       "other_share": 4.54
+    },
+    {
+      "source": "Steam",
+      "date": "2023-09-01",
+      "linux_share": 1.96,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.16,
+        "Ubuntu 22.04.2 LTS 64 bit": 0.14,
+        "\"Manjaro Linux\" 64 bit": 0.08,
+        "Linux Mint 21.1 64 bit": 0.08
+      },
+      "windows_share": 96.21,
+      "mac_share": 1.84,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2023-10-01",
+      "linux_share": 2.3,
+      "details": {
+        "Linux": 2.3,
+        "Windows": 29.74,
+        "macOS": 9.75,
+        "ChromeOS": 2.02,
+        "Mobile (Android/iOS)": 56.17
+      },
+      "windows_share": 29.74,
+      "mac_share": 9.75,
+      "chromeos_share": 2.02,
+      "other_share": 56.17
     },
     {
       "source": "StatCounter",
@@ -948,6 +2442,22 @@
       "other_share": 3.77
     },
     {
+      "source": "DAP",
+      "date": "2023-11-01",
+      "linux_share": 2.56,
+      "details": {
+        "Linux": 2.56,
+        "Windows": 29.03,
+        "macOS": 9.78,
+        "ChromeOS": 2.02,
+        "Mobile (Android/iOS)": 56.6
+      },
+      "windows_share": 29.03,
+      "mac_share": 9.78,
+      "chromeos_share": 2.02,
+      "other_share": 56.6
+    },
+    {
       "source": "StatCounter",
       "date": "2023-11-01",
       "linux_share": 3.22,
@@ -962,6 +2472,36 @@
       "mac_share": 21.01,
       "chromeos_share": 3.71,
       "other_share": 3.05
+    },
+    {
+      "source": "Steam",
+      "date": "2023-11-01",
+      "linux_share": 1.63,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.13,
+        "Ubuntu 22.04.3 LTS 64 bit": 0.11,
+        "\"Manjaro Linux\" 64 bit": 0.06,
+        "Linux Mint 21.2 64 bit": 0.06
+      },
+      "windows_share": 96.94,
+      "mac_share": 1.43,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2023-12-01",
+      "linux_share": 2.45,
+      "details": {
+        "Linux": 2.45,
+        "Windows": 25.5,
+        "macOS": 8.92,
+        "ChromeOS": 1.59,
+        "Mobile (Android/iOS)": 61.53
+      },
+      "windows_share": 25.5,
+      "mac_share": 8.92,
+      "chromeos_share": 1.59,
+      "other_share": 61.53
     },
     {
       "source": "StatCounter",
@@ -980,6 +2520,36 @@
       "other_share": 4.66
     },
     {
+      "source": "Steam",
+      "date": "2023-12-01",
+      "linux_share": 1.39,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.1,
+        "Ubuntu 22.04.3 LTS 64 bit": 0.09,
+        "\"Manjaro Linux\" 64 bit": 0.05,
+        "Linux Mint 21.2 64 bit": 0.05
+      },
+      "windows_share": 97.43,
+      "mac_share": 1.19,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2024-01-01",
+      "linux_share": 2.27,
+      "details": {
+        "Linux": 2.27,
+        "Windows": 29.67,
+        "macOS": 9.77,
+        "ChromeOS": 1.86,
+        "Mobile (Android/iOS)": 56.42
+      },
+      "windows_share": 29.67,
+      "mac_share": 9.77,
+      "chromeos_share": 1.86,
+      "other_share": 56.42
+    },
+    {
       "source": "StatCounter",
       "date": "2024-01-01",
       "linux_share": 3.77,
@@ -994,6 +2564,36 @@
       "mac_share": 16.11,
       "chromeos_share": 1.78,
       "other_share": 5.35
+    },
+    {
+      "source": "Steam",
+      "date": "2024-01-01",
+      "linux_share": 1.91,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.15,
+        "Ubuntu 22.04.3 LTS 64 bit": 0.13,
+        "Linux Mint 21.2 64 bit": 0.08,
+        "\"Manjaro Linux\" 64 bit": 0.07
+      },
+      "windows_share": 96.56,
+      "mac_share": 1.53,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2024-02-01",
+      "linux_share": 2.21,
+      "details": {
+        "Linux": 2.21,
+        "Windows": 29.63,
+        "macOS": 9.6,
+        "ChromeOS": 2.04,
+        "Mobile (Android/iOS)": 56.51
+      },
+      "windows_share": 29.63,
+      "mac_share": 9.6,
+      "chromeos_share": 2.04,
+      "other_share": 56.51
     },
     {
       "source": "StatCounter",
@@ -1012,6 +2612,36 @@
       "other_share": 6.12
     },
     {
+      "source": "Steam",
+      "date": "2024-02-01",
+      "linux_share": 1.95,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.15,
+        "Ubuntu 22.04.3 LTS 64 bit": 0.13,
+        "Linux Mint 21.2 64 bit": 0.07,
+        "\"Manjaro Linux\" 64 bit": 0.07
+      },
+      "windows_share": 96.52,
+      "mac_share": 1.54,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2024-03-01",
+      "linux_share": 2.19,
+      "details": {
+        "Linux": 2.19,
+        "Windows": 31.42,
+        "macOS": 10.73,
+        "ChromeOS": 1.72,
+        "Mobile (Android/iOS)": 53.93
+      },
+      "windows_share": 31.42,
+      "mac_share": 10.73,
+      "chromeos_share": 1.72,
+      "other_share": 53.93
+    },
+    {
       "source": "StatCounter",
       "date": "2024-03-01",
       "linux_share": 4.05,
@@ -1026,6 +2656,36 @@
       "mac_share": 14.68,
       "chromeos_share": 2.27,
       "other_share": 6.53
+    },
+    {
+      "source": "Steam",
+      "date": "2024-03-01",
+      "linux_share": 1.76,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.14,
+        "Ubuntu 22.04.3 LTS 64 bit": 0.09,
+        "Linux Mint 21.3 64 bit": 0.06,
+        "\"Manjaro Linux\" 64 bit": 0.06
+      },
+      "windows_share": 96.91,
+      "mac_share": 1.32,
+      "other_share": 0.01
+    },
+    {
+      "source": "DAP",
+      "date": "2024-04-01",
+      "linux_share": 2.22,
+      "details": {
+        "Linux": 2.22,
+        "Windows": 32.64,
+        "macOS": 11.16,
+        "ChromeOS": 1.84,
+        "Mobile (Android/iOS)": 52.13
+      },
+      "windows_share": 32.64,
+      "mac_share": 11.16,
+      "chromeos_share": 1.84,
+      "other_share": 52.13
     },
     {
       "source": "StatCounter",
@@ -1044,6 +2704,36 @@
       "other_share": 5.35
     },
     {
+      "source": "Steam",
+      "date": "2024-04-01",
+      "linux_share": 1.94,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.15,
+        "Ubuntu 22.04.4 LTS 64 bit": 0.11,
+        "Linux Mint 21.3 64 bit": 0.07,
+        "\"Manjaro Linux\" 64 bit": 0.07
+      },
+      "windows_share": 96.67,
+      "mac_share": 1.38,
+      "other_share": 0.01
+    },
+    {
+      "source": "DAP",
+      "date": "2024-05-01",
+      "linux_share": 2.51,
+      "details": {
+        "Linux": 2.51,
+        "Windows": 32.52,
+        "macOS": 10.29,
+        "ChromeOS": 1.78,
+        "Mobile (Android/iOS)": 52.89
+      },
+      "windows_share": 32.52,
+      "mac_share": 10.29,
+      "chromeos_share": 1.78,
+      "other_share": 52.9
+    },
+    {
       "source": "StatCounter",
       "date": "2024-05-01",
       "linux_share": 3.77,
@@ -1058,6 +2748,36 @@
       "mac_share": 14.9,
       "chromeos_share": 2.54,
       "other_share": 4.88
+    },
+    {
+      "source": "Steam",
+      "date": "2024-05-01",
+      "linux_share": 1.94,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.15,
+        "Ubuntu 22.04.4 LTS 64 bit": 0.11,
+        "Linux Mint 21.3 64 bit": 0.07,
+        "\"Manjaro Linux\" 64 bit": 0.07
+      },
+      "windows_share": 96.67,
+      "mac_share": 1.38,
+      "other_share": 0.01
+    },
+    {
+      "source": "DAP",
+      "date": "2024-06-01",
+      "linux_share": 2.54,
+      "details": {
+        "Linux": 2.54,
+        "Windows": 31.7,
+        "macOS": 9.81,
+        "ChromeOS": 0.86,
+        "Mobile (Android/iOS)": 55.08
+      },
+      "windows_share": 31.7,
+      "mac_share": 9.81,
+      "chromeos_share": 0.86,
+      "other_share": 55.08
     },
     {
       "source": "StatCounter",
@@ -1076,6 +2796,37 @@
       "other_share": 6.24
     },
     {
+      "source": "Steam",
+      "date": "2024-06-01",
+      "linux_share": 2.32,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.18,
+        "Ubuntu 22.04.4 LTS 64 bit": 0.11,
+        "Linux Mint 21.3 64 bit": 0.1,
+        "\"Manjaro Linux\" 64 bit": 0.07,
+        "Ubuntu Core 22 64 bit": 0.06
+      },
+      "windows_share": 96.21,
+      "mac_share": 1.47,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2024-07-01",
+      "linux_share": 2.64,
+      "details": {
+        "Linux": 2.64,
+        "Windows": 31.86,
+        "macOS": 9.64,
+        "ChromeOS": 0.71,
+        "Mobile (Android/iOS)": 55.14
+      },
+      "windows_share": 31.86,
+      "mac_share": 9.64,
+      "chromeos_share": 0.71,
+      "other_share": 55.14
+    },
+    {
       "source": "StatCounter",
       "date": "2024-07-01",
       "linux_share": 4.44,
@@ -1090,6 +2841,38 @@
       "mac_share": 14.92,
       "chromeos_share": 1.41,
       "other_share": 7.14
+    },
+    {
+      "source": "Steam",
+      "date": "2024-07-01",
+      "linux_share": 2.08,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.17,
+        "Linux Mint 21.3 64 bit": 0.11,
+        "Ubuntu 22.04.4 LTS 64 bit": 0.09,
+        "\"Manjaro Linux\" 64 bit": 0.06,
+        "Ubuntu 24.04 LTS 64 bit": 0.06,
+        "Ubuntu Core 22 64 bit": 0.06
+      },
+      "windows_share": 96.61,
+      "mac_share": 1.31,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2024-08-01",
+      "linux_share": 3.24,
+      "details": {
+        "Linux": 3.24,
+        "Windows": 32.1,
+        "macOS": 9.89,
+        "ChromeOS": 1.07,
+        "Mobile (Android/iOS)": 53.5
+      },
+      "windows_share": 32.1,
+      "mac_share": 9.89,
+      "chromeos_share": 1.07,
+      "other_share": 53.7
     },
     {
       "source": "StatCounter",
@@ -1108,6 +2891,39 @@
       "other_share": 6.78
     },
     {
+      "source": "Steam",
+      "date": "2024-08-01",
+      "linux_share": 2.08,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.17,
+        "Linux Mint 21.3 64 bit": 0.11,
+        "Ubuntu 22.04.4 LTS 64 bit": 0.08,
+        "Ubuntu 24.04 LTS 64 bit": 0.07,
+        "Ubuntu Core 22 64 bit": 0.06,
+        "\"Manjaro Linux\" 64 bit": 0.06,
+        "Debian GNU/Linux 12 (bookworm) 64 bit": 0.05
+      },
+      "windows_share": 96.55,
+      "mac_share": 1.37,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2024-09-01",
+      "linux_share": 2.71,
+      "details": {
+        "Linux": 2.71,
+        "Windows": 31.6,
+        "macOS": 10.55,
+        "ChromeOS": 1.57,
+        "Mobile (Android/iOS)": 51.97
+      },
+      "windows_share": 31.6,
+      "mac_share": 10.55,
+      "chromeos_share": 1.57,
+      "other_share": 53.55
+    },
+    {
       "source": "StatCounter",
       "date": "2024-09-01",
       "linux_share": 4.48,
@@ -1122,6 +2938,22 @@
       "mac_share": 15.45,
       "chromeos_share": 2.25,
       "other_share": 4.49
+    },
+    {
+      "source": "DAP",
+      "date": "2024-10-01",
+      "linux_share": 2.47,
+      "details": {
+        "Linux": 2.47,
+        "Windows": 31.3,
+        "macOS": 10.39,
+        "ChromeOS": 1.62,
+        "Mobile (Android/iOS)": 52.74
+      },
+      "windows_share": 31.3,
+      "mac_share": 10.39,
+      "chromeos_share": 1.62,
+      "other_share": 54.2
     },
     {
       "source": "StatCounter",
@@ -1140,6 +2972,22 @@
       "other_share": 4.67
     },
     {
+      "source": "DAP",
+      "date": "2024-11-01",
+      "linux_share": 2.84,
+      "details": {
+        "Linux": 2.84,
+        "Windows": 31.81,
+        "macOS": 10.63,
+        "ChromeOS": 1.64,
+        "Mobile (Android/iOS)": 51.91
+      },
+      "windows_share": 31.81,
+      "mac_share": 10.63,
+      "chromeos_share": 1.64,
+      "other_share": 53.09
+    },
+    {
       "source": "StatCounter",
       "date": "2024-11-01",
       "linux_share": 4.04,
@@ -1154,6 +3002,38 @@
       "mac_share": 15.38,
       "chromeos_share": 2.24,
       "other_share": 5.41
+    },
+    {
+      "source": "Steam",
+      "date": "2024-11-01",
+      "linux_share": 2.0,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.18,
+        "Ubuntu 24.04.1 LTS 64 bit": 0.1,
+        "Linux Mint 22 64 bit": 0.08,
+        "Ubuntu Core 22 64 bit": 0.08,
+        "\"Manjaro Linux\" 64 bit": 0.06,
+        "Linux Mint 21.3 64 bit": 0.05
+      },
+      "windows_share": 96.61,
+      "mac_share": 1.39,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2024-12-01",
+      "linux_share": 2.4,
+      "details": {
+        "Linux": 2.4,
+        "Windows": 28.5,
+        "macOS": 9.78,
+        "ChromeOS": 1.49,
+        "Mobile (Android/iOS)": 56.82
+      },
+      "windows_share": 28.5,
+      "mac_share": 9.78,
+      "chromeos_share": 1.49,
+      "other_share": 57.83
     },
     {
       "source": "StatCounter",
@@ -1172,6 +3052,22 @@
       "other_share": 6.44
     },
     {
+      "source": "DAP",
+      "date": "2025-01-01",
+      "linux_share": 2.61,
+      "details": {
+        "Linux": 2.61,
+        "Windows": 30.64,
+        "macOS": 9.93,
+        "ChromeOS": 1.64,
+        "Mobile (Android/iOS)": 53.49
+      },
+      "windows_share": 30.64,
+      "mac_share": 9.93,
+      "chromeos_share": 1.64,
+      "other_share": 55.19
+    },
+    {
       "source": "StatCounter",
       "date": "2025-01-01",
       "linux_share": 3.72,
@@ -1186,6 +3082,22 @@
       "mac_share": 15.02,
       "chromeos_share": 1.92,
       "other_share": 7.44
+    },
+    {
+      "source": "DAP",
+      "date": "2025-02-01",
+      "linux_share": 2.67,
+      "details": {
+        "Linux": 2.67,
+        "Windows": 30.58,
+        "macOS": 9.87,
+        "ChromeOS": 1.7,
+        "Mobile (Android/iOS)": 53.57
+      },
+      "windows_share": 30.58,
+      "mac_share": 9.87,
+      "chromeos_share": 1.7,
+      "other_share": 55.17
     },
     {
       "source": "StatCounter",
@@ -1204,6 +3116,23 @@
       "other_share": 8.02
     },
     {
+      "source": "DAP",
+      "date": "2025-03-01",
+      "linux_share": 3.1,
+      "details": {
+        "Linux": 3.1,
+        "Windows": 31.71,
+        "macOS": 10.27,
+        "ChromeOS": 1.65,
+        "Mobile (Android/iOS)": 52.75,
+        "Linux x86_64": 0.0
+      },
+      "windows_share": 31.71,
+      "mac_share": 10.27,
+      "chromeos_share": 1.65,
+      "other_share": 53.27
+    },
+    {
       "source": "StatCounter",
       "date": "2025-03-01",
       "linux_share": 3.98,
@@ -1218,6 +3147,23 @@
       "mac_share": 15.7,
       "chromeos_share": 1.86,
       "other_share": 6.79
+    },
+    {
+      "source": "DAP",
+      "date": "2025-04-01",
+      "linux_share": 2.83,
+      "details": {
+        "Linux": 2.82,
+        "Windows": 33.22,
+        "macOS": 10.66,
+        "ChromeOS": 1.7,
+        "Mobile (Android/iOS)": 50.32,
+        "Linux x86_64": 0.01
+      },
+      "windows_share": 33.22,
+      "mac_share": 10.66,
+      "chromeos_share": 1.7,
+      "other_share": 51.58
     },
     {
       "source": "StatCounter",
@@ -1236,6 +3182,40 @@
       "other_share": 7.2
     },
     {
+      "source": "Steam",
+      "date": "2025-04-01",
+      "linux_share": 2.33,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.23,
+        "Linux Mint 22.1 64 bit": 0.12,
+        "Ubuntu Core 22 64 bit": 0.1,
+        "Ubuntu 24.04.2 LTS 64 bit": 0.1,
+        "\"Manjaro Linux\" 64 bit": 0.06,
+        "\"EndeavourOS Linux\" 64 bit": 0.06,
+        "Debian GNU/Linux 12 (bookworm) 64 bit": 0.05
+      },
+      "windows_share": 96.1,
+      "mac_share": 1.58,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2025-05-01",
+      "linux_share": 3.44,
+      "details": {
+        "Linux": 3.42,
+        "Windows": 31.8,
+        "macOS": 10.09,
+        "ChromeOS": 1.63,
+        "Mobile (Android/iOS)": 51.13,
+        "Linux x86_64": 0.02
+      },
+      "windows_share": 31.8,
+      "mac_share": 10.09,
+      "chromeos_share": 1.63,
+      "other_share": 53.03
+    },
+    {
       "source": "StatCounter",
       "date": "2025-05-01",
       "linux_share": 4.06,
@@ -1250,6 +3230,40 @@
       "mac_share": 15.74,
       "chromeos_share": 1.83,
       "other_share": 8.17
+    },
+    {
+      "source": "Steam",
+      "date": "2025-05-01",
+      "linux_share": 2.27,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.21,
+        "Linux Mint 22.1 64 bit": 0.14,
+        "Ubuntu Core 22 64 bit": 0.1,
+        "Ubuntu 24.04.2 LTS 64 bit": 0.1,
+        "\"Manjaro Linux\" 64 bit": 0.06,
+        "\"EndeavourOS Linux\" 64 bit": 0.06,
+        "Debian GNU/Linux 12 (bookworm) 64 bit": 0.05
+      },
+      "windows_share": 96.1,
+      "mac_share": 1.62,
+      "other_share": 0.01
+    },
+    {
+      "source": "DAP",
+      "date": "2025-06-01",
+      "linux_share": 3.26,
+      "details": {
+        "Linux": 3.26,
+        "Windows": 32.12,
+        "macOS": 10.32,
+        "ChromeOS": 0.84,
+        "Mobile (Android/iOS)": 51.77,
+        "Linux x86_64": 0.0
+      },
+      "windows_share": 32.12,
+      "mac_share": 10.32,
+      "chromeos_share": 0.84,
+      "other_share": 53.47
     },
     {
       "source": "StatCounter",
@@ -1268,6 +3282,39 @@
       "other_share": 9.18
     },
     {
+      "source": "Steam",
+      "date": "2025-06-01",
+      "linux_share": 2.69,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.27,
+        "Linux Mint 22.1 64 bit": 0.21,
+        "Ubuntu Core 22 64 bit": 0.12,
+        "Ubuntu 24.04.2 LTS 64 bit": 0.12,
+        "\"EndeavourOS Linux\" 64 bit": 0.07,
+        "\"Manjaro Linux\" 64 bit": 0.07,
+        "Debian GNU/Linux 12 (bookworm) 64 bit": 0.05
+      },
+      "windows_share": 95.45,
+      "mac_share": 1.85,
+      "other_share": 0.01
+    },
+    {
+      "source": "DAP",
+      "date": "2025-07-01",
+      "linux_share": 3.25,
+      "details": {
+        "Linux": 3.25,
+        "Windows": 32.78,
+        "macOS": 10.56,
+        "ChromeOS": 0.67,
+        "Mobile (Android/iOS)": 52.1
+      },
+      "windows_share": 32.78,
+      "mac_share": 10.56,
+      "chromeos_share": 0.67,
+      "other_share": 52.73
+    },
+    {
       "source": "StatCounter",
       "date": "2025-07-01",
       "linux_share": 3.88,
@@ -1282,6 +3329,24 @@
       "mac_share": 13.59,
       "chromeos_share": 1.02,
       "other_share": 9.64
+    },
+    {
+      "source": "DAP",
+      "date": "2025-08-01",
+      "linux_share": 3.74,
+      "details": {
+        "Linux": 3.74,
+        "Windows": 32.62,
+        "macOS": 10.73,
+        "ChromeOS": 0.93,
+        "Mobile (Android/iOS)": 51.18,
+        "Linux armv8l": 0.0,
+        "Linux x86_64": 0.0
+      },
+      "windows_share": 32.62,
+      "mac_share": 10.73,
+      "chromeos_share": 0.93,
+      "other_share": 51.97
     },
     {
       "source": "StatCounter",
@@ -1300,6 +3365,41 @@
       "other_share": 11.65
     },
     {
+      "source": "Steam",
+      "date": "2025-08-01",
+      "linux_share": 2.89,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.31,
+        "Linux Mint 22.1 64 bit": 0.23,
+        "Ubuntu 24.04.2 LTS 64 bit": 0.13,
+        "Ubuntu Core 22 64 bit": 0.12,
+        "\"Manjaro Linux\" 64 bit": 0.07,
+        "\"EndeavourOS Linux\" 64 bit": 0.07,
+        "Fedora Linux 42 (Workstation Edition) 64 bit": 0.06,
+        "Debian GNU/Linux 12 (bookworm) 64 bit": 0.06,
+        "\"Fedora Linux 42 (KDE Plasma Desktop Edition)\" 64 bit": 0.05
+      },
+      "windows_share": 95.23,
+      "mac_share": 1.88,
+      "other_share": 0.0
+    },
+    {
+      "source": "DAP",
+      "date": "2025-09-01",
+      "linux_share": 3.38,
+      "details": {
+        "Linux": 3.38,
+        "Windows": 36.46,
+        "macOS": 11.15,
+        "ChromeOS": 1.56,
+        "Mobile (Android/iOS)": 46.14
+      },
+      "windows_share": 36.46,
+      "mac_share": 11.15,
+      "chromeos_share": 1.56,
+      "other_share": 47.44
+    },
+    {
       "source": "StatCounter",
       "date": "2025-09-01",
       "linux_share": 3.34,
@@ -1314,6 +3414,23 @@
       "mac_share": 12.9,
       "chromeos_share": 1.62,
       "other_share": 11.33
+    },
+    {
+      "source": "DAP",
+      "date": "2025-10-01",
+      "linux_share": 2.85,
+      "details": {
+        "Linux": 2.85,
+        "Windows": 41.05,
+        "macOS": 10.42,
+        "ChromeOS": 1.6,
+        "Mobile (Android/iOS)": 42.51,
+        "Linux x86_64": 0.0
+      },
+      "windows_share": 41.05,
+      "mac_share": 10.42,
+      "chromeos_share": 1.6,
+      "other_share": 44.08
     },
     {
       "source": "StatCounter",
@@ -1332,6 +3449,42 @@
       "other_share": 11.2
     },
     {
+      "source": "Steam",
+      "date": "2025-10-01",
+      "linux_share": 2.68,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.29,
+        "Linux Mint 22.1 64 bit": 0.15,
+        "Ubuntu Core 22 64 bit": 0.11,
+        "Ubuntu 24.04.3 LTS 64 bit": 0.09,
+        "Linux Mint 22.2 64 bit": 0.09,
+        "\"EndeavourOS Linux\" 64 bit": 0.06,
+        "\"Manjaro Linux\" 64 bit": 0.06,
+        "\"Fedora Linux 42 (KDE Plasma Desktop Edition)\" 64 bit": 0.05,
+        "Fedora Linux 42 (Workstation Edition) 64 bit": 0.05
+      },
+      "windows_share": 95.4,
+      "mac_share": 1.91,
+      "other_share": 0.01
+    },
+    {
+      "source": "DAP",
+      "date": "2025-11-01",
+      "linux_share": 3.11,
+      "details": {
+        "Linux": 3.11,
+        "Windows": 41.7,
+        "macOS": 11.22,
+        "ChromeOS": 1.41,
+        "Mobile (Android/iOS)": 40.29,
+        "Linux x86_64": 0.0
+      },
+      "windows_share": 41.7,
+      "mac_share": 11.22,
+      "chromeos_share": 1.41,
+      "other_share": 42.55
+    },
+    {
       "source": "StatCounter",
       "date": "2025-11-01",
       "linux_share": 3.07,
@@ -1348,6 +3501,23 @@
       "other_share": 13.14
     },
     {
+      "source": "DAP",
+      "date": "2025-12-01",
+      "linux_share": 2.57,
+      "details": {
+        "Linux": 2.57,
+        "Windows": 38.66,
+        "macOS": 11.18,
+        "ChromeOS": 1.18,
+        "Mobile (Android/iOS)": 44.52,
+        "Linux x86_64": 0.0
+      },
+      "windows_share": 38.66,
+      "mac_share": 11.18,
+      "chromeos_share": 1.18,
+      "other_share": 46.42
+    },
+    {
       "source": "StatCounter",
       "date": "2025-12-01",
       "linux_share": 3.86,
@@ -1362,6 +3532,23 @@
       "mac_share": 12.46,
       "chromeos_share": 1.23,
       "other_share": 15.98
+    },
+    {
+      "source": "DAP",
+      "date": "2026-01-01",
+      "linux_share": 2.77,
+      "details": {
+        "Linux": 2.77,
+        "Windows": 41.94,
+        "macOS": 12.06,
+        "ChromeOS": 1.27,
+        "Mobile (Android/iOS)": 40.5,
+        "Linux x86_64": 0.0
+      },
+      "windows_share": 41.94,
+      "mac_share": 12.06,
+      "chromeos_share": 1.27,
+      "other_share": 41.94
     },
     {
       "source": "StatCounter",

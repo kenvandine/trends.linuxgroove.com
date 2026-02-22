@@ -1,0 +1,16 @@
+[
+  {
+    "source": "Steam",
+    "date": "2023-11-01",
+    "linux_share": 1.63,
+    "details": {
+      "\"Arch Linux\" 64 bit": 0.13,
+      "Ubuntu 22.04.3 LTS 64 bit": 0.11,
+      "\"Manjaro Linux\" 64 bit": 0.06,
+      "Linux Mint 21.2 64 bit": 0.06
+    },
+    "windows_share": 96.94,
+    "mac_share": 1.43,
+    "other_share": 0.0
+  }
+]

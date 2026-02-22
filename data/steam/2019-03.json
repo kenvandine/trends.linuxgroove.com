@@ -1,0 +1,15 @@
+[
+  {
+    "source": "Steam",
+    "date": "2019-03-01",
+    "linux_share": 0.77,
+    "details": {
+      "Ubuntu 18.04.1 LTS 64 bit": 0.18,
+      "Linux 4.x 64 bit": 0.09,
+      "Ubuntu 18.10 64 bit": 0.06
+    },
+    "windows_share": 96.12,
+    "mac_share": 3.11,
+    "other_share": 0.0
+  }
+]

@@ -1,5 +1,9 @@
+import calendar
+import os
+import time
 import requests
-from datetime import datetime
+from datetime import date, datetime
+from pathlib import Path
 from src.adapters.base_adapter import BaseAdapter
 
 
@@ -13,6 +17,13 @@ class DAPAdapter(BaseAdapter):
     Note: DAP data includes mobile devices (Android, iOS), so Linux share
     here represents desktop Linux as a fraction of *all* government web
     traffic (mobile + desktop), which is lower than desktop-only metrics.
+
+    Historical data (2018-present) is available via the GSA Analytics API:
+      - v1.1: January 2018 – July 2023  (api_key query param)
+      - v2:   August 2023 – present     (x-api-key header)
+
+    Set the DAP_API_KEY environment variable to your api.data.gov key.
+    A DEMO_KEY is used as fallback but has strict rate limits.
     """
 
     SOURCE_INFO = {
@@ -29,11 +40,15 @@ class DAPAdapter(BaseAdapter):
     _MAC_KEYWORDS = frozenset(["macintosh", "mac os", "macos", "os x"])
     _CHROMEOS_KEYWORDS = frozenset(["chromeos", "chrome os", "cros"])
 
+    # GSA API endpoints
+    _API_V1 = "https://api.gsa.gov/analytics/dap/v1.1/reports/os/data"
+    _API_V2 = "https://api.gsa.gov/analytics/dap/v2/reports/os/data"
+
     def __init__(self):
         super().__init__("DAP")
         # os.json provides OS breakdown across all government website sessions
         self.url = "https://analytics.usa.gov/data/live/os.json"
-        self.supported_date_ranges = False  # DAP only provides current/recent data
+        self.supported_date_ranges = True
         self._headers = {
             "User-Agent": (
                 "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
@@ -43,15 +58,31 @@ class DAPAdapter(BaseAdapter):
         }
 
     def fetch_data(self, start_date=None, end_date=None):
-        """Fetch current OS distribution from analytics.usa.gov.
+        """Fetch OS distribution from DAP.
+
+        When start_date and end_date are both provided, fetches historical
+        data month-by-month via the GSA Analytics API. Skips months that
+        already have stored data files.
+
+        When called without dates, fetches the current period from the
+        live analytics.usa.gov endpoint.
 
         Args:
-            start_date: Ignored (DAP provides only current period data).
-            end_date: Ignored.
+            start_date: Start date (YYYY-MM-DD). Requires end_date.
+            end_date:   End date   (YYYY-MM-DD). Requires start_date.
 
         Returns:
-            List with one data point for the current period.
+            List of data points, one per month in the requested range.
         """
+        if start_date and end_date:
+            return self._fetch_historical(start_date, end_date)
+        return self._fetch_current()
+
+    # ------------------------------------------------------------------ #
+    # Current data                                                         #
+    # ------------------------------------------------------------------ #
+
+    def _fetch_current(self):
         try:
             print("  Fetching DAP OS data from analytics.usa.gov...")
             response = requests.get(self.url, headers=self._headers, timeout=30)
@@ -74,6 +105,125 @@ class DAPAdapter(BaseAdapter):
             print(f"  Error fetching DAP data: {e}")
 
         return []
+
+    # ------------------------------------------------------------------ #
+    # Historical data via GSA Analytics API                               #
+    # ------------------------------------------------------------------ #
+
+    def _fetch_historical(self, start_date, end_date):
+        """Fetch one data point per month via the GSA API."""
+        api_key = os.environ.get("DAP_API_KEY", "DEMO_KEY")
+        if api_key == "DEMO_KEY":
+            print(
+                "  WARNING: DAP_API_KEY not set; using DEMO_KEY which has strict "
+                "rate limits. Register free at https://api.data.gov/signup/"
+            )
+
+        start = datetime.strptime(start_date, "%Y-%m-%d")
+        end = datetime.strptime(end_date, "%Y-%m-%d")
+
+        results = []
+        current = date(start.year, start.month, 1)
+        end_month = date(end.year, end.month, 1)
+
+        while current <= end_month:
+            year, month = current.year, current.month
+            year_month = f"{year}-{month:02d}"
+
+            if self._month_file_exists(year_month):
+                print(f"  DAP {year_month}: already stored, skipping")
+            else:
+                points = self._fetch_one_month(year, month, api_key)
+                if points:
+                    results.extend(points)
+                time.sleep(0.5)
+
+            # Advance one month
+            current = (
+                date(year + 1, 1, 1) if month == 12 else date(year, month + 1, 1)
+            )
+
+        return results
+
+    def _fetch_one_month(self, year, month, api_key):
+        """Fetch OS data for one calendar month from the GSA API."""
+        last_day = calendar.monthrange(year, month)[1]
+        after = f"{year}-{month:02d}-01"
+        before = f"{year}-{month:02d}-{last_day:02d}"
+        date_str = f"{year}-{month:02d}-01"
+
+        # v2 for August 2023+, v1.1 for earlier months
+        use_v2 = (year, month) >= (2023, 8)
+
+        if use_v2:
+            url = self._API_V2
+            headers = {**self._headers, "x-api-key": api_key}
+            params = {"after": after, "before": before, "limit": 10000}
+        else:
+            url = self._API_V1
+            headers = self._headers
+            params = {"api_key": api_key, "after": after, "before": before, "limit": 10000}
+
+        api_ver = "v2" if use_v2 else "v1.1"
+        print(f"  DAP {year}-{month:02d}: querying {api_ver} API...")
+
+        try:
+            resp = requests.get(url, headers=headers, params=params, timeout=60)
+
+            if resp.status_code == 429:
+                print(f"  DAP {year}-{month:02d}: rate limited, waiting 30s...")
+                time.sleep(30)
+                resp = requests.get(url, headers=headers, params=params, timeout=60)
+
+            if resp.status_code != 200:
+                print(f"  DAP {year}-{month:02d}: HTTP {resp.status_code}, skipping")
+                return []
+
+            records = resp.json()
+            if not isinstance(records, list) or not records:
+                print(f"  DAP {year}-{month:02d}: empty or unexpected response")
+                return []
+
+            # Aggregate daily visit counts per OS across all records in the month
+            by_os = {}
+            for rec in records:
+                os_name = rec.get("os", "")
+                visits = rec.get("visits", 0) or 0
+                if os_name and os_name not in ("(not set)", ""):
+                    by_os[os_name] = by_os.get(os_name, 0) + visits
+
+            total_users = sum(by_os.values())
+            if not total_users:
+                print(f"  DAP {year}-{month:02d}: no usable visit data")
+                return []
+
+            # Reuse the existing parser (expects same dict structure as live endpoint)
+            os_data = self._parse_dap_data(
+                {"totals": {"by_os": by_os, "totalUsers": total_users}}
+            )
+            if not os_data:
+                return []
+
+            print(
+                f"  DAP {year}-{month:02d}: "
+                f"Linux={os_data['linux_share']:.2f}%  "
+                f"Win={os_data['windows_share']:.2f}%  "
+                f"Mac={os_data['mac_share']:.2f}%"
+            )
+            return self.format_data([{"date": date_str, **os_data}])
+
+        except Exception as exc:
+            print(f"  DAP {year}-{month:02d}: error — {exc}")
+            return []
+
+    def _month_file_exists(self, year_month):
+        """Return True if a non-empty data file already exists for this month."""
+        path = Path("data") / "dap" / f"{year_month}.json"
+        return path.exists() and path.stat().st_size > 20
+
+    # ------------------------------------------------------------------ #
+    # Parsing                                                              #
+    # ------------------------------------------------------------------ #
 
     def _parse_dap_data(self, data):
         """Parse analytics.usa.gov OS JSON into OS share totals.
