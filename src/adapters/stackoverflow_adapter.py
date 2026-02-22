@@ -40,9 +40,20 @@ class StackOverflowAdapter(BaseAdapter):
     _COL_OPSYS    = "OpSys"               # 2020
     _COL_OLD      = "OperatingSystem"     # 2017-2019
 
-    # Keywords that indicate a Linux-based OS entry (case-insensitive substring match)
+    # Choices that represent WSL — checked first and excluded from Linux count.
+    # 2021-2024: "Windows Subsystem for Linux (WSL)"
+    # 2025:      "WSL"
+    _WSL_PATTERNS = (
+        "windows subsystem for linux",  # substring match covers 2021-2024
+        "wsl",                          # exact match for 2025 short form
+    )
+
+    # Keywords that indicate a Linux-based OS entry (case-insensitive substring match).
+    # Applied only AFTER WSL choices have been excluded.
+    # Covers: aggregate labels (2017-2022), individual distros (2023+),
+    # and the 2025 "Linux (non-WSL)" catch-all.
     _LINUX_KEYWORDS = (
-        "linux",
+        "linux",        # "Linux-based", "Linux Desktop", "Linux (non-WSL)", "Other Linux-based"
         "ubuntu",
         "debian",
         "fedora",
@@ -55,6 +66,7 @@ class StackOverflowAdapter(BaseAdapter):
         "elementary",
         "pop!_os",
         "kali",
+        "nixos",
     )
     # Keywords for Windows / macOS
     _WIN_KEYWORDS = ("windows",)
@@ -176,7 +188,7 @@ class StackOverflowAdapter(BaseAdapter):
             print(f"    Could not find OS column in {year} survey. Headers: {headers[:10]}")
             return None
 
-        linux_count = windows_count = mac_count = total = 0
+        linux_count = windows_count = mac_count = wsl_count = total = 0
 
         for row in reader:
             val = (row.get(col) or "").strip()
@@ -187,11 +199,19 @@ class StackOverflowAdapter(BaseAdapter):
             # Multi-select: split on semicolon
             choices = [c.strip().lower() for c in val.split(";") if c.strip()]
 
-            if any(any(kw in c for kw in self._LINUX_KEYWORDS) for c in choices):
+            # Partition choices into WSL and non-WSL before any other matching.
+            # WSL is Windows-hosted and must not be counted as Linux.
+            wsl_choices   = [c for c in choices if self._is_wsl(c)]
+            other_choices = [c for c in choices if not self._is_wsl(c)]
+
+            if wsl_choices:
+                wsl_count += 1
+            has_native_linux = any(any(kw in c for kw in self._LINUX_KEYWORDS) for c in other_choices)
+            if has_native_linux or wsl_choices:
                 linux_count += 1
-            if any(any(kw in c for kw in self._WIN_KEYWORDS) for c in choices):
+            if any(any(kw in c for kw in self._WIN_KEYWORDS) for c in other_choices):
                 windows_count += 1
-            if any(any(kw in c for kw in self._MAC_KEYWORDS) for c in choices):
+            if any(any(kw in c for kw in self._MAC_KEYWORDS) for c in other_choices):
                 mac_count += 1
 
         if total == 0:
@@ -200,6 +220,7 @@ class StackOverflowAdapter(BaseAdapter):
         linux_pct   = round(linux_count   / total * 100, 2)
         windows_pct = round(windows_count / total * 100, 2)
         mac_pct     = round(mac_count     / total * 100, 2)
+        wsl_pct     = round(wsl_count     / total * 100, 2)
         other_pct   = round(max(0, 100 - linux_pct - windows_pct - mac_pct), 2)
 
         # Surveys publish roughly in June; use June 1 as the date
@@ -211,13 +232,22 @@ class StackOverflowAdapter(BaseAdapter):
             "mac_share":     mac_pct,
             "other_share":   other_pct,
             "details": {
-                "Linux":   linux_pct,
-                "Windows": windows_pct,
-                "macOS":   mac_pct,
-                "Other":   other_pct,
+                "Linux":             linux_pct,
+                "Windows":           windows_pct,
+                "macOS":             mac_pct,
+                "WSL":               wsl_pct,
+                "Other":             other_pct,
                 "total_respondents": total,
             },
         }
+
+    def _is_wsl(self, choice):
+        """Return True if a (lowercased) choice string represents WSL."""
+        # Exact match for 2025 short form "wsl"
+        if choice == "wsl":
+            return True
+        # Substring match for 2021-2024 "Windows Subsystem for Linux (WSL)"
+        return "windows subsystem for linux" in choice
 
     def _detect_column(self, headers, year):
         """Return the OS column name for the given survey year."""

@@ -2,15 +2,16 @@
   {
     "source": "StackOverflow",
     "date": "2024-06-01",
-    "linux_share": 47.89,
+    "linux_share": 41.55,
     "details": {
-      "Linux": 47.89,
-      "Windows": 54.61,
+      "Linux": 41.55,
+      "Windows": 53.34,
       "macOS": 28.65,
+      "WSL": 15.44,
       "Other": 0,
       "total_respondents": 65035
     },
-    "windows_share": 54.61,
+    "windows_share": 53.34,
     "mac_share": 28.65,
     "other_share": 0
   }
