@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Linux Groove Market Trends</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <style>
     /* ── Design tokens ── */
@@ -39,7 +42,7 @@
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-family: "Ubuntu", system-ui, -apple-system, sans-serif;
       font-size: 14px;
       line-height: 1.6;
       min-height: 100vh;
@@ -397,6 +400,9 @@
 </div>
 
 <script>
+// Apply Ubuntu to all Chart.js text globally
+Chart.defaults.font.family = '"Ubuntu", system-ui, sans-serif';
+
 /* ═══════════════════════════════════════════════════════════════════
    CONFIG — edit here to add new sources or OS types in future
    ═══════════════════════════════════════════════════════════════════ */
