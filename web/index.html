@@ -298,6 +298,22 @@
     }
     .source-info-card a:hover { text-decoration: underline; }
 
+    /* ── Section divider (Developer Surveys, etc.) ── */
+    .section-divider {
+      border-top: 1px solid var(--border);
+      margin: 8px 0 20px;
+      padding-top: 28px;
+    }
+    .section-divider h2 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .section-divider p {
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
     /* ── Footer ── */
     footer {
       text-align: center;
@@ -456,6 +472,62 @@
   <!-- Source info cards -->
   <div class="sources-grid" id="sources-grid"></div>
 
+  <!-- ── Developer Surveys section ── -->
+  <div class="section-divider" id="survey-section" style="display:none">
+    <h2>Developer Surveys</h2>
+    <p>Self-reported platform preferences from developer community surveys. Reflects developer adoption rather than general desktop or web traffic share.</p>
+  </div>
+
+  <!-- Survey controls (source chips shown only when >1 survey; OS chips always shown) -->
+  <div class="controls" id="survey-controls" style="display:none">
+    <div class="control-group" id="survey-source-group" style="display:none">
+      <label>Surveys</label>
+      <div class="btn-row" id="survey-source-chips"></div>
+    </div>
+    <div class="control-group">
+      <label>Operating Systems</label>
+      <div class="btn-row" id="survey-os-chips">
+        <span class="chip active" data-survey-os="linux" style="--chip-color: hsl(145,65%,50%)">
+          <span class="chip-dot" style="background:hsl(145,65%,50%)"></span>Linux
+        </span>
+        <span class="chip" data-survey-os="windows" style="--chip-color: hsl(210,55%,75%)">
+          <span class="chip-dot" style="background:hsl(210,55%,75%)"></span>Windows
+        </span>
+        <span class="chip" data-survey-os="mac" style="--chip-color: hsl(30,60%,62%)">
+          <span class="chip-dot" style="background:hsl(30,60%,62%)"></span>macOS
+        </span>
+        <span class="chip" data-survey-os="wsl" style="--chip-color: hsl(185,65%,48%)">
+          <span class="chip-dot" style="background:hsl(185,65%,48%)"></span>WSL
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="chart-card" id="survey-chart-card" style="display:none">
+    <h2>OS Share — Developer Surveys</h2>
+    <div class="chart-wrap">
+      <canvas id="survey-chart"></canvas>
+      <div class="no-data hidden" id="survey-no-data">No data to display for this selection.</div>
+    </div>
+  </div>
+
+  <div class="chart-card" id="survey-gap-chart-card" style="display:none">
+    <h2>Linux Gap Analysis — Developer Surveys</h2>
+    <p class="chart-subtitle">Percentage-point difference between Linux and each selected platform (Linux − Platform). Negative = Linux trails; trending upward = Linux gaining ground.</p>
+    <div class="chart-wrap">
+      <canvas id="survey-gap-chart"></canvas>
+      <div class="no-data hidden" id="survey-gap-no-data">No gap data available for this selection.</div>
+    </div>
+  </div>
+
+  <div class="stats-card" id="survey-stats-card" style="display:none">
+    <h2>Latest Readings — Developer Surveys</h2>
+    <table id="survey-stats-table">
+      <thead><tr id="survey-stats-head-row"></tr></thead>
+      <tbody id="survey-stats-body"></tbody>
+    </table>
+  </div>
+
   <footer>
     <p>Data aggregated from public sources. See each source for methodology. &nbsp;|&nbsp;
     <a href="https://trends.linuxgroove.com" target="_blank">trends.linuxgroove.com</a> &nbsp;|&nbsp;
@@ -510,6 +582,7 @@ const SOURCE_CONFIG = {
   },
   StackOverflow: {
     label: "Stack Overflow Survey",
+    survey: true,
     colors: {
       linux:   "hsl(15,80%,55%)",
       windows: "hsl(15,55%,72%)",
@@ -530,13 +603,17 @@ const OS_CONFIG = {
 /* ═══════════════════════════════════════════════════════════════════
    STATE
    ═══════════════════════════════════════════════════════════════════ */
-let allData      = [];       // raw data points from combined.json
-let manifest     = {};       // manifest.json content
-let chart        = null;     // Chart.js instance (main)
-let gapChart     = null;     // Chart.js instance (gap/delta)
-let activeMonths = 0;        // 0 = all time
-let activeSources = new Set();
-let activeOSes   = new Set(["linux"]);
+let allData            = [];   // raw data points from combined.json
+let manifest           = {};   // manifest.json content
+let chart              = null; // Chart.js instance (market)
+let gapChart           = null; // Chart.js instance (market gap)
+let surveyChart        = null; // Chart.js instance (developer surveys)
+let surveyGapChart     = null; // Chart.js instance (developer survey gap)
+let activeMonths       = 0;    // 0 = all time
+let activeSources      = new Set(); // active market sources
+let activeSurveySources = new Set(); // active survey sources
+let activeOSes         = new Set(["linux"]);
+let activeSurveyOSes   = new Set(["linux"]);
 
 /* ═══════════════════════════════════════════════════════════════════
    INIT
@@ -565,9 +642,12 @@ async function init() {
     }
 
     buildSourceChips();
+    buildSurveySourceChips();
     buildSourceInfoCards();
     buildChart();
     buildGapChart();
+    buildSurveyChart();
+    buildSurveyGapChart();
     applyUrlParams();
     render();
 
@@ -596,9 +676,11 @@ async function detectDataBase() {
    BUILD UI COMPONENTS
    ═══════════════════════════════════════════════════════════════════ */
 function buildSourceChips() {
-  // Determine which sources are actually in the data
-  const sourcesInData = [...new Set(allData.map(d => d.source))].sort();
-  activeSources = new Set(sourcesInData); // all on by default
+  // Only market (non-survey) sources
+  const sourcesInData = [...new Set(allData.map(d => d.source))]
+    .filter(s => !SOURCE_CONFIG[s]?.survey)
+    .sort();
+  activeSources = new Set(sourcesInData);
 
   const container = document.getElementById("source-chips");
   container.innerHTML = "";
@@ -612,6 +694,47 @@ function buildSourceChips() {
     chip.innerHTML = `
       <span class="chip-dot" style="background:${cfg.chipColor}"></span>${cfg.label}`;
     container.appendChild(chip);
+  });
+}
+
+function buildSurveySourceChips() {
+  const sourcesInData = [...new Set(allData.map(d => d.source))]
+    .filter(s => SOURCE_CONFIG[s]?.survey)
+    .sort();
+  activeSurveySources = new Set(sourcesInData);
+
+  if (sourcesInData.length === 0) return;
+
+  // Always show section, controls bar, and chart card when survey data exists
+  document.getElementById("survey-section").style.display = "";
+  document.getElementById("survey-controls").style.display = "";
+  document.getElementById("survey-chart-card").style.display = "";
+  document.getElementById("survey-stats-card").style.display = "";
+
+  // Source chip group only needed when there's more than one survey
+  if (sourcesInData.length > 1) {
+    document.getElementById("survey-source-group").style.display = "";
+    const container = document.getElementById("survey-source-chips");
+    container.innerHTML = "";
+    sourcesInData.forEach(src => {
+      const cfg = SOURCE_CONFIG[src] || { label: src, chipColor: "#888" };
+      const chip = document.createElement("span");
+      chip.className = "chip active";
+      chip.dataset.surveySource = src;
+      chip.style.setProperty("--chip-color", cfg.chipColor);
+      chip.innerHTML = `
+        <span class="chip-dot" style="background:${cfg.chipColor}"></span>${cfg.label}`;
+      container.appendChild(chip);
+    });
+  }
+
+  // Hide OS chips for which no survey data exists
+  const surveyData = allData.filter(d => SOURCE_CONFIG[d.source]?.survey);
+  document.querySelectorAll(".chip[data-survey-os]").forEach(chip => {
+    const osKey = chip.dataset.surveyOs;
+    const field = OS_CONFIG[osKey]?.field;
+    const hasData = field && surveyData.some(d => d[field] != null);
+    if (!hasData) chip.style.display = "none";
   });
 }
 
@@ -638,9 +761,10 @@ function buildSourceInfoCards() {
   });
 }
 
-function buildChart() {
-  const ctx = document.getElementById("chart").getContext("2d");
-  chart = new Chart(ctx, {
+// ── Chart factories (shared config) ──────────────────────────────
+function createLineChart(canvasId) {
+  const ctx = document.getElementById(canvasId).getContext("2d");
+  return new Chart(ctx, {
     type: "line",
     data: { labels: [], datasets: [] },
     options: {
@@ -651,47 +775,28 @@ function buildChart() {
         legend: {
           display: true,
           position: "top",
-          labels: {
-            color: "#8892a4",
-            boxWidth: 20,
-            padding: 16,
-            font: { size: 12 },
-            usePointStyle: true,
-            pointStyleWidth: 16,
-          },
+          labels: { color: "#8892a4", boxWidth: 20, padding: 16,
+                    font: { size: 12 }, usePointStyle: true, pointStyleWidth: 16 },
         },
         tooltip: {
-          backgroundColor: "#1a1d26",
-          borderColor: "#2e3348",
-          borderWidth: 1,
-          titleColor: "#e2e8f0",
-          bodyColor: "#8892a4",
+          backgroundColor: "#1a1d26", borderColor: "#2e3348", borderWidth: 1,
+          titleColor: "#e2e8f0", bodyColor: "#8892a4",
           callbacks: {
             label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y?.toFixed(2) ?? "N/A"}%`,
           },
         },
       },
       scales: {
-        x: {
-          grid: { color: "#1e2230" },
-          ticks: { color: "#8892a4", maxTicksLimit: 18, maxRotation: 45 },
-        },
-        y: {
-          grid: { color: "#1e2230" },
-          ticks: {
-            color: "#8892a4",
-            callback: v => v + "%",
-          },
-          min: 0,
-        },
+        x: { grid: { color: "#1e2230" }, ticks: { color: "#8892a4", maxTicksLimit: 18, maxRotation: 45 } },
+        y: { grid: { color: "#1e2230" }, ticks: { color: "#8892a4", callback: v => v + "%" }, min: 0 },
       },
     },
   });
 }
 
-function buildGapChart() {
-  const ctx = document.getElementById("gap-chart").getContext("2d");
-  gapChart = new Chart(ctx, {
+function createGapChart(canvasId) {
+  const ctx = document.getElementById(canvasId).getContext("2d");
+  return new Chart(ctx, {
     type: "line",
     data: { labels: [], datasets: [] },
     options: {
@@ -702,21 +807,12 @@ function buildGapChart() {
         legend: {
           display: true,
           position: "top",
-          labels: {
-            color: "#8892a4",
-            boxWidth: 20,
-            padding: 16,
-            font: { size: 12 },
-            usePointStyle: true,
-            pointStyleWidth: 16,
-          },
+          labels: { color: "#8892a4", boxWidth: 20, padding: 16,
+                    font: { size: 12 }, usePointStyle: true, pointStyleWidth: 16 },
         },
         tooltip: {
-          backgroundColor: "#1a1d26",
-          borderColor: "#2e3348",
-          borderWidth: 1,
-          titleColor: "#e2e8f0",
-          bodyColor: "#8892a4",
+          backgroundColor: "#1a1d26", borderColor: "#2e3348", borderWidth: 1,
+          titleColor: "#e2e8f0", bodyColor: "#8892a4",
           callbacks: {
             label: ctx => {
               const v = ctx.parsed.y;
@@ -727,55 +823,68 @@ function buildGapChart() {
         },
       },
       scales: {
-        x: {
-          grid: { color: "#1e2230" },
-          ticks: { color: "#8892a4", maxTicksLimit: 18, maxRotation: 45 },
-        },
-        y: {
-          grid: { color: "#1e2230" },
-          ticks: {
-            color: "#8892a4",
-            callback: v => (v > 0 ? "+" : "") + v + " pp",
-          },
-        },
+        x: { grid: { color: "#1e2230" }, ticks: { color: "#8892a4", maxTicksLimit: 18, maxRotation: 45 } },
+        y: { grid: { color: "#1e2230" }, ticks: { color: "#8892a4", callback: v => (v > 0 ? "+" : "") + v + " pp" } },
       },
     },
   });
 }
 
+function buildChart()          { chart          = createLineChart("chart"); }
+function buildGapChart()       { gapChart       = createGapChart("gap-chart"); }
+function buildSurveyChart()    { surveyChart    = createLineChart("survey-chart"); }
+function buildSurveyGapChart() { surveyGapChart = createGapChart("survey-gap-chart"); }
+
 /* ═══════════════════════════════════════════════════════════════════
    RENDER
    ═══════════════════════════════════════════════════════════════════ */
 function render() {
+  // ── Market charts ──
   const filtered = filterData();
   const labels   = buildLabels(filtered);
   const datasets = buildDatasets(filtered, labels);
 
   const noData = document.getElementById("no-data");
-  if (datasets.length === 0) {
-    noData.classList.remove("hidden");
-  } else {
-    noData.classList.add("hidden");
-  }
-
+  noData.classList.toggle("hidden", datasets.length > 0);
   chart.data.labels   = labels;
   chart.data.datasets = datasets;
   chart.update();
 
-  renderGapChart(filtered, labels);
-  renderStats(filtered);
+  renderGapChart(filtered, labels, gapChart, "gap-chart-card", "gap-no-data");
+  renderStats(filtered, "stats-head-row", "stats-body", activeOSes);
+
+  // ── Developer Survey charts ──
+  const surveyFiltered = filterSurveyData();
+  const surveyLabels   = buildLabels(surveyFiltered);
+  const surveyDatasets = buildDatasets(surveyFiltered, surveyLabels, activeSurveyOSes);
+
+  const surveyNoData = document.getElementById("survey-no-data");
+  surveyNoData.classList.toggle("hidden", surveyDatasets.length > 0);
+  surveyChart.data.labels   = surveyLabels;
+  surveyChart.data.datasets = surveyDatasets;
+  surveyChart.update();
+
+  renderGapChart(surveyFiltered, surveyLabels, surveyGapChart, "survey-gap-chart-card", "survey-gap-no-data", activeSurveyOSes);
+  renderStats(surveyFiltered, "survey-stats-head-row", "survey-stats-body", activeSurveyOSes);
 }
 
 function filterData() {
-  let data = allData.filter(d => activeSources.has(d.source));
+  let data = allData.filter(d => activeSources.has(d.source) && !SOURCE_CONFIG[d.source]?.survey);
+  return applyTimeframe(data);
+}
 
+function filterSurveyData() {
+  let data = allData.filter(d => activeSurveySources.has(d.source) && SOURCE_CONFIG[d.source]?.survey);
+  return applyTimeframe(data);
+}
+
+function applyTimeframe(data) {
   if (activeMonths > 0) {
     const cutoff = new Date();
     cutoff.setMonth(cutoff.getMonth() - activeMonths);
-    const cutoffStr = cutoff.toISOString().slice(0, 7); // YYYY-MM
+    const cutoffStr = cutoff.toISOString().slice(0, 7);
     data = data.filter(d => d.date.slice(0, 7) >= cutoffStr);
   }
-
   return data;
 }
 
@@ -784,7 +893,7 @@ function buildLabels(data) {
   return [...new Set(data.map(d => d.date.slice(0, 7)))].sort();
 }
 
-function buildDatasets(data, labels) {
+function buildDatasets(data, labels, osSet = activeOSes) {
   const datasets = [];
 
   // Group data by source
@@ -797,7 +906,7 @@ function buildDatasets(data, labels) {
   Object.entries(bySource).forEach(([src, byDate]) => {
     const cfg = SOURCE_CONFIG[src] || { label: src, colors: { linux: "#888", windows: "#aaa", mac: "#ccc" } };
 
-    activeOSes.forEach(osKey => {
+    osSet.forEach(osKey => {
       const osCfg = OS_CONFIG[osKey];
       if (!osCfg) return;
 
@@ -829,14 +938,14 @@ function buildDatasets(data, labels) {
   return datasets;
 }
 
-function renderGapChart(filtered, labels) {
+function renderGapChart(filtered, labels, chartInst, cardId, noDataId, osSet = activeOSes) {
   // Only show when Linux is selected alongside at least one comparison OS
   const compareOSes = [];
-  if (activeOSes.has("linux") && activeOSes.has("windows")) compareOSes.push("windows");
-  if (activeOSes.has("linux") && activeOSes.has("mac"))     compareOSes.push("mac");
+  if (osSet.has("linux") && osSet.has("windows")) compareOSes.push("windows");
+  if (osSet.has("linux") && osSet.has("mac"))     compareOSes.push("mac");
 
-  const gapCard  = document.getElementById("gap-chart-card");
-  const gapNoData = document.getElementById("gap-no-data");
+  const gapCard   = document.getElementById(cardId);
+  const gapNoData = document.getElementById(noDataId);
 
   if (compareOSes.length === 0) {
     gapCard.style.display = "none";
@@ -889,69 +998,68 @@ function renderGapChart(filtered, labels) {
     });
   });
 
-  if (datasets.length === 0) {
-    gapNoData.classList.remove("hidden");
-  } else {
-    gapNoData.classList.add("hidden");
-  }
+  gapNoData.classList.toggle("hidden", datasets.length > 0);
 
-  gapChart.data.labels   = labels;
-  gapChart.data.datasets = datasets;
-  gapChart.update();
+  chartInst.data.labels   = labels;
+  chartInst.data.datasets = datasets;
+  chartInst.update();
 }
 
-function renderStats(data) {
-  const tbody = document.getElementById("stats-body");
+// Renders a "latest readings" stats table.
+// headRowId / bodyId: DOM ids for the thead tr and tbody.
+// osSet: the active OS set for this section (controls delta columns).
+// Auto-detects which OS columns have data, so WSL appears in survey tables
+// without any extra configuration.
+function renderStats(data, headRowId, bodyId, osSet) {
+  const tbody   = document.getElementById(bodyId);
+  const headRow = document.getElementById(headRowId);
   tbody.innerHTML = "";
 
-  // Determine which delta columns to show based on active OS selection
-  const showWinDelta = activeOSes.has("linux") && activeOSes.has("windows");
-  const showMacDelta = activeOSes.has("linux") && activeOSes.has("mac");
-  const totalCols = 6 + (showWinDelta ? 1 : 0) + (showMacDelta ? 1 : 0);
+  // Which OS fields actually have data in this dataset?
+  const allOsKeys     = ["linux", "windows", "mac", "wsl"];
+  const presentOsKeys = allOsKeys.filter(k => data.some(d => d[OS_CONFIG[k].field] != null));
 
-  // Rebuild table header to reflect active delta columns
-  const headRow = document.getElementById("stats-head-row");
+  // Delta columns: comparison OSes selected alongside Linux.
+  // WSL is excluded — it's a Linux subsystem, not a competing platform.
+  const deltaOsKeys = presentOsKeys.filter(
+    k => k !== "linux" && k !== "wsl" && osSet.has("linux") && osSet.has(k)
+  );
+
+  const totalCols = 2 + presentOsKeys.length + 1 + deltaOsKeys.length;
+
   headRow.innerHTML = `
     <th>Source</th>
     <th>Period</th>
-    <th>Linux</th>
-    <th>Windows</th>
-    <th>macOS</th>
+    ${presentOsKeys.map(k => `<th>${OS_CONFIG[k].label}</th>`).join("")}
     <th>MoM Change (Linux)</th>
-    ${showWinDelta ? "<th>vs Windows</th>" : ""}
-    ${showMacDelta ? "<th>vs macOS</th>" : ""}
+    ${deltaOsKeys.map(k => `<th>vs ${OS_CONFIG[k].label}</th>`).join("")}
   `;
 
-  // Get the latest data point per source
   const sources = [...new Set(data.map(d => d.source))];
 
   sources.forEach(src => {
     const srcData = data.filter(d => d.source === src).sort((a, b) => a.date.localeCompare(b.date));
     if (srcData.length === 0) return;
 
-    const latest  = srcData[srcData.length - 1];
-    const prev    = srcData.length > 1 ? srcData[srcData.length - 2] : null;
-    const cfg     = SOURCE_CONFIG[src] || { chipColor: "#888", label: src };
+    const latest = srcData[srcData.length - 1];
+    const prev   = srcData.length > 1 ? srcData[srcData.length - 2] : null;
+    const cfg    = SOURCE_CONFIG[src] || { chipColor: "#888", label: src };
 
     const linuxCur  = latest.linux_share ?? null;
-    const winCur    = latest.windows_share ?? null;
-    const macCur    = latest.mac_share ?? null;
     const linuxPrev = prev?.linux_share ?? null;
-    const winPrev   = prev?.windows_share ?? null;
-    const macPrev   = prev?.mac_share ?? null;
 
-    const momDelta = (linuxCur != null && linuxPrev != null)
-      ? (linuxCur - linuxPrev)
-      : null;
+    const momDelta = (linuxCur != null && linuxPrev != null) ? (linuxCur - linuxPrev) : null;
+    const momClass = momDelta == null ? "trend-flat" : momDelta > 0 ? "trend-up" : "trend-down";
+    const momStr   = momDelta == null ? "—" : (momDelta > 0 ? "+" : "") + momDelta.toFixed(2) + "%";
 
-    const momClass = momDelta == null ? "trend-flat"
-                   : momDelta > 0    ? "trend-up"
-                   : momDelta < 0    ? "trend-down"
-                   : "trend-flat";
-    const momStr   = momDelta == null ? "—"
-                   : (momDelta > 0 ? "+" : "") + momDelta.toFixed(2) + "%";
+    const osCells = presentOsKeys.map(k =>
+      `<td class="pct-cell">${pctCell(latest[OS_CONFIG[k].field] ?? null)}</td>`
+    ).join("");
 
-    const periodStr = formatMonthLabel(latest.date.slice(0, 7));
+    const deltaCells = deltaOsKeys.map(k => {
+      const field = OS_CONFIG[k].field;
+      return `<td class="pct-cell">${ppDeltaCell(linuxCur, latest[field] ?? null, linuxPrev, prev?.[field] ?? null)}</td>`;
+    }).join("");
 
     const row = document.createElement("tr");
     row.innerHTML = `
@@ -961,13 +1069,10 @@ function renderStats(data) {
           ${cfg.label}
         </span>
       </td>
-      <td>${periodStr}</td>
-      <td class="pct-cell">${pctCell(linuxCur)}</td>
-      <td class="pct-cell">${pctCell(winCur)}</td>
-      <td class="pct-cell">${pctCell(macCur)}</td>
+      <td>${formatMonthLabel(latest.date.slice(0, 7))}</td>
+      ${osCells}
       <td class="pct-cell ${momClass}">${momStr}</td>
-      ${showWinDelta ? `<td class="pct-cell">${ppDeltaCell(linuxCur, winCur, linuxPrev, winPrev)}</td>` : ""}
-      ${showMacDelta ? `<td class="pct-cell">${ppDeltaCell(linuxCur, macCur, linuxPrev, macPrev)}</td>` : ""}
+      ${deltaCells}
     `;
     tbody.appendChild(row);
   });
@@ -983,9 +1088,19 @@ function renderStats(data) {
    RESET / SHARE
    ═══════════════════════════════════════════════════════════════════ */
 function resetView() {
-  // Restore all sources
+  // Restore all market sources
   activeSources = new Set([...document.querySelectorAll(".chip[data-source]")].map(c => c.dataset.source));
   document.querySelectorAll(".chip[data-source]").forEach(c => c.classList.add("active"));
+
+  // Restore all survey sources
+  activeSurveySources = new Set([...document.querySelectorAll(".chip[data-survey-source]")].map(c => c.dataset.surveySource));
+  document.querySelectorAll(".chip[data-survey-source]").forEach(c => c.classList.add("active"));
+
+  // Restore Linux-only survey OS
+  activeSurveyOSes = new Set(["linux"]);
+  document.querySelectorAll(".chip[data-survey-os]").forEach(c =>
+    c.classList.toggle("active", c.dataset.surveyOs === "linux")
+  );
 
   // Restore Linux-only OS
   activeOSes = new Set(["linux"]);
@@ -1071,6 +1186,36 @@ document.getElementById("timeframe-btns").addEventListener("click", e => {
 document.getElementById("source-chips").addEventListener("click", e => {
   const chip = e.target.closest(".chip[data-source]");
   if (chip) toggleSource(chip.dataset.source, chip);
+});
+
+document.getElementById("survey-source-chips").addEventListener("click", e => {
+  const chip = e.target.closest(".chip[data-survey-source]");
+  if (!chip) return;
+  const src = chip.dataset.surveySource;
+  if (activeSurveySources.has(src)) {
+    if (activeSurveySources.size === 1) return; // keep at least one
+    activeSurveySources.delete(src);
+    chip.classList.remove("active");
+  } else {
+    activeSurveySources.add(src);
+    chip.classList.add("active");
+  }
+  render();
+});
+
+document.getElementById("survey-os-chips").addEventListener("click", e => {
+  const chip = e.target.closest(".chip[data-survey-os]");
+  if (!chip) return;
+  const os = chip.dataset.surveyOs;
+  if (activeSurveyOSes.has(os)) {
+    if (activeSurveyOSes.size === 1) return; // keep at least one
+    activeSurveyOSes.delete(os);
+    chip.classList.remove("active");
+  } else {
+    activeSurveyOSes.add(os);
+    chip.classList.add("active");
+  }
+  render();
 });
 
 document.getElementById("os-chips").addEventListener("click", e => {
