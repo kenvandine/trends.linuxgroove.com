@@ -1123,6 +1123,8 @@ function shareView() {
   params.set("sources", [...activeSources].join(","));
   params.set("os", [...activeOSes].join(","));
   params.set("months", activeMonths);
+  params.set("survey_sources", [...activeSurveySources].join(","));
+  params.set("survey_os", [...activeSurveyOSes].join(","));
   const url = `${window.location.origin}${window.location.pathname}?${params}`;
 
   const btn = document.getElementById("btn-share");
@@ -1166,6 +1168,28 @@ function applyUrlParams() {
       activeMonths = m;
       document.querySelectorAll(".btn-time").forEach(b =>
         b.classList.toggle("active", parseInt(b.dataset.months, 10) === m)
+      );
+    }
+  }
+
+  if (params.has("survey_sources")) {
+    const requested = new Set(params.get("survey_sources").split(",").map(s => s.trim()).filter(Boolean));
+    const valid = [...requested].filter(s => activeSurveySources.has(s));
+    if (valid.length > 0) {
+      activeSurveySources = new Set(valid);
+      document.querySelectorAll(".chip[data-survey-source]").forEach(c =>
+        c.classList.toggle("active", activeSurveySources.has(c.dataset.surveySource))
+      );
+    }
+  }
+
+  if (params.has("survey_os")) {
+    const requested = new Set(params.get("survey_os").split(",").map(s => s.trim()).filter(Boolean));
+    const valid = [...requested].filter(os => OS_CONFIG[os]);
+    if (valid.length > 0) {
+      activeSurveyOSes = new Set(valid);
+      document.querySelectorAll(".chip[data-survey-os]").forEach(c =>
+        c.classList.toggle("active", activeSurveyOSes.has(c.dataset.surveyOs))
       );
     }
   }
