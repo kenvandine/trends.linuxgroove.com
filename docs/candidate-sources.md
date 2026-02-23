@@ -6,12 +6,12 @@ Sources considered for future integration. Sorted roughly by priority.
 
 ## Developer Surveys
 
-### Eclipse Foundation Developer Survey
-- **URL:** https://www.eclipse.org/community/eclipse_newsletter/
+### Devographics Surveys (State of JS / State of CSS / State of HTML)
+- **URL:** https://stateofjs.com / https://stateofcss.com / https://devographics.com
 - **Cadence:** Annual
-- **OS data:** Yes — includes primary development OS breakdown
-- **Access:** Results published publicly as PDF/HTML reports
-- **Notes:** Skews toward Java/enterprise developers; smaller sample than SO or JetBrains but a distinct audience. Would complement the others well. Data extraction would likely require PDF parsing or HTML scraping of the results page.
+- **OS data:** Uncertain — surveys cover browser/tooling environment; OS question may be present
+- **Access:** Raw JSON data published on GitHub at https://github.com/Devographics/surveys
+- **Notes:** Well-known community developer surveys with 20,000+ respondents. If an OS question exists, the public JSON download would make this straightforward to implement. Worth checking each year's data export for an OS field before investing in an adapter.
 
 ### SlashData State of the Developer Nation
 - **URL:** https://www.slashdata.co/developer-nation
@@ -68,6 +68,16 @@ Sources considered for future integration. Sorted roughly by priority.
 - **Status:** **No OS data** — investigated and ruled out
 - **Notes:** Raw CSVs focus on Kubernetes/container adoption, cloud providers, and CI/CD practices. Multiple years examined (2018, 2019, 2020, 2022) — none include a question about which OS developers use for their workstation or development environment.
 
+### Eclipse Foundation Developer Survey
+- **URL:** https://www.eclipse.org/community/eclipse_newsletter/
+- **Status:** **Not viable** — investigated and ruled out
+- **Notes:** The Eclipse IDE/developer platform survey (which tracked Windows/Linux/macOS workstation usage) ran 2007–2011 only and is no longer published. The ongoing Eclipse IoT & Edge Developer Survey (2018–present) tracks which OS runs *on embedded devices* (Linux vs FreeRTOS vs Zephyr), which is unrelated to desktop developer OS share.
+
+### Wikimedia Analytics (Wikipedia traffic)
+- **URL:** https://analytics.wikimedia.org/
+- **Status:** **No public OS API** — investigated and ruled out
+- **Notes:** OS data exists internally in Wikimedia's Hive/Druid infrastructure (`user_agent_map['os_family']`), but is not exposed through any public REST API. The public `wikimedia.org/api/rest_v1/metrics/` endpoints only provide pageview and unique-device counts without OS dimension. Accessing OS data requires authorized access to their analytics cluster.
+
 ### Kaggle ML & Data Science Survey
 - **URL:** https://www.kaggle.com/c/kaggle-survey-2022
 - **Status:** **Historical data only (2017–2022)** — not implemented; no ongoing updates
@@ -84,12 +94,12 @@ Sources considered for future integration. Sorted roughly by priority.
 - **Access:** Published publicly on their site
 - **Notes:** Heavily skewed toward beginner/learning developers visiting W3Schools tutorials. Not representative of general web traffic but an interesting niche signal. HTML scraping required.
 
-### Wikimedia Analytics (Wikipedia traffic)
-- **URL:** https://analytics.wikimedia.org/
+### W3Counter
+- **URL:** https://www.w3counter.com/globalstats.php
 - **Cadence:** Monthly
-- **OS data:** Yes — OS breakdown available via their public API
-- **Access:** Fully public REST API
-- **Notes:** Wikipedia's global audience is broad and representative. API is well-documented and reliable. Relatively easy to add. See https://wikitech.wikimedia.org/wiki/Analytics
+- **OS data:** Yes — OS breakdown published publicly
+- **Access:** HTML scraping of their public stats page
+- **Notes:** Similar to StatCounter but smaller sample. Publishes monthly OS stats going back several years. Would require HTML scraping since no public API exists. Lower priority given StatCounter already covers this niche.
 
 ---
 
