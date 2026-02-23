@@ -191,6 +191,21 @@
     }
     .chart-wrap { position: relative; height: 380px; }
 
+    .chart-card h2 {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin-bottom: 4px;
+    }
+    .chart-subtitle {
+      font-size: 12px;
+      color: var(--text-muted);
+      opacity: 0.75;
+      margin-bottom: 14px;
+    }
+
     .no-data {
       position: absolute;
       inset: 0;
@@ -401,11 +416,22 @@
     </div>
   </div>
 
-  <!-- Chart -->
+  <!-- Main chart -->
   <div class="chart-card">
+    <h2>Market Share Over Time</h2>
     <div class="chart-wrap">
       <canvas id="chart"></canvas>
       <div class="no-data hidden" id="no-data">No data to display for this selection.</div>
+    </div>
+  </div>
+
+  <!-- Gap / delta chart (shown when a comparison OS is selected alongside Linux) -->
+  <div class="chart-card" id="gap-chart-card" style="display:none">
+    <h2>Linux Gap Analysis</h2>
+    <p class="chart-subtitle">Percentage-point difference between Linux and each selected platform (Linux − Platform). Negative = Linux trails; trending upward = Linux gaining ground.</p>
+    <div class="chart-wrap">
+      <canvas id="gap-chart"></canvas>
+      <div class="no-data hidden" id="gap-no-data">No gap data available for this selection.</div>
     </div>
   </div>
 
@@ -414,7 +440,7 @@
     <h2>Latest Readings</h2>
     <table id="stats-table">
       <thead>
-        <tr>
+        <tr id="stats-head-row">
           <th>Source</th>
           <th>Period</th>
           <th>Linux</th>
@@ -506,7 +532,8 @@ const OS_CONFIG = {
    ═══════════════════════════════════════════════════════════════════ */
 let allData      = [];       // raw data points from combined.json
 let manifest     = {};       // manifest.json content
-let chart        = null;     // Chart.js instance
+let chart        = null;     // Chart.js instance (main)
+let gapChart     = null;     // Chart.js instance (gap/delta)
 let activeMonths = 0;        // 0 = all time
 let activeSources = new Set();
 let activeOSes   = new Set(["linux"]);
@@ -540,6 +567,7 @@ async function init() {
     buildSourceChips();
     buildSourceInfoCards();
     buildChart();
+    buildGapChart();
     applyUrlParams();
     render();
 
@@ -661,6 +689,60 @@ function buildChart() {
   });
 }
 
+function buildGapChart() {
+  const ctx = document.getElementById("gap-chart").getContext("2d");
+  gapChart = new Chart(ctx, {
+    type: "line",
+    data: { labels: [], datasets: [] },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: "index", intersect: false },
+      plugins: {
+        legend: {
+          display: true,
+          position: "top",
+          labels: {
+            color: "#8892a4",
+            boxWidth: 20,
+            padding: 16,
+            font: { size: 12 },
+            usePointStyle: true,
+            pointStyleWidth: 16,
+          },
+        },
+        tooltip: {
+          backgroundColor: "#1a1d26",
+          borderColor: "#2e3348",
+          borderWidth: 1,
+          titleColor: "#e2e8f0",
+          bodyColor: "#8892a4",
+          callbacks: {
+            label: ctx => {
+              const v = ctx.parsed.y;
+              if (v == null) return ` ${ctx.dataset.label}: N/A`;
+              return ` ${ctx.dataset.label}: ${v > 0 ? "+" : ""}${v.toFixed(2)} pp`;
+            },
+          },
+        },
+      },
+      scales: {
+        x: {
+          grid: { color: "#1e2230" },
+          ticks: { color: "#8892a4", maxTicksLimit: 18, maxRotation: 45 },
+        },
+        y: {
+          grid: { color: "#1e2230" },
+          ticks: {
+            color: "#8892a4",
+            callback: v => (v > 0 ? "+" : "") + v + " pp",
+          },
+        },
+      },
+    },
+  });
+}
+
 /* ═══════════════════════════════════════════════════════════════════
    RENDER
    ═══════════════════════════════════════════════════════════════════ */
@@ -680,6 +762,7 @@ function render() {
   chart.data.datasets = datasets;
   chart.update();
 
+  renderGapChart(filtered, labels);
   renderStats(filtered);
 }
 
@@ -746,9 +829,98 @@ function buildDatasets(data, labels) {
   return datasets;
 }
 
+function renderGapChart(filtered, labels) {
+  // Only show when Linux is selected alongside at least one comparison OS
+  const compareOSes = [];
+  if (activeOSes.has("linux") && activeOSes.has("windows")) compareOSes.push("windows");
+  if (activeOSes.has("linux") && activeOSes.has("mac"))     compareOSes.push("mac");
+
+  const gapCard  = document.getElementById("gap-chart-card");
+  const gapNoData = document.getElementById("gap-no-data");
+
+  if (compareOSes.length === 0) {
+    gapCard.style.display = "none";
+    return;
+  }
+  gapCard.style.display = "";
+
+  // Group data by source
+  const bySource = {};
+  filtered.forEach(d => {
+    if (!bySource[d.source]) bySource[d.source] = {};
+    bySource[d.source][d.date.slice(0, 7)] = d;
+  });
+
+  const datasets = [];
+
+  Object.entries(bySource).forEach(([src, byDate]) => {
+    const cfg = SOURCE_CONFIG[src] || { label: src, colors: {} };
+
+    compareOSes.forEach(osKey => {
+      const osCfg = OS_CONFIG[osKey];
+      const hasData = Object.values(byDate).some(
+        d => d.linux_share != null && d[osCfg.field] != null
+      );
+      if (!hasData) return;
+
+      // Use the source's linux color with the comparison OS's dash style so it
+      // stays visually consistent with the main chart's line-style conventions.
+      const linuxColor = cfg.colors.linux || cfg.colors[osKey] || "#888";
+      const dash = osCfg.dash; // [] for windows([6,3]) / [2,3] for mac
+
+      const dataArr = labels.map(lbl => {
+        const pt = byDate[lbl];
+        if (!pt || pt.linux_share == null || pt[osCfg.field] == null) return null;
+        return pt.linux_share - pt[osCfg.field];
+      });
+
+      datasets.push({
+        label: `${cfg.label} — Linux vs ${osCfg.label}`,
+        data: dataArr,
+        borderColor: linuxColor,
+        backgroundColor: linuxColor.replace("hsl", "hsla").replace(")", ",0.08)"),
+        pointRadius: labels.length > 60 ? 0 : 2,
+        pointHoverRadius: 4,
+        borderWidth: 2,
+        borderDash: dash,
+        tension: 0.3,
+        spanGaps: true,
+      });
+    });
+  });
+
+  if (datasets.length === 0) {
+    gapNoData.classList.remove("hidden");
+  } else {
+    gapNoData.classList.add("hidden");
+  }
+
+  gapChart.data.labels   = labels;
+  gapChart.data.datasets = datasets;
+  gapChart.update();
+}
+
 function renderStats(data) {
   const tbody = document.getElementById("stats-body");
   tbody.innerHTML = "";
+
+  // Determine which delta columns to show based on active OS selection
+  const showWinDelta = activeOSes.has("linux") && activeOSes.has("windows");
+  const showMacDelta = activeOSes.has("linux") && activeOSes.has("mac");
+  const totalCols = 6 + (showWinDelta ? 1 : 0) + (showMacDelta ? 1 : 0);
+
+  // Rebuild table header to reflect active delta columns
+  const headRow = document.getElementById("stats-head-row");
+  headRow.innerHTML = `
+    <th>Source</th>
+    <th>Period</th>
+    <th>Linux</th>
+    <th>Windows</th>
+    <th>macOS</th>
+    <th>MoM Change (Linux)</th>
+    ${showWinDelta ? "<th>vs Windows</th>" : ""}
+    ${showMacDelta ? "<th>vs macOS</th>" : ""}
+  `;
 
   // Get the latest data point per source
   const sources = [...new Set(data.map(d => d.source))];
@@ -765,6 +937,8 @@ function renderStats(data) {
     const winCur    = latest.windows_share ?? null;
     const macCur    = latest.mac_share ?? null;
     const linuxPrev = prev?.linux_share ?? null;
+    const winPrev   = prev?.windows_share ?? null;
+    const macPrev   = prev?.mac_share ?? null;
 
     const momDelta = (linuxCur != null && linuxPrev != null)
       ? (linuxCur - linuxPrev)
@@ -792,13 +966,15 @@ function renderStats(data) {
       <td class="pct-cell">${pctCell(winCur)}</td>
       <td class="pct-cell">${pctCell(macCur)}</td>
       <td class="pct-cell ${momClass}">${momStr}</td>
+      ${showWinDelta ? `<td class="pct-cell">${ppDeltaCell(linuxCur, winCur, linuxPrev, winPrev)}</td>` : ""}
+      ${showMacDelta ? `<td class="pct-cell">${ppDeltaCell(linuxCur, macCur, linuxPrev, macPrev)}</td>` : ""}
     `;
     tbody.appendChild(row);
   });
 
   if (tbody.children.length === 0) {
     const row = document.createElement("tr");
-    row.innerHTML = `<td colspan="6" style="color:var(--text-muted);text-align:center">No data for current selection</td>`;
+    row.innerHTML = `<td colspan="${totalCols}" style="color:var(--text-muted);text-align:center">No data for current selection</td>`;
     tbody.appendChild(row);
   }
 }
@@ -932,6 +1108,18 @@ document.getElementById("btn-share").addEventListener("click", shareView);
    ═══════════════════════════════════════════════════════════════════ */
 function pctCell(val) {
   return val != null ? val.toFixed(2) + "%" : "<span style='color:var(--text-muted)'>—</span>";
+}
+
+// Shows the month-over-month change in the Linux vs comparison gap (Δ pp).
+// Positive = gap narrowed (Linux gaining ground) → green.
+// Negative = gap widened (Linux losing ground) → red.
+function ppDeltaCell(linuxCur, otherCur, linuxPrev, otherPrev) {
+  if (linuxCur == null || otherCur == null || linuxPrev == null || otherPrev == null)
+    return "<span style='color:var(--text-muted)'>—</span>";
+  const change = (linuxCur - otherCur) - (linuxPrev - otherPrev);
+  const cls  = change > 0 ? "trend-up" : change < 0 ? "trend-down" : "trend-flat";
+  const sign = change > 0 ? "+" : "";
+  return `<span class="${cls}">${sign}${change.toFixed(2)} pp</span>`;
 }
 
 function formatMonthLabel(ym) {
