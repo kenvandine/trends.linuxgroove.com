@@ -490,13 +490,13 @@
         <span class="chip active" data-survey-os="linux" style="--chip-color: hsl(145,65%,50%)">
           <span class="chip-dot" style="background:hsl(145,65%,50%)"></span>Linux
         </span>
-        <span class="chip" data-survey-os="windows" style="--chip-color: hsl(210,55%,75%)">
+        <span class="chip active" data-survey-os="windows" style="--chip-color: hsl(210,55%,75%)">
           <span class="chip-dot" style="background:hsl(210,55%,75%)"></span>Windows
         </span>
         <span class="chip" data-survey-os="mac" style="--chip-color: hsl(30,60%,62%)">
           <span class="chip-dot" style="background:hsl(30,60%,62%)"></span>macOS
         </span>
-        <span class="chip" data-survey-os="wsl" style="--chip-color: hsl(185,65%,48%)">
+        <span class="chip active" data-survey-os="wsl" style="--chip-color: hsl(185,65%,48%)">
           <span class="chip-dot" style="background:hsl(185,65%,48%)"></span>WSL
         </span>
       </div>
@@ -613,7 +613,7 @@ let activeMonths       = 0;    // 0 = all time
 let activeSources      = new Set(); // active market sources
 let activeSurveySources = new Set(); // active survey sources
 let activeOSes         = new Set(["linux"]);
-let activeSurveyOSes   = new Set(["linux"]);
+let activeSurveyOSes   = new Set(["linux", "windows", "wsl"]);
 
 /* ═══════════════════════════════════════════════════════════════════
    INIT
@@ -1096,10 +1096,10 @@ function resetView() {
   activeSurveySources = new Set([...document.querySelectorAll(".chip[data-survey-source]")].map(c => c.dataset.surveySource));
   document.querySelectorAll(".chip[data-survey-source]").forEach(c => c.classList.add("active"));
 
-  // Restore Linux-only survey OS
-  activeSurveyOSes = new Set(["linux"]);
+  // Restore default survey OSes
+  activeSurveyOSes = new Set(["linux", "windows", "wsl"]);
   document.querySelectorAll(".chip[data-survey-os]").forEach(c =>
-    c.classList.toggle("active", c.dataset.surveyOs === "linux")
+    c.classList.toggle("active", activeSurveyOSes.has(c.dataset.surveyOs))
   );
 
   // Restore Linux-only OS
