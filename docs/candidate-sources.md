@@ -20,19 +20,58 @@ Sources considered for future integration. Sorted roughly by priority.
 - **Access:** Summary reports are free; granular data requires purchasing the full report
 - **Notes:** Very large sample (~20,000 respondents). Free tier may not expose OS breakdown detail; worth checking each report to see what's publicly available.
 
-### CNCF Annual Survey (Cloud Native Computing Foundation)
-- **URL:** https://www.cncf.io/reports/cncf-annual-survey/
-- **Cadence:** Annual
-- **OS data:** Partial — covers development/deployment environments
-- **Access:** Full results published publicly including raw data on GitHub
-- **Notes:** Audience is heavily Kubernetes/cloud-native focused, so Linux numbers will be very high (not representative of general developers). Useful as a "cloud developer" niche signal. Raw data available at https://github.com/cncf/surveys
-
 ### InfoQ Developer Survey
 - **URL:** https://www.infoq.com/articles/ (search "developer survey")
 - **Cadence:** Irregular — not every year
 - **OS data:** Sometimes — depends on the year's focus
 - **Access:** Published publicly on InfoQ
 - **Notes:** Inconsistent cadence and format make automation harder. Worth monitoring but low priority.
+
+---
+
+## AI / ML Developer Surveys
+
+### Linux Foundation AI & Data / Open Source AI Report
+- **URL:** https://www.linuxfoundation.org/research
+- **Cadence:** Annual
+- **OS data:** Possible — covers development environment and tooling
+- **Access:** Free PDF download; raw data not always published
+- **Notes:** Focuses on open-source AI tools and practitioners. Smaller sample than Kaggle/SO. Linux representation likely higher than average due to audience. Would need PDF extraction or manual data entry. Worth checking each year's report for an OS question.
+
+### O'Reilly AI & Technology Salary Survey
+- **URL:** https://www.oreilly.com/radar/
+- **Cadence:** Annual
+- **OS data:** Possible — includes developer environment questions
+- **Access:** Report available free (registration may be required)
+- **Notes:** Large sample of tech professionals; not strictly AI-focused but includes ML/AI practitioners. OS breakdown not confirmed in every edition; review report before implementing.
+
+### Hugging Face Annual Report / Community Survey
+- **URL:** https://huggingface.co/blog
+- **Cadence:** Irregular
+- **OS data:** Unknown — no confirmed OS question found
+- **Access:** Published publicly on their blog
+- **Notes:** Audience is AI/ML focused with heavy open-source use. No structured data download identified. Low priority unless they publish a formal survey with an OS question.
+
+---
+
+## Investigated — No OS Data
+
+### Anaconda State of Data Science Survey
+- **URL:** https://www.anaconda.com/state-of-data-science
+- **Raw data:** https://github.com/anaconda/state-of-data-science
+- **Status:** **No OS data** — investigated and ruled out
+- **Notes:** The survey covers data science tools, workflows, and deployment environments (local vs. cloud) but does not ask which operating system respondents use. The 2023 CSV (the only edition with public raw data) confirms no OS question.
+
+### CNCF Cloud Native Survey
+- **URL:** https://www.cncf.io/reports/cncf-annual-survey/
+- **Raw data:** https://github.com/cncf/surveys
+- **Status:** **No OS data** — investigated and ruled out
+- **Notes:** Raw CSVs focus on Kubernetes/container adoption, cloud providers, and CI/CD practices. Multiple years examined (2018, 2019, 2020, 2022) — none include a question about which OS developers use for their workstation or development environment.
+
+### Kaggle ML & Data Science Survey
+- **URL:** https://www.kaggle.com/c/kaggle-survey-2022
+- **Status:** **Historical data only (2017–2022)** — not implemented; no ongoing updates
+- **Notes:** The traditional ML & DS survey ran annually 2017–2022. The 2023 edition was replaced by an AI Report essay competition with no demographic OS data. No traditional survey with OS data has been published since 2022. The historical data is downloadable via the Kaggle API but without ongoing updates, this source doesn't meaningfully track continued Linux adoption.
 
 ---
 
