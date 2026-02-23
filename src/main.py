@@ -38,6 +38,9 @@ Examples:
   # Backfill Stack Overflow Developer Survey history (annual, 2017-present)
   python3 -m src.main --source stackoverflow --range-from 2017-01-01 --range-to 2026-01-01
 
+  # Backfill JetBrains Developer Ecosystem Survey history (annual, 2019-present)
+  python3 -m src.main --source jetbrains --range-from 2019-01-01 --range-to 2026-01-01
+
   # Collect from a single source
   python3 -m src.main --source steam
 
@@ -51,7 +54,7 @@ Examples:
     parser.add_argument("--month", "-m", help="Collect a single month (YYYY-MM)")
     parser.add_argument(
         "--source", "-s",
-        choices=["steam", "statcounter", "dap", "cloudflare", "stackoverflow"],
+        choices=["steam", "statcounter", "dap", "cloudflare", "stackoverflow", "jetbrains"],
         help="Only collect from this source",
     )
     parser.add_argument(

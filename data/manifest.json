@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-02-22T04:34:36Z",
+  "last_updated": "2026-02-23T19:05:52Z",
   "sources": {
     "steam": {
       "id": "steam",
@@ -307,7 +307,6 @@
       "covers": "all_devices",
       "region": "global",
       "files": [
-        "2023-05",
         "2023-06",
         "2023-07",
         "2023-08",
@@ -342,7 +341,7 @@
         "2026-01"
       ],
       "date_range": {
-        "from": "2023-05",
+        "from": "2023-06",
         "to": "2026-01"
       }
     },
@@ -366,6 +365,28 @@
       "date_range": {
         "from": "2019-06",
         "to": "2025-06"
+      }
+    },
+    "jetbrains": {
+      "id": "jetbrains",
+      "name": "JetBrains Developer Ecosystem Survey",
+      "description": "OS used for development among software developers (annual survey)",
+      "url": "https://www.jetbrains.com/lp/devecosystem/",
+      "methodology": "Self-reported annual survey of ~20,000+ developers worldwide. Multi-select OS question; shares can exceed 100%.",
+      "covers": "desktop",
+      "region": "global",
+      "files": [
+        "2019-01",
+        "2020-01",
+        "2021-01",
+        "2022-01",
+        "2023-01",
+        "2024-01",
+        "2025-01"
+      ],
+      "date_range": {
+        "from": "2019-01",
+        "to": "2025-01"
       }
     }
   }

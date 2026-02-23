@@ -1,9 +1,10 @@
 {
   "metadata": {
-    "last_updated": "2026-02-22T04:34:36Z",
+    "last_updated": "2026-02-23T19:05:52Z",
     "sources": [
       "Cloudflare",
       "DAP",
+      "JetBrains",
       "StackOverflow",
       "StatCounter",
       "Steam"
@@ -37,6 +38,20 @@
       "mac_share": 7.97,
       "chromeos_share": 1.46,
       "other_share": 49.19
+    },
+    {
+      "source": "JetBrains",
+      "date": "2019-01-01",
+      "linux_share": 47.0,
+      "details": {
+        "Linux": 47.0,
+        "Windows": 56.0,
+        "macOS": 49.0,
+        "total_respondents": 6000,
+        "note": "Multi-select; shares can exceed 100%"
+      },
+      "windows_share": 56.0,
+      "mac_share": 49.0
     },
     {
       "source": "StatCounter",
@@ -614,6 +629,20 @@
       "other_share": 49.62
     },
     {
+      "source": "JetBrains",
+      "date": "2020-01-01",
+      "linux_share": 49.0,
+      "details": {
+        "Linux": 49.0,
+        "Windows": 59.0,
+        "macOS": 49.0,
+        "total_respondents": 19696,
+        "note": "Multi-select; shares can exceed 100%"
+      },
+      "windows_share": 59.0,
+      "mac_share": 49.0
+    },
+    {
       "source": "StatCounter",
       "date": "2020-01-01",
       "linux_share": 1.9,
@@ -1180,6 +1209,20 @@
       "other_share": 60.81
     },
     {
+      "source": "JetBrains",
+      "date": "2021-01-01",
+      "linux_share": 47.0,
+      "details": {
+        "Linux": 47.0,
+        "Windows": 61.0,
+        "macOS": 45.0,
+        "total_respondents": 31743,
+        "note": "Multi-select; shares can exceed 100%"
+      },
+      "windows_share": 61.0,
+      "mac_share": 45.0
+    },
+    {
       "source": "StatCounter",
       "date": "2021-01-01",
       "linux_share": 1.91,
@@ -1722,6 +1765,20 @@
       "mac_share": 10.16,
       "chromeos_share": 1.41,
       "other_share": 58.08
+    },
+    {
+      "source": "JetBrains",
+      "date": "2022-01-01",
+      "linux_share": 40.0,
+      "details": {
+        "Linux": 40.0,
+        "Windows": 62.0,
+        "macOS": 44.0,
+        "total_respondents": 29000,
+        "note": "Multi-select; shares can exceed 100%"
+      },
+      "windows_share": 62.0,
+      "mac_share": 44.0
     },
     {
       "source": "StatCounter",
@@ -2300,6 +2357,20 @@
       "other_share": 55.93
     },
     {
+      "source": "JetBrains",
+      "date": "2023-01-01",
+      "linux_share": 46.0,
+      "details": {
+        "Linux": 46.0,
+        "Windows": 62.0,
+        "macOS": 42.0,
+        "total_respondents": 26348,
+        "note": "Multi-select; shares can exceed 100%"
+      },
+      "windows_share": 62.0,
+      "mac_share": 42.0
+    },
+    {
       "source": "StatCounter",
       "date": "2023-01-01",
       "linux_share": 2.91,
@@ -2465,22 +2536,6 @@
       "windows_share": 97.75,
       "mac_share": 1.41,
       "other_share": 0.0
-    },
-    {
-      "source": "Cloudflare",
-      "date": "2023-05-01",
-      "linux_share": 4.31,
-      "details": {
-        "Linux": 4.31,
-        "Windows": 30.38,
-        "macOS": 0.0,
-        "Android": 40.4,
-        "iOS": 17.48,
-        "Other": 0.0
-      },
-      "windows_share": 30.38,
-      "mac_share": 0.0,
-      "other_share": 57.88
     },
     {
       "source": "DAP",
@@ -3011,6 +3066,20 @@
       "mac_share": 9.77,
       "chromeos_share": 1.86,
       "other_share": 56.42
+    },
+    {
+      "source": "JetBrains",
+      "date": "2024-01-01",
+      "linux_share": 49.0,
+      "details": {
+        "Linux": 49.0,
+        "Windows": 58.0,
+        "macOS": 42.0,
+        "total_respondents": 23000,
+        "note": "Multi-select; shares can exceed 100%"
+      },
+      "windows_share": 58.0,
+      "mac_share": 42.0
     },
     {
       "source": "StatCounter",
@@ -3788,6 +3857,20 @@
       "mac_share": 9.93,
       "chromeos_share": 1.64,
       "other_share": 55.19
+    },
+    {
+      "source": "JetBrains",
+      "date": "2025-01-01",
+      "linux_share": 47.5,
+      "details": {
+        "Linux": 47.5,
+        "Windows": 59.9,
+        "macOS": 53.0,
+        "total_respondents": 24534,
+        "note": "Multi-select; shares can exceed 100%"
+      },
+      "windows_share": 59.9,
+      "mac_share": 53.0
     },
     {
       "source": "StatCounter",

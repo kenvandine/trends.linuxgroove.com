@@ -1,0 +1,16 @@
+[
+  {
+    "source": "JetBrains",
+    "date": "2022-01-01",
+    "linux_share": 40.0,
+    "details": {
+      "Linux": 40.0,
+      "Windows": 62.0,
+      "macOS": 44.0,
+      "total_respondents": 29000,
+      "note": "Multi-select; shares can exceed 100%"
+    },
+    "windows_share": 62.0,
+    "mac_share": 44.0
+  }
+]

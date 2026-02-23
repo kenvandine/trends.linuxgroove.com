@@ -55,6 +55,7 @@ htmlcov/
 !CONTRIBUTING.md
 !CHANGELOG.md
 !LICENSE.md
+!docs/*.md
 
 # Project specific
 *.png
