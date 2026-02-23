@@ -6,12 +6,13 @@ Sources considered for future integration. Sorted roughly by priority.
 
 ## Developer Surveys
 
-### Devographics Surveys (State of JS / State of CSS / State of HTML)
-- **URL:** https://stateofjs.com / https://stateofcss.com / https://devographics.com
-- **Cadence:** Annual
-- **OS data:** Uncertain — surveys cover browser/tooling environment; OS question may be present
-- **Access:** Raw JSON data published on GitHub at https://github.com/Devographics/surveys
-- **Notes:** Well-known community developer surveys with 20,000+ respondents. If an OS question exists, the public JSON download would make this straightforward to implement. Worth checking each year's data export for an OS field before investing in an adapter.
+### Devographics — State of Devs
+- **URL:** https://stateofdevs.com
+- **Cadence:** Annual (first edition: 2025)
+- **OS data:** Yes — "What is the primary operating system in which you work?" (macOS / Windows / Linux)
+- **Access:** Results published at https://2025.stateofdevs.com/en-US/technology/; raw data likely on GitHub at https://github.com/Devographics/surveys
+- **2025 results:** macOS 57%, Windows 28%, Linux 15%
+- **Notes:** New survey launched in 2025 covering non-technical aspects of developer life. Only one data point so far — not useful for trend tracking yet. Implement once a second year of data is published. State of JS / State of CSS / State of HTML (the older Devographics surveys) do **not** include an OS question.
 
 ### SlashData State of the Developer Nation
 - **URL:** https://www.slashdata.co/developer-nation
