@@ -61,6 +61,15 @@ SOURCE_METADATA = {
         "covers": "desktop",
         "region": "global",
     },
+    "firefox": {
+        "id": "firefox",
+        "name": "Firefox Public Data Report",
+        "description": "OS distribution among Firefox desktop release channel users (weekly)",
+        "url": "https://data.firefox.com/dashboard/hardware",
+        "methodology": "Weekly sample of Firefox telemetry from the desktop release channel",
+        "covers": "desktop",
+        "region": "global",
+    },
 }
 
 
@@ -69,7 +78,7 @@ class JSONStorageHandler:
 
     def __init__(self, data_dir="data"):
         self.data_dir = Path(data_dir)
-        for subdir in ["steam", "statcounter", "dap", "cloudflare", "stackoverflow", "jetbrains"]:
+        for subdir in ["steam", "statcounter", "dap", "cloudflare", "stackoverflow", "jetbrains", "firefox"]:
             (self.data_dir / subdir).mkdir(parents=True, exist_ok=True)
 
     def _source_dir(self, source_name):
@@ -81,6 +90,7 @@ class JSONStorageHandler:
             "Cloudflare": "cloudflare",
             "StackOverflow": "stackoverflow",
             "JetBrains": "jetbrains",
+            "Firefox": "firefox",
         }
         return mapping.get(source_name, source_name.lower())
 
@@ -118,7 +128,7 @@ class JSONStorageHandler:
 
     def get_data(self, source_id=None, start_date=None, end_date=None):
         """Retrieve data points filtered by source and/or date range."""
-        source_dirs = [source_id.lower()] if source_id else ["steam", "statcounter", "dap", "cloudflare", "stackoverflow", "jetbrains"]
+        source_dirs = [source_id.lower()] if source_id else ["steam", "statcounter", "dap", "cloudflare", "stackoverflow", "jetbrains", "firefox"]
         data = []
 
         for source_dir in source_dirs:

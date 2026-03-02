@@ -7,6 +7,7 @@ from src.adapters.dap_adapter import DAPAdapter
 from src.adapters.cloudflare_adapter import CloudflareAdapter
 from src.adapters.stackoverflow_adapter import StackOverflowAdapter
 from src.adapters.jetbrains_adapter import JetBrainsAdapter
+from src.adapters.firefox_adapter import FirefoxAdapter
 from src.storage.json_storage_handler import JSONStorageHandler
 
 
@@ -21,6 +22,7 @@ class MarketTrendsEngine:
             CloudflareAdapter(),
             StackOverflowAdapter(),
             JetBrainsAdapter(),
+            FirefoxAdapter(),
         ]
         self.storage = JSONStorageHandler()
 

@@ -1,0 +1,13 @@
+[
+  {
+    "source": "Firefox",
+    "date": "2018-12-31",
+    "linux_share": 2.77,
+    "details": {
+      "Linux-4.x": 2.77
+    },
+    "windows_share": 90.07,
+    "mac_share": 6.64,
+    "other_share": 0.53
+  }
+]

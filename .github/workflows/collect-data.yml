@@ -2,7 +2,8 @@ name: Collect Data and Deploy
 
 on:
   schedule:
-    - cron: '0 8 1 * *'  # 08:00 UTC on the 1st of every month
+    - cron: '0 8 1 * *'   # 08:00 UTC on the 1st of every month (all sources)
+    - cron: '0 8 * * 1'   # 08:00 UTC every Monday (Firefox weekly update)
   workflow_dispatch:
     inputs:
       source:
@@ -17,6 +18,7 @@ on:
           - dap
           - cloudflare
           - stackoverflow
+          - firefox
 
 # Needs write access to commit data files back to main.
 permissions:
@@ -54,8 +56,12 @@ jobs:
           CLOUDFLARE_RADAR_API_KEY: ${{ secrets.CLOUDFLARE_RADAR_API_KEY }}
         run: |
           SOURCE="${{ github.event.inputs.source }}"
+          SCHEDULE="${{ github.event.schedule }}"
           if [ -n "$SOURCE" ]; then
             python3 -m src.main --source "$SOURCE"
+          elif [ "$SCHEDULE" = "0 8 * * 1" ]; then
+            # Weekly Monday run — Firefox data only
+            python3 -m src.main --source firefox
           else
             python3 -m src.main
           fi

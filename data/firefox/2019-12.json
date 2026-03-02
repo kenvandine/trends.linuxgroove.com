@@ -1,0 +1,62 @@
+[
+  {
+    "source": "Firefox",
+    "date": "2019-12-30",
+    "linux_share": 3.26,
+    "details": {
+      "Linux-5.x": 1.16,
+      "Linux-4.x": 2.1
+    },
+    "windows_share": 89.48,
+    "mac_share": 6.88,
+    "other_share": 0.38
+  },
+  {
+    "source": "Firefox",
+    "date": "2019-12-23",
+    "linux_share": 3.24,
+    "details": {
+      "Linux-5.x": 1.13,
+      "Linux-4.x": 2.1
+    },
+    "windows_share": 89.65,
+    "mac_share": 6.73,
+    "other_share": 0.39
+  },
+  {
+    "source": "Firefox",
+    "date": "2019-12-16",
+    "linux_share": 3.38,
+    "details": {
+      "Linux-5.x": 1.05,
+      "Linux-4.x": 2.33
+    },
+    "windows_share": 89.55,
+    "mac_share": 6.62,
+    "other_share": 0.45
+  },
+  {
+    "source": "Firefox",
+    "date": "2019-12-09",
+    "linux_share": 3.42,
+    "details": {
+      "Linux-5.x": 1.02,
+      "Linux-4.x": 2.4
+    },
+    "windows_share": 89.48,
+    "mac_share": 6.64,
+    "other_share": 0.47
+  },
+  {
+    "source": "Firefox",
+    "date": "2019-12-02",
+    "linux_share": 3.45,
+    "details": {
+      "Linux-5.x": 1.01,
+      "Linux-4.x": 2.44
+    },
+    "windows_share": 89.4,
+    "mac_share": 6.66,
+    "other_share": 0.48
+  }
+]
