@@ -1,0 +1,22 @@
+[
+  {
+    "source": "StatsBetaGouv",
+    "date": "2026-03-01",
+    "linux_share": 1.46,
+    "details": {
+      "iOS": 41.84,
+      "Android": 30.47,
+      "Windows": 19.84,
+      "Mac": 5.88,
+      "GNU/Linux": 1.46,
+      "Chrome OS": 0.36,
+      "Inconnu": 0.14,
+      "Console": 0.0,
+      "Unix": 0.0
+    },
+    "windows_share": 19.84,
+    "mac_share": 5.88,
+    "chromeos_share": 0.36,
+    "other_share": 72.45
+  }
+]

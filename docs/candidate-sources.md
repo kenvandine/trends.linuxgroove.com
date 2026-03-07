@@ -88,6 +88,13 @@ Sources considered for future integration. Sorted roughly by priority.
 
 ## Web / Traffic Analytics
 
+### stats.beta.gouv.fr (France public digital services)
+- **URL:** https://stats.beta.gouv.fr/
+- **Cadence:** Monthly (queryable by month)
+- **OS data:** Yes — Matomo `DevicesDetection.getOsFamilies` includes Windows / Mac / GNU/Linux / iOS / Android / Chrome OS
+- **Access:** Public Matomo Reporting API (no auth needed for aggregated reports), e.g. `https://stats.beta.gouv.fr/?module=API&method=DevicesDetection.getOsFamilies&idSite=all&period=month&date=2026-02-01&format=json`
+- **Notes:** Strong candidate. This is the closest French analogue discovered to DAP-style public OS analytics. Data is returned per site ID; aggregate across top-level keys to compute monthly totals. Coverage appears sparse before 2023-02 and grows through 2024 (site mix changes over time), so treat early history carefully.
+
 ### W3Schools Browser Statistics
 - **URL:** https://www.w3schools.com/browsers/
 - **Cadence:** Monthly
@@ -101,6 +108,31 @@ Sources considered for future integration. Sorted roughly by priority.
 - **OS data:** Yes — OS breakdown published publicly
 - **Access:** HTML scraping of their public stats page
 - **Notes:** Similar to StatCounter but smaller sample. Publishes monthly OS stats going back several years. Would require HTML scraping since no public API exists. Lower priority given StatCounter already covers this niche.
+
+---
+
+## Government / Public-Sector Analytics
+
+### EU Publications Office Web Analytics (webanalytics.op.europa.eu)
+- **URL:** https://webanalytics.op.europa.eu/en/
+- **Cadence:** Monthly dashboards
+- **OS data:** Likely present in dashboard views, but API/export access is inconsistent across subdomains
+- **Access:** Public Superset dashboards exist; some endpoints expose chart APIs, but broad monthly-report access appears permission-gated for anonymous users
+- **Notes:** Promising but medium effort due access variability. Could be integrated if a stable public CSV/JSON endpoint is identified for an OS chart.
+
+### data.gouv.fr consultation stats (France)
+- **URL:** https://www.data.gouv.fr/datasets/statistiques-de-consultation-de-data-gouv-fr
+- **Cadence:** Daily (yearly CSV files)
+- **OS data:** **No**
+- **Access:** Open CSV + pipeline code published
+- **Notes:** Useful traffic telemetry but no OS dimension in exported fields (`API.get` rollups only). Not suitable for OS-share tracking.
+
+### Audiences quotidiennes des principaux sites web gouvernementaux (France)
+- **URL:** https://www.data.gouv.fr/datasets/audiences-quotidiennes-des-principaux-sites-web-gouvernementaux
+- **Cadence:** Historical only
+- **OS data:** **No** (site totals + support categories)
+- **Access:** Open ZIP archives
+- **Notes:** Last updated 2019-05-24. Historical reference only; not viable as an ongoing trend source.
 
 ---
 

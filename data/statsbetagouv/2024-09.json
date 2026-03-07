@@ -1,0 +1,24 @@
+[
+  {
+    "source": "StatsBetaGouv",
+    "date": "2024-09-01",
+    "linux_share": 0.64,
+    "details": {
+      "iOS": 39.1,
+      "Android": 32.49,
+      "Windows": 22.23,
+      "Mac": 5.16,
+      "GNU/Linux": 0.64,
+      "Chrome OS": 0.37,
+      "Inconnu": 0.0,
+      "Console": 0.0,
+      "Other Mobile": 0.0,
+      "Real-time OS": 0.0,
+      "Unix": 0.0
+    },
+    "windows_share": 22.23,
+    "mac_share": 5.16,
+    "chromeos_share": 0.37,
+    "other_share": 71.6
+  }
+]

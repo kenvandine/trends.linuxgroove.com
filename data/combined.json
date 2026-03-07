@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-03-02T19:34:23Z",
+    "last_updated": "2026-03-07T17:06:23Z",
     "sources": [
       "Cloudflare",
       "DAP",
@@ -8,10 +8,13 @@
       "JetBrains",
       "StackOverflow",
       "StatCounter",
-      "Steam"
+      "StatsBetaGouv",
+      "Steam",
+      "W3Counter",
+      "W3Schools"
     ],
     "date_range": {
-      "from": "2018-12-31",
+      "from": "2018-01-01",
       "to": "2026-03-01"
     },
     "fields": [
@@ -24,6 +27,498 @@
     ]
   },
   "data": [
+    {
+      "source": "W3Counter",
+      "date": "2018-01-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 17.0,
+        "Windows 7": 16.77,
+        "Android 7": 11.51,
+        "iOS 11": 10.88,
+        "Android 6": 9.69,
+        "Android 5": 8.01,
+        "Android 4": 4.84,
+        "Mac OS X": 4.36,
+        "Windows 8.1": 3.17,
+        "iOS 10": 2.95
+      },
+      "windows_share": 36.94,
+      "mac_share": 4.36,
+      "chromeos_share": 0.0,
+      "other_share": 58.7
+    },
+    {
+      "source": "W3Schools",
+      "date": "2018-01-01",
+      "linux_share": 5.7,
+      "details": {
+        "win10": 41.6,
+        "win8": 7.9,
+        "win7": 26.3,
+        "vista": 0.1,
+        "winxp": 0.5,
+        "linux": 5.7,
+        "mac": 10.0,
+        "chromeos": 1.3,
+        "mobile": 7.7
+      },
+      "windows_share": 76.4,
+      "mac_share": 10.0,
+      "chromeos_share": 1.3,
+      "other_share": 7.7
+    },
+    {
+      "source": "W3Counter",
+      "date": "2018-02-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 15.96,
+        "Windows 7": 15.92,
+        "Android 7": 12.86,
+        "iOS 11": 11.46,
+        "Android 6": 10.09,
+        "Android 5": 8.03,
+        "Android 4": 5.1,
+        "Mac OS X": 4.61,
+        "Windows 8.1": 3.02,
+        "iOS 10": 2.73
+      },
+      "windows_share": 34.9,
+      "mac_share": 4.61,
+      "chromeos_share": 0.0,
+      "other_share": 60.49
+    },
+    {
+      "source": "W3Schools",
+      "date": "2018-02-01",
+      "linux_share": 5.6,
+      "details": {
+        "win10": 42.3,
+        "win8": 7.6,
+        "win7": 25.6,
+        "vista": 0.1,
+        "winxp": 0.5,
+        "linux": 5.6,
+        "mac": 10.3,
+        "chromeos": 0.3,
+        "mobile": 7.9
+      },
+      "windows_share": 76.1,
+      "mac_share": 10.3,
+      "chromeos_share": 0.3,
+      "other_share": 7.9
+    },
+    {
+      "source": "W3Counter",
+      "date": "2018-03-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 7": 15.62,
+        "Windows 10": 15.32,
+        "Android 7": 13.53,
+        "iOS 11": 11.7,
+        "Android 6": 10.3,
+        "Android 5": 7.77,
+        "Mac OS X": 5.27,
+        "Android 4": 4.61,
+        "Windows 8.1": 2.75,
+        "iOS 10": 2.41
+      },
+      "windows_share": 33.69,
+      "mac_share": 5.27,
+      "chromeos_share": 0.0,
+      "other_share": 61.04
+    },
+    {
+      "source": "W3Schools",
+      "date": "2018-03-01",
+      "linux_share": 5.5,
+      "details": {
+        "win10": 43.7,
+        "win8": 7.4,
+        "win7": 24.7,
+        "vista": 0.1,
+        "winxp": 0.4,
+        "linux": 5.5,
+        "mac": 10.4,
+        "chromeos": 0.3,
+        "mobile": 7.8
+      },
+      "windows_share": 76.3,
+      "mac_share": 10.4,
+      "chromeos_share": 0.3,
+      "other_share": 7.8
+    },
+    {
+      "source": "W3Counter",
+      "date": "2018-04-01",
+      "linux_share": 2.25,
+      "details": {
+        "Windows 7": 14.56,
+        "Android 7": 13.94,
+        "Windows 10": 13.92,
+        "Android 6": 11.49,
+        "iOS 11": 11.11,
+        "Android 5": 9.27,
+        "Android 4": 5.03,
+        "Mac OS X": 3.88,
+        "Windows 8.1": 2.43,
+        "Linux": 2.25
+      },
+      "windows_share": 30.91,
+      "mac_share": 3.88,
+      "chromeos_share": 0.0,
+      "other_share": 62.96
+    },
+    {
+      "source": "W3Schools",
+      "date": "2018-04-01",
+      "linux_share": 5.5,
+      "details": {
+        "win10": 44.6,
+        "win8": 7.1,
+        "win7": 23.8,
+        "vista": 0.1,
+        "winxp": 0.4,
+        "linux": 5.5,
+        "mac": 10.6,
+        "chromeos": 0.3,
+        "mobile": 7.8
+      },
+      "windows_share": 76.0,
+      "mac_share": 10.6,
+      "chromeos_share": 0.3,
+      "other_share": 7.8
+    },
+    {
+      "source": "W3Counter",
+      "date": "2018-05-01",
+      "linux_share": 0.0,
+      "details": {
+        "Android 7": 15.79,
+        "Windows 7": 13.88,
+        "Windows 10": 13.47,
+        "iOS 11": 11.76,
+        "Android 6": 11.47,
+        "Android 5": 9.21,
+        "Android 4": 4.76,
+        "Mac OS X": 3.5,
+        "Android 8": 3.18,
+        "Windows 8.1": 2.43
+      },
+      "windows_share": 29.78,
+      "mac_share": 3.5,
+      "chromeos_share": 0.0,
+      "other_share": 66.72
+    },
+    {
+      "source": "W3Schools",
+      "date": "2018-05-01",
+      "linux_share": 5.6,
+      "details": {
+        "win10": 45.3,
+        "win8": 6.9,
+        "win7": 23.4,
+        "vista": 0.1,
+        "winxp": 0.3,
+        "linux": 5.6,
+        "mac": 10.4,
+        "chromeos": 0.3,
+        "mobile": 7.8
+      },
+      "windows_share": 76.0,
+      "mac_share": 10.4,
+      "chromeos_share": 0.3,
+      "other_share": 7.8
+    },
+    {
+      "source": "W3Counter",
+      "date": "2018-06-01",
+      "linux_share": 0.0,
+      "details": {
+        "Android 7": 17.74,
+        "Android 6": 12.56,
+        "Windows 7": 12.29,
+        "Windows 10": 11.14,
+        "Android 5": 11.06,
+        "iOS 11": 10.68,
+        "Android 4": 4.93,
+        "Android 8": 4.59,
+        "Mac OS X": 2.8,
+        "Android": 2.33
+      },
+      "windows_share": 23.43,
+      "mac_share": 2.8,
+      "chromeos_share": 0.0,
+      "other_share": 73.77
+    },
+    {
+      "source": "W3Schools",
+      "date": "2018-06-01",
+      "linux_share": 6.1,
+      "details": {
+        "win10": 45.4,
+        "win8": 6.8,
+        "win7": 22.9,
+        "vista": 0.1,
+        "winxp": 0.3,
+        "linux": 6.1,
+        "mac": 10.2,
+        "chromeos": 0.2,
+        "mobile": 8.1
+      },
+      "windows_share": 75.5,
+      "mac_share": 10.2,
+      "chromeos_share": 0.2,
+      "other_share": 8.1
+    },
+    {
+      "source": "W3Counter",
+      "date": "2018-07-01",
+      "linux_share": 0.0,
+      "details": {
+        "Android 7": 16.15,
+        "Windows 7": 12.79,
+        "Android 6": 11.4,
+        "iOS 11": 11.36,
+        "Windows 10": 10.93,
+        "Android 5": 9.98,
+        "Android 8": 5.81,
+        "Android 4": 5.17,
+        "Mac OS X": 2.92,
+        "Windows 8.1": 2.16
+      },
+      "windows_share": 25.88,
+      "mac_share": 2.92,
+      "chromeos_share": 0.0,
+      "other_share": 71.2
+    },
+    {
+      "source": "W3Schools",
+      "date": "2018-07-01",
+      "linux_share": 6.2,
+      "details": {
+        "win10": 45.4,
+        "win8": 6.9,
+        "win7": 23.1,
+        "vista": 0.1,
+        "winxp": 0.4,
+        "linux": 6.2,
+        "mac": 9.5,
+        "chromeos": 0.1,
+        "mobile": 8.4
+      },
+      "windows_share": 75.9,
+      "mac_share": 9.5,
+      "chromeos_share": 0.1,
+      "other_share": 8.4
+    },
+    {
+      "source": "W3Counter",
+      "date": "2018-08-01",
+      "linux_share": 2.51,
+      "details": {
+        "Android 7": 15.16,
+        "Windows 7": 13.98,
+        "Windows 10": 12.6,
+        "iOS 11": 11.31,
+        "Android 6": 10.11,
+        "Android 5": 8.33,
+        "Android 8": 8.18,
+        "Android 4": 4.24,
+        "Mac OS X": 2.77,
+        "Linux": 2.51
+      },
+      "windows_share": 26.58,
+      "mac_share": 2.77,
+      "chromeos_share": 0.0,
+      "other_share": 68.14
+    },
+    {
+      "source": "W3Schools",
+      "date": "2018-08-01",
+      "linux_share": 6.1,
+      "details": {
+        "win10": 46.1,
+        "win8": 6.5,
+        "win7": 22.4,
+        "vista": 0.1,
+        "winxp": 0.3,
+        "linux": 6.1,
+        "mac": 9.9,
+        "chromeos": 0.2,
+        "mobile": 8.7
+      },
+      "windows_share": 75.4,
+      "mac_share": 9.9,
+      "chromeos_share": 0.2,
+      "other_share": 8.7
+    },
+    {
+      "source": "W3Counter",
+      "date": "2018-09-01",
+      "linux_share": 0.0,
+      "details": {
+        "Android 7": 15.46,
+        "Windows 7": 13.58,
+        "Windows 10": 13.05,
+        "Android 6": 10.83,
+        "iOS 11": 9.97,
+        "Android 8": 8.67,
+        "Android 5": 8.41,
+        "Android 4": 4.14,
+        "Mac OS X": 2.91,
+        "Windows 8.1": 2.5
+      },
+      "windows_share": 29.13,
+      "mac_share": 2.91,
+      "chromeos_share": 0.0,
+      "other_share": 67.96
+    },
+    {
+      "source": "W3Schools",
+      "date": "2018-09-01",
+      "linux_share": 5.8,
+      "details": {
+        "win10": 47.6,
+        "win8": 6.1,
+        "win7": 21.1,
+        "vista": 0.1,
+        "winxp": 0.3,
+        "linux": 5.8,
+        "mac": 10.1,
+        "chromeos": 0.3,
+        "mobile": 8.7
+      },
+      "windows_share": 75.2,
+      "mac_share": 10.1,
+      "chromeos_share": 0.3,
+      "other_share": 8.7
+    },
+    {
+      "source": "W3Counter",
+      "date": "2018-10-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 15.02,
+        "Windows 7": 13.5,
+        "Android 7": 12.85,
+        "Android 8": 10.86,
+        "Android 6": 9.24,
+        "Android 5": 7.38,
+        "iOS 12": 6.12,
+        "iOS 11": 5.28,
+        "Mac OS X": 3.82,
+        "Android 4": 3.55
+      },
+      "windows_share": 28.52,
+      "mac_share": 3.82,
+      "chromeos_share": 0.0,
+      "other_share": 67.66
+    },
+    {
+      "source": "W3Schools",
+      "date": "2018-10-01",
+      "linux_share": 5.6,
+      "details": {
+        "win10": 49.2,
+        "win8": 5.7,
+        "win7": 20.1,
+        "vista": 0.1,
+        "winxp": 0.3,
+        "linux": 5.6,
+        "mac": 10.5,
+        "chromeos": 0.3,
+        "mobile": 8.3
+      },
+      "windows_share": 75.4,
+      "mac_share": 10.5,
+      "chromeos_share": 0.3,
+      "other_share": 8.3
+    },
+    {
+      "source": "W3Counter",
+      "date": "2018-11-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 17.07,
+        "Windows 7": 14.45,
+        "Android 8": 11.72,
+        "Android 7": 10.75,
+        "Android 6": 8.48,
+        "iOS 12": 8.04,
+        "Android 5": 6.4,
+        "Mac OS X": 4.1,
+        "iOS 11": 3.88,
+        "Android 4": 2.99
+      },
+      "windows_share": 31.52,
+      "mac_share": 4.1,
+      "chromeos_share": 0.0,
+      "other_share": 64.38
+    },
+    {
+      "source": "W3Schools",
+      "date": "2018-11-01",
+      "linux_share": 5.6,
+      "details": {
+        "win10": 50.0,
+        "win8": 5.4,
+        "win7": 19.3,
+        "vista": 0.1,
+        "winxp": 0.3,
+        "linux": 5.6,
+        "mac": 10.8,
+        "chromeos": 0.4,
+        "mobile": 8.4
+      },
+      "windows_share": 75.1,
+      "mac_share": 10.8,
+      "chromeos_share": 0.4,
+      "other_share": 8.4
+    },
+    {
+      "source": "W3Counter",
+      "date": "2018-12-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 16.62,
+        "Android 8": 14.06,
+        "Windows 7": 13.81,
+        "Android 7": 9.65,
+        "iOS 12": 9.4,
+        "Android 6": 7.83,
+        "Android 5": 6.02,
+        "Mac OS X": 3.92,
+        "iOS 11": 3.24,
+        "Android 4": 2.81
+      },
+      "windows_share": 30.43,
+      "mac_share": 3.92,
+      "chromeos_share": 0.0,
+      "other_share": 65.65
+    },
+    {
+      "source": "W3Schools",
+      "date": "2018-12-01",
+      "linux_share": 5.7,
+      "details": {
+        "win10": 49.5,
+        "win8": 5.6,
+        "win7": 19.3,
+        "vista": 0.1,
+        "winxp": 0.3,
+        "linux": 5.7,
+        "mac": 9.8,
+        "chromeos": 0.4,
+        "mobile": 9.5
+      },
+      "windows_share": 74.8,
+      "mac_share": 9.8,
+      "chromeos_share": 0.4,
+      "other_share": 9.5
+    },
     {
       "source": "Firefox",
       "date": "2018-12-31",
@@ -94,6 +589,47 @@
       "windows_share": 96.0,
       "mac_share": 3.2,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2019-01-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 16.45,
+        "Android 8": 15.02,
+        "Windows 7": 13.81,
+        "iOS 12": 9.94,
+        "Android 7": 9.35,
+        "Android 6": 7.65,
+        "Android 5": 5.95,
+        "Mac OS X": 4.03,
+        "iOS 11": 2.79,
+        "Android 4": 2.65
+      },
+      "windows_share": 30.26,
+      "mac_share": 4.03,
+      "chromeos_share": 0.0,
+      "other_share": 65.71
+    },
+    {
+      "source": "W3Schools",
+      "date": "2019-01-01",
+      "linux_share": 6.1,
+      "details": {
+        "win10": 49.9,
+        "win8": 5.4,
+        "win7": 18.8,
+        "vista": 0.1,
+        "winxp": 0.3,
+        "linux": 6.1,
+        "mac": 10.1,
+        "chromeos": 0.3,
+        "mobile": 9.2
+      },
+      "windows_share": 74.5,
+      "mac_share": 10.1,
+      "chromeos_share": 0.3,
+      "other_share": 9.2
     },
     {
       "source": "Firefox",
@@ -187,6 +723,47 @@
       "other_share": 0.0
     },
     {
+      "source": "W3Counter",
+      "date": "2019-02-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 16.64,
+        "Android 8": 14.83,
+        "Windows 7": 14.42,
+        "iOS 12": 10.15,
+        "Android 7": 8.63,
+        "Android 6": 7.23,
+        "Android 5": 5.54,
+        "Mac OS X": 4.48,
+        "Android": 3.05,
+        "iOS 11": 2.34
+      },
+      "windows_share": 31.06,
+      "mac_share": 4.48,
+      "chromeos_share": 0.0,
+      "other_share": 64.46
+    },
+    {
+      "source": "W3Schools",
+      "date": "2019-02-01",
+      "linux_share": 5.9,
+      "details": {
+        "win10": 50.7,
+        "win8": 5.2,
+        "win7": 18.0,
+        "vista": 0.1,
+        "winxp": 0.3,
+        "linux": 5.9,
+        "mac": 10.3,
+        "chromeos": 0.4,
+        "mobile": 9.4
+      },
+      "windows_share": 74.3,
+      "mac_share": 10.3,
+      "chromeos_share": 0.4,
+      "other_share": 9.4
+    },
+    {
       "source": "Firefox",
       "date": "2019-02-04",
       "linux_share": 3.0,
@@ -274,6 +851,47 @@
       "windows_share": 96.12,
       "mac_share": 3.11,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2019-03-01",
+      "linux_share": 2.68,
+      "details": {
+        "Windows 10": 15.7,
+        "Android 8": 15.32,
+        "Windows 7": 13.93,
+        "iOS 12": 10.17,
+        "Android 7": 8.88,
+        "Android 6": 7.26,
+        "Android 5": 5.71,
+        "Android": 4.07,
+        "Mac OS X": 3.8,
+        "Linux": 2.68
+      },
+      "windows_share": 29.63,
+      "mac_share": 3.8,
+      "chromeos_share": 0.0,
+      "other_share": 63.89
+    },
+    {
+      "source": "W3Schools",
+      "date": "2019-03-01",
+      "linux_share": 5.6,
+      "details": {
+        "win10": 52.3,
+        "win8": 5.0,
+        "win7": 17.1,
+        "vista": 0.0,
+        "winxp": 0.2,
+        "linux": 5.6,
+        "mac": 10.3,
+        "chromeos": 0.4,
+        "mobile": 9.3
+      },
+      "windows_share": 74.6,
+      "mac_share": 10.3,
+      "chromeos_share": 0.4,
+      "other_share": 9.3
     },
     {
       "source": "Firefox",
@@ -377,6 +995,47 @@
       "other_share": 0.0
     },
     {
+      "source": "W3Counter",
+      "date": "2019-04-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 15.67,
+        "Android 8": 14.9,
+        "Windows 7": 13.68,
+        "iOS 12": 10.78,
+        "Android 7": 8.28,
+        "Android 6": 7.22,
+        "Android 5": 5.6,
+        "Android 9": 4.88,
+        "Mac OS X": 3.51,
+        "Windows 8": 2.69
+      },
+      "windows_share": 32.04,
+      "mac_share": 3.51,
+      "chromeos_share": 0.0,
+      "other_share": 64.45
+    },
+    {
+      "source": "W3Schools",
+      "date": "2019-04-01",
+      "linux_share": 5.7,
+      "details": {
+        "win10": 52.9,
+        "win8": 4.7,
+        "win7": 16.3,
+        "vista": 0.0,
+        "winxp": 0.2,
+        "linux": 5.7,
+        "mac": 10.6,
+        "chromeos": 0.4,
+        "mobile": 9.3
+      },
+      "windows_share": 74.1,
+      "mac_share": 10.6,
+      "chromeos_share": 0.4,
+      "other_share": 9.3
+    },
+    {
       "source": "Firefox",
       "date": "2019-04-08",
       "linux_share": 3.0,
@@ -466,6 +1125,47 @@
       "windows_share": 96.12,
       "mac_share": 3.06,
       "other_share": 0.01
+    },
+    {
+      "source": "W3Counter",
+      "date": "2019-05-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 15.17,
+        "Windows 7": 14.04,
+        "Android 8": 13.87,
+        "iOS 12": 11.04,
+        "Android 7": 7.67,
+        "Android 6": 6.72,
+        "Android 9": 6.63,
+        "Android 5": 5.35,
+        "Mac OS X": 3.5,
+        "Windows 8": 2.26
+      },
+      "windows_share": 31.47,
+      "mac_share": 3.5,
+      "chromeos_share": 0.0,
+      "other_share": 65.03
+    },
+    {
+      "source": "W3Schools",
+      "date": "2019-05-01",
+      "linux_share": 5.8,
+      "details": {
+        "win10": 53.8,
+        "win8": 4.6,
+        "win7": 15.7,
+        "vista": 0.0,
+        "winxp": 0.2,
+        "linux": 5.8,
+        "mac": 10.2,
+        "chromeos": 0.4,
+        "mobile": 9.5
+      },
+      "windows_share": 74.3,
+      "mac_share": 10.2,
+      "chromeos_share": 0.4,
+      "other_share": 9.5
     },
     {
       "source": "Firefox",
@@ -563,6 +1263,47 @@
       "windows_share": 95.9,
       "mac_share": 3.26,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2019-06-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 16.23,
+        "Windows 7": 14.32,
+        "Android 8": 12.61,
+        "iOS 12": 10.84,
+        "Android 9": 8.1,
+        "Android 7": 6.86,
+        "Android 6": 6.24,
+        "Android 5": 4.95,
+        "Mac OS X": 3.58,
+        "iOS 9": 2.7
+      },
+      "windows_share": 30.55,
+      "mac_share": 3.58,
+      "chromeos_share": 0.0,
+      "other_share": 65.87
+    },
+    {
+      "source": "W3Schools",
+      "date": "2019-06-01",
+      "linux_share": 6.2,
+      "details": {
+        "win10": 53.4,
+        "win8": 4.8,
+        "win7": 15.2,
+        "vista": 0.0,
+        "winxp": 0.2,
+        "linux": 6.2,
+        "mac": 10.0,
+        "chromeos": 0.2,
+        "mobile": 13.9
+      },
+      "windows_share": 73.6,
+      "mac_share": 10.0,
+      "chromeos_share": 0.2,
+      "other_share": 13.9
     },
     {
       "source": "Firefox",
@@ -667,6 +1408,47 @@
       "other_share": 0.0
     },
     {
+      "source": "W3Counter",
+      "date": "2019-07-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 16.35,
+        "Windows 7": 13.94,
+        "Android 8": 12.07,
+        "iOS 12": 10.25,
+        "Android 9": 9.8,
+        "Android 6": 6.76,
+        "Android 7": 6.51,
+        "Android 5": 4.98,
+        "Mac OS X": 3.66,
+        "Windows 8": 2.27
+      },
+      "windows_share": 32.56,
+      "mac_share": 3.66,
+      "chromeos_share": 0.0,
+      "other_share": 63.78
+    },
+    {
+      "source": "W3Schools",
+      "date": "2019-07-01",
+      "linux_share": 6.3,
+      "details": {
+        "win10": 52.7,
+        "win8": 5.9,
+        "win7": 15.0,
+        "vista": 0.0,
+        "winxp": 0.2,
+        "linux": 6.3,
+        "mac": 9.1,
+        "chromeos": 0.2,
+        "mobile": 10.8
+      },
+      "windows_share": 73.8,
+      "mac_share": 9.1,
+      "chromeos_share": 0.2,
+      "other_share": 10.8
+    },
+    {
       "source": "Firefox",
       "date": "2019-07-08",
       "linux_share": 2.65,
@@ -756,6 +1538,47 @@
       "windows_share": 96.28,
       "mac_share": 2.93,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2019-08-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 13.86,
+        "Android 8": 13.29,
+        "Windows 7": 13.07,
+        "Android 9": 12.42,
+        "iOS 12": 10.26,
+        "Android 6": 7.32,
+        "Android 7": 6.4,
+        "Android 5": 5.7,
+        "Mac OS X": 2.74,
+        "iOS 11": 2.72
+      },
+      "windows_share": 26.93,
+      "mac_share": 2.74,
+      "chromeos_share": 0.0,
+      "other_share": 70.33
+    },
+    {
+      "source": "W3Schools",
+      "date": "2019-08-01",
+      "linux_share": 6.2,
+      "details": {
+        "win10": 54.2,
+        "win8": 4.7,
+        "win7": 14.2,
+        "vista": 0.0,
+        "winxp": 0.2,
+        "linux": 6.2,
+        "mac": 9.5,
+        "chromeos": 0.2,
+        "mobile": 10.9
+      },
+      "windows_share": 73.3,
+      "mac_share": 9.5,
+      "chromeos_share": 0.2,
+      "other_share": 10.9
     },
     {
       "source": "Firefox",
@@ -851,6 +1674,47 @@
       "windows_share": 96.28,
       "mac_share": 2.93,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2019-09-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 18.15,
+        "Windows 7": 12.85,
+        "Android 9": 12.14,
+        "Android 8": 11.1,
+        "iOS 12": 10.14,
+        "Android 6": 6.2,
+        "Android 7": 5.6,
+        "Android 5": 4.61,
+        "Mac OS X": 3.72,
+        "Windows 8": 2.51
+      },
+      "windows_share": 33.51,
+      "mac_share": 3.72,
+      "chromeos_share": 0.0,
+      "other_share": 62.77
+    },
+    {
+      "source": "W3Schools",
+      "date": "2019-09-01",
+      "linux_share": 5.9,
+      "details": {
+        "win10": 56.0,
+        "win8": 4.1,
+        "win7": 13.2,
+        "vista": 0.0,
+        "winxp": 0.2,
+        "linux": 5.9,
+        "mac": 9.9,
+        "chromeos": 0.4,
+        "mobile": 10.5
+      },
+      "windows_share": 73.5,
+      "mac_share": 9.9,
+      "chromeos_share": 0.4,
+      "other_share": 10.5
     },
     {
       "source": "Firefox",
@@ -959,6 +1823,47 @@
       "other_share": 0.0
     },
     {
+      "source": "W3Counter",
+      "date": "2019-10-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 17.69,
+        "Android 9": 11.7,
+        "Android 8": 11.37,
+        "Windows 7": 10.7,
+        "Android 6": 7.27,
+        "Android 5": 5.88,
+        "iOS 12": 5.65,
+        "Android 7": 4.86,
+        "iOS 13": 4.6,
+        "Mac OS X": 4.24
+      },
+      "windows_share": 28.39,
+      "mac_share": 4.24,
+      "chromeos_share": 0.0,
+      "other_share": 67.37
+    },
+    {
+      "source": "W3Schools",
+      "date": "2019-10-01",
+      "linux_share": 5.8,
+      "details": {
+        "win10": 57.5,
+        "win8": 3.7,
+        "win7": 12.1,
+        "vista": 0.0,
+        "winxp": 0.1,
+        "linux": 5.8,
+        "mac": 10.6,
+        "chromeos": 0.4,
+        "mobile": 9.8
+      },
+      "windows_share": 73.4,
+      "mac_share": 10.6,
+      "chromeos_share": 0.4,
+      "other_share": 9.8
+    },
+    {
       "source": "Firefox",
       "date": "2019-10-07",
       "linux_share": 3.87,
@@ -1051,6 +1956,47 @@
       "windows_share": 96.1,
       "mac_share": 3.07,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2019-11-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 21.35,
+        "Android 9": 13.17,
+        "Windows 7": 10.22,
+        "Android 8": 9.91,
+        "iOS 13": 7.95,
+        "Android 6": 6.28,
+        "Mac OS X": 5.34,
+        "Android 5": 4.77,
+        "Android 7": 4.57,
+        "iOS 12": 4.21
+      },
+      "windows_share": 31.57,
+      "mac_share": 5.34,
+      "chromeos_share": 0.0,
+      "other_share": 63.09
+    },
+    {
+      "source": "W3Schools",
+      "date": "2019-11-01",
+      "linux_share": 5.7,
+      "details": {
+        "win10": 57.6,
+        "win8": 3.6,
+        "win7": 11.7,
+        "vista": 0.0,
+        "winxp": 0.1,
+        "linux": 5.7,
+        "mac": 10.1,
+        "chromeos": 0.4,
+        "mobile": 10.8
+      },
+      "windows_share": 73.0,
+      "mac_share": 10.1,
+      "chromeos_share": 0.4,
+      "other_share": 10.8
     },
     {
       "source": "Firefox",
@@ -1146,6 +2092,47 @@
       "windows_share": 96.28,
       "mac_share": 2.92,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2019-12-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 17.36,
+        "Android 9": 13.61,
+        "Android 8": 10.5,
+        "iOS 13": 10.18,
+        "Windows 7": 8.6,
+        "Android 6": 6.88,
+        "Android 5": 5.74,
+        "iOS 12": 4.75,
+        "Android 7": 4.59,
+        "Mac OS X": 3.57
+      },
+      "windows_share": 25.96,
+      "mac_share": 3.57,
+      "chromeos_share": 0.0,
+      "other_share": 70.47
+    },
+    {
+      "source": "W3Schools",
+      "date": "2019-12-01",
+      "linux_share": 6.0,
+      "details": {
+        "win10": 57.3,
+        "win8": 3.7,
+        "win7": 11.5,
+        "vista": 0.0,
+        "winxp": 0.2,
+        "linux": 6.0,
+        "mac": 9.4,
+        "chromeos": 0.4,
+        "mobile": 11.7
+      },
+      "windows_share": 72.7,
+      "mac_share": 9.4,
+      "chromeos_share": 0.4,
+      "other_share": 11.7
     },
     {
       "source": "Firefox",
@@ -1268,6 +2255,46 @@
       "other_share": 0.0
     },
     {
+      "source": "W3Counter",
+      "date": "2020-01-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 17.65,
+        "Android 9": 15.25,
+        "iOS 13": 11.43,
+        "Android 5": 8.76,
+        "Windows 7": 8.49,
+        "Android 8": 8.43,
+        "Android 7": 4.96,
+        "Android 6": 4.64,
+        "Mac OS X": 3.72,
+        "iOS 12": 3.68
+      },
+      "windows_share": 26.14,
+      "mac_share": 3.72,
+      "chromeos_share": 0.0,
+      "other_share": 70.14
+    },
+    {
+      "source": "W3Schools",
+      "date": "2020-01-01",
+      "linux_share": 6.4,
+      "details": {
+        "win10": 58.1,
+        "win8": 3.6,
+        "win7": 10.6,
+        "winxp": 0.2,
+        "linux": 6.4,
+        "mac": 9.7,
+        "chromeos": 0.4,
+        "mobile": 11.2
+      },
+      "windows_share": 72.5,
+      "mac_share": 9.7,
+      "chromeos_share": 0.4,
+      "other_share": 11.2
+    },
+    {
       "source": "Firefox",
       "date": "2020-01-06",
       "linux_share": 3.38,
@@ -1361,6 +2388,46 @@
       "windows_share": 96.09,
       "mac_share": 3.01,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2020-02-01",
+      "linux_share": 3.34,
+      "details": {
+        "Windows 10": 18.39,
+        "Android 9": 14.2,
+        "Windows 7": 13.77,
+        "iOS 13": 8.3,
+        "Android 8": 7.76,
+        "Android 6": 4.84,
+        "Android 7": 4.56,
+        "Android 5": 4.35,
+        "Mac OS X": 4.31,
+        "Linux": 3.34
+      },
+      "windows_share": 32.16,
+      "mac_share": 4.31,
+      "chromeos_share": 0.0,
+      "other_share": 60.19
+    },
+    {
+      "source": "W3Schools",
+      "date": "2020-02-01",
+      "linux_share": 5.9,
+      "details": {
+        "win10": 59.1,
+        "win8": 3.5,
+        "win7": 9.8,
+        "winxp": 0.2,
+        "linux": 5.9,
+        "mac": 9.9,
+        "chromeos": 0.0,
+        "mobile": 11.4
+      },
+      "windows_share": 72.6,
+      "mac_share": 9.9,
+      "chromeos_share": 0.0,
+      "other_share": 11.4
     },
     {
       "source": "Firefox",
@@ -1457,6 +2524,46 @@
       "windows_share": 96.02,
       "mac_share": 3.15,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2020-03-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 17.39,
+        "Android 9": 16.6,
+        "Windows 7": 10.08,
+        "Android 8": 9.6,
+        "iOS 13": 8.14,
+        "Android 7": 6.01,
+        "Android 5": 5.29,
+        "Android 6": 5.26,
+        "Mac OS X": 3.87,
+        "Android 10": 3.23
+      },
+      "windows_share": 27.47,
+      "mac_share": 3.87,
+      "chromeos_share": 0.0,
+      "other_share": 68.66
+    },
+    {
+      "source": "W3Schools",
+      "date": "2020-03-01",
+      "linux_share": 5.4,
+      "details": {
+        "win10": 60.6,
+        "win8": 3.2,
+        "win7": 8.5,
+        "winxp": 0.1,
+        "linux": 5.4,
+        "mac": 11.1,
+        "chromeos": 0.4,
+        "mobile": 10.8
+      },
+      "windows_share": 72.4,
+      "mac_share": 11.1,
+      "chromeos_share": 0.4,
+      "other_share": 10.8
     },
     {
       "source": "Firefox",
@@ -1566,6 +2673,46 @@
       "other_share": 0.0
     },
     {
+      "source": "W3Counter",
+      "date": "2020-04-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 19.26,
+        "Android 9": 17.46,
+        "Android 8": 9.69,
+        "iOS 13": 9.04,
+        "Windows 7": 7.93,
+        "Android 7": 5.84,
+        "Android 5": 4.99,
+        "Android 10": 4.94,
+        "Android 6": 4.92,
+        "Mac OS X": 4.13
+      },
+      "windows_share": 27.19,
+      "mac_share": 4.13,
+      "chromeos_share": 0.0,
+      "other_share": 68.68
+    },
+    {
+      "source": "W3Schools",
+      "date": "2020-04-01",
+      "linux_share": 4.8,
+      "details": {
+        "win10": 60.1,
+        "win8": 3.2,
+        "win7": 7.4,
+        "winxp": 0.1,
+        "linux": 4.8,
+        "mac": 12.4,
+        "chromeos": 0.4,
+        "mobile": 11.8
+      },
+      "windows_share": 70.8,
+      "mac_share": 12.4,
+      "chromeos_share": 0.4,
+      "other_share": 11.8
+    },
+    {
       "source": "Firefox",
       "date": "2020-04-06",
       "linux_share": 3.36,
@@ -1659,6 +2806,46 @@
       "windows_share": 95.06,
       "mac_share": 4.05,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2020-05-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 20.76,
+        "Android 9": 16.15,
+        "iOS 13": 10.92,
+        "Android 8": 9.51,
+        "Windows 7": 7.29,
+        "Android 10": 6.93,
+        "Android 7": 5.55,
+        "Android 6": 4.71,
+        "Mac OS X": 4.51,
+        "Android 5": 4.23
+      },
+      "windows_share": 28.05,
+      "mac_share": 4.51,
+      "chromeos_share": 0.0,
+      "other_share": 67.44
+    },
+    {
+      "source": "W3Schools",
+      "date": "2020-05-01",
+      "linux_share": 4.9,
+      "details": {
+        "win10": 60.1,
+        "win8": 3.1,
+        "win7": 7.2,
+        "winxp": 0.1,
+        "linux": 4.9,
+        "mac": 11.9,
+        "chromeos": 0.4,
+        "mobile": 12.3
+      },
+      "windows_share": 70.5,
+      "mac_share": 11.9,
+      "chromeos_share": 0.4,
+      "other_share": 12.3
     },
     {
       "source": "Firefox",
@@ -1786,6 +2973,46 @@
       "other_share": 0.0
     },
     {
+      "source": "W3Counter",
+      "date": "2020-06-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 23.51,
+        "Android 9": 13.16,
+        "iOS 13": 11.57,
+        "Windows 7": 8.67,
+        "Android 10": 8.21,
+        "Android 8": 8.12,
+        "Mac OS X": 4.78,
+        "Android 7": 4.51,
+        "Android 6": 4.26,
+        "Android 5": 3.19
+      },
+      "windows_share": 32.18,
+      "mac_share": 4.78,
+      "chromeos_share": 0.0,
+      "other_share": 63.04
+    },
+    {
+      "source": "W3Schools",
+      "date": "2020-06-01",
+      "linux_share": 4.9,
+      "details": {
+        "win10": 61.0,
+        "win8": 3.0,
+        "win7": 7.2,
+        "winxp": 0.1,
+        "linux": 4.9,
+        "mac": 11.3,
+        "chromeos": 0.3,
+        "mobile": 12.1
+      },
+      "windows_share": 71.3,
+      "mac_share": 11.3,
+      "chromeos_share": 0.3,
+      "other_share": 12.1
+    },
+    {
       "source": "Firefox",
       "date": "2020-06-08",
       "linux_share": 3.27,
@@ -1864,6 +3091,46 @@
       "mac_share": 17.07,
       "chromeos_share": 0.67,
       "other_share": 2.69
+    },
+    {
+      "source": "W3Counter",
+      "date": "2020-07-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 21.65,
+        "iOS 13": 12.63,
+        "Android 9": 11.92,
+        "Android 10": 9.43,
+        "Windows 7": 9.19,
+        "Android 8": 7.76,
+        "Mac OS X": 6.44,
+        "Android 6": 4.47,
+        "Android 7": 4.18,
+        "Android 5": 2.64
+      },
+      "windows_share": 30.84,
+      "mac_share": 6.44,
+      "chromeos_share": 0.0,
+      "other_share": 62.72
+    },
+    {
+      "source": "W3Schools",
+      "date": "2020-07-01",
+      "linux_share": 5.0,
+      "details": {
+        "win10": 61.0,
+        "win8": 3.0,
+        "win7": 7.2,
+        "winxp": 0.1,
+        "linux": 5.0,
+        "mac": 10.6,
+        "chromeos": 0.3,
+        "mobile": 12.9
+      },
+      "windows_share": 71.3,
+      "mac_share": 10.6,
+      "chromeos_share": 0.3,
+      "other_share": 12.9
     },
     {
       "source": "Firefox",
@@ -1959,6 +3226,46 @@
       "windows_share": 95.94,
       "mac_share": 3.2,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2020-08-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 20.23,
+        "iOS 13": 13.5,
+        "Android 10": 11.16,
+        "Android 9": 11.07,
+        "Windows 7": 9.15,
+        "Android 8": 7.6,
+        "Mac OS X": 7.25,
+        "Android 6": 4.35,
+        "Android 7": 3.93,
+        "Android 5": 2.5
+      },
+      "windows_share": 29.38,
+      "mac_share": 7.25,
+      "chromeos_share": 0.0,
+      "other_share": 63.37
+    },
+    {
+      "source": "W3Schools",
+      "date": "2020-08-01",
+      "linux_share": 4.9,
+      "details": {
+        "win10": 61.0,
+        "win8": 3.2,
+        "win7": 6.8,
+        "winxp": 0.1,
+        "linux": 4.9,
+        "mac": 10.3,
+        "chromeos": 0.3,
+        "mobile": 13.5
+      },
+      "windows_share": 71.1,
+      "mac_share": 10.3,
+      "chromeos_share": 0.3,
+      "other_share": 13.5
     },
     {
       "source": "Firefox",
@@ -2067,6 +3374,46 @@
       "other_share": 0.01
     },
     {
+      "source": "W3Counter",
+      "date": "2020-09-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 21.33,
+        "Android 10": 12.49,
+        "iOS 13": 12.42,
+        "Android 9": 10.06,
+        "Mac OS X": 8.25,
+        "Windows 7": 7.04,
+        "Android 8": 7.01,
+        "Android 6": 4.06,
+        "Android 7": 3.52,
+        "Android 5": 2.36
+      },
+      "windows_share": 28.37,
+      "mac_share": 8.25,
+      "chromeos_share": 0.0,
+      "other_share": 63.38
+    },
+    {
+      "source": "W3Schools",
+      "date": "2020-09-01",
+      "linux_share": 4.7,
+      "details": {
+        "win10": 62.0,
+        "win8": 2.7,
+        "win7": 6.4,
+        "winxp": 0.1,
+        "linux": 4.7,
+        "mac": 10.3,
+        "chromeos": 0.5,
+        "mobile": 13.3
+      },
+      "windows_share": 71.2,
+      "mac_share": 10.3,
+      "chromeos_share": 0.5,
+      "other_share": 13.3
+    },
+    {
       "source": "Firefox",
       "date": "2020-09-07",
       "linux_share": 3.1,
@@ -2162,6 +3509,46 @@
       "other_share": 0.0
     },
     {
+      "source": "W3Counter",
+      "date": "2020-10-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 20.55,
+        "Android 10": 13.52,
+        "Android 9": 9.42,
+        "Mac OS X": 8.06,
+        "iOS 13": 7.86,
+        "Android 8": 7.05,
+        "Windows 7": 6.74,
+        "iOS 14": 5.81,
+        "Android 6": 3.94,
+        "Android 7": 3.51
+      },
+      "windows_share": 27.29,
+      "mac_share": 8.06,
+      "chromeos_share": 0.0,
+      "other_share": 64.65
+    },
+    {
+      "source": "W3Schools",
+      "date": "2020-10-01",
+      "linux_share": 4.7,
+      "details": {
+        "win10": 63.1,
+        "win8": 2.4,
+        "win7": 6.0,
+        "winxp": 0.1,
+        "linux": 4.7,
+        "mac": 10.5,
+        "chromeos": 0.6,
+        "mobile": 12.6
+      },
+      "windows_share": 71.6,
+      "mac_share": 10.5,
+      "chromeos_share": 0.6,
+      "other_share": 12.6
+    },
+    {
       "source": "Firefox",
       "date": "2020-10-05",
       "linux_share": 3.21,
@@ -2255,6 +3642,46 @@
       "windows_share": 95.61,
       "mac_share": 3.46,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2020-11-01",
+      "linux_share": 5.62,
+      "details": {
+        "Windows 10": 19.47,
+        "Android 10": 13.6,
+        "Windows 7": 9.53,
+        "iOS 14": 9.1,
+        "Android 9": 8.24,
+        "Mac OS X": 8.13,
+        "Android 8": 6.28,
+        "Linux": 5.62,
+        "iOS 13": 3.39,
+        "Windows 8": 3.31
+      },
+      "windows_share": 32.31,
+      "mac_share": 8.13,
+      "chromeos_share": 0.0,
+      "other_share": 53.94
+    },
+    {
+      "source": "W3Schools",
+      "date": "2020-11-01",
+      "linux_share": 4.7,
+      "details": {
+        "win10": 64.2,
+        "win8": 2.3,
+        "win7": 5.6,
+        "winxp": 0.1,
+        "linux": 4.7,
+        "mac": 10.4,
+        "chromeos": 0.6,
+        "mobile": 12.1
+      },
+      "windows_share": 72.2,
+      "mac_share": 10.4,
+      "chromeos_share": 0.6,
+      "other_share": 12.1
     },
     {
       "source": "Firefox",
@@ -2364,6 +3791,46 @@
       "other_share": 0.0
     },
     {
+      "source": "W3Counter",
+      "date": "2020-12-01",
+      "linux_share": 6.11,
+      "details": {
+        "Windows 10": 19.47,
+        "Android 10": 14.71,
+        "iOS 14": 11.25,
+        "Windows 7": 9.52,
+        "Android 9": 7.89,
+        "Mac OS X": 7.48,
+        "Linux": 6.11,
+        "Android 8": 5.94,
+        "Android 6": 2.92,
+        "Android 7": 2.85
+      },
+      "windows_share": 28.99,
+      "mac_share": 7.48,
+      "chromeos_share": 0.0,
+      "other_share": 57.42
+    },
+    {
+      "source": "W3Schools",
+      "date": "2020-12-01",
+      "linux_share": 4.8,
+      "details": {
+        "win10": 63.3,
+        "win8": 2.4,
+        "win7": 5.9,
+        "winxp": 0.1,
+        "linux": 4.8,
+        "mac": 9.6,
+        "chromeos": 0.5,
+        "mobile": 13.5
+      },
+      "windows_share": 71.7,
+      "mac_share": 9.6,
+      "chromeos_share": 0.5,
+      "other_share": 13.5
+    },
+    {
       "source": "Firefox",
       "date": "2020-12-07",
       "linux_share": 3.17,
@@ -2471,6 +3938,46 @@
       "other_share": 0.01
     },
     {
+      "source": "W3Counter",
+      "date": "2021-01-01",
+      "linux_share": 3.58,
+      "details": {
+        "Windows 10": 20.12,
+        "Android 10": 16.32,
+        "iOS 14": 12.22,
+        "Android 9": 8.1,
+        "Windows 7": 7.49,
+        "Mac OS X": 7.25,
+        "Android 8": 6.15,
+        "Linux": 3.58,
+        "Windows 8": 3.52,
+        "Android 6": 3.04
+      },
+      "windows_share": 31.13,
+      "mac_share": 7.25,
+      "chromeos_share": 0.0,
+      "other_share": 58.04
+    },
+    {
+      "source": "W3Schools",
+      "date": "2021-01-01",
+      "linux_share": 4.7,
+      "details": {
+        "win10": 63.9,
+        "win8": 2.3,
+        "win7": 5.5,
+        "winxp": 0.1,
+        "linux": 4.7,
+        "mac": 9.8,
+        "chromeos": 0.6,
+        "mobile": 13.2
+      },
+      "windows_share": 71.8,
+      "mac_share": 9.8,
+      "chromeos_share": 0.6,
+      "other_share": 13.2
+    },
+    {
       "source": "Firefox",
       "date": "2021-01-04",
       "linux_share": 3.1,
@@ -2576,6 +4083,46 @@
       "other_share": 0.0
     },
     {
+      "source": "W3Counter",
+      "date": "2021-02-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 24.07,
+        "Android 10": 16.05,
+        "iOS 14": 12.55,
+        "Android 9": 7.76,
+        "Mac OS X": 7.46,
+        "Windows 7": 6.43,
+        "Android 8": 5.88,
+        "Android 6": 3.65,
+        "Android 7": 2.79,
+        "Windows 8": 2.12
+      },
+      "windows_share": 32.62,
+      "mac_share": 7.46,
+      "chromeos_share": 0.0,
+      "other_share": 59.92
+    },
+    {
+      "source": "W3Schools",
+      "date": "2021-02-01",
+      "linux_share": 4.7,
+      "details": {
+        "win10": 64.0,
+        "win8": 2.2,
+        "win7": 5.3,
+        "winxp": 0.1,
+        "linux": 4.7,
+        "mac": 10.1,
+        "chromeos": 0.6,
+        "mobile": 13.1
+      },
+      "windows_share": 71.6,
+      "mac_share": 10.1,
+      "chromeos_share": 0.6,
+      "other_share": 13.1
+    },
+    {
       "source": "Firefox",
       "date": "2021-02-08",
       "linux_share": 3.27,
@@ -2654,6 +4201,46 @@
       "mac_share": 16.48,
       "chromeos_share": 2.09,
       "other_share": 3.91
+    },
+    {
+      "source": "W3Counter",
+      "date": "2021-03-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 24.26,
+        "Android 10": 16.03,
+        "iOS 14": 13.19,
+        "Android 9": 7.48,
+        "Mac OS X": 7.34,
+        "Windows 7": 6.17,
+        "Android 8": 5.75,
+        "Android 6": 3.56,
+        "Android 11": 2.96,
+        "Android 7": 2.66
+      },
+      "windows_share": 30.43,
+      "mac_share": 7.34,
+      "chromeos_share": 0.0,
+      "other_share": 62.23
+    },
+    {
+      "source": "W3Schools",
+      "date": "2021-03-01",
+      "linux_share": 4.5,
+      "details": {
+        "win10": 64.9,
+        "win8": 2.1,
+        "win7": 5.0,
+        "winxp": 0.1,
+        "linux": 4.5,
+        "mac": 9.7,
+        "chromeos": 0.6,
+        "mobile": 13.1
+      },
+      "windows_share": 72.1,
+      "mac_share": 9.7,
+      "chromeos_share": 0.6,
+      "other_share": 13.1
     },
     {
       "source": "Firefox",
@@ -2749,6 +4336,46 @@
       "other_share": 0.0
     },
     {
+      "source": "W3Counter",
+      "date": "2021-04-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 22.48,
+        "Android 10": 16.6,
+        "iOS 14": 13.76,
+        "Android 9": 7.36,
+        "Mac OS X": 6.29,
+        "Android 8": 5.87,
+        "Windows 7": 5.62,
+        "Android 11": 5.05,
+        "Android 7": 3.75,
+        "Android 6": 3.5
+      },
+      "windows_share": 28.1,
+      "mac_share": 6.29,
+      "chromeos_share": 0.0,
+      "other_share": 65.61
+    },
+    {
+      "source": "W3Schools",
+      "date": "2021-04-01",
+      "linux_share": 4.4,
+      "details": {
+        "win10": 65.2,
+        "win8": 2.0,
+        "win7": 4.7,
+        "winxp": 0.0,
+        "linux": 4.4,
+        "mac": 9.6,
+        "chromeos": 0.5,
+        "mobile": 13.6
+      },
+      "windows_share": 71.9,
+      "mac_share": 9.6,
+      "chromeos_share": 0.5,
+      "other_share": 13.6
+    },
+    {
       "source": "Firefox",
       "date": "2021-04-05",
       "linux_share": 3.2,
@@ -2841,6 +4468,46 @@
       "windows_share": 96.27,
       "mac_share": 2.88,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2021-05-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 20.14,
+        "Android 10": 17.66,
+        "iOS 14": 14.17,
+        "Android 9": 7.31,
+        "Android 11": 6.61,
+        "Android 8": 5.97,
+        "Mac OS X": 5.67,
+        "Windows 7": 4.76,
+        "Android 6": 3.52,
+        "Android 7": 3.22
+      },
+      "windows_share": 24.9,
+      "mac_share": 5.67,
+      "chromeos_share": 0.0,
+      "other_share": 69.43
+    },
+    {
+      "source": "W3Schools",
+      "date": "2021-05-01",
+      "linux_share": 4.2,
+      "details": {
+        "win10": 65.4,
+        "win8": 2.0,
+        "win7": 4.4,
+        "winxp": 0.0,
+        "linux": 4.2,
+        "mac": 9.2,
+        "chromeos": 0.5,
+        "mobile": 14.4
+      },
+      "windows_share": 71.8,
+      "mac_share": 9.2,
+      "chromeos_share": 0.5,
+      "other_share": 14.4
     },
     {
       "source": "Firefox",
@@ -2966,6 +4633,46 @@
       "other_share": 0.0
     },
     {
+      "source": "W3Counter",
+      "date": "2021-06-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 20.71,
+        "Android 10": 16.51,
+        "iOS 14": 14.39,
+        "Android 11": 8.23,
+        "Android 9": 7.02,
+        "Android 8": 5.79,
+        "Mac OS X": 5.53,
+        "Windows 7": 5.05,
+        "Android 5": 3.38,
+        "Android 6": 3.16
+      },
+      "windows_share": 25.76,
+      "mac_share": 5.53,
+      "chromeos_share": 0.0,
+      "other_share": 68.71
+    },
+    {
+      "source": "W3Schools",
+      "date": "2021-06-01",
+      "linux_share": 4.2,
+      "details": {
+        "win10": 65.0,
+        "win8": 2.0,
+        "win7": 4.4,
+        "winxp": 0.0,
+        "linux": 4.2,
+        "mac": 8.8,
+        "chromeos": 0.3,
+        "mobile": 15.1
+      },
+      "windows_share": 71.4,
+      "mac_share": 8.8,
+      "chromeos_share": 0.3,
+      "other_share": 15.1
+    },
+    {
       "source": "Firefox",
       "date": "2021-06-07",
       "linux_share": 3.22,
@@ -3044,6 +4751,46 @@
       "mac_share": 15.43,
       "chromeos_share": 1.21,
       "other_share": 7.94
+    },
+    {
+      "source": "W3Counter",
+      "date": "2021-07-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 20.09,
+        "Android 10": 15.7,
+        "iOS 14": 13.25,
+        "Android 11": 9.39,
+        "Android 9": 6.84,
+        "Android 8": 6.62,
+        "Mac OS X": 6.44,
+        "Windows 7": 5.68,
+        "Android 5": 4.04,
+        "Android 7": 2.7
+      },
+      "windows_share": 25.77,
+      "mac_share": 6.44,
+      "chromeos_share": 0.0,
+      "other_share": 67.79
+    },
+    {
+      "source": "W3Schools",
+      "date": "2021-07-01",
+      "linux_share": 4.2,
+      "details": {
+        "win10": 65.2,
+        "win8": 1.9,
+        "win7": 4.6,
+        "winxp": 0.0,
+        "linux": 4.2,
+        "mac": 9.2,
+        "chromeos": 0.5,
+        "mobile": 15.7
+      },
+      "windows_share": 71.7,
+      "mac_share": 9.2,
+      "chromeos_share": 0.5,
+      "other_share": 15.7
     },
     {
       "source": "Firefox",
@@ -3139,6 +4886,46 @@
       "windows_share": 96.49,
       "mac_share": 2.51,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2021-08-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 18.23,
+        "Android 10": 14.76,
+        "iOS 14": 13.0,
+        "Android 11": 10.1,
+        "Android 9": 7.39,
+        "Android 8": 6.61,
+        "Windows 7": 6.11,
+        "Mac OS X": 4.52,
+        "Android 5": 3.35,
+        "iOS 13": 3.09
+      },
+      "windows_share": 24.34,
+      "mac_share": 4.52,
+      "chromeos_share": 0.0,
+      "other_share": 71.14
+    },
+    {
+      "source": "W3Schools",
+      "date": "2021-08-01",
+      "linux_share": 4.3,
+      "details": {
+        "win10": 64.9,
+        "win8": 1.9,
+        "win7": 4.4,
+        "winxp": 0.0,
+        "linux": 4.3,
+        "mac": 8.5,
+        "chromeos": 0.3,
+        "mobile": 15.6
+      },
+      "windows_share": 71.2,
+      "mac_share": 8.5,
+      "chromeos_share": 0.3,
+      "other_share": 15.6
     },
     {
       "source": "Firefox",
@@ -3248,6 +5035,46 @@
       "other_share": 0.0
     },
     {
+      "source": "W3Counter",
+      "date": "2021-09-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 20.46,
+        "Android 10": 12.92,
+        "iOS 14": 12.88,
+        "Android 11": 11.75,
+        "Android 9": 6.9,
+        "Android 8": 5.71,
+        "Windows 7": 5.12,
+        "Mac OS X": 4.24,
+        "Android 5": 3.44,
+        "iOS 13": 3.33
+      },
+      "windows_share": 25.58,
+      "mac_share": 4.24,
+      "chromeos_share": 0.0,
+      "other_share": 70.18
+    },
+    {
+      "source": "W3Schools",
+      "date": "2021-09-01",
+      "linux_share": 4.1,
+      "details": {
+        "win10": 65.7,
+        "win8": 1.8,
+        "win7": 4.2,
+        "winxp": 0.0,
+        "linux": 4.1,
+        "mac": 8.9,
+        "chromeos": 0.6,
+        "mobile": 14.7
+      },
+      "windows_share": 71.7,
+      "mac_share": 8.9,
+      "chromeos_share": 0.6,
+      "other_share": 14.7
+    },
+    {
       "source": "Firefox",
       "date": "2021-09-06",
       "linux_share": 3.25,
@@ -3341,6 +5168,46 @@
       "windows_share": 96.47,
       "mac_share": 2.47,
       "other_share": 0.01
+    },
+    {
+      "source": "W3Counter",
+      "date": "2021-10-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 20.94,
+        "Android 11": 13.53,
+        "Android 10": 11.92,
+        "iOS 14": 10.69,
+        "Android 9": 5.86,
+        "Mac OS X": 5.39,
+        "Android 8": 5.35,
+        "Android 5": 5.33,
+        "Windows 7": 4.86,
+        "iOS 15": 4.18
+      },
+      "windows_share": 25.8,
+      "mac_share": 5.39,
+      "chromeos_share": 0.0,
+      "other_share": 68.81
+    },
+    {
+      "source": "W3Schools",
+      "date": "2021-10-01",
+      "linux_share": 4.1,
+      "details": {
+        "win10": 66.2,
+        "win8": 1.7,
+        "win7": 4.0,
+        "winxp": 0.0,
+        "linux": 4.1,
+        "mac": 9.2,
+        "chromeos": 0.6,
+        "mobile": 14.3
+      },
+      "windows_share": 71.9,
+      "mac_share": 9.2,
+      "chromeos_share": 0.6,
+      "other_share": 14.3
     },
     {
       "source": "Firefox",
@@ -3450,6 +5317,46 @@
       "other_share": 0.0
     },
     {
+      "source": "W3Counter",
+      "date": "2021-11-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 19.5,
+        "Android 11": 16.36,
+        "Android 10": 12.59,
+        "iOS 14": 8.56,
+        "iOS 15": 6.68,
+        "Android 9": 6.18,
+        "Mac OS X": 5.64,
+        "Android 8": 5.35,
+        "Windows 7": 4.28,
+        "Android 5": 3.33
+      },
+      "windows_share": 23.78,
+      "mac_share": 5.64,
+      "chromeos_share": 0.0,
+      "other_share": 70.58
+    },
+    {
+      "source": "W3Schools",
+      "date": "2021-11-01",
+      "linux_share": 4.2,
+      "details": {
+        "win10": 66.6,
+        "win8": 1.6,
+        "win7": 3.8,
+        "winxp": 0.0,
+        "linux": 4.2,
+        "mac": 9.3,
+        "chromeos": 0.6,
+        "mobile": 14.0
+      },
+      "windows_share": 72.0,
+      "mac_share": 9.3,
+      "chromeos_share": 0.6,
+      "other_share": 14.0
+    },
+    {
       "source": "Firefox",
       "date": "2021-11-08",
       "linux_share": 3.55,
@@ -3544,6 +5451,46 @@
       "windows_share": 96.14,
       "mac_share": 2.7,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2021-12-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 19.33,
+        "Android 11": 16.91,
+        "Android 10": 12.61,
+        "iOS 15": 9.79,
+        "Android 9": 6.21,
+        "iOS 14": 5.87,
+        "Mac OS X": 5.82,
+        "Android 8": 5.55,
+        "Windows 7": 3.87,
+        "Android 7": 2.89
+      },
+      "windows_share": 23.2,
+      "mac_share": 5.82,
+      "chromeos_share": 0.0,
+      "other_share": 70.98
+    },
+    {
+      "source": "W3Schools",
+      "date": "2021-12-01",
+      "linux_share": 4.3,
+      "details": {
+        "win10": 65.6,
+        "win8": 1.6,
+        "win7": 3.9,
+        "winxp": 0.0,
+        "linux": 4.3,
+        "mac": 8.7,
+        "chromeos": 0.6,
+        "mobile": 15.4
+      },
+      "windows_share": 71.1,
+      "mac_share": 8.7,
+      "chromeos_share": 0.6,
+      "other_share": 15.4
     },
     {
       "source": "Firefox",
@@ -3655,6 +5602,45 @@
       "other_share": 0.0
     },
     {
+      "source": "W3Counter",
+      "date": "2022-01-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 23.24,
+        "Android 11": 14.8,
+        "iOS 15": 11.37,
+        "Android 10": 10.81,
+        "Mac OS X": 6.37,
+        "Android 9": 5.55,
+        "iOS 14": 4.78,
+        "Android 8": 4.53,
+        "Windows 7": 4.45,
+        "Android 7": 2.43
+      },
+      "windows_share": 27.69,
+      "mac_share": 6.37,
+      "chromeos_share": 0.0,
+      "other_share": 65.94
+    },
+    {
+      "source": "W3Schools",
+      "date": "2022-01-01",
+      "linux_share": 4.1,
+      "details": {
+        "win10": 66.3,
+        "win8": 1.5,
+        "win7": 3.4,
+        "linux": 4.1,
+        "mac": 9.1,
+        "chromeos": 0.6,
+        "mobile": 15.0
+      },
+      "windows_share": 71.2,
+      "mac_share": 9.1,
+      "chromeos_share": 0.6,
+      "other_share": 15.0
+    },
+    {
       "source": "Firefox",
       "date": "2022-01-03",
       "linux_share": 3.53,
@@ -3762,6 +5748,45 @@
       "other_share": 0.0
     },
     {
+      "source": "W3Counter",
+      "date": "2022-02-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 20.38,
+        "Android 11": 16.01,
+        "iOS 15": 12.69,
+        "Android 10": 11.61,
+        "Mac OS X": 6.14,
+        "Android 9": 5.81,
+        "Android 8": 4.61,
+        "iOS 14": 4.07,
+        "Windows 7": 3.96,
+        "Android 12": 2.81
+      },
+      "windows_share": 24.34,
+      "mac_share": 6.14,
+      "chromeos_share": 0.0,
+      "other_share": 69.52
+    },
+    {
+      "source": "W3Schools",
+      "date": "2022-02-01",
+      "linux_share": 4.1,
+      "details": {
+        "win10": 66.3,
+        "win8": 1.4,
+        "win7": 3.4,
+        "linux": 4.1,
+        "mac": 9.4,
+        "chromeos": 0.7,
+        "mobile": 14.7
+      },
+      "windows_share": 71.1,
+      "mac_share": 9.4,
+      "chromeos_share": 0.7,
+      "other_share": 14.7
+    },
+    {
       "source": "Firefox",
       "date": "2022-02-07",
       "linux_share": 3.74,
@@ -3855,6 +5880,45 @@
       "windows_share": 96.17,
       "mac_share": 2.77,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2022-03-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 23.17,
+        "Android 11": 14.32,
+        "iOS 15": 13.56,
+        "Android 10": 10.95,
+        "Windows 7": 6.02,
+        "Mac OS X": 5.91,
+        "Android 9": 4.72,
+        "Android 12": 3.98,
+        "Android 8": 3.89,
+        "iOS 14": 3.19
+      },
+      "windows_share": 29.19,
+      "mac_share": 5.91,
+      "chromeos_share": 0.0,
+      "other_share": 64.9
+    },
+    {
+      "source": "W3Schools",
+      "date": "2022-03-01",
+      "linux_share": 4.2,
+      "details": {
+        "win10": 66.9,
+        "win8": 1.4,
+        "win7": 3.4,
+        "linux": 4.2,
+        "mac": 9.1,
+        "chromeos": 0.6,
+        "mobile": 14.4
+      },
+      "windows_share": 71.7,
+      "mac_share": 9.1,
+      "chromeos_share": 0.6,
+      "other_share": 14.4
     },
     {
       "source": "Firefox",
@@ -3952,6 +6016,45 @@
       "other_share": 0.0
     },
     {
+      "source": "W3Counter",
+      "date": "2022-04-01",
+      "linux_share": 0.0,
+      "details": {
+        "Android 11": 19.29,
+        "Windows 10": 15.58,
+        "iOS 15": 15.13,
+        "Android 10": 13.51,
+        "Android 9": 6.27,
+        "Android 12": 5.74,
+        "Android 8": 4.58,
+        "Mac OS X": 4.5,
+        "iOS 14": 2.99,
+        "Windows 7": 2.79
+      },
+      "windows_share": 18.37,
+      "mac_share": 4.5,
+      "chromeos_share": 0.0,
+      "other_share": 77.13
+    },
+    {
+      "source": "W3Schools",
+      "date": "2022-04-01",
+      "linux_share": 4.2,
+      "details": {
+        "win10": 66.3,
+        "win8": 1.4,
+        "win7": 3.3,
+        "linux": 4.2,
+        "mac": 9.3,
+        "chromeos": 0.6,
+        "mobile": 15.1
+      },
+      "windows_share": 71.0,
+      "mac_share": 9.3,
+      "chromeos_share": 0.6,
+      "other_share": 15.1
+    },
+    {
       "source": "Firefox",
       "date": "2022-04-04",
       "linux_share": 4.08,
@@ -4045,6 +6148,45 @@
       "windows_share": 96.31,
       "mac_share": 2.55,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2022-05-01",
+      "linux_share": 0.0,
+      "details": {
+        "Android 11": 19.43,
+        "iOS 15": 16.4,
+        "Windows 10": 14.74,
+        "Android 10": 13.29,
+        "Android 12": 7.99,
+        "Android 9": 6.17,
+        "Android 8": 4.44,
+        "Mac OS X": 4.02,
+        "iOS 14": 2.57,
+        "Windows 7": 2.55
+      },
+      "windows_share": 17.29,
+      "mac_share": 4.02,
+      "chromeos_share": 0.0,
+      "other_share": 78.69
+    },
+    {
+      "source": "W3Schools",
+      "date": "2022-05-01",
+      "linux_share": 4.2,
+      "details": {
+        "win10": 66.5,
+        "win8": 1.3,
+        "win7": 3.1,
+        "linux": 4.2,
+        "mac": 9.2,
+        "chromeos": 0.6,
+        "mobile": 15.2
+      },
+      "windows_share": 70.9,
+      "mac_share": 9.2,
+      "chromeos_share": 0.6,
+      "other_share": 15.2
     },
     {
       "source": "Firefox",
@@ -4171,6 +6313,45 @@
       "other_share": 0.0
     },
     {
+      "source": "W3Counter",
+      "date": "2022-06-01",
+      "linux_share": 0.0,
+      "details": {
+        "Android 11": 16.67,
+        "iOS 15": 16.18,
+        "Windows 10": 15.58,
+        "Android 10": 13.07,
+        "Android 12": 9.82,
+        "Android 9": 5.67,
+        "Android 8": 4.35,
+        "Mac OS X": 4.13,
+        "Windows 7": 3.59,
+        "iOS 14": 2.27
+      },
+      "windows_share": 19.17,
+      "mac_share": 4.13,
+      "chromeos_share": 0.0,
+      "other_share": 76.7
+    },
+    {
+      "source": "W3Schools",
+      "date": "2022-06-01",
+      "linux_share": 4.2,
+      "details": {
+        "win10": 66.4,
+        "win8": 1.3,
+        "win7": 2.9,
+        "linux": 4.2,
+        "mac": 9.0,
+        "chromeos": 0.3,
+        "mobile": 15.8
+      },
+      "windows_share": 70.6,
+      "mac_share": 9.0,
+      "chromeos_share": 0.3,
+      "other_share": 15.8
+    },
+    {
       "source": "Firefox",
       "date": "2022-06-06",
       "linux_share": 4.15,
@@ -4264,6 +6445,45 @@
       "windows_share": 96.68,
       "mac_share": 2.2,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2022-07-01",
+      "linux_share": 0.0,
+      "details": {
+        "iOS 15": 17.86,
+        "Android 11": 16.27,
+        "Windows 10": 16.11,
+        "Android 10": 11.77,
+        "Android 12": 11.29,
+        "Android 9": 5.32,
+        "Android 8": 4.32,
+        "Mac OS X": 3.68,
+        "Windows 7": 3.26,
+        "iOS 14": 2.11
+      },
+      "windows_share": 19.37,
+      "mac_share": 3.68,
+      "chromeos_share": 0.0,
+      "other_share": 76.95
+    },
+    {
+      "source": "W3Schools",
+      "date": "2022-07-01",
+      "linux_share": 4.4,
+      "details": {
+        "win10": 66.0,
+        "win8": 1.3,
+        "win7": 2.9,
+        "linux": 4.4,
+        "mac": 8.8,
+        "chromeos": 0.3,
+        "mobile": 16.3
+      },
+      "windows_share": 70.2,
+      "mac_share": 8.8,
+      "chromeos_share": 0.3,
+      "other_share": 16.3
     },
     {
       "source": "Firefox",
@@ -4373,6 +6593,45 @@
       "other_share": 0.0
     },
     {
+      "source": "W3Counter",
+      "date": "2022-08-01",
+      "linux_share": 0.0,
+      "details": {
+        "iOS 15": 17.39,
+        "Windows 10": 16.6,
+        "Android 11": 15.6,
+        "Android 12": 14.68,
+        "Android 10": 11.66,
+        "Android 9": 5.26,
+        "Android 8": 4.06,
+        "Mac OS X": 3.38,
+        "Windows 7": 3.0,
+        "Android 7": 1.66
+      },
+      "windows_share": 19.6,
+      "mac_share": 3.38,
+      "chromeos_share": 0.0,
+      "other_share": 77.02
+    },
+    {
+      "source": "W3Schools",
+      "date": "2022-08-01",
+      "linux_share": 4.4,
+      "details": {
+        "win10": 66.1,
+        "win8": 1.2,
+        "win7": 2.8,
+        "linux": 4.4,
+        "mac": 8.9,
+        "chromeos": 0.3,
+        "mobile": 16.2
+      },
+      "windows_share": 70.1,
+      "mac_share": 8.9,
+      "chromeos_share": 0.3,
+      "other_share": 16.2
+    },
+    {
       "source": "Firefox",
       "date": "2022-08-08",
       "linux_share": 4.05,
@@ -4468,6 +6727,45 @@
       "other_share": 0.0
     },
     {
+      "source": "W3Counter",
+      "date": "2022-09-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 18.39,
+        "iOS 15": 14.63,
+        "Android 11": 14.51,
+        "Android 12": 14.37,
+        "Android 10": 10.99,
+        "Android 9": 4.94,
+        "Android 8": 3.98,
+        "Mac OS X": 3.58,
+        "Windows 7": 3.26,
+        "iOS 16": 2.55
+      },
+      "windows_share": 21.65,
+      "mac_share": 3.58,
+      "chromeos_share": 0.0,
+      "other_share": 74.77
+    },
+    {
+      "source": "W3Schools",
+      "date": "2022-09-01",
+      "linux_share": 4.2,
+      "details": {
+        "win10": 66.4,
+        "win8": 1.1,
+        "win7": 2.7,
+        "linux": 4.2,
+        "mac": 9.1,
+        "chromeos": 0.5,
+        "mobile": 15.9
+      },
+      "windows_share": 70.2,
+      "mac_share": 9.1,
+      "chromeos_share": 0.5,
+      "other_share": 15.9
+    },
+    {
       "source": "Firefox",
       "date": "2022-09-05",
       "linux_share": 4.0,
@@ -4559,6 +6857,45 @@
       "windows_share": 96.41,
       "mac_share": 2.36,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2022-10-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 19.23,
+        "Android 12": 15.08,
+        "Android 11": 12.53,
+        "iOS 15": 11.82,
+        "Android 10": 9.75,
+        "iOS 16": 7.41,
+        "Android 9": 4.35,
+        "Mac OS X": 4.03,
+        "Android 8": 3.47,
+        "Windows 7": 3.4
+      },
+      "windows_share": 22.63,
+      "mac_share": 4.03,
+      "chromeos_share": 0.0,
+      "other_share": 73.34
+    },
+    {
+      "source": "W3Schools",
+      "date": "2022-10-01",
+      "linux_share": 4.0,
+      "details": {
+        "win10": 67.0,
+        "win8": 1.0,
+        "win7": 2.4,
+        "linux": 4.0,
+        "mac": 9.8,
+        "chromeos": 0.6,
+        "mobile": 15.3
+      },
+      "windows_share": 70.4,
+      "mac_share": 9.8,
+      "chromeos_share": 0.6,
+      "other_share": 15.3
     },
     {
       "source": "Firefox",
@@ -4666,6 +7003,45 @@
       "other_share": 0.0
     },
     {
+      "source": "W3Counter",
+      "date": "2022-11-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 19.19,
+        "Android 12": 15.16,
+        "Android 11": 12.36,
+        "Android 10": 9.83,
+        "iOS 16": 9.65,
+        "iOS 15": 9.41,
+        "Android 9": 4.25,
+        "Mac OS X": 3.94,
+        "Android 8": 3.54,
+        "Windows 7": 3.43
+      },
+      "windows_share": 22.62,
+      "mac_share": 3.94,
+      "chromeos_share": 0.0,
+      "other_share": 73.44
+    },
+    {
+      "source": "W3Schools",
+      "date": "2022-11-01",
+      "linux_share": 3.9,
+      "details": {
+        "win10": 67.5,
+        "win8": 1.0,
+        "win7": 2.3,
+        "linux": 3.9,
+        "mac": 9.2,
+        "chromeos": 0.6,
+        "mobile": 15.5
+      },
+      "windows_share": 70.8,
+      "mac_share": 9.2,
+      "chromeos_share": 0.6,
+      "other_share": 15.5
+    },
+    {
       "source": "Firefox",
       "date": "2022-11-07",
       "linux_share": 4.52,
@@ -4758,6 +7134,45 @@
       "windows_share": 96.11,
       "mac_share": 2.45,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2022-12-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 17.36,
+        "Android 12": 14.86,
+        "iOS 16": 12.78,
+        "Android 11": 12.14,
+        "Android 10": 9.68,
+        "iOS 15": 6.08,
+        "Android 13": 4.38,
+        "Android 9": 4.34,
+        "Mac OS X": 3.55,
+        "Android 8": 3.47
+      },
+      "windows_share": 17.36,
+      "mac_share": 3.55,
+      "chromeos_share": 0.0,
+      "other_share": 79.09
+    },
+    {
+      "source": "W3Schools",
+      "date": "2022-12-01",
+      "linux_share": 4.0,
+      "details": {
+        "win10": 66.9,
+        "win8": 1.0,
+        "win7": 2.3,
+        "linux": 4.0,
+        "mac": 8.7,
+        "chromeos": 0.5,
+        "mobile": 16.7
+      },
+      "windows_share": 70.2,
+      "mac_share": 8.7,
+      "chromeos_share": 0.5,
+      "other_share": 16.7
     },
     {
       "source": "Firefox",
@@ -4868,6 +7283,46 @@
       "other_share": 0.0
     },
     {
+      "source": "W3Counter",
+      "date": "2023-01-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 20.48,
+        "iOS 16": 13.09,
+        "Android 12": 12.85,
+        "Android 11": 11.32,
+        "Android 10": 9.12,
+        "Android 13": 6.34,
+        "iOS 15": 4.88,
+        "Android 9": 3.97,
+        "Mac OS X": 3.89,
+        "Windows 7": 3.39
+      },
+      "windows_share": 23.87,
+      "mac_share": 3.89,
+      "chromeos_share": 0.0,
+      "other_share": 72.24
+    },
+    {
+      "source": "W3Schools",
+      "date": "2023-01-01",
+      "linux_share": 4.1,
+      "details": {
+        "win11": 0.0,
+        "win10": 67.7,
+        "win8": 0.8,
+        "win7": 1.8,
+        "linux": 4.1,
+        "mac": 9.1,
+        "chromeos": 0.5,
+        "mobile": 15.9
+      },
+      "windows_share": 70.3,
+      "mac_share": 9.1,
+      "chromeos_share": 0.5,
+      "other_share": 15.9
+    },
+    {
       "source": "Firefox",
       "date": "2023-01-02",
       "linux_share": 4.11,
@@ -4960,6 +7415,24 @@
       "other_share": 6.13
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2023-02-01",
+      "linux_share": 2.43,
+      "details": {
+        "Windows": 40.73,
+        "iOS": 24.93,
+        "Android": 23.7,
+        "Mac": 7.97,
+        "GNU/Linux": 2.43,
+        "Chrome OS": 0.24,
+        "Inconnu": 0.01
+      },
+      "windows_share": 40.73,
+      "mac_share": 7.97,
+      "chromeos_share": 0.24,
+      "other_share": 48.64
+    },
+    {
       "source": "Steam",
       "date": "2023-02-01",
       "linux_share": 1.38,
@@ -4972,6 +7445,46 @@
       "windows_share": 96.02,
       "mac_share": 2.61,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2023-02-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 21.76,
+        "iOS 16": 13.66,
+        "Android 12": 11.95,
+        "Android 11": 10.8,
+        "Android 13": 9.03,
+        "Android 10": 8.86,
+        "Android 9": 3.93,
+        "iOS 15": 3.78,
+        "Mac OS X": 3.64,
+        "Android 8": 3.02
+      },
+      "windows_share": 21.76,
+      "mac_share": 3.64,
+      "chromeos_share": 0.0,
+      "other_share": 74.6
+    },
+    {
+      "source": "W3Schools",
+      "date": "2023-02-01",
+      "linux_share": 4.0,
+      "details": {
+        "win11": 0.0,
+        "win10": 69.9,
+        "win8": 0.3,
+        "win7": 0.7,
+        "linux": 4.0,
+        "mac": 9.2,
+        "chromeos": 0.5,
+        "mobile": 15.3
+      },
+      "windows_share": 70.9,
+      "mac_share": 9.2,
+      "chromeos_share": 0.5,
+      "other_share": 15.3
     },
     {
       "source": "Firefox",
@@ -5054,6 +7567,25 @@
       "other_share": 7.32
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2023-03-01",
+      "linux_share": 1.57,
+      "details": {
+        "Windows": 44.59,
+        "Android": 23.23,
+        "iOS": 22.31,
+        "Mac": 7.98,
+        "GNU/Linux": 1.57,
+        "Chrome OS": 0.32,
+        "Inconnu": 0.0,
+        "Other Mobile": 0.0
+      },
+      "windows_share": 44.59,
+      "mac_share": 7.98,
+      "chromeos_share": 0.32,
+      "other_share": 45.54
+    },
+    {
       "source": "Steam",
       "date": "2023-03-01",
       "linux_share": 1.27,
@@ -5066,6 +7598,46 @@
       "windows_share": 96.37,
       "mac_share": 2.37,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2023-03-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 19.69,
+        "iOS 16": 13.57,
+        "Android 12": 12.07,
+        "Android 13": 11.06,
+        "Android 11": 10.69,
+        "Android 10": 9.66,
+        "Android 9": 3.99,
+        "Mac OS X": 3.23,
+        "iOS 15": 3.07,
+        "Windows 7": 3.02
+      },
+      "windows_share": 22.71,
+      "mac_share": 3.23,
+      "chromeos_share": 0.0,
+      "other_share": 74.06
+    },
+    {
+      "source": "W3Schools",
+      "date": "2023-03-01",
+      "linux_share": 3.9,
+      "details": {
+        "win11": 0.0,
+        "win10": 70.9,
+        "win8": 0.2,
+        "win7": 0.4,
+        "linux": 3.9,
+        "mac": 9.0,
+        "chromeos": 0.6,
+        "mobile": 15.0
+      },
+      "windows_share": 71.5,
+      "mac_share": 9.0,
+      "chromeos_share": 0.6,
+      "other_share": 15.0
     },
     {
       "source": "Firefox",
@@ -5148,6 +7720,28 @@
       "other_share": 13.02
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2023-04-01",
+      "linux_share": 2.05,
+      "details": {
+        "Windows": 42.1,
+        "Android": 23.58,
+        "iOS": 23.06,
+        "Mac": 8.85,
+        "GNU/Linux": 2.05,
+        "Chrome OS": 0.35,
+        "Inconnu": 0.0,
+        "BlackBerry": 0.0,
+        "Console": 0.0,
+        "Other Mobile": 0.0,
+        "Windows Mobile": 0.0
+      },
+      "windows_share": 42.11,
+      "mac_share": 8.85,
+      "chromeos_share": 0.35,
+      "other_share": 46.64
+    },
+    {
       "source": "Steam",
       "date": "2023-04-01",
       "linux_share": 0.84,
@@ -5159,6 +7753,46 @@
       "windows_share": 97.75,
       "mac_share": 1.41,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2023-04-01",
+      "linux_share": 3.55,
+      "details": {
+        "Windows 10": 17.08,
+        "iOS 16": 13.62,
+        "Android 10": 12.88,
+        "Android 13": 10.97,
+        "Android 12": 10.88,
+        "Android 11": 9.81,
+        "Android 9": 3.7,
+        "Linux": 3.55,
+        "Mac OS X": 3.2,
+        "Android 8": 2.92
+      },
+      "windows_share": 17.08,
+      "mac_share": 3.2,
+      "chromeos_share": 0.0,
+      "other_share": 76.17
+    },
+    {
+      "source": "W3Schools",
+      "date": "2023-04-01",
+      "linux_share": 4.0,
+      "details": {
+        "win11": 0.0,
+        "win10": 70.3,
+        "win8": 0.1,
+        "win7": 0.4,
+        "linux": 4.0,
+        "mac": 9.0,
+        "chromeos": 0.5,
+        "mobile": 15.6
+      },
+      "windows_share": 70.8,
+      "mac_share": 9.0,
+      "chromeos_share": 0.5,
+      "other_share": 15.6
     },
     {
       "source": "Firefox",
@@ -5253,6 +7887,26 @@
       "other_share": 12.7
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2023-05-01",
+      "linux_share": 2.33,
+      "details": {
+        "Windows": 40.96,
+        "Android": 23.77,
+        "iOS": 22.94,
+        "Mac": 9.63,
+        "GNU/Linux": 2.33,
+        "Chrome OS": 0.35,
+        "Console": 0.0,
+        "Inconnu": 0.0,
+        "Other Mobile": 0.0
+      },
+      "windows_share": 40.96,
+      "mac_share": 9.63,
+      "chromeos_share": 0.35,
+      "other_share": 46.72
+    },
+    {
       "source": "Steam",
       "date": "2023-05-01",
       "linux_share": 1.32,
@@ -5265,6 +7919,46 @@
       "windows_share": 96.38,
       "mac_share": 2.3,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2023-05-01",
+      "linux_share": 3.54,
+      "details": {
+        "Android 10": 33.3,
+        "Windows 10": 16.57,
+        "iOS 16": 13.83,
+        "Android 13": 6.12,
+        "Android 11": 5.64,
+        "Android 12": 5.64,
+        "Linux": 3.54,
+        "Mac OS X": 3.17,
+        "iOS 15": 2.33,
+        "Android 9": 2.25
+      },
+      "windows_share": 16.57,
+      "mac_share": 3.17,
+      "chromeos_share": 0.0,
+      "other_share": 76.72
+    },
+    {
+      "source": "W3Schools",
+      "date": "2023-05-01",
+      "linux_share": 3.9,
+      "details": {
+        "win11": 0.0,
+        "win10": 71.1,
+        "win8": 0.1,
+        "win7": 0.4,
+        "linux": 3.9,
+        "mac": 8.6,
+        "chromeos": 0.6,
+        "mobile": 15.3
+      },
+      "windows_share": 71.6,
+      "mac_share": 8.6,
+      "chromeos_share": 0.6,
+      "other_share": 15.3
     },
     {
       "source": "Firefox",
@@ -5380,6 +8074,24 @@
       "other_share": 3.26
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2023-06-01",
+      "linux_share": 2.92,
+      "details": {
+        "Windows": 52.53,
+        "iOS": 17.28,
+        "Android": 16.59,
+        "Mac": 10.45,
+        "GNU/Linux": 2.92,
+        "Chrome OS": 0.15,
+        "Inconnu": 0.08
+      },
+      "windows_share": 52.53,
+      "mac_share": 10.45,
+      "chromeos_share": 0.15,
+      "other_share": 33.95
+    },
+    {
       "source": "Steam",
       "date": "2023-06-01",
       "linux_share": 1.47,
@@ -5392,6 +8104,46 @@
       "windows_share": 96.14,
       "mac_share": 2.39,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2023-06-01",
+      "linux_share": 3.64,
+      "details": {
+        "Android 10": 39.65,
+        "Windows 10": 16.84,
+        "iOS 16": 14.45,
+        "Android 13": 4.22,
+        "Android 12": 4.11,
+        "Android 11": 4.05,
+        "Linux": 3.64,
+        "Mac OS X": 2.43,
+        "iOS 15": 2.27,
+        "Android 9": 1.74
+      },
+      "windows_share": 16.84,
+      "mac_share": 2.43,
+      "chromeos_share": 0.0,
+      "other_share": 77.09
+    },
+    {
+      "source": "W3Schools",
+      "date": "2023-06-01",
+      "linux_share": 4.0,
+      "details": {
+        "win11": 0.0,
+        "win10": 71.0,
+        "win8": 0.5,
+        "win7": 0.3,
+        "linux": 4.0,
+        "mac": 8.5,
+        "chromeos": 0.4,
+        "mobile": 15.7
+      },
+      "windows_share": 71.8,
+      "mac_share": 8.5,
+      "chromeos_share": 0.4,
+      "other_share": 15.7
     },
     {
       "source": "Firefox",
@@ -5490,6 +8242,21 @@
       "other_share": 3.7
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2023-07-01",
+      "linux_share": 8.33,
+      "details": {
+        "iOS": 58.33,
+        "Android": 16.67,
+        "Windows": 16.67,
+        "GNU/Linux": 8.33
+      },
+      "windows_share": 16.67,
+      "mac_share": 0.0,
+      "chromeos_share": 0.0,
+      "other_share": 75.0
+    },
+    {
       "source": "Steam",
       "date": "2023-07-01",
       "linux_share": 1.44,
@@ -5502,6 +8269,46 @@
       "windows_share": 96.77,
       "mac_share": 1.79,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2023-07-01",
+      "linux_share": 2.77,
+      "details": {
+        "Android 10": 37.76,
+        "Windows 10": 18.32,
+        "iOS 16": 15.64,
+        "Android 13": 4.59,
+        "Android 11": 3.91,
+        "Android 12": 3.84,
+        "Mac OS X": 2.81,
+        "Linux": 2.77,
+        "iOS 15": 2.22,
+        "Android 9": 1.6
+      },
+      "windows_share": 18.32,
+      "mac_share": 2.81,
+      "chromeos_share": 0.0,
+      "other_share": 76.1
+    },
+    {
+      "source": "W3Schools",
+      "date": "2023-07-01",
+      "linux_share": 4.2,
+      "details": {
+        "win11": 26.5,
+        "win10": 42.7,
+        "win8": 0.8,
+        "win7": 2.0,
+        "linux": 4.2,
+        "mac": 7.8,
+        "chromeos": 0.3,
+        "mobile": 15.7
+      },
+      "windows_share": 72.0,
+      "mac_share": 7.8,
+      "chromeos_share": 0.3,
+      "other_share": 15.7
     },
     {
       "source": "Firefox",
@@ -5612,6 +8419,20 @@
       "other_share": 4.04
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2023-08-01",
+      "linux_share": 0.0,
+      "details": {
+        "iOS": 66.67,
+        "Android": 16.67,
+        "Windows": 16.67
+      },
+      "windows_share": 16.67,
+      "mac_share": 0.0,
+      "chromeos_share": 0.0,
+      "other_share": 83.33
+    },
+    {
       "source": "Steam",
       "date": "2023-08-01",
       "linux_share": 1.44,
@@ -5624,6 +8445,46 @@
       "windows_share": 96.77,
       "mac_share": 1.79,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2023-08-01",
+      "linux_share": 1.81,
+      "details": {
+        "Android 10": 33.19,
+        "Windows 10": 19.25,
+        "iOS 16": 14.84,
+        "Windows 7": 5.32,
+        "Android 13": 4.54,
+        "Android 12": 3.85,
+        "Android 11": 3.44,
+        "Mac OS X": 3.16,
+        "iOS 15": 1.96,
+        "Linux": 1.81
+      },
+      "windows_share": 24.57,
+      "mac_share": 3.16,
+      "chromeos_share": 0.0,
+      "other_share": 70.46
+    },
+    {
+      "source": "W3Schools",
+      "date": "2023-08-01",
+      "linux_share": 4.2,
+      "details": {
+        "win11": 27.6,
+        "win10": 41.1,
+        "win8": 0.7,
+        "win7": 1.8,
+        "linux": 4.2,
+        "mac": 8.5,
+        "chromeos": 0.3,
+        "mobile": 15.9
+      },
+      "windows_share": 71.2,
+      "mac_share": 8.5,
+      "chromeos_share": 0.3,
+      "other_share": 15.9
     },
     {
       "source": "Firefox",
@@ -5722,6 +8583,20 @@
       "other_share": 4.54
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2023-09-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows": 50.0,
+        "Mac": 33.33,
+        "iOS": 16.67
+      },
+      "windows_share": 50.0,
+      "mac_share": 33.33,
+      "chromeos_share": 0.0,
+      "other_share": 16.67
+    },
+    {
       "source": "Steam",
       "date": "2023-09-01",
       "linux_share": 1.96,
@@ -5734,6 +8609,46 @@
       "windows_share": 96.21,
       "mac_share": 1.84,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2023-09-01",
+      "linux_share": 1.8,
+      "details": {
+        "Android 10": 33.54,
+        "Windows 10": 18.14,
+        "iOS 16": 14.99,
+        "Android 13": 5.22,
+        "Android 12": 3.83,
+        "Android 11": 3.78,
+        "Mac OS X": 2.99,
+        "Android 8": 2.53,
+        "iOS 15": 1.88,
+        "Linux": 1.8
+      },
+      "windows_share": 18.14,
+      "mac_share": 2.99,
+      "chromeos_share": 0.0,
+      "other_share": 77.07
+    },
+    {
+      "source": "W3Schools",
+      "date": "2023-09-01",
+      "linux_share": 3.8,
+      "details": {
+        "win11": 28.0,
+        "win10": 41.4,
+        "win8": 0.7,
+        "win7": 1.6,
+        "linux": 3.8,
+        "mac": 8.2,
+        "chromeos": 0.5,
+        "mobile": 15.7
+      },
+      "windows_share": 71.7,
+      "mac_share": 8.2,
+      "chromeos_share": 0.5,
+      "other_share": 15.7
     },
     {
       "source": "Firefox",
@@ -5832,6 +8747,21 @@
       "other_share": 3.77
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2023-10-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows": 42.86,
+        "Mac": 28.57,
+        "Android": 14.29,
+        "iOS": 14.29
+      },
+      "windows_share": 42.86,
+      "mac_share": 28.57,
+      "chromeos_share": 0.0,
+      "other_share": 28.57
+    },
+    {
       "source": "Steam",
       "date": "2023-10-01",
       "linux_share": 1.82,
@@ -5845,6 +8775,46 @@
       "windows_share": 96.61,
       "mac_share": 1.57,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2023-10-01",
+      "linux_share": 0.0,
+      "details": {
+        "Android 10": 31.36,
+        "Windows 10": 20.57,
+        "iOS 16": 11.75,
+        "Android 13": 5.55,
+        "iOS 17": 4.35,
+        "Android 12": 3.77,
+        "Android 11": 3.7,
+        "Mac OS X": 3.32,
+        "Android 8": 2.31,
+        "iOS 15": 1.91
+      },
+      "windows_share": 20.57,
+      "mac_share": 3.32,
+      "chromeos_share": 0.0,
+      "other_share": 76.11
+    },
+    {
+      "source": "W3Schools",
+      "date": "2023-10-01",
+      "linux_share": 4.0,
+      "details": {
+        "win11": 28.2,
+        "win10": 40.7,
+        "win8": 0.6,
+        "win7": 1.5,
+        "linux": 4.0,
+        "mac": 8.6,
+        "chromeos": 0.6,
+        "mobile": 15.8
+      },
+      "windows_share": 71.0,
+      "mac_share": 8.6,
+      "chromeos_share": 0.6,
+      "other_share": 15.8
     },
     {
       "source": "Firefox",
@@ -5955,6 +8925,19 @@
       "other_share": 3.05
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2023-11-01",
+      "linux_share": 0.0,
+      "details": {
+        "Android": 50.0,
+        "Windows": 50.0
+      },
+      "windows_share": 50.0,
+      "mac_share": 0.0,
+      "chromeos_share": 0.0,
+      "other_share": 50.0
+    },
+    {
       "source": "Steam",
       "date": "2023-11-01",
       "linux_share": 1.63,
@@ -5967,6 +8950,46 @@
       "windows_share": 96.94,
       "mac_share": 1.43,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2023-11-01",
+      "linux_share": 0.0,
+      "details": {
+        "Android 10": 31.24,
+        "Windows 10": 21.71,
+        "iOS 16": 9.75,
+        "iOS 17": 6.98,
+        "Android 13": 5.57,
+        "Android 12": 3.8,
+        "Android 11": 3.57,
+        "Mac OS X": 3.4,
+        "Android 8": 1.9,
+        "iOS 15": 1.82
+      },
+      "windows_share": 21.71,
+      "mac_share": 3.4,
+      "chromeos_share": 0.0,
+      "other_share": 74.89
+    },
+    {
+      "source": "W3Schools",
+      "date": "2023-11-01",
+      "linux_share": 3.9,
+      "details": {
+        "win11": 28.7,
+        "win10": 40.3,
+        "win8": 0.6,
+        "win7": 1.4,
+        "linux": 3.9,
+        "mac": 8.7,
+        "chromeos": 0.6,
+        "mobile": 15.8
+      },
+      "windows_share": 71.0,
+      "mac_share": 8.7,
+      "chromeos_share": 0.6,
+      "other_share": 15.8
     },
     {
       "source": "Firefox",
@@ -6065,6 +9088,23 @@
       "other_share": 4.66
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2023-12-01",
+      "linux_share": 51.69,
+      "details": {
+        "GNU/Linux": 51.69,
+        "Android": 24.59,
+        "iOS": 10.63,
+        "Windows": 7.06,
+        "Mac": 5.78,
+        "Chrome OS": 0.26
+      },
+      "windows_share": 7.06,
+      "mac_share": 5.78,
+      "chromeos_share": 0.26,
+      "other_share": 35.22
+    },
+    {
       "source": "Steam",
       "date": "2023-12-01",
       "linux_share": 1.39,
@@ -6077,6 +9117,46 @@
       "windows_share": 97.43,
       "mac_share": 1.19,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2023-12-01",
+      "linux_share": 0.0,
+      "details": {
+        "Android 10": 30.33,
+        "Windows 10": 20.88,
+        "iOS 17": 11.15,
+        "Android 13": 5.63,
+        "iOS 16": 5.42,
+        "Android 12": 4.13,
+        "Android 11": 3.66,
+        "Mac OS X": 3.36,
+        "Android 8": 2.08,
+        "iOS 15": 1.89
+      },
+      "windows_share": 20.88,
+      "mac_share": 3.36,
+      "chromeos_share": 0.0,
+      "other_share": 75.76
+    },
+    {
+      "source": "W3Schools",
+      "date": "2023-12-01",
+      "linux_share": 4.0,
+      "details": {
+        "win11": 29.6,
+        "win10": 38.0,
+        "win8": 0.6,
+        "win7": 1.5,
+        "linux": 4.0,
+        "mac": 7.9,
+        "chromeos": 0.5,
+        "mobile": 17.3
+      },
+      "windows_share": 69.7,
+      "mac_share": 7.9,
+      "chromeos_share": 0.5,
+      "other_share": 17.3
     },
     {
       "source": "Firefox",
@@ -6201,6 +9281,25 @@
       "other_share": 5.35
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2024-01-01",
+      "linux_share": 6.15,
+      "details": {
+        "Android": 46.96,
+        "Windows": 26.14,
+        "iOS": 14.82,
+        "GNU/Linux": 6.15,
+        "Mac": 5.8,
+        "Chrome OS": 0.09,
+        "Inconnu": 0.02,
+        "Unix": 0.02
+      },
+      "windows_share": 26.14,
+      "mac_share": 5.8,
+      "chromeos_share": 0.09,
+      "other_share": 61.82
+    },
+    {
       "source": "Steam",
       "date": "2024-01-01",
       "linux_share": 1.91,
@@ -6213,6 +9312,46 @@
       "windows_share": 96.56,
       "mac_share": 1.53,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2024-01-01",
+      "linux_share": 0.0,
+      "details": {
+        "Android 10": 30.84,
+        "Windows 10": 18.32,
+        "iOS 17": 10.36,
+        "Android 13": 6.03,
+        "Android 12": 4.37,
+        "iOS 16": 4.28,
+        "Android 11": 4.08,
+        "Mac OS X": 3.0,
+        "Android 8": 2.88,
+        "Android 6": 2.32
+      },
+      "windows_share": 18.32,
+      "mac_share": 3.0,
+      "chromeos_share": 0.0,
+      "other_share": 78.68
+    },
+    {
+      "source": "W3Schools",
+      "date": "2024-01-01",
+      "linux_share": 4.1,
+      "details": {
+        "win11": 30.6,
+        "win10": 38.2,
+        "win8": 0.5,
+        "win7": 1.3,
+        "linux": 4.1,
+        "mac": 8.4,
+        "chromeos": 0.6,
+        "mobile": 18.0
+      },
+      "windows_share": 70.6,
+      "mac_share": 8.4,
+      "chromeos_share": 0.6,
+      "other_share": 18.0
     },
     {
       "source": "Firefox",
@@ -6311,6 +9450,23 @@
       "other_share": 6.12
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2024-02-01",
+      "linux_share": 2.38,
+      "details": {
+        "Android": 47.85,
+        "Windows": 31.59,
+        "iOS": 12.69,
+        "Mac": 5.34,
+        "GNU/Linux": 2.38,
+        "Chrome OS": 0.14
+      },
+      "windows_share": 31.59,
+      "mac_share": 5.34,
+      "chromeos_share": 0.14,
+      "other_share": 60.55
+    },
+    {
       "source": "Steam",
       "date": "2024-02-01",
       "linux_share": 1.95,
@@ -6323,6 +9479,46 @@
       "windows_share": 96.52,
       "mac_share": 1.54,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2024-02-01",
+      "linux_share": 1.85,
+      "details": {
+        "Android 10": 30.76,
+        "Windows 10": 19.66,
+        "iOS 17": 12.36,
+        "Android 13": 6.12,
+        "Android 12": 4.88,
+        "Android 11": 4.49,
+        "iOS 16": 4.2,
+        "Mac OS X": 3.12,
+        "Android 14": 2.13,
+        "Linux": 1.85
+      },
+      "windows_share": 19.66,
+      "mac_share": 3.12,
+      "chromeos_share": 0.0,
+      "other_share": 75.37
+    },
+    {
+      "source": "W3Schools",
+      "date": "2024-02-01",
+      "linux_share": 4.0,
+      "details": {
+        "win11": 31.0,
+        "win10": 36.8,
+        "win8": 0.6,
+        "win7": 1.4,
+        "linux": 4.0,
+        "mac": 7.9,
+        "chromeos": 0.6,
+        "mobile": 14.7
+      },
+      "windows_share": 69.8,
+      "mac_share": 7.9,
+      "chromeos_share": 0.6,
+      "other_share": 14.7
     },
     {
       "source": "Firefox",
@@ -6421,6 +9617,27 @@
       "other_share": 6.53
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2024-03-01",
+      "linux_share": 1.82,
+      "details": {
+        "Android": 33.0,
+        "Windows": 29.53,
+        "iOS": 23.87,
+        "Mac": 11.26,
+        "GNU/Linux": 1.82,
+        "Chrome OS": 0.48,
+        "Inconnu": 0.03,
+        "Windows Mobile": 0.01,
+        "Console": 0.0,
+        "Unix": 0.0
+      },
+      "windows_share": 29.54,
+      "mac_share": 11.26,
+      "chromeos_share": 0.48,
+      "other_share": 56.9
+    },
+    {
       "source": "Steam",
       "date": "2024-03-01",
       "linux_share": 1.76,
@@ -6433,6 +9650,46 @@
       "windows_share": 96.91,
       "mac_share": 1.32,
       "other_share": 0.01
+    },
+    {
+      "source": "W3Counter",
+      "date": "2024-03-01",
+      "linux_share": 1.81,
+      "details": {
+        "Android 10": 30.49,
+        "Windows 10": 21.68,
+        "iOS 17": 12.89,
+        "Android 13": 5.24,
+        "Android 12": 4.72,
+        "Android 11": 3.94,
+        "iOS 16": 3.72,
+        "Mac OS X": 3.15,
+        "Android 14": 2.55,
+        "Linux": 1.81
+      },
+      "windows_share": 21.68,
+      "mac_share": 3.15,
+      "chromeos_share": 0.0,
+      "other_share": 73.36
+    },
+    {
+      "source": "W3Schools",
+      "date": "2024-03-01",
+      "linux_share": 3.7,
+      "details": {
+        "win11": 31.6,
+        "win10": 36.0,
+        "win8": 0.5,
+        "win7": 1.4,
+        "linux": 3.7,
+        "mac": 7.0,
+        "chromeos": 0.5,
+        "mobile": 14.7
+      },
+      "windows_share": 69.5,
+      "mac_share": 7.0,
+      "chromeos_share": 0.5,
+      "other_share": 14.7
     },
     {
       "source": "Firefox",
@@ -6543,6 +9800,28 @@
       "other_share": 5.35
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2024-04-01",
+      "linux_share": 1.89,
+      "details": {
+        "Android": 36.17,
+        "Windows": 27.39,
+        "iOS": 22.59,
+        "Mac": 11.37,
+        "GNU/Linux": 1.89,
+        "Chrome OS": 0.54,
+        "Inconnu": 0.04,
+        "Windows Mobile": 0.0,
+        "Other Mobile": 0.0,
+        "Console": 0.0,
+        "Unix": 0.0
+      },
+      "windows_share": 27.4,
+      "mac_share": 11.37,
+      "chromeos_share": 0.54,
+      "other_share": 58.8
+    },
+    {
       "source": "Steam",
       "date": "2024-04-01",
       "linux_share": 1.94,
@@ -6555,6 +9834,46 @@
       "windows_share": 96.67,
       "mac_share": 1.38,
       "other_share": 0.01
+    },
+    {
+      "source": "W3Counter",
+      "date": "2024-04-01",
+      "linux_share": 1.88,
+      "details": {
+        "Android 10": 29.33,
+        "Windows 10": 22.55,
+        "iOS 17": 12.79,
+        "Android 13": 4.98,
+        "Android 12": 4.63,
+        "Android 11": 3.6,
+        "iOS 16": 3.57,
+        "Mac OS X": 3.18,
+        "Android 14": 3.17,
+        "Linux": 1.88
+      },
+      "windows_share": 22.55,
+      "mac_share": 3.18,
+      "chromeos_share": 0.0,
+      "other_share": 72.39
+    },
+    {
+      "source": "W3Schools",
+      "date": "2024-04-01",
+      "linux_share": 4.0,
+      "details": {
+        "win11": 32.5,
+        "win10": 37.2,
+        "win8": 0.4,
+        "win7": 1.1,
+        "linux": 4.0,
+        "mac": 8.8,
+        "chromeos": 0.6,
+        "mobile": 15.3
+      },
+      "windows_share": 71.2,
+      "mac_share": 8.8,
+      "chromeos_share": 0.6,
+      "other_share": 15.3
     },
     {
       "source": "Firefox",
@@ -6653,6 +9972,27 @@
       "other_share": 4.88
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2024-05-01",
+      "linux_share": 1.47,
+      "details": {
+        "Android": 37.52,
+        "Windows": 27.72,
+        "iOS": 22.6,
+        "Mac": 10.19,
+        "GNU/Linux": 1.47,
+        "Chrome OS": 0.45,
+        "Inconnu": 0.05,
+        "Console": 0.0,
+        "Other Mobile": 0.0,
+        "Unix": 0.0
+      },
+      "windows_share": 27.72,
+      "mac_share": 10.19,
+      "chromeos_share": 0.45,
+      "other_share": 60.17
+    },
+    {
       "source": "Steam",
       "date": "2024-05-01",
       "linux_share": 1.94,
@@ -6665,6 +10005,46 @@
       "windows_share": 96.67,
       "mac_share": 1.38,
       "other_share": 0.01
+    },
+    {
+      "source": "W3Counter",
+      "date": "2024-05-01",
+      "linux_share": 2.07,
+      "details": {
+        "Android 10": 30.47,
+        "Windows 10": 22.84,
+        "iOS 17": 13.11,
+        "Android 13": 4.23,
+        "Android 12": 4.04,
+        "Android 11": 3.54,
+        "Mac OS X": 3.26,
+        "iOS 16": 3.11,
+        "Android 14": 3.03,
+        "Linux": 2.07
+      },
+      "windows_share": 22.84,
+      "mac_share": 3.26,
+      "chromeos_share": 0.0,
+      "other_share": 71.83
+    },
+    {
+      "source": "W3Schools",
+      "date": "2024-05-01",
+      "linux_share": 3.8,
+      "details": {
+        "win11": 33.1,
+        "win10": 37.0,
+        "win8": 0.4,
+        "win7": 1.1,
+        "linux": 3.8,
+        "mac": 8.2,
+        "chromeos": 0.7,
+        "mobile": 15.8
+      },
+      "windows_share": 71.6,
+      "mac_share": 8.2,
+      "chromeos_share": 0.7,
+      "other_share": 15.8
     },
     {
       "source": "Firefox",
@@ -6780,6 +10160,30 @@
       "other_share": 6.24
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2024-06-01",
+      "linux_share": 1.7,
+      "details": {
+        "Android": 33.5,
+        "Windows": 32.33,
+        "iOS": 22.32,
+        "Mac": 9.63,
+        "GNU/Linux": 1.7,
+        "Chrome OS": 0.47,
+        "Inconnu": 0.04,
+        "Other Mobile": 0.0,
+        "Console": 0.0,
+        "Windows Mobile": 0.0,
+        "Symbian": 0.0,
+        "Unix": 0.0,
+        "Firefox OS": 0.0
+      },
+      "windows_share": 32.33,
+      "mac_share": 9.63,
+      "chromeos_share": 0.47,
+      "other_share": 55.87
+    },
+    {
       "source": "Steam",
       "date": "2024-06-01",
       "linux_share": 2.32,
@@ -6793,6 +10197,46 @@
       "windows_share": 96.21,
       "mac_share": 1.47,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2024-06-01",
+      "linux_share": 2.41,
+      "details": {
+        "Android 10": 31.34,
+        "Windows 10": 22.35,
+        "iOS 17": 14.1,
+        "Android 12": 3.88,
+        "Android 14": 3.76,
+        "Mac OS X": 3.65,
+        "Android 13": 3.44,
+        "iOS 16": 3.2,
+        "Android 11": 2.72,
+        "Linux": 2.41
+      },
+      "windows_share": 22.35,
+      "mac_share": 3.65,
+      "chromeos_share": 0.0,
+      "other_share": 71.59
+    },
+    {
+      "source": "W3Schools",
+      "date": "2024-06-01",
+      "linux_share": 4.2,
+      "details": {
+        "win11": 34.5,
+        "win10": 34.6,
+        "win8": 0.3,
+        "win7": 1.2,
+        "linux": 4.2,
+        "mac": 8.1,
+        "chromeos": 0.3,
+        "mobile": 16.6
+      },
+      "windows_share": 70.6,
+      "mac_share": 8.1,
+      "chromeos_share": 0.3,
+      "other_share": 16.6
     },
     {
       "source": "Firefox",
@@ -6903,6 +10347,29 @@
       "other_share": 7.14
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2024-07-01",
+      "linux_share": 1.73,
+      "details": {
+        "Windows": 35.48,
+        "Android": 29.24,
+        "iOS": 24.0,
+        "Mac": 9.18,
+        "GNU/Linux": 1.73,
+        "Chrome OS": 0.35,
+        "Inconnu": 0.04,
+        "Console": 0.0,
+        "Windows Mobile": 0.0,
+        "Unix": 0.0,
+        "Other Mobile": 0.0,
+        "Firefox OS": 0.0
+      },
+      "windows_share": 35.48,
+      "mac_share": 9.18,
+      "chromeos_share": 0.35,
+      "other_share": 53.27
+    },
+    {
       "source": "Steam",
       "date": "2024-07-01",
       "linux_share": 2.08,
@@ -6917,6 +10384,46 @@
       "windows_share": 96.61,
       "mac_share": 1.31,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2024-07-01",
+      "linux_share": 3.02,
+      "details": {
+        "Android 10": 29.93,
+        "Windows 10": 21.2,
+        "iOS 17": 14.72,
+        "Android 14": 4.94,
+        "Mac OS X": 3.99,
+        "Android 12": 3.98,
+        "Android 13": 3.33,
+        "iOS 16": 3.04,
+        "Linux": 3.02,
+        "Android 11": 2.54
+      },
+      "windows_share": 21.2,
+      "mac_share": 3.99,
+      "chromeos_share": 0.0,
+      "other_share": 71.79
+    },
+    {
+      "source": "W3Schools",
+      "date": "2024-07-01",
+      "linux_share": 4.0,
+      "details": {
+        "win11": 35.2,
+        "win10": 33.4,
+        "win8": 0.4,
+        "win7": 1.2,
+        "linux": 4.0,
+        "mac": 7.4,
+        "chromeos": 0.3,
+        "mobile": 16.6
+      },
+      "windows_share": 70.2,
+      "mac_share": 7.4,
+      "chromeos_share": 0.3,
+      "other_share": 16.6
     },
     {
       "source": "Firefox",
@@ -7015,6 +10522,27 @@
       "other_share": 6.78
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2024-08-01",
+      "linux_share": 0.76,
+      "details": {
+        "iOS": 40.13,
+        "Android": 34.62,
+        "Windows": 19.16,
+        "Mac": 4.96,
+        "GNU/Linux": 0.76,
+        "Chrome OS": 0.37,
+        "Inconnu": 0.01,
+        "Other Mobile": 0.0,
+        "Windows Mobile": 0.0,
+        "Console": 0.0
+      },
+      "windows_share": 19.16,
+      "mac_share": 4.96,
+      "chromeos_share": 0.37,
+      "other_share": 74.76
+    },
+    {
       "source": "Steam",
       "date": "2024-08-01",
       "linux_share": 2.08,
@@ -7030,6 +10558,46 @@
       "windows_share": 96.55,
       "mac_share": 1.37,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2024-08-01",
+      "linux_share": 3.67,
+      "details": {
+        "Android 10": 28.72,
+        "Windows 10": 22.16,
+        "iOS 17": 13.7,
+        "Android 14": 5.41,
+        "Android 12": 4.07,
+        "Mac OS X": 3.88,
+        "Android 13": 3.69,
+        "Linux": 3.67,
+        "Android 11": 2.79,
+        "iOS 16": 2.64
+      },
+      "windows_share": 22.16,
+      "mac_share": 3.88,
+      "chromeos_share": 0.0,
+      "other_share": 70.29
+    },
+    {
+      "source": "W3Schools",
+      "date": "2024-08-01",
+      "linux_share": 3.9,
+      "details": {
+        "win11": 35.2,
+        "win10": 32.5,
+        "win8": 0.5,
+        "win7": 1.1,
+        "linux": 3.9,
+        "mac": 7.2,
+        "chromeos": 0.4,
+        "mobile": 17.5
+      },
+      "windows_share": 69.3,
+      "mac_share": 7.2,
+      "chromeos_share": 0.4,
+      "other_share": 17.5
     },
     {
       "source": "Firefox",
@@ -7128,6 +10696,28 @@
       "other_share": 4.49
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2024-09-01",
+      "linux_share": 0.64,
+      "details": {
+        "iOS": 39.1,
+        "Android": 32.49,
+        "Windows": 22.23,
+        "Mac": 5.16,
+        "GNU/Linux": 0.64,
+        "Chrome OS": 0.37,
+        "Inconnu": 0.0,
+        "Console": 0.0,
+        "Other Mobile": 0.0,
+        "Real-time OS": 0.0,
+        "Unix": 0.0
+      },
+      "windows_share": 22.23,
+      "mac_share": 5.16,
+      "chromeos_share": 0.37,
+      "other_share": 71.6
+    },
+    {
       "source": "Steam",
       "date": "2024-09-01",
       "linux_share": 2.08,
@@ -7143,6 +10733,46 @@
       "windows_share": 96.55,
       "mac_share": 1.37,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2024-09-01",
+      "linux_share": 3.67,
+      "details": {
+        "Android 10": 29.53,
+        "Windows 10": 21.29,
+        "iOS 17": 12.09,
+        "Android 14": 5.32,
+        "Android 12": 4.51,
+        "Linux": 3.67,
+        "Android 11": 3.55,
+        "Android 13": 3.46,
+        "Mac OS X": 3.38,
+        "iOS 16": 3.26
+      },
+      "windows_share": 21.29,
+      "mac_share": 3.38,
+      "chromeos_share": 0.0,
+      "other_share": 71.66
+    },
+    {
+      "source": "W3Schools",
+      "date": "2024-09-01",
+      "linux_share": 3.8,
+      "details": {
+        "win11": 35.8,
+        "win10": 32.1,
+        "win8": 0.4,
+        "win7": 1.0,
+        "linux": 3.8,
+        "mac": 7.6,
+        "chromeos": 0.6,
+        "mobile": 16.5
+      },
+      "windows_share": 69.3,
+      "mac_share": 7.6,
+      "chromeos_share": 0.6,
+      "other_share": 16.5
     },
     {
       "source": "Firefox",
@@ -7253,6 +10883,29 @@
       "other_share": 4.67
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2024-10-01",
+      "linux_share": 0.56,
+      "details": {
+        "iOS": 35.09,
+        "Android": 28.54,
+        "Mac": 18.09,
+        "Windows": 17.4,
+        "GNU/Linux": 0.56,
+        "Chrome OS": 0.29,
+        "Inconnu": 0.02,
+        "Console": 0.0,
+        "Windows Mobile": 0.0,
+        "Other Mobile": 0.0,
+        "Real-time OS": 0.0,
+        "Unix": 0.0
+      },
+      "windows_share": 17.4,
+      "mac_share": 18.09,
+      "chromeos_share": 0.29,
+      "other_share": 63.66
+    },
+    {
       "source": "Steam",
       "date": "2024-10-01",
       "linux_share": 1.92,
@@ -7268,6 +10921,46 @@
       "windows_share": 96.78,
       "mac_share": 1.3,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2024-10-01",
+      "linux_share": 3.86,
+      "details": {
+        "Android 10": 28.5,
+        "Windows 10": 23.31,
+        "iOS 17": 10.31,
+        "Android 14": 5.34,
+        "Linux": 3.86,
+        "Android 12": 3.82,
+        "iOS 18": 3.67,
+        "Mac OS X": 3.64,
+        "Android 13": 3.31,
+        "Android 11": 2.82
+      },
+      "windows_share": 23.31,
+      "mac_share": 3.64,
+      "chromeos_share": 0.0,
+      "other_share": 69.19
+    },
+    {
+      "source": "W3Schools",
+      "date": "2024-10-01",
+      "linux_share": 3.7,
+      "details": {
+        "win11": 35.4,
+        "win10": 32.8,
+        "win8": 0.4,
+        "win7": 0.9,
+        "linux": 3.7,
+        "mac": 7.9,
+        "chromeos": 0.6,
+        "mobile": 16.3
+      },
+      "windows_share": 69.5,
+      "mac_share": 7.9,
+      "chromeos_share": 0.6,
+      "other_share": 16.3
     },
     {
       "source": "Firefox",
@@ -7366,6 +11059,28 @@
       "other_share": 5.41
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2024-11-01",
+      "linux_share": 0.66,
+      "details": {
+        "iOS": 41.03,
+        "Android": 31.76,
+        "Windows": 20.81,
+        "Mac": 5.4,
+        "GNU/Linux": 0.66,
+        "Chrome OS": 0.33,
+        "Inconnu": 0.01,
+        "Other Mobile": 0.0,
+        "Console": 0.0,
+        "Windows Mobile": 0.0,
+        "Real-time OS": 0.0
+      },
+      "windows_share": 20.81,
+      "mac_share": 5.4,
+      "chromeos_share": 0.33,
+      "other_share": 72.8
+    },
+    {
       "source": "Steam",
       "date": "2024-11-01",
       "linux_share": 2.0,
@@ -7380,6 +11095,46 @@
       "windows_share": 96.61,
       "mac_share": 1.39,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2024-11-01",
+      "linux_share": 2.58,
+      "details": {
+        "Android 10": 31.02,
+        "Windows 10": 23.46,
+        "iOS 17": 8.86,
+        "iOS 18": 4.86,
+        "Android 14": 4.76,
+        "Mac OS X": 3.58,
+        "Android 12": 3.33,
+        "Android 13": 3.31,
+        "Android 11": 2.8,
+        "Linux": 2.58
+      },
+      "windows_share": 23.46,
+      "mac_share": 3.58,
+      "chromeos_share": 0.0,
+      "other_share": 70.38
+    },
+    {
+      "source": "W3Schools",
+      "date": "2024-11-01",
+      "linux_share": 3.6,
+      "details": {
+        "win11": 36.0,
+        "win10": 32.5,
+        "win8": 0.4,
+        "win7": 1.0,
+        "linux": 3.6,
+        "mac": 7.4,
+        "chromeos": 0.6,
+        "mobile": 17.8
+      },
+      "windows_share": 69.9,
+      "mac_share": 7.4,
+      "chromeos_share": 0.6,
+      "other_share": 17.8
     },
     {
       "source": "Firefox",
@@ -7478,6 +11233,32 @@
       "other_share": 6.44
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2024-12-01",
+      "linux_share": 0.81,
+      "details": {
+        "iOS": 37.19,
+        "Android": 29.64,
+        "Windows": 25.48,
+        "Mac": 6.32,
+        "GNU/Linux": 0.81,
+        "Chrome OS": 0.54,
+        "Inconnu": 0.01,
+        "Other Mobile": 0.0,
+        "Console": 0.0,
+        "Windows Mobile": 0.0,
+        "Real-time OS": 0.0,
+        "Unix": 0.0,
+        "Symbian": 0.0,
+        "BlackBerry": 0.0,
+        "Firefox OS": 0.0
+      },
+      "windows_share": 25.48,
+      "mac_share": 6.32,
+      "chromeos_share": 0.54,
+      "other_share": 66.85
+    },
+    {
       "source": "Steam",
       "date": "2024-12-01",
       "linux_share": 2.0,
@@ -7492,6 +11273,46 @@
       "windows_share": 96.61,
       "mac_share": 1.39,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2024-12-01",
+      "linux_share": 2.71,
+      "details": {
+        "Android 10": 30.32,
+        "Windows 10": 22.28,
+        "iOS 18": 9.26,
+        "Android 14": 5.65,
+        "iOS 17": 4.47,
+        "Android 13": 3.69,
+        "Android 12": 3.67,
+        "Mac OS X": 3.34,
+        "Android 11": 3.09,
+        "Linux": 2.71
+      },
+      "windows_share": 22.28,
+      "mac_share": 3.34,
+      "chromeos_share": 0.0,
+      "other_share": 71.67
+    },
+    {
+      "source": "W3Schools",
+      "date": "2024-12-01",
+      "linux_share": 3.9,
+      "details": {
+        "win11": 37.3,
+        "win10": 30.8,
+        "win8": 0.3,
+        "win7": 1.0,
+        "linux": 3.9,
+        "mac": 7.3,
+        "chromeos": 0.6,
+        "mobile": 18.3
+      },
+      "windows_share": 69.4,
+      "mac_share": 7.3,
+      "chromeos_share": 0.6,
+      "other_share": 18.3
     },
     {
       "source": "Firefox",
@@ -7616,6 +11437,31 @@
       "other_share": 7.44
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2025-01-01",
+      "linux_share": 0.89,
+      "details": {
+        "iOS": 38.78,
+        "Android": 30.68,
+        "Windows": 22.11,
+        "Mac": 6.93,
+        "GNU/Linux": 0.89,
+        "Chrome OS": 0.6,
+        "Inconnu": 0.0,
+        "Other Mobile": 0.0,
+        "Console": 0.0,
+        "Windows Mobile": 0.0,
+        "Real-time OS": 0.0,
+        "Unix": 0.0,
+        "Firefox OS": 0.0,
+        "Other Smart TV": 0.0
+      },
+      "windows_share": 22.11,
+      "mac_share": 6.93,
+      "chromeos_share": 0.6,
+      "other_share": 69.47
+    },
+    {
       "source": "Steam",
       "date": "2025-01-01",
       "linux_share": 2.03,
@@ -7630,6 +11476,46 @@
       "windows_share": 96.56,
       "mac_share": 1.41,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2025-01-01",
+      "linux_share": 2.83,
+      "details": {
+        "Android 10": 29.64,
+        "Windows 10": 23.06,
+        "iOS 18": 9.69,
+        "Android 14": 5.11,
+        "Mac OS X": 3.71,
+        "iOS 17": 3.48,
+        "Android 12": 3.48,
+        "Android 13": 3.41,
+        "Android 11": 2.9,
+        "Linux": 2.83
+      },
+      "windows_share": 23.06,
+      "mac_share": 3.71,
+      "chromeos_share": 0.0,
+      "other_share": 70.4
+    },
+    {
+      "source": "W3Schools",
+      "date": "2025-01-01",
+      "linux_share": 4.0,
+      "details": {
+        "win11": 38.1,
+        "win10": 31.3,
+        "win8": 0.4,
+        "win7": 0.9,
+        "linux": 4.0,
+        "mac": 7.7,
+        "chromeos": 0.6,
+        "mobile": 16.7
+      },
+      "windows_share": 70.7,
+      "mac_share": 7.7,
+      "chromeos_share": 0.6,
+      "other_share": 16.7
     },
     {
       "source": "Firefox",
@@ -7728,6 +11614,29 @@
       "other_share": 8.02
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2025-02-01",
+      "linux_share": 0.87,
+      "details": {
+        "iOS": 39.11,
+        "Android": 30.59,
+        "Windows": 22.08,
+        "Mac": 6.79,
+        "GNU/Linux": 0.87,
+        "Chrome OS": 0.54,
+        "Inconnu": 0.01,
+        "Console": 0.0,
+        "Other Mobile": 0.0,
+        "Windows Mobile": 0.0,
+        "Unix": 0.0,
+        "Firefox OS": 0.0
+      },
+      "windows_share": 22.08,
+      "mac_share": 6.79,
+      "chromeos_share": 0.54,
+      "other_share": 69.72
+    },
+    {
       "source": "Steam",
       "date": "2025-02-01",
       "linux_share": 2.29,
@@ -7742,6 +11651,46 @@
       "windows_share": 96.1,
       "mac_share": 1.61,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2025-02-01",
+      "linux_share": 2.56,
+      "details": {
+        "Android 10": 27.8,
+        "Windows 10": 20.95,
+        "iOS 18": 9.61,
+        "Android 14": 5.11,
+        "Mac OS X": 4.45,
+        "Android 12": 3.5,
+        "Android 13": 3.48,
+        "Android 11": 3.2,
+        "iOS 17": 3.1,
+        "Linux": 2.56
+      },
+      "windows_share": 20.95,
+      "mac_share": 4.45,
+      "chromeos_share": 0.0,
+      "other_share": 72.04
+    },
+    {
+      "source": "W3Schools",
+      "date": "2025-02-01",
+      "linux_share": 3.9,
+      "details": {
+        "win11": 39.6,
+        "win10": 28.7,
+        "win8": 0.4,
+        "win7": 0.9,
+        "linux": 3.9,
+        "mac": 7.8,
+        "chromeos": 0.6,
+        "mobile": 17.7
+      },
+      "windows_share": 69.6,
+      "mac_share": 7.8,
+      "chromeos_share": 0.6,
+      "other_share": 17.7
     },
     {
       "source": "Firefox",
@@ -7841,6 +11790,29 @@
       "other_share": 6.79
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2025-03-01",
+      "linux_share": 0.79,
+      "details": {
+        "iOS": 39.39,
+        "Android": 30.46,
+        "Windows": 22.24,
+        "Mac": 6.61,
+        "GNU/Linux": 0.79,
+        "Chrome OS": 0.5,
+        "Inconnu": 0.01,
+        "Console": 0.0,
+        "Windows Mobile": 0.0,
+        "Other Mobile": 0.0,
+        "Firefox OS": 0.0,
+        "Unix": 0.0
+      },
+      "windows_share": 22.24,
+      "mac_share": 6.61,
+      "chromeos_share": 0.5,
+      "other_share": 69.86
+    },
+    {
       "source": "Steam",
       "date": "2025-03-01",
       "linux_share": 1.45,
@@ -7853,6 +11825,46 @@
       "windows_share": 97.58,
       "mac_share": 0.97,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2025-03-01",
+      "linux_share": 2.5,
+      "details": {
+        "Android 10": 27.34,
+        "Windows 10": 20.52,
+        "iOS 18": 10.62,
+        "Mac OS X": 5.12,
+        "Android 12": 4.77,
+        "Android 14": 4.57,
+        "Android 13": 3.05,
+        "Android 11": 2.83,
+        "Linux": 2.5,
+        "Android 8": 2.46
+      },
+      "windows_share": 20.52,
+      "mac_share": 5.12,
+      "chromeos_share": 0.0,
+      "other_share": 71.86
+    },
+    {
+      "source": "W3Schools",
+      "date": "2025-03-01",
+      "linux_share": 3.9,
+      "details": {
+        "win11": 39.8,
+        "win10": 28.2,
+        "win8": 0.3,
+        "win7": 0.8,
+        "linux": 3.9,
+        "mac": 7.9,
+        "chromeos": 0.6,
+        "mobile": 18.1
+      },
+      "windows_share": 69.1,
+      "mac_share": 7.9,
+      "chromeos_share": 0.6,
+      "other_share": 18.1
     },
     {
       "source": "Firefox",
@@ -7964,6 +11976,30 @@
       "other_share": 7.2
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2025-04-01",
+      "linux_share": 0.78,
+      "details": {
+        "iOS": 36.58,
+        "Android": 28.75,
+        "Windows": 27.6,
+        "Mac": 5.84,
+        "GNU/Linux": 0.78,
+        "Chrome OS": 0.43,
+        "Inconnu": 0.01,
+        "Other Mobile": 0.0,
+        "Windows Mobile": 0.0,
+        "Console": 0.0,
+        "Real-time OS": 0.0,
+        "Firefox OS": 0.0,
+        "IBM": 0.0
+      },
+      "windows_share": 27.6,
+      "mac_share": 5.84,
+      "chromeos_share": 0.43,
+      "other_share": 65.34
+    },
+    {
       "source": "Steam",
       "date": "2025-04-01",
       "linux_share": 2.33,
@@ -7979,6 +12015,46 @@
       "windows_share": 96.1,
       "mac_share": 1.58,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2025-04-01",
+      "linux_share": 2.82,
+      "details": {
+        "Android 10": 27.73,
+        "Windows 10": 23.15,
+        "iOS 18": 11.75,
+        "Mac OS X": 6.96,
+        "Android 14": 3.43,
+        "Android 12": 2.86,
+        "Linux": 2.82,
+        "Android 13": 2.54,
+        "Android 11": 2.2,
+        "Android 8": 1.95
+      },
+      "windows_share": 23.15,
+      "mac_share": 6.96,
+      "chromeos_share": 0.0,
+      "other_share": 67.07
+    },
+    {
+      "source": "W3Schools",
+      "date": "2025-04-01",
+      "linux_share": 3.8,
+      "details": {
+        "win11": 40.7,
+        "win10": 27.4,
+        "win8": 0.3,
+        "win7": 0.8,
+        "linux": 3.8,
+        "mac": 8.1,
+        "chromeos": 0.6,
+        "mobile": 18.2
+      },
+      "windows_share": 69.2,
+      "mac_share": 8.1,
+      "chromeos_share": 0.6,
+      "other_share": 18.2
     },
     {
       "source": "Firefox",
@@ -8078,6 +12154,32 @@
       "other_share": 8.17
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2025-05-01",
+      "linux_share": 0.81,
+      "details": {
+        "iOS": 39.38,
+        "Android": 29.89,
+        "Windows": 23.04,
+        "Mac": 6.37,
+        "GNU/Linux": 0.81,
+        "Chrome OS": 0.51,
+        "Inconnu": 0.01,
+        "Console": 0.0,
+        "Windows Mobile": 0.0,
+        "Other Mobile": 0.0,
+        "Unix": 0.0,
+        "Real-time OS": 0.0,
+        "Other Smart TV": 0.0,
+        "Firefox OS": 0.0,
+        "Symbian": 0.0
+      },
+      "windows_share": 23.04,
+      "mac_share": 6.37,
+      "chromeos_share": 0.51,
+      "other_share": 69.27
+    },
+    {
       "source": "Steam",
       "date": "2025-05-01",
       "linux_share": 2.27,
@@ -8093,6 +12195,46 @@
       "windows_share": 96.1,
       "mac_share": 1.62,
       "other_share": 0.01
+    },
+    {
+      "source": "W3Counter",
+      "date": "2025-05-01",
+      "linux_share": 2.47,
+      "details": {
+        "Android 10": 25.56,
+        "Windows 10": 24.9,
+        "iOS 18": 11.77,
+        "Mac OS X": 9.47,
+        "Android 14": 3.04,
+        "Android 12": 2.78,
+        "Linux": 2.47,
+        "Android 13": 2.35,
+        "Android 11": 2.14,
+        "Android 15": 1.94
+      },
+      "windows_share": 24.9,
+      "mac_share": 9.47,
+      "chromeos_share": 0.0,
+      "other_share": 63.16
+    },
+    {
+      "source": "W3Schools",
+      "date": "2025-05-01",
+      "linux_share": 3.9,
+      "details": {
+        "win11": 42.0,
+        "win10": 27.4,
+        "win8": 0.3,
+        "win7": 0.8,
+        "linux": 3.9,
+        "mac": 8.0,
+        "chromeos": 0.7,
+        "mobile": 17.1
+      },
+      "windows_share": 70.5,
+      "mac_share": 8.0,
+      "chromeos_share": 0.7,
+      "other_share": 17.1
     },
     {
       "source": "Firefox",
@@ -8209,6 +12351,29 @@
       "other_share": 9.18
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2025-06-01",
+      "linux_share": 0.79,
+      "details": {
+        "iOS": 37.19,
+        "Android": 29.22,
+        "Windows": 26.65,
+        "Mac": 5.76,
+        "GNU/Linux": 0.79,
+        "Chrome OS": 0.39,
+        "Inconnu": 0.01,
+        "Other Mobile": 0.0,
+        "Windows Mobile": 0.0,
+        "Console": 0.0,
+        "Real-time OS": 0.0,
+        "Unix": 0.0
+      },
+      "windows_share": 26.65,
+      "mac_share": 5.76,
+      "chromeos_share": 0.39,
+      "other_share": 66.42
+    },
+    {
       "source": "Steam",
       "date": "2025-06-01",
       "linux_share": 2.69,
@@ -8224,6 +12389,46 @@
       "windows_share": 95.45,
       "mac_share": 1.85,
       "other_share": 0.01
+    },
+    {
+      "source": "W3Counter",
+      "date": "2025-06-01",
+      "linux_share": 2.09,
+      "details": {
+        "Android 10": 27.13,
+        "Windows 10": 20.68,
+        "iOS 18": 13.45,
+        "Mac OS X": 5.18,
+        "Android 12": 3.86,
+        "Android 14": 3.72,
+        "Android 15": 3.6,
+        "Android 13": 3.04,
+        "Android 11": 2.5,
+        "Linux": 2.09
+      },
+      "windows_share": 20.68,
+      "mac_share": 5.18,
+      "chromeos_share": 0.0,
+      "other_share": 72.05
+    },
+    {
+      "source": "W3Schools",
+      "date": "2025-06-01",
+      "linux_share": 3.9,
+      "details": {
+        "win11": 43.6,
+        "win10": 26.1,
+        "win8": 0.3,
+        "win7": 0.8,
+        "linux": 3.9,
+        "mac": 7.7,
+        "chromeos": 0.4,
+        "mobile": 17.3
+      },
+      "windows_share": 70.8,
+      "mac_share": 7.7,
+      "chromeos_share": 0.4,
+      "other_share": 17.3
     },
     {
       "source": "Firefox",
@@ -8334,6 +12539,27 @@
       "other_share": 9.64
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2025-07-01",
+      "linux_share": 0.43,
+      "details": {
+        "Windows": 52.57,
+        "iOS": 24.56,
+        "Android": 19.17,
+        "Mac": 3.07,
+        "GNU/Linux": 0.43,
+        "Chrome OS": 0.2,
+        "Inconnu": 0.0,
+        "Other Mobile": 0.0,
+        "Console": 0.0,
+        "Windows Mobile": 0.0
+      },
+      "windows_share": 52.57,
+      "mac_share": 3.07,
+      "chromeos_share": 0.2,
+      "other_share": 43.73
+    },
+    {
       "source": "Steam",
       "date": "2025-07-01",
       "linux_share": 2.69,
@@ -8349,6 +12575,46 @@
       "windows_share": 95.45,
       "mac_share": 1.85,
       "other_share": 0.01
+    },
+    {
+      "source": "W3Counter",
+      "date": "2025-07-01",
+      "linux_share": 2.34,
+      "details": {
+        "Android 10": 27.13,
+        "Windows 10": 23.51,
+        "iOS 18": 13.18,
+        "Mac OS X": 5.48,
+        "Android 15": 3.53,
+        "Android 12": 3.5,
+        "Android 14": 3.22,
+        "Android 13": 2.96,
+        "Linux": 2.34,
+        "Android 11": 2.32
+      },
+      "windows_share": 23.51,
+      "mac_share": 5.48,
+      "chromeos_share": 0.0,
+      "other_share": 68.67
+    },
+    {
+      "source": "W3Schools",
+      "date": "2025-07-01",
+      "linux_share": 4.1,
+      "details": {
+        "win11": 44.0,
+        "win10": 25.8,
+        "win8": 0.3,
+        "win7": 0.9,
+        "linux": 4.1,
+        "mac": 6.8,
+        "chromeos": 0.3,
+        "mobile": 17.7
+      },
+      "windows_share": 71.0,
+      "mac_share": 6.8,
+      "chromeos_share": 0.3,
+      "other_share": 17.7
     },
     {
       "source": "Firefox",
@@ -8449,6 +12715,27 @@
       "other_share": 11.65
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2025-08-01",
+      "linux_share": 0.91,
+      "details": {
+        "iOS": 42.46,
+        "Android": 34.08,
+        "Windows": 17.29,
+        "Mac": 4.94,
+        "GNU/Linux": 0.91,
+        "Chrome OS": 0.33,
+        "Inconnu": 0.0,
+        "Other Mobile": 0.0,
+        "Console": 0.0,
+        "Windows Mobile": 0.0
+      },
+      "windows_share": 17.29,
+      "mac_share": 4.94,
+      "chromeos_share": 0.33,
+      "other_share": 76.55
+    },
+    {
       "source": "Steam",
       "date": "2025-08-01",
       "linux_share": 2.89,
@@ -8466,6 +12753,46 @@
       "windows_share": 95.23,
       "mac_share": 1.88,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2025-08-01",
+      "linux_share": 2.71,
+      "details": {
+        "Windows 10": 24.04,
+        "Android 10": 20.34,
+        "Mac OS X": 14.91,
+        "iOS 18": 11.27,
+        "Android 15": 5.11,
+        "Android 12": 4.02,
+        "Android 14": 3.14,
+        "Android 13": 2.75,
+        "Linux": 2.71,
+        "Android 11": 1.91
+      },
+      "windows_share": 24.04,
+      "mac_share": 14.91,
+      "chromeos_share": 0.0,
+      "other_share": 58.34
+    },
+    {
+      "source": "W3Schools",
+      "date": "2025-08-01",
+      "linux_share": 3.9,
+      "details": {
+        "win11": 43.0,
+        "win10": 24.3,
+        "win8": 0.3,
+        "win7": 0.8,
+        "linux": 3.9,
+        "mac": 9.3,
+        "chromeos": 0.4,
+        "mobile": 17.9
+      },
+      "windows_share": 68.4,
+      "mac_share": 9.3,
+      "chromeos_share": 0.4,
+      "other_share": 17.9
     },
     {
       "source": "Firefox",
@@ -8576,6 +12903,27 @@
       "other_share": 11.33
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2025-09-01",
+      "linux_share": 1.3,
+      "details": {
+        "iOS": 41.83,
+        "Android": 30.61,
+        "Windows": 20.13,
+        "Mac": 5.72,
+        "GNU/Linux": 1.3,
+        "Chrome OS": 0.4,
+        "Inconnu": 0.01,
+        "Other Mobile": 0.0,
+        "Console": 0.0,
+        "Windows Mobile": 0.0
+      },
+      "windows_share": 20.13,
+      "mac_share": 5.72,
+      "chromeos_share": 0.4,
+      "other_share": 72.45
+    },
+    {
       "source": "Steam",
       "date": "2025-09-01",
       "linux_share": 2.64,
@@ -8592,6 +12940,46 @@
       "windows_share": 95.59,
       "mac_share": 1.77,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2025-09-01",
+      "linux_share": 2.85,
+      "details": {
+        "Windows 10": 29.01,
+        "Android 10": 21.56,
+        "iOS 18": 13.35,
+        "Mac OS X": 9.18,
+        "Android 15": 3.26,
+        "Linux": 2.85,
+        "Android 12": 2.46,
+        "Android 14": 2.42,
+        "Android 13": 2.14,
+        "Android 11": 1.67
+      },
+      "windows_share": 29.01,
+      "mac_share": 9.18,
+      "chromeos_share": 0.0,
+      "other_share": 58.96
+    },
+    {
+      "source": "W3Schools",
+      "date": "2025-09-01",
+      "linux_share": 3.8,
+      "details": {
+        "win11": 45.8,
+        "win10": 23.8,
+        "win8": 0.3,
+        "win7": 0.7,
+        "linux": 3.8,
+        "mac": 8.0,
+        "chromeos": 0.7,
+        "mobile": 16.9
+      },
+      "windows_share": 70.6,
+      "mac_share": 8.0,
+      "chromeos_share": 0.7,
+      "other_share": 16.9
     },
     {
       "source": "Firefox",
@@ -8691,6 +13079,29 @@
       "other_share": 11.2
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2025-10-01",
+      "linux_share": 1.56,
+      "details": {
+        "iOS": 41.18,
+        "Android": 29.84,
+        "Windows": 20.94,
+        "Mac": 6.05,
+        "GNU/Linux": 1.56,
+        "Chrome OS": 0.41,
+        "Inconnu": 0.02,
+        "Console": 0.0,
+        "Windows Mobile": 0.0,
+        "Other Mobile": 0.0,
+        "Firefox OS": 0.0,
+        "Real-time OS": 0.0
+      },
+      "windows_share": 20.94,
+      "mac_share": 6.05,
+      "chromeos_share": 0.41,
+      "other_share": 71.05
+    },
+    {
       "source": "Steam",
       "date": "2025-10-01",
       "linux_share": 2.68,
@@ -8708,6 +13119,27 @@
       "windows_share": 95.4,
       "mac_share": 1.91,
       "other_share": 0.01
+    },
+    {
+      "source": "W3Counter",
+      "date": "2025-10-01",
+      "linux_share": 2.51,
+      "details": {
+        "Windows 10": 31.49,
+        "Android 10": 18.31,
+        "iOS 18": 14.7,
+        "Mac OS X": 7.98,
+        "Windows 7": 7.37,
+        "Linux": 2.51,
+        "Android 15": 2.34,
+        "Android 14": 1.73,
+        "Android 12": 1.69,
+        "Android 13": 1.59
+      },
+      "windows_share": 38.86,
+      "mac_share": 7.98,
+      "chromeos_share": 0.0,
+      "other_share": 50.65
     },
     {
       "source": "Firefox",
@@ -8807,6 +13239,28 @@
       "other_share": 13.14
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2025-11-01",
+      "linux_share": 1.93,
+      "details": {
+        "iOS": 41.31,
+        "Android": 29.49,
+        "Windows": 20.35,
+        "Mac": 6.57,
+        "GNU/Linux": 1.93,
+        "Chrome OS": 0.32,
+        "Inconnu": 0.03,
+        "Other Mobile": 0.0,
+        "Console": 0.0,
+        "Windows Mobile": 0.0,
+        "Firefox OS": 0.0
+      },
+      "windows_share": 20.35,
+      "mac_share": 6.57,
+      "chromeos_share": 0.32,
+      "other_share": 70.84
+    },
+    {
       "source": "Steam",
       "date": "2025-11-01",
       "linux_share": 3.05,
@@ -8824,6 +13278,27 @@
       "windows_share": 94.84,
       "mac_share": 2.11,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2025-11-01",
+      "linux_share": 3.13,
+      "details": {
+        "Windows 10": 29.29,
+        "Android 10": 19.63,
+        "Windows 7": 12.35,
+        "iOS 18": 10.59,
+        "Mac OS X": 5.37,
+        "Linux": 3.13,
+        "Android 15": 2.61,
+        "Android 12": 2.03,
+        "Android 14": 2.0,
+        "Android 13": 1.85
+      },
+      "windows_share": 41.64,
+      "mac_share": 5.37,
+      "chromeos_share": 0.0,
+      "other_share": 49.86
     },
     {
       "source": "Firefox",
@@ -8935,6 +13410,28 @@
       "other_share": 15.98
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2025-12-01",
+      "linux_share": 1.6,
+      "details": {
+        "iOS": 44.3,
+        "Android": 29.82,
+        "Windows": 18.67,
+        "Mac": 5.3,
+        "GNU/Linux": 1.6,
+        "Chrome OS": 0.3,
+        "Inconnu": 0.01,
+        "Other Mobile": 0.0,
+        "Console": 0.0,
+        "Windows Mobile": 0.0,
+        "Real-time OS": 0.0
+      },
+      "windows_share": 18.67,
+      "mac_share": 5.3,
+      "chromeos_share": 0.3,
+      "other_share": 74.13
+    },
+    {
       "source": "Steam",
       "date": "2025-12-01",
       "linux_share": 3.05,
@@ -8952,6 +13449,27 @@
       "windows_share": 94.84,
       "mac_share": 2.11,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2025-12-01",
+      "linux_share": 2.17,
+      "details": {
+        "Windows 10": 35.41,
+        "Android 10": 18.05,
+        "Windows 7": 11.1,
+        "iOS 18": 8.81,
+        "Mac OS X": 4.44,
+        "Android 15": 2.64,
+        "Android 12": 2.23,
+        "Linux": 2.17,
+        "Android 14": 2.12,
+        "Android 13": 1.86
+      },
+      "windows_share": 46.51,
+      "mac_share": 4.44,
+      "chromeos_share": 0.0,
+      "other_share": 46.88
     },
     {
       "source": "Firefox",
@@ -9051,6 +13569,26 @@
       "other_share": 15.35
     },
     {
+      "source": "StatsBetaGouv",
+      "date": "2026-01-01",
+      "linux_share": 1.85,
+      "details": {
+        "iOS": 42.15,
+        "Android": 28.36,
+        "Windows": 21.72,
+        "Mac": 5.55,
+        "GNU/Linux": 1.85,
+        "Chrome OS": 0.32,
+        "Inconnu": 0.04,
+        "Console": 0.0,
+        "Other Mobile": 0.0
+      },
+      "windows_share": 21.72,
+      "mac_share": 5.55,
+      "chromeos_share": 0.32,
+      "other_share": 70.55
+    },
+    {
       "source": "Steam",
       "date": "2026-01-01",
       "linux_share": 3.38,
@@ -9070,6 +13608,27 @@
       "windows_share": 94.62,
       "mac_share": 2.01,
       "other_share": 0.0
+    },
+    {
+      "source": "W3Counter",
+      "date": "2026-01-01",
+      "linux_share": 2.4,
+      "details": {
+        "Windows 10": 45.19,
+        "Android 10": 16.21,
+        "iOS 18": 7.36,
+        "Mac OS X": 5.03,
+        "Android 15": 2.57,
+        "Linux": 2.4,
+        "Android 12": 2.39,
+        "Android 14": 2.17,
+        "Android 13": 1.9,
+        "iOS 26": 1.89
+      },
+      "windows_share": 45.19,
+      "mac_share": 5.03,
+      "chromeos_share": 0.0,
+      "other_share": 47.38
     },
     {
       "source": "Firefox",
@@ -9118,6 +13677,47 @@
       "windows_share": 85.54,
       "mac_share": 8.24,
       "other_share": 0.39
+    },
+    {
+      "source": "StatsBetaGouv",
+      "date": "2026-02-01",
+      "linux_share": 1.38,
+      "details": {
+        "iOS": 41.83,
+        "Android": 28.89,
+        "Windows": 21.67,
+        "Mac": 5.65,
+        "GNU/Linux": 1.38,
+        "Chrome OS": 0.32,
+        "Inconnu": 0.26,
+        "Console": 0.0,
+        "Other Mobile": 0.0
+      },
+      "windows_share": 21.67,
+      "mac_share": 5.65,
+      "chromeos_share": 0.32,
+      "other_share": 70.98
+    },
+    {
+      "source": "W3Counter",
+      "date": "2026-02-01",
+      "linux_share": 0.0,
+      "details": {
+        "Windows 10": 44.41,
+        "Android 10": 15.35,
+        "iOS 18": 6.12,
+        "Mac OS X": 4.78,
+        "Android 8": 2.73,
+        "Android 6": 2.55,
+        "Android 5": 2.46,
+        "iOS 11": 2.4,
+        "iOS 26": 2.19,
+        "Android 12": 1.96
+      },
+      "windows_share": 44.41,
+      "mac_share": 4.78,
+      "chromeos_share": 0.0,
+      "other_share": 50.81
     },
     {
       "source": "Firefox",
@@ -9182,6 +13782,26 @@
       "mac_share": 12.74,
       "chromeos_share": 2.11,
       "other_share": 35.53
+    },
+    {
+      "source": "StatsBetaGouv",
+      "date": "2026-03-01",
+      "linux_share": 1.46,
+      "details": {
+        "iOS": 41.84,
+        "Android": 30.47,
+        "Windows": 19.84,
+        "Mac": 5.88,
+        "GNU/Linux": 1.46,
+        "Chrome OS": 0.36,
+        "Inconnu": 0.14,
+        "Console": 0.0,
+        "Unix": 0.0
+      },
+      "windows_share": 19.84,
+      "mac_share": 5.88,
+      "chromeos_share": 0.36,
+      "other_share": 72.45
     }
   ]
 }

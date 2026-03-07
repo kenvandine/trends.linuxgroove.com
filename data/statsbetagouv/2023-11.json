@@ -1,0 +1,15 @@
+[
+  {
+    "source": "StatsBetaGouv",
+    "date": "2023-11-01",
+    "linux_share": 0.0,
+    "details": {
+      "Android": 50.0,
+      "Windows": 50.0
+    },
+    "windows_share": 50.0,
+    "mac_share": 0.0,
+    "chromeos_share": 0.0,
+    "other_share": 50.0
+  }
+]

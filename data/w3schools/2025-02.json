@@ -1,0 +1,21 @@
+[
+  {
+    "source": "W3Schools",
+    "date": "2025-02-01",
+    "linux_share": 3.9,
+    "details": {
+      "win11": 39.6,
+      "win10": 28.7,
+      "win8": 0.4,
+      "win7": 0.9,
+      "linux": 3.9,
+      "mac": 7.8,
+      "chromeos": 0.6,
+      "mobile": 17.7
+    },
+    "windows_share": 69.6,
+    "mac_share": 7.8,
+    "chromeos_share": 0.6,
+    "other_share": 17.7
+  }
+]

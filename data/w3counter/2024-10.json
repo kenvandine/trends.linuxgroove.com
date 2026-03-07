@@ -1,0 +1,23 @@
+[
+  {
+    "source": "W3Counter",
+    "date": "2024-10-01",
+    "linux_share": 3.86,
+    "details": {
+      "Android 10": 28.5,
+      "Windows 10": 23.31,
+      "iOS 17": 10.31,
+      "Android 14": 5.34,
+      "Linux": 3.86,
+      "Android 12": 3.82,
+      "iOS 18": 3.67,
+      "Mac OS X": 3.64,
+      "Android 13": 3.31,
+      "Android 11": 2.82
+    },
+    "windows_share": 23.31,
+    "mac_share": 3.64,
+    "chromeos_share": 0.0,
+    "other_share": 69.19
+  }
+]

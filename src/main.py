@@ -54,7 +54,18 @@ Examples:
     parser.add_argument("--month", "-m", help="Collect a single month (YYYY-MM)")
     parser.add_argument(
         "--source", "-s",
-        choices=["steam", "statcounter", "dap", "cloudflare", "stackoverflow", "jetbrains", "firefox"],
+        choices=[
+            "steam",
+            "statcounter",
+            "dap",
+            "cloudflare",
+            "stackoverflow",
+            "jetbrains",
+            "firefox",
+            "w3counter",
+            "w3schools",
+            "statsbetagouv",
+        ],
         help="Only collect from this source",
     )
     parser.add_argument(

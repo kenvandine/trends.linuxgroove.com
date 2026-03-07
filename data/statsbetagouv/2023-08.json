@@ -1,0 +1,16 @@
+[
+  {
+    "source": "StatsBetaGouv",
+    "date": "2023-08-01",
+    "linux_share": 0.0,
+    "details": {
+      "iOS": 66.67,
+      "Android": 16.67,
+      "Windows": 16.67
+    },
+    "windows_share": 16.67,
+    "mac_share": 0.0,
+    "chromeos_share": 0.0,
+    "other_share": 83.33
+  }
+]

@@ -8,6 +8,9 @@ from src.adapters.cloudflare_adapter import CloudflareAdapter
 from src.adapters.stackoverflow_adapter import StackOverflowAdapter
 from src.adapters.jetbrains_adapter import JetBrainsAdapter
 from src.adapters.firefox_adapter import FirefoxAdapter
+from src.adapters.w3counter_adapter import W3CounterAdapter
+from src.adapters.w3schools_adapter import W3SchoolsAdapter
+from src.adapters.statsbetagouv_adapter import StatsBetaGouvAdapter
 from src.storage.json_storage_handler import JSONStorageHandler
 
 
@@ -23,6 +26,9 @@ class MarketTrendsEngine:
             StackOverflowAdapter(),
             JetBrainsAdapter(),
             FirefoxAdapter(),
+            W3CounterAdapter(),
+            W3SchoolsAdapter(),
+            StatsBetaGouvAdapter(),
         ]
         self.storage = JSONStorageHandler()
 

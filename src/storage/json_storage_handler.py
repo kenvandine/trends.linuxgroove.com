@@ -70,6 +70,33 @@ SOURCE_METADATA = {
         "covers": "desktop",
         "region": "global",
     },
+    "w3counter": {
+        "id": "w3counter",
+        "name": "W3Counter",
+        "description": "Global platform share from W3Counter monthly top platforms",
+        "url": "https://www.w3counter.com/globalstats.php",
+        "methodology": "Monthly top-10 platform table from W3Counter global stats",
+        "covers": "all_devices",
+        "region": "global",
+    },
+    "w3schools": {
+        "id": "w3schools",
+        "name": "W3Schools OS Statistics",
+        "description": "OS platform share from W3Schools monthly log-based statistics",
+        "url": "https://www.w3schools.com/browsers/browsers_os.asp",
+        "methodology": "Monthly percentages from W3Schools website traffic logs",
+        "covers": "all_devices",
+        "region": "global",
+    },
+    "statsbetagouv": {
+        "id": "statsbetagouv",
+        "name": "stats.beta.gouv.fr",
+        "description": "OS distribution across beta.gouv.fr public digital services (all devices)",
+        "url": "https://stats.beta.gouv.fr/",
+        "methodology": "Public Matomo Reporting API aggregated over sites",
+        "covers": "all_devices",
+        "region": "fr",
+    },
 }
 
 
@@ -78,7 +105,18 @@ class JSONStorageHandler:
 
     def __init__(self, data_dir="data"):
         self.data_dir = Path(data_dir)
-        for subdir in ["steam", "statcounter", "dap", "cloudflare", "stackoverflow", "jetbrains", "firefox"]:
+        for subdir in [
+            "steam",
+            "statcounter",
+            "dap",
+            "cloudflare",
+            "stackoverflow",
+            "jetbrains",
+            "firefox",
+            "w3counter",
+            "w3schools",
+            "statsbetagouv",
+        ]:
             (self.data_dir / subdir).mkdir(parents=True, exist_ok=True)
 
     def _source_dir(self, source_name):
@@ -91,6 +129,9 @@ class JSONStorageHandler:
             "StackOverflow": "stackoverflow",
             "JetBrains": "jetbrains",
             "Firefox": "firefox",
+            "W3Counter": "w3counter",
+            "W3Schools": "w3schools",
+            "StatsBetaGouv": "statsbetagouv",
         }
         return mapping.get(source_name, source_name.lower())
 
@@ -128,7 +169,18 @@ class JSONStorageHandler:
 
     def get_data(self, source_id=None, start_date=None, end_date=None):
         """Retrieve data points filtered by source and/or date range."""
-        source_dirs = [source_id.lower()] if source_id else ["steam", "statcounter", "dap", "cloudflare", "stackoverflow", "jetbrains", "firefox"]
+        source_dirs = [source_id.lower()] if source_id else [
+            "steam",
+            "statcounter",
+            "dap",
+            "cloudflare",
+            "stackoverflow",
+            "jetbrains",
+            "firefox",
+            "w3counter",
+            "w3schools",
+            "statsbetagouv",
+        ]
         data = []
 
         for source_dir in source_dirs:
