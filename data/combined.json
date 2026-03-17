@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-03-17T02:50:44Z",
+    "last_updated": "2026-03-17T02:59:59Z",
     "sources": [
       "Cloudflare",
       "DAP",
@@ -9118,6 +9118,75 @@
       "windows_share": 85.54,
       "mac_share": 8.24,
       "other_share": 0.39
+    },
+    {
+      "source": "Cloudflare",
+      "date": "2026-02-01",
+      "linux_share": 2.41,
+      "details": {
+        "Linux": 2.41,
+        "Windows": 34.68,
+        "macOS": 0.0,
+        "Android": 35.28,
+        "iOS": 17.53,
+        "Other": 0.0
+      },
+      "windows_share": 34.68,
+      "mac_share": 0.0,
+      "other_share": 52.82
+    },
+    {
+      "source": "DAP",
+      "date": "2026-02-01",
+      "linux_share": 2.74,
+      "details": {
+        "Linux": 2.74,
+        "Windows": 35.98,
+        "macOS": 13.66,
+        "ChromeOS": 1.38,
+        "Mobile (Android/iOS)": 44.29
+      },
+      "windows_share": 35.98,
+      "mac_share": 13.66,
+      "chromeos_share": 1.38,
+      "other_share": 46.23
+    },
+    {
+      "source": "StatCounter",
+      "date": "2026-02-01",
+      "linux_share": 2.89,
+      "details": {
+        "Linux": 2.89,
+        "Windows": 66.59,
+        "macOS": 12.26,
+        "ChromeOS": 1.48,
+        "Other": 16.77
+      },
+      "windows_share": 66.59,
+      "mac_share": 12.26,
+      "chromeos_share": 1.48,
+      "other_share": 16.77
+    },
+    {
+      "source": "Steam",
+      "date": "2026-02-01",
+      "linux_share": 3.38,
+      "details": {
+        "\"Arch Linux\" 64 bit": 0.31,
+        "Linux Mint 22.2 64 bit": 0.22,
+        "Ubuntu Core 24 64 bit": 0.13,
+        "Ubuntu 24.04.3 LTS 64 bit": 0.13,
+        "Linux Mint 22.3 64 bit": 0.08,
+        "\"Fedora Linux 43 (KDE Plasma Desktop Edition)\" 64 bit": 0.07,
+        "\"EndeavourOS Linux\" 64 bit": 0.06,
+        "\"Nobara Linux 43 (KDE Plasma Desktop Edition)\" 64 bit": 0.06,
+        "Debian GNU/Linux 13 (trixie) 64 bit": 0.06,
+        "\"Manjaro Linux\" 64 bit": 0.06,
+        "Ubuntu 25.10 64 bit": 0.05
+      },
+      "windows_share": 94.62,
+      "mac_share": 2.01,
+      "other_share": 0.0
     },
     {
       "source": "Firefox",
