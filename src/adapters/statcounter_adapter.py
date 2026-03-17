@@ -1,7 +1,7 @@
 import requests
 import csv
 import io
-from datetime import datetime
+from datetime import datetime, timedelta
 from src.adapters.base_adapter import BaseAdapter
 
 
@@ -64,8 +64,13 @@ class StatCounterAdapter(BaseAdapter):
             mac_share, chromeos_share, and other_share.
         """
         now = datetime.utcnow()
-        from_dt = datetime.strptime(start_date, "%Y-%m-%d") if start_date else datetime(now.year, now.month, 1)
-        to_dt   = datetime.strptime(end_date,   "%Y-%m-%d") if end_date   else datetime(now.year, now.month, 1)
+        if start_date:
+            from_dt = datetime.strptime(start_date, "%Y-%m-%d")
+        else:
+            # Default to previous month — current month data is incomplete on the 1st
+            first_of_month = datetime(now.year, now.month, 1)
+            from_dt = (first_of_month - timedelta(days=1)).replace(day=1)
+        to_dt = datetime.strptime(end_date, "%Y-%m-%d") if end_date else from_dt
 
         url = self._build_url(from_dt, to_dt)
         print(f"  Fetching StatCounter data: {from_dt.strftime('%Y-%m')} to {to_dt.strftime('%Y-%m')}")

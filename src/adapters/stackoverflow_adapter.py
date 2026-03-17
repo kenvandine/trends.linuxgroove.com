@@ -93,8 +93,10 @@ class StackOverflowAdapter(BaseAdapter):
             List of annual data points with linux_share, windows_share, mac_share.
         """
         now = datetime.utcnow()
-        from_year = datetime.strptime(start_date, "%Y-%m-%d").year if start_date else now.year
-        to_year   = datetime.strptime(end_date,   "%Y-%m-%d").year if end_date   else now.year
+        # Default to previous year — current year survey won't be published yet
+        default_year = now.year - 1
+        from_year = datetime.strptime(start_date, "%Y-%m-%d").year if start_date else default_year
+        to_year   = datetime.strptime(end_date,   "%Y-%m-%d").year if end_date   else default_year
 
         # Clamp to supported range
         from_year = max(from_year, self._FIRST_YEAR)

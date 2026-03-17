@@ -2,7 +2,7 @@ import calendar
 import os
 import time
 import requests
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from src.adapters.base_adapter import BaseAdapter
 
@@ -76,7 +76,12 @@ class DAPAdapter(BaseAdapter):
         """
         if start_date and end_date:
             return self._fetch_historical(start_date, end_date)
-        return self._fetch_current()
+        # Default to previous month — fetch completed data via the historical API
+        now = datetime.utcnow()
+        first_of_month = datetime(now.year, now.month, 1)
+        prev_first = (first_of_month - timedelta(days=1)).replace(day=1)
+        prev_ym = prev_first.strftime("%Y-%m-%d")
+        return self._fetch_historical(prev_ym, prev_ym)
 
     # ------------------------------------------------------------------ #
     # Current data                                                         #

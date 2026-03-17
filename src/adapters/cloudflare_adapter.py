@@ -1,7 +1,7 @@
 import os
 import calendar
 import requests
-from datetime import datetime
+from datetime import datetime, timedelta
 from src.adapters.base_adapter import BaseAdapter
 
 
@@ -50,8 +50,13 @@ class CloudflareAdapter(BaseAdapter):
             return []
 
         now = datetime.utcnow()
-        from_dt = datetime.strptime(start_date, "%Y-%m-%d") if start_date else datetime(now.year, now.month, 1)
-        to_dt   = datetime.strptime(end_date,   "%Y-%m-%d") if end_date   else datetime(now.year, now.month, 1)
+        if start_date:
+            from_dt = datetime.strptime(start_date, "%Y-%m-%d")
+        else:
+            # Default to previous month — current month data is incomplete on the 1st
+            first_of_month = datetime(now.year, now.month, 1)
+            from_dt = (first_of_month - timedelta(days=1)).replace(day=1)
+        to_dt = datetime.strptime(end_date, "%Y-%m-%d") if end_date else from_dt
 
         # Single-month fetch
         if from_dt.year == to_dt.year and from_dt.month == to_dt.month:
