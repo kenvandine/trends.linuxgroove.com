@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-03-16T08:52:07Z",
+    "last_updated": "2026-03-17T02:50:44Z",
     "sources": [
       "Cloudflare",
       "DAP",
@@ -9182,6 +9182,22 @@
       "mac_share": 12.74,
       "chromeos_share": 2.11,
       "other_share": 35.53
+    },
+    {
+      "source": "StatCounter",
+      "date": "2026-03-01",
+      "linux_share": 3.17,
+      "details": {
+        "Linux": 3.17,
+        "Windows": 61.25,
+        "macOS": 14.2,
+        "ChromeOS": 1.63,
+        "Other": 19.76
+      },
+      "windows_share": 61.25,
+      "mac_share": 14.2,
+      "chromeos_share": 1.63,
+      "other_share": 19.76
     },
     {
       "source": "Firefox",
