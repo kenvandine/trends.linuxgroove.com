@@ -19,6 +19,14 @@ on:
           - cloudflare
           - stackoverflow
           - firefox
+      range_from:
+        description: 'Start date YYYY-MM-DD (leave blank for default)'
+        required: false
+        default: ''
+      range_to:
+        description: 'End date YYYY-MM-DD (leave blank for default)'
+        required: false
+        default: ''
 
 # Needs write access to commit data files back to main.
 permissions:
@@ -56,14 +64,20 @@ jobs:
           CLOUDFLARE_RADAR_API_KEY: ${{ secrets.CLOUDFLARE_RADAR_API_KEY }}
         run: |
           SOURCE="${{ github.event.inputs.source }}"
+          RANGE_FROM="${{ github.event.inputs.range_from }}"
+          RANGE_TO="${{ github.event.inputs.range_to }}"
           SCHEDULE="${{ github.event.schedule }}"
-          if [ -n "$SOURCE" ]; then
-            python3 -m src.main --source "$SOURCE"
-          elif [ "$SCHEDULE" = "0 8 * * 1" ]; then
+
+          ARGS=""
+          [ -n "$SOURCE" ]     && ARGS="$ARGS --source $SOURCE"
+          [ -n "$RANGE_FROM" ] && ARGS="$ARGS --range-from $RANGE_FROM"
+          [ -n "$RANGE_TO" ]   && ARGS="$ARGS --range-to $RANGE_TO"
+
+          if [ -z "$SOURCE" ] && [ "$SCHEDULE" = "0 8 * * 1" ]; then
             # Weekly Monday run — Firefox data only
             python3 -m src.main --source firefox
           else
-            python3 -m src.main
+            python3 -m src.main $ARGS
           fi
 
       - name: Commit new data to main
