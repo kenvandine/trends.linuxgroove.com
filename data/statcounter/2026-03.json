@@ -2,17 +2,17 @@
   {
     "source": "StatCounter",
     "date": "2026-03-01",
-    "linux_share": 3.17,
+    "linux_share": 3.16,
     "details": {
-      "Linux": 3.17,
-      "Windows": 61.25,
-      "macOS": 14.2,
-      "ChromeOS": 1.63,
-      "Other": 19.76
+      "Linux": 3.16,
+      "Windows": 60.8,
+      "macOS": 14.76,
+      "ChromeOS": 1.62,
+      "Other": 19.68
     },
-    "windows_share": 61.25,
-    "mac_share": 14.2,
-    "chromeos_share": 1.63,
-    "other_share": 19.76
+    "windows_share": 60.8,
+    "mac_share": 14.76,
+    "chromeos_share": 1.62,
+    "other_share": 19.68
   }
 ]
