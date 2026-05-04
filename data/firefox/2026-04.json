@@ -1,6 +1,18 @@
 [
   {
     "source": "Firefox",
+    "date": "2026-04-27",
+    "linux_share": 5.86,
+    "details": {
+      "Linux-5.x": 1.09,
+      "Linux-6.x": 4.77
+    },
+    "windows_share": 84.68,
+    "mac_share": 8.69,
+    "other_share": 0.77
+  },
+  {
+    "source": "Firefox",
     "date": "2026-04-20",
     "linux_share": 6.04,
     "details": {
