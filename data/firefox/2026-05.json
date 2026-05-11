@@ -1,0 +1,14 @@
+[
+  {
+    "source": "Firefox",
+    "date": "2026-05-04",
+    "linux_share": 5.7,
+    "details": {
+      "Linux-5.x": 1.1,
+      "Linux-6.x": 4.6
+    },
+    "windows_share": 84.78,
+    "mac_share": 8.6,
+    "other_share": 0.93
+  }
+]
