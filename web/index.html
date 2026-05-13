@@ -423,6 +423,9 @@
         <span class="chip" data-os="wsl" style="--chip-color: hsl(185,65%,48%)">
           <span class="chip-dot" style="background:hsl(185,65%,48%)"></span>WSL
         </span>
+        <span class="chip" data-os="unknown" style="--chip-color: hsl(0,0%,60%)">
+          <span class="chip-dot" style="background:hsl(0,0%,60%)"></span>Unknown
+        </span>
       </div>
     </div>
 
@@ -541,9 +544,9 @@
 // Apply Ubuntu to all Chart.js text globally
 Chart.defaults.font.family = '"Ubuntu", system-ui, sans-serif';
 
-/* ═══════════════════════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════════════
    CONFIG — edit here to add new sources or OS types in future
-   ═══════════════════════════════════════════════════════════════════ */
+   ═══════════════════════════════════════════════════════════════ */
 const SOURCE_CONFIG = {
   Steam: {
     label: "Steam",
@@ -551,6 +554,7 @@ const SOURCE_CONFIG = {
       linux:   "hsl(210,85%,60%)",
       windows: "hsl(210,55%,75%)",
       mac:     "hsl(210,40%,48%)",
+      unknown: "hsl(210,15%,55%)",
     },
     chipColor: "hsl(210,85%,60%)",
   },
@@ -560,6 +564,7 @@ const SOURCE_CONFIG = {
       linux:   "hsl(145,65%,50%)",
       windows: "hsl(145,45%,68%)",
       mac:     "hsl(145,40%,38%)",
+      unknown: "hsl(145,20%,55%)",
     },
     chipColor: "hsl(145,65%,50%)",
   },
@@ -569,6 +574,7 @@ const SOURCE_CONFIG = {
       linux:   "hsl(30,85%,58%)",
       windows: "hsl(30,60%,74%)",
       mac:     "hsl(30,45%,42%)",
+      unknown: "hsl(30,15%,55%)",
     },
     chipColor: "hsl(30,85%,58%)",
   },
@@ -578,6 +584,7 @@ const SOURCE_CONFIG = {
       linux:   "hsl(270,70%,62%)",
       windows: "hsl(270,45%,75%)",
       mac:     "hsl(270,40%,45%)",
+      unknown: "hsl(270,15%,55%)",
     },
     chipColor: "hsl(270,70%,62%)",
   },
@@ -587,6 +594,7 @@ const SOURCE_CONFIG = {
       linux:   "hsl(55,90%,55%)",
       windows: "hsl(55,60%,72%)",
       mac:     "hsl(55,45%,42%)",
+      unknown: "hsl(55,15%,55%)",
     },
     chipColor: "hsl(55,90%,55%)",
   },
@@ -598,6 +606,7 @@ const SOURCE_CONFIG = {
       windows: "hsl(15,55%,72%)",
       mac:     "hsl(15,45%,40%)",
       wsl:     "hsl(185,65%,48%)",
+      unknown: "hsl(15,15%,55%)",
     },
     chipColor: "hsl(15,80%,55%)",
   },
@@ -608,6 +617,7 @@ const SOURCE_CONFIG = {
       linux:   "hsl(340,70%,58%)",
       windows: "hsl(340,45%,72%)",
       mac:     "hsl(340,40%,44%)",
+      unknown: "hsl(340,15%,55%)",
     },
     chipColor: "hsl(340,70%,58%)",
   },
@@ -618,11 +628,12 @@ const OS_CONFIG = {
   windows: { label: "Windows", field: "windows_share", dash: [6, 3] },
   mac:     { label: "macOS",   field: "mac_share",     dash: [2, 3] },
   wsl:     { label: "WSL",     field: "wsl_share",     dash: [4, 2] },
+  unknown: { label: "Unknown", field: "unknown_share", dash: [1, 3] },
 };
 
-/* ═══════════════════════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════════════
    STATE
-   ═══════════════════════════════════════════════════════════════════ */
+   ═══════════════════════════════════════════════════════════════ */
 let allData            = [];   // raw data points from combined.json
 let manifest           = {};   // manifest.json content
 let chart              = null; // Chart.js instance (market)
@@ -635,9 +646,9 @@ let activeSurveySources = new Set(); // active survey sources
 let activeOSes         = new Set(["linux"]);
 let activeSurveyOSes   = new Set(["linux", "windows", "wsl"]);
 
-/* ═══════════════════════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════════════
    INIT
-   ═══════════════════════════════════════════════════════════════════ */
+   ═══════════════════════════════════════════════════════════════ */
 async function init() {
   try {
     // Probe for the data directory — works regardless of where the HTTP
@@ -692,9 +703,9 @@ async function detectDataBase() {
   return "../data"; // fall through — fetch will produce a clear error
 }
 
-/* ═══════════════════════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════════════
    BUILD UI COMPONENTS
-   ═══════════════════════════════════════════════════════════════════ */
+   ═══════════════════════════════════════════════════════════════ */
 function buildSourceChips() {
   // Only market (non-survey) sources
   const sourcesInData = [...new Set(allData.map(d => d.source))]
@@ -781,7 +792,7 @@ function buildSourceInfoCards() {
   });
 }
 
-// ── Chart factories (shared config) ──────────────────────────────
+// ── Chart factories (shared config) ────────────────────────────────────────────────────
 function createLineChart(canvasId) {
   const ctx = document.getElementById(canvasId).getContext("2d");
   return new Chart(ctx, {
@@ -855,9 +866,9 @@ function buildGapChart()       { gapChart       = createGapChart("gap-chart"); }
 function buildSurveyChart()    { surveyChart    = createLineChart("survey-chart"); }
 function buildSurveyGapChart() { surveyGapChart = createGapChart("survey-gap-chart"); }
 
-/* ═══════════════════════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════════════
    RENDER
-   ═══════════════════════════════════════════════════════════════════ */
+   ═══════════════════════════════════════════════════════════════ */
 function render() {
   // ── Market charts ──
   const filtered = filterData();
@@ -1036,13 +1047,13 @@ function renderStats(data, headRowId, bodyId, osSet) {
   tbody.innerHTML = "";
 
   // Which OS fields actually have data in this dataset?
-  const allOsKeys     = ["linux", "windows", "mac", "wsl"];
+  const allOsKeys     = ["linux", "windows", "mac", "wsl", "unknown"];
   const presentOsKeys = allOsKeys.filter(k => data.some(d => d[OS_CONFIG[k].field] != null));
 
   // Delta columns: comparison OSes selected alongside Linux.
-  // WSL is excluded — it's a Linux subsystem, not a competing platform.
+  // WSL and Unknown are excluded — they’re not competing platforms for gap analysis.
   const deltaOsKeys = presentOsKeys.filter(
-    k => k !== "linux" && k !== "wsl" && osSet.has("linux") && osSet.has(k)
+    k => k !== "linux" && k !== "wsl" && k !== "unknown" && osSet.has("linux") && osSet.has(k)
   );
 
   const totalCols = 2 + presentOsKeys.length + 1 + deltaOsKeys.length;
@@ -1104,9 +1115,9 @@ function renderStats(data, headRowId, bodyId, osSet) {
   }
 }
 
-/* ═══════════════════════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════════════
    RESET / SHARE
-   ═══════════════════════════════════════════════════════════════════ */
+   ═══════════════════════════════════════════════════════════════ */
 function resetView() {
   // Restore all market sources
   activeSources = new Set([...document.querySelectorAll(".chip[data-source]")].map(c => c.dataset.source));
@@ -1215,9 +1226,9 @@ function applyUrlParams() {
   }
 }
 
-/* ═══════════════════════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════════════
    EVENT HANDLERS
-   ═══════════════════════════════════════════════════════════════════ */
+   ═══════════════════════════════════════════════════════════════ */
 document.getElementById("timeframe-btns").addEventListener("click", e => {
   const btn = e.target.closest(".btn-time");
   if (!btn) return;
@@ -1292,9 +1303,9 @@ function toggleSource(src, chip) {
 document.getElementById("btn-reset").addEventListener("click", resetView);
 document.getElementById("btn-share").addEventListener("click", shareView);
 
-/* ═══════════════════════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════════════
    HELPERS
-   ═══════════════════════════════════════════════════════════════════ */
+   ═══════════════════════════════════════════════════════════════ */
 function pctCell(val) {
   return val != null ? val.toFixed(2) + "%" : "<span style='color:var(--text-muted)'>—</span>";
 }
@@ -1329,9 +1340,9 @@ function showError(msg) {
   el.classList.remove("hidden");
 }
 
-/* ═══════════════════════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════════════
    BOOT
-   ═══════════════════════════════════════════════════════════════════ */
+   ═══════════════════════════════════════════════════════════════ */
 init();
 </script>
 </body>

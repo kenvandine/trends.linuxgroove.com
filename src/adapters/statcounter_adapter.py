@@ -10,7 +10,7 @@ class StatCounterAdapter(BaseAdapter):
 
     Fetches real monthly time-series data from StatCounter's CSV export API.
     Windows versions (Win10, Win11, Win7…) are aggregated into windows_share.
-    "OS X" and "macOS" columns are combined into mac_share.
+    “OS X” and “macOS” columns are combined into mac_share.
     """
 
     SOURCE_INFO = {
@@ -21,10 +21,11 @@ class StatCounterAdapter(BaseAdapter):
     }
 
     # Column-name prefixes/keywords that identify each OS group
-    _WIN_PREFIXES  = ("win",)          # Win10, Win11, Win7, Win8, Win8.1, WinXP…
-    _MAC_COLUMNS   = frozenset(["os x", "macos", "mac os x", "osx"])
-    _LINUX_COLUMNS = frozenset(["linux"])
-    _CHROME_COLUMNS = frozenset(["chrome os"])
+    _WIN_PREFIXES    = ("win",)          # Win10, Win11, Win7, Win8, Win8.1, WinXP…
+    _MAC_COLUMNS     = frozenset(["os x", "macos", "mac os x", "osx"])
+    _LINUX_COLUMNS   = frozenset(["linux"])
+    _CHROME_COLUMNS  = frozenset(["chrome os"])
+    _UNKNOWN_COLUMNS = frozenset(["unknown"])
 
     def __init__(self):
         super().__init__("StatCounter")
@@ -61,7 +62,7 @@ class StatCounterAdapter(BaseAdapter):
 
         Returns:
             List of monthly data points with linux_share, windows_share,
-            mac_share, chromeos_share, and other_share.
+            mac_share, chromeos_share, unknown_share, and other_share.
         """
         now = datetime.utcnow()
         if start_date:
@@ -134,7 +135,7 @@ class StatCounterAdapter(BaseAdapter):
             date_str = self._parse_date(row[0].strip().strip('"'))
             if not date_str:
                 continue
-            linux = win = mac = chrome = other = 0.0
+            linux = win = mac = chrome = unknown = other = 0.0
             for col, raw in zip(headers[1:], row[1:]):
                 col_l = col.lower()
                 val = self._parse_float(raw)
@@ -146,18 +147,20 @@ class StatCounterAdapter(BaseAdapter):
                     chrome += val
                 elif any(col_l.startswith(p) for p in self._WIN_PREFIXES):
                     win += val
+                elif col_l in self._UNKNOWN_COLUMNS:
+                    unknown += val
                 else:
                     other += val
             if linux == 0 and win == 0:
                 continue
-            data_points.append(self._make_point(date_str, linux, win, mac, chrome, other))
+            data_points.append(self._make_point(date_str, linux, win, mac, chrome, unknown, other))
         return data_points
 
     def _parse_aggregate(self, data_rows, period_date):
         """Parse single-month aggregate rows (OS, share%) into one data point."""
         if not period_date:
             return []
-        linux = win = mac = chrome = other = 0.0
+        linux = win = mac = chrome = unknown = other = 0.0
         for row in data_rows:
             if len(row) < 2:
                 continue
@@ -171,26 +174,30 @@ class StatCounterAdapter(BaseAdapter):
                 chrome += val
             elif any(col_l.startswith(p) for p in self._WIN_PREFIXES):
                 win += val
+            elif col_l in self._UNKNOWN_COLUMNS:
+                unknown += val
             else:
                 other += val
         if linux == 0 and win == 0:
             return []
-        return [self._make_point(period_date, linux, win, mac, chrome, other)]
+        return [self._make_point(period_date, linux, win, mac, chrome, unknown, other)]
 
-    def _make_point(self, date_str, linux, win, mac, chrome, other):
+    def _make_point(self, date_str, linux, win, mac, chrome, unknown, other):
         return {
             "date":           date_str,
-            "linux_share":    round(linux,  2),
-            "windows_share":  round(win,    2),
-            "mac_share":      round(mac,    2),
-            "chromeos_share": round(chrome, 2),
-            "other_share":    round(other,  2),
+            "linux_share":    round(linux,   2),
+            "windows_share":  round(win,     2),
+            "mac_share":      round(mac,     2),
+            "chromeos_share": round(chrome,  2),
+            "unknown_share":  round(unknown, 2),
+            "other_share":    round(other,   2),
             "details": {
-                "Linux":    round(linux,  2),
-                "Windows":  round(win,    2),
-                "macOS":    round(mac,    2),
-                "ChromeOS": round(chrome, 2),
-                "Other":    round(other,  2),
+                "Linux":    round(linux,   2),
+                "Windows":  round(win,     2),
+                "macOS":    round(mac,     2),
+                "ChromeOS": round(chrome,  2),
+                "Unknown":  round(unknown, 2),
+                "Other":    round(other,   2),
             },
         }
 
