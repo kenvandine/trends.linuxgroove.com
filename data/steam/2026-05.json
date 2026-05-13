@@ -1,0 +1,22 @@
+[
+  {
+    "source": "Steam",
+    "date": "2026-05-01",
+    "linux_share": 4.52,
+    "details": {
+      "Arch Linux 64 bit": 0.32,
+      "Linux Mint 22.3 64 bit": 0.27,
+      "Ubuntu Core 24 64 bit": 0.13,
+      "Ubuntu 24.04.4 LTS 64 bit": 0.09,
+      "Fedora Linux 43 (KDE Plasma Desktop Edition) 64 bit": 0.06,
+      "Ubuntu 25.10 64 bit": 0.06,
+      "Linux Mint 22.2 64 bit": 0.05,
+      "Fedora Linux 43 (Workstation Edition) 64 bit": 0.05,
+      "Manjaro Linux 64 bit": 0.05,
+      "Debian GNU/Linux 13 (trixie) 64 bit": 0.05
+    },
+    "windows_share": 93.47,
+    "mac_share": 2.01,
+    "other_share": 0.0
+  }
+]
