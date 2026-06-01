@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-05-25T11:50:19Z",
+    "last_updated": "2026-06-01T13:28:13Z",
     "sources": [
       "Cloudflare",
       "DAP",
@@ -9406,16 +9406,21 @@
     {
       "source": "Steam",
       "date": "2026-04-01",
-      "linux_share": 2.23,
+      "linux_share": 4.52,
       "details": {
-        "Arch Linux 64 bit": 0.19,
-        "Linux Mint 22.3 64 bit": 0.14,
-        "Ubuntu Core 24 64 bit": 0.08,
-        "Ubuntu 24.04.3 LTS 64 bit": 0.06,
-        "Linux Mint 22.2 64 bit": 0.05
+        "Arch Linux 64 bit": 0.32,
+        "Linux Mint 22.3 64 bit": 0.27,
+        "Ubuntu Core 24 64 bit": 0.13,
+        "Ubuntu 24.04.4 LTS 64 bit": 0.09,
+        "Fedora Linux 43 (KDE Plasma Desktop Edition) 64 bit": 0.06,
+        "Ubuntu 25.10 64 bit": 0.06,
+        "Linux Mint 22.2 64 bit": 0.05,
+        "Fedora Linux 43 (Workstation Edition) 64 bit": 0.05,
+        "Manjaro Linux 64 bit": 0.05,
+        "Debian GNU/Linux 13 (trixie) 64 bit": 0.05
       },
-      "windows_share": 96.61,
-      "mac_share": 1.16,
+      "windows_share": 93.47,
+      "mac_share": 2.01,
       "other_share": 0.0
     },
     {
@@ -9465,6 +9470,54 @@
       "windows_share": 84.68,
       "mac_share": 8.69,
       "other_share": 0.77
+    },
+    {
+      "source": "Cloudflare",
+      "date": "2026-05-01",
+      "linux_share": 2.49,
+      "details": {
+        "Linux": 2.49,
+        "Windows": 36.2,
+        "macOS": 0.0,
+        "Android": 34.14,
+        "iOS": 16.86,
+        "Other": 0.0
+      },
+      "windows_share": 36.2,
+      "mac_share": 0.0,
+      "other_share": 51.0
+    },
+    {
+      "source": "DAP",
+      "date": "2026-05-01",
+      "linux_share": 2.98,
+      "details": {
+        "Linux": 2.98,
+        "Windows": 41.38,
+        "macOS": 13.16,
+        "ChromeOS": 1.44,
+        "Mobile (Android/iOS)": 40.3
+      },
+      "windows_share": 41.38,
+      "mac_share": 13.16,
+      "chromeos_share": 1.44,
+      "other_share": 41.04
+    },
+    {
+      "source": "StatCounter",
+      "date": "2026-05-01",
+      "linux_share": 3.09,
+      "details": {
+        "Linux": 3.09,
+        "Windows": 62.05,
+        "macOS": 14.7,
+        "ChromeOS": 1.4,
+        "Other": 18.76
+      },
+      "windows_share": 62.05,
+      "mac_share": 14.7,
+      "chromeos_share": 1.4,
+      "other_share": 18.76
     },
     {
       "source": "Steam",
