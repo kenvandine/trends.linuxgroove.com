@@ -4,8 +4,8 @@
     "date": "2026-02-23",
     "linux_share": 5.94,
     "details": {
-      "Linux-5.x": 1.12,
-      "Linux-6.x": 4.82
+      "Linux-6.x": 4.82,
+      "Linux-5.x": 1.12
     },
     "windows_share": 85.35,
     "mac_share": 8.32,
@@ -16,8 +16,8 @@
     "date": "2026-02-16",
     "linux_share": 6.08,
     "details": {
-      "Linux-5.x": 1.14,
-      "Linux-6.x": 4.94
+      "Linux-6.x": 4.94,
+      "Linux-5.x": 1.14
     },
     "windows_share": 84.96,
     "mac_share": 8.58,
@@ -28,8 +28,8 @@
     "date": "2026-02-09",
     "linux_share": 5.97,
     "details": {
-      "Linux-5.x": 1.18,
-      "Linux-6.x": 4.79
+      "Linux-6.x": 4.79,
+      "Linux-5.x": 1.18
     },
     "windows_share": 85.35,
     "mac_share": 8.3,
@@ -40,8 +40,8 @@
     "date": "2026-02-02",
     "linux_share": 5.9,
     "details": {
-      "Linux-5.x": 1.18,
-      "Linux-6.x": 4.72
+      "Linux-6.x": 4.72,
+      "Linux-5.x": 1.18
     },
     "windows_share": 85.47,
     "mac_share": 8.25,

@@ -4,8 +4,8 @@
     "date": "2023-03-27",
     "linux_share": 4.65,
     "details": {
-      "Linux-5.x": 3.27,
-      "Linux Other": 1.38
+      "Linux Other": 1.38,
+      "Linux-5.x": 3.27
     },
     "windows_share": 88.02,
     "mac_share": 7.33,
@@ -16,8 +16,8 @@
     "date": "2023-03-20",
     "linux_share": 4.63,
     "details": {
-      "Linux-5.x": 3.28,
-      "Linux Other": 1.36
+      "Linux Other": 1.36,
+      "Linux-5.x": 3.28
     },
     "windows_share": 88.14,
     "mac_share": 7.23,
@@ -28,8 +28,8 @@
     "date": "2023-03-13",
     "linux_share": 4.5,
     "details": {
-      "Linux-5.x": 3.17,
-      "Linux Other": 1.32
+      "Linux Other": 1.32,
+      "Linux-5.x": 3.17
     },
     "windows_share": 88.46,
     "mac_share": 7.04,
@@ -40,8 +40,8 @@
     "date": "2023-03-06",
     "linux_share": 4.59,
     "details": {
-      "Linux-5.x": 3.24,
-      "Linux Other": 1.35
+      "Linux Other": 1.35,
+      "Linux-5.x": 3.24
     },
     "windows_share": 88.22,
     "mac_share": 7.18,
