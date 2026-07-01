@@ -2,21 +2,27 @@
   {
     "source": "Steam",
     "date": "2026-05-01",
-    "linux_share": 4.52,
+    "linux_share": 3.99,
     "details": {
-      "Arch Linux 64 bit": 0.32,
-      "Linux Mint 22.3 64 bit": 0.27,
-      "Ubuntu Core 24 64 bit": 0.13,
-      "Ubuntu 24.04.4 LTS 64 bit": 0.09,
+      "SteamOS Holo 64 bit": 0.93,
+      "CachyOS 64 bit": 0.53,
+      "Arch Linux 64 bit": 0.35,
+      "Linux Mint 22.3 64 bit": 0.31,
+      "Bazzite 64 bit": 0.29,
+      "Freedesktop SDK 25.08 (Flatpak runtime) 64 bit": 0.22,
+      "Ubuntu Core 24 64 bit": 0.14,
+      "Ubuntu 24.04.4 LTS 64 bit": 0.11,
+      "Nobara Linux 43 (KDE Plasma Desktop Edition) 64 bit": 0.08,
+      "Debian GNU/Linux 13 (trixie) 64 bit": 0.07,
+      "EndeavourOS Linux 64 bit": 0.07,
+      "Ubuntu 26.04 LTS 64 bit": 0.07,
+      "Fedora Linux 44 (KDE Plasma Desktop Edition) 64 bit": 0.06,
+      "Pop!_OS 24.04 LTS 64 bit": 0.06,
       "Fedora Linux 43 (KDE Plasma Desktop Edition) 64 bit": 0.06,
-      "Ubuntu 25.10 64 bit": 0.06,
-      "Linux Mint 22.2 64 bit": 0.05,
-      "Fedora Linux 43 (Workstation Edition) 64 bit": 0.05,
-      "Manjaro Linux 64 bit": 0.05,
-      "Debian GNU/Linux 13 (trixie) 64 bit": 0.05
+      "Manjaro Linux 64 bit": 0.05
     },
-    "windows_share": 93.47,
-    "mac_share": 2.01,
+    "windows_share": 93.85,
+    "mac_share": 2.16,
     "other_share": 0.0
   }
 ]
