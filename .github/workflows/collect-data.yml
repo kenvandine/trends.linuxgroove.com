@@ -74,8 +74,11 @@ jobs:
           [ -n "$RANGE_TO" ]   && ARGS="$ARGS --range-to $RANGE_TO"
 
           if [ -z "$SOURCE" ] && [ "$SCHEDULE" = "0 8 * * 1" ]; then
-            # Weekly Monday run — Firefox data only
+            # Weekly Monday run — Firefox, plus a Steam re-check in case the
+            # monthly (1st-of-month) run landed before Valve rolled the
+            # hwsurvey page over to the new month.
             python3 -m src.main --source firefox
+            python3 -m src.main --source steam
           else
             python3 -m src.main $ARGS
           fi
