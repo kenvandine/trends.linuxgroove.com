@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-07-06T11:59:48Z",
+    "last_updated": "2026-07-06T13:19:58Z",
     "sources": [
       "Cloudflare",
       "DAP",
@@ -9657,6 +9657,31 @@
       "mac_share": 16.4,
       "chromeos_share": 1.21,
       "other_share": 21.47
+    },
+    {
+      "source": "Steam",
+      "date": "2026-06-01",
+      "linux_share": 3.69,
+      "details": {
+        "SteamOS Holo 64 bit": 0.84,
+        "CachyOS 64 bit": 0.52,
+        "Arch Linux 64 bit": 0.33,
+        "Linux Mint 22.3 64 bit": 0.29,
+        "Bazzite 64 bit": 0.27,
+        "Freedesktop SDK 25.08 (Flatpak runtime) 64 bit": 0.2,
+        "Ubuntu Core 24 64 bit": 0.11,
+        "Ubuntu 24.04.4 LTS 64 bit": 0.1,
+        "Ubuntu 26.04 LTS 64 bit": 0.09,
+        "Fedora Linux 44 (KDE Plasma Desktop Edition) 64 bit": 0.09,
+        "Nobara Linux 43 (KDE Plasma Desktop Edition) 64 bit": 0.08,
+        "Debian GNU/Linux 13 (trixie) 64 bit": 0.07,
+        "EndeavourOS Linux 64 bit": 0.07,
+        "Fedora Linux 44 (Workstation Edition) 64 bit": 0.06,
+        "Pop!_OS 24.04 LTS 64 bit": 0.06
+      },
+      "windows_share": 94.1,
+      "mac_share": 2.21,
+      "other_share": 0.0
     },
     {
       "source": "Firefox",
