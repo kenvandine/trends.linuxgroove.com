@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-07-20T10:46:55Z",
+    "last_updated": "2026-07-27T11:15:01Z",
     "sources": [
       "Cloudflare",
       "DAP",
@@ -12,7 +12,7 @@
     ],
     "date_range": {
       "from": "2018-12-31",
-      "to": "2026-07-13"
+      "to": "2026-07-20"
     },
     "fields": [
       "linux_share",
@@ -9759,6 +9759,19 @@
       },
       "windows_share": 85.37,
       "mac_share": 8.51,
+      "other_share": 0.0
+    },
+    {
+      "source": "Firefox",
+      "date": "2026-07-20",
+      "linux_share": 6.17,
+      "details": {
+        "Linux-6.x": 3.04,
+        "Linux-7.x": 1.91,
+        "Linux Other": 1.22
+      },
+      "windows_share": 85.31,
+      "mac_share": 8.52,
       "other_share": 0.0
     }
   ]
