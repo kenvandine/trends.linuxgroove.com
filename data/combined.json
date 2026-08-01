@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-07-27T11:15:01Z",
+    "last_updated": "2026-08-01T09:49:27Z",
     "sources": [
       "Cloudflare",
       "DAP",
@@ -9734,6 +9734,54 @@
       "windows_share": 85.45,
       "mac_share": 8.46,
       "other_share": 0.0
+    },
+    {
+      "source": "Cloudflare",
+      "date": "2026-07-01",
+      "linux_share": 3.31,
+      "details": {
+        "Linux": 3.31,
+        "Windows": 34.63,
+        "macOS": 0.0,
+        "Android": 34.68,
+        "iOS": 16.97,
+        "Other": 0.0
+      },
+      "windows_share": 34.63,
+      "mac_share": 0.0,
+      "other_share": 51.65
+    },
+    {
+      "source": "DAP",
+      "date": "2026-07-01",
+      "linux_share": 3.64,
+      "details": {
+        "Linux": 3.64,
+        "Windows": 36.52,
+        "macOS": 12.62,
+        "ChromeOS": 0.6,
+        "Mobile (Android/iOS)": 45.66
+      },
+      "windows_share": 36.52,
+      "mac_share": 12.62,
+      "chromeos_share": 0.6,
+      "other_share": 46.61
+    },
+    {
+      "source": "StatCounter",
+      "date": "2026-07-01",
+      "linux_share": 5.62,
+      "details": {
+        "Linux": 5.62,
+        "Windows": 53.16,
+        "macOS": 14.89,
+        "ChromeOS": 1.1,
+        "Other": 25.24
+      },
+      "windows_share": 53.16,
+      "mac_share": 14.89,
+      "chromeos_share": 1.1,
+      "other_share": 25.24
     },
     {
       "source": "Firefox",
