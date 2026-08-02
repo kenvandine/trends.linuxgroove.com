@@ -4,15 +4,265 @@
     "date": "2024-09-01",
     "linux_share": 4.48,
     "details": {
-      "Linux": 4.48,
-      "Windows": 73.32,
-      "macOS": 15.45,
-      "ChromeOS": 2.25,
-      "Other": 4.49
+      "win10": 46.02,
+      "win11": 24.51,
+      "OS X": 15.45,
+      "unknown": 4.47,
+      "linux": 4.48,
+      "macos": 0.0,
+      "Chrome OS": 2.25,
+      "other (dotted)": 2.81
     },
-    "windows_share": 73.32,
+    "windows_share": 70.53,
     "mac_share": 15.45,
     "chromeos_share": 2.25,
-    "other_share": 4.49
+    "other_share": 7.28
+  },
+  {
+    "source": "StatCounter (United States)",
+    "date": "2024-09-01",
+    "linux_share": 4.23,
+    "details": {
+      "win11": 23.47,
+      "win10": 36.75,
+      "OS X": 25.6,
+      "unknown": 2.73,
+      "linux": 4.23,
+      "Chrome OS": 5.53,
+      "macos": 0.0,
+      "other (dotted)": 1.69
+    },
+    "windows_share": 60.22,
+    "mac_share": 25.6,
+    "chromeos_share": 5.53,
+    "other_share": 4.42
+  },
+  {
+    "source": "StatCounter (Canada)",
+    "date": "2024-09-01",
+    "linux_share": 2.31,
+    "details": {
+      "win10": 37.89,
+      "win11": 25.06,
+      "OS X": 27.77,
+      "unknown": 1.76,
+      "macos": 0.0,
+      "Chrome OS": 3.58,
+      "linux": 2.31,
+      "other (dotted)": 1.63
+    },
+    "windows_share": 62.95,
+    "mac_share": 27.77,
+    "chromeos_share": 3.58,
+    "other_share": 3.39
+  },
+  {
+    "source": "StatCounter (United Kingdom)",
+    "date": "2024-09-01",
+    "linux_share": 1.95,
+    "details": {
+      "win11": 30.27,
+      "win10": 37.6,
+      "OS X": 23.99,
+      "unknown": 1.61,
+      "macos": 0.0,
+      "Chrome OS": 3.68,
+      "linux": 1.95,
+      "other (dotted)": 0.89
+    },
+    "windows_share": 67.87,
+    "mac_share": 23.99,
+    "chromeos_share": 3.68,
+    "other_share": 2.5
+  },
+  {
+    "source": "StatCounter (Germany)",
+    "date": "2024-09-01",
+    "linux_share": 4.17,
+    "details": {
+      "win10": 50.87,
+      "win11": 24.62,
+      "OS X": 14.91,
+      "unknown": 1.9,
+      "linux": 4.17,
+      "macos": 0.0,
+      "Chrome OS": 1.18,
+      "other (dotted)": 2.35
+    },
+    "windows_share": 75.49,
+    "mac_share": 14.91,
+    "chromeos_share": 1.18,
+    "other_share": 4.25
+  },
+  {
+    "source": "StatCounter (India)",
+    "date": "2024-09-01",
+    "linux_share": 17.25,
+    "details": {
+      "unknown": 7.64,
+      "win10": 46.83,
+      "win11": 22.97,
+      "linux": 17.25,
+      "OS X": 3.46,
+      "macos": 0.0,
+      "win7": 1.29,
+      "other (dotted)": 0.54
+    },
+    "windows_share": 71.09,
+    "mac_share": 3.46,
+    "chromeos_share": 0.0,
+    "other_share": 8.18
+  },
+  {
+    "source": "StatCounter (Japan)",
+    "date": "2024-09-01",
+    "linux_share": 1.45,
+    "details": {
+      "win11": 31.43,
+      "win10": 38.01,
+      "unknown": 14.26,
+      "OS X": 12.88,
+      "macos": 0.0,
+      "linux": 1.45,
+      "win7": 0.87,
+      "other (dotted)": 1.11
+    },
+    "windows_share": 70.31,
+    "mac_share": 12.88,
+    "chromeos_share": 0.0,
+    "other_share": 15.37
+  },
+  {
+    "source": "StatCounter (Brazil)",
+    "date": "2024-09-01",
+    "linux_share": 3.2,
+    "details": {
+      "win11": 31.6,
+      "win10": 56.21,
+      "OS X": 4.26,
+      "unknown": 1.42,
+      "linux": 3.2,
+      "win7": 1.95,
+      "macos": 0.0,
+      "other (dotted)": 1.36
+    },
+    "windows_share": 89.76,
+    "mac_share": 4.26,
+    "chromeos_share": 0.0,
+    "other_share": 2.78
+  },
+  {
+    "source": "StatCounter (North America)",
+    "date": "2024-09-01",
+    "linux_share": 3.92,
+    "details": {
+      "win11": 23.87,
+      "win10": 36.99,
+      "OS X": 25.69,
+      "unknown": 2.84,
+      "macos": 0.0,
+      "linux": 3.92,
+      "Chrome OS": 5.05,
+      "other (dotted)": 1.64
+    },
+    "windows_share": 60.86,
+    "mac_share": 25.69,
+    "chromeos_share": 5.05,
+    "other_share": 4.48
+  },
+  {
+    "source": "StatCounter (Europe)",
+    "date": "2024-09-01",
+    "linux_share": 3.07,
+    "details": {
+      "win10": 48.43,
+      "win11": 26.54,
+      "OS X": 15.44,
+      "unknown": 2.28,
+      "linux": 3.07,
+      "macos": 0.0,
+      "Chrome OS": 2.28,
+      "other (dotted)": 1.96
+    },
+    "windows_share": 74.97,
+    "mac_share": 15.44,
+    "chromeos_share": 2.28,
+    "other_share": 4.24
+  },
+  {
+    "source": "StatCounter (Asia)",
+    "date": "2024-09-01",
+    "linux_share": 6.39,
+    "details": {
+      "win10": 49.89,
+      "win11": 23.21,
+      "unknown": 5.7,
+      "OS X": 9.72,
+      "linux": 6.39,
+      "win7": 3.6,
+      "macos": 0.0,
+      "other (dotted)": 1.49
+    },
+    "windows_share": 76.7,
+    "mac_share": 9.72,
+    "chromeos_share": 0.0,
+    "other_share": 7.19
+  },
+  {
+    "source": "StatCounter (South America)",
+    "date": "2024-09-01",
+    "linux_share": 3.16,
+    "details": {
+      "win11": 30.62,
+      "win10": 56.07,
+      "OS X": 4.93,
+      "unknown": 2.54,
+      "linux": 3.16,
+      "macos": 0.0,
+      "win7": 1.56,
+      "other (dotted)": 1.12
+    },
+    "windows_share": 88.25,
+    "mac_share": 4.93,
+    "chromeos_share": 0.0,
+    "other_share": 3.66
+  },
+  {
+    "source": "StatCounter (Africa)",
+    "date": "2024-09-01",
+    "linux_share": 2.64,
+    "details": {
+      "win10": 47.61,
+      "unknown": 23.48,
+      "win11": 18.48,
+      "OS X": 5.06,
+      "linux": 2.64,
+      "macos": 0.0,
+      "win7": 1.47,
+      "other (dotted)": 1.25
+    },
+    "windows_share": 67.56,
+    "mac_share": 5.06,
+    "chromeos_share": 0.0,
+    "other_share": 24.73
+  },
+  {
+    "source": "StatCounter (Oceania)",
+    "date": "2024-09-01",
+    "linux_share": 1.71,
+    "details": {
+      "win11": 28.7,
+      "win10": 35.48,
+      "OS X": 29.66,
+      "macos": 0.0,
+      "unknown": 1.46,
+      "linux": 1.71,
+      "Chrome OS": 1.91,
+      "other (dotted)": 1.08
+    },
+    "windows_share": 64.18,
+    "mac_share": 29.66,
+    "chromeos_share": 1.91,
+    "other_share": 2.54
   }
 ]
