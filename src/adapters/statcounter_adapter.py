@@ -1,6 +1,8 @@
 import requests
 import csv
+import re
 import io
+import json
 from datetime import datetime, timedelta
 from src.adapters.base_adapter import BaseAdapter
 
@@ -8,9 +10,12 @@ from src.adapters.base_adapter import BaseAdapter
 class StatCounterAdapter(BaseAdapter):
     """Adapter for StatCounter desktop OS market share data.
 
-    Fetches real monthly time-series data from StatCounter's CSV export API.
-    Windows versions (Win10, Win11, Win7…) are aggregated into windows_share.
-    "OS X" and "macOS" columns are combined into mac_share.
+    Fetches real monthly time-series data from StatCounter's FusionCharts XML
+    endpoint, which supports region-specific data.  Worldwide data is the
+    default; pass ``region_code`` to fetch a different region.
+
+    Region codes:  ww (Worldwide), US, CA, GB, DE, IN, JP, BR, etc.
+    See https://gs.statcounter.com/os-market-share/desktop for the full list.
     """
 
     SOURCE_INFO = {
@@ -21,14 +26,43 @@ class StatCounterAdapter(BaseAdapter):
     }
 
     # Column-name prefixes/keywords that identify each OS group
-    _WIN_PREFIXES  = ("win",)          # Win10, Win11, Win7, Win8, Win8.1, WinXP…
+    _WIN_PREFIXES  = ("win",)
     _MAC_COLUMNS   = frozenset(["os x", "macos", "mac os x", "osx"])
     _LINUX_COLUMNS = frozenset(["linux"])
     _CHROME_COLUMNS = frozenset(["chrome os"])
 
-    def __init__(self):
+    # Region code -> (region_name_for_url, region_hidden_value)
+    REGION_MAP = {
+        "ww":            ("Worldwide",           "ww"),
+        "US":            ("United States",       "US"),
+        "CA":            ("Canada",              "CA"),
+        "GB":            ("United Kingdom",      "GB"),
+        "DE":            ("Germany",             "DE"),
+        "IN":            ("India",               "IN"),
+        "JP":            ("Japan",               "JP"),
+        "BR":            ("Brazil",              "BR"),
+        "na":            ("North America",       "NA"),
+        "eu":            ("Europe",              "EU"),
+        "as":            ("Asia",                "AS"),
+        "sa":            ("South America",       "SA"),
+        "af":            ("Africa",              "AF"),
+        "oc":            ("Oceania",             "OC"),
+    }
+
+    def __init__(self, region_code="ww"):
         super().__init__("StatCounter")
         self.supported_date_ranges = True
+        self.region_code = region_code
+        region_name, region_hidden = self.REGION_MAP.get(
+            region_code, (f"Region-{region_code}", region_code)
+        )
+        self.region_name = region_name
+        self.region_hidden = region_hidden
+        # Set the source name used in data points
+        if region_code == "ww":
+            self.name = "StatCounter"
+        else:
+            self.name = f"StatCounter ({region_name})"
         self._headers = {
             "User-Agent": (
                 "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
@@ -38,22 +72,16 @@ class StatCounterAdapter(BaseAdapter):
         }
 
     def _build_url(self, from_dt, to_dt):
-        """Build the StatCounter monthly CSV export URL."""
-        from_int = from_dt.strftime("%Y%m")      # e.g. "202501"
+        """Build the StatCounter FusionCharts XML URL for the given region."""
+        from_int = from_dt.strftime("%Y%m")
         to_int   = to_dt.strftime("%Y%m")
-        from_ym  = from_dt.strftime("%Y-%m")     # e.g. "2025-01"
-        to_ym    = to_dt.strftime("%Y-%m")
         return (
-            "https://gs.statcounter.com/os-market-share/desktop/worldwide/chart.php"
-            f"?period=monthly&statType_hidden=os&region_hidden=ww"
-            f"&granularity=monthly&statType=Operating+System&region=Worldwide"
-            f"&fromInt={from_int}&toInt={to_int}"
-            f"&fromMonthYear={from_ym}&toMonthYear={to_ym}"
-            f"&csv=1&chartWidth=600"
+            f"https://gs.statcounter.com/chart.php"
+            f"?os-{self.region_code}-monthly-{from_int}-{to_int}"
         )
 
     def fetch_data(self, start_date=None, end_date=None):
-        """Fetch OS market share data from StatCounter CSV export.
+        """Fetch OS market share data from StatCounter.
 
         Args:
             start_date: Start date (YYYY-MM-DD). Defaults to current month.
@@ -67,171 +95,154 @@ class StatCounterAdapter(BaseAdapter):
         if start_date:
             from_dt = datetime.strptime(start_date, "%Y-%m-%d")
         else:
-            # Default to previous month — current month data is incomplete on the 1st
             first_of_month = datetime(now.year, now.month, 1)
             from_dt = (first_of_month - timedelta(days=1)).replace(day=1)
         to_dt = datetime.strptime(end_date, "%Y-%m-%d") if end_date else from_dt
 
-        url = self._build_url(from_dt, to_dt)
-        print(f"  Fetching StatCounter data: {from_dt.strftime('%Y-%m')} to {to_dt.strftime('%Y-%m')}")
+        # The FusionCharts endpoint requires from != to. If single-month,
+        # fetch the previous month too and filter later.
+        fetch_from = from_dt
+        fetch_to = to_dt
+        single_month = (from_dt.strftime("%Y%m") == to_dt.strftime("%Y%m"))
+        if single_month:
+            # Fetch one extra month backwards to ensure we get data
+            fetch_from = from_dt - timedelta(days=32)
+            fetch_from = fetch_from.replace(day=1)
+
+        url = self._build_url(fetch_from, fetch_to)
+        print(f"  Fetching StatCounter data ({self.region_name}): "
+              f"{fetch_from.strftime('%Y-%m')} to {fetch_to.strftime('%Y-%m')}")
 
         try:
             response = requests.get(url, headers=self._headers, timeout=30)
             if response.status_code == 200 and response.text.strip():
-                points = self._parse_csv(response.text)
+                points = self._parse_fusioncharts(response.text)
                 if points:
-                    print(f"  Parsed {len(points)} month(s) from StatCounter")
+                    # Filter to requested date range if single-month fetch
+                    if single_month:
+                        points = [p for p in points
+                                  if p["date"].startswith(from_dt.strftime("%Y-%m"))]
+                    print(f"  Parsed {len(points)} month(s) from StatCounter "
+                          f"({self.region_name})")
                     return self.format_data(points)
-                print("  StatCounter CSV returned no usable rows")
+                print(f"  StatCounter ({self.region_name}) returned no usable rows")
             else:
-                print(f"  StatCounter HTTP {response.status_code}")
+                print(f"  StatCounter HTTP {response.status_code} ({self.region_name})")
         except Exception as exc:
-            print(f"  StatCounter error: {exc}")
+            print(f"  StatCounter error ({self.region_name}): {exc}")
 
         return []
 
-    def _parse_csv(self, csv_text):
-        """Parse StatCounter CSV into monthly data points.
+    def _parse_fusioncharts(self, text):
+        """Parse StatCounter FusionCharts XML (JS-wrapped) into monthly data points.
 
-        StatCounter returns two different formats depending on the date range:
+        The chart.php endpoint returns JavaScript like:
+            var json = {"xml":"<chart ...><dataset seriesName='Linux' ...>...</dataset>...</chart>"};
 
-        Multi-month (time series) format — used when fromInt != toInt:
-            "Date","Win11","Win10","OS X","macOS","Linux","Chrome OS","Unknown",...
-            2025-01,26.36,43.38,15.02,0,3.72,1.92,...
-
-        Single-month (aggregate) format — used when fromInt == toInt:
-            "OS","Market Share Perc. (Jan 2026)"
-            "Win11",45.24
-            "Win10",21.57
-            "Linux",3.59
-            ...
+        Each <dataset> corresponds to one OS.  Each <set> has a value and a
+        toolText like 'Linux - 3.44% - Jan 2024'.
         """
-        stripped = csv_text.strip()
-        reader = csv.reader(io.StringIO(stripped))
-        rows = list(reader)
-
-        if not rows:
+        # Extract the JSON object from the JS wrapper
+        json_match = re.search(r'var json = (\{.+?\});', text, re.DOTALL)
+        if not json_match:
             return []
 
-        headers = [h.strip().strip('"') for h in rows[0]]
-
-        # Detect format by first column header
-        if headers[0].lower() == "date":
-            return self._parse_timeseries(headers, rows[1:], date_from_header=False)
-        elif headers[0].lower() == "os":
-            # Single-month aggregate: extract period from column header "Market Share Perc. (Jan 2026)"
-            period_date = self._extract_period_from_header(headers[1] if len(headers) > 1 else "")
-            return self._parse_aggregate(rows[1:], period_date)
-        else:
+        try:
+            data = json.loads(json_match.group(1))
+        except json.JSONDecodeError:
             return []
 
-    def _parse_timeseries(self, headers, data_rows, date_from_header=False):
-        """Parse multi-month time-series rows."""
+        xml = data.get("xml", "")
+        if not xml:
+            return []
+
+        # Extract categories (dates) — these are sparse (every other month shown)
+        categories = re.findall(r'<category[^>]*label=[\'"]([^\'"]+)[\'"]', xml)
+
+        # Extract datasets
+        datasets = re.findall(
+            r'<dataset seriesName=[\'"]([^\'"]+)[\'"][^>]*>(.*?)</dataset>',
+            xml, re.DOTALL
+        )
+
+        if not categories or not datasets:
+            return []
+
+        # Build a lookup: month_label -> {os_name: value}
+        # Categories are sparse; we need to map values to ALL months
+        # The <set> elements contain the full monthly data in toolText
+        month_data = {}  # {month_label: {os_name: value}}
+
+        for os_name, dataset_xml in datasets:
+            sets = re.findall(
+                r'<set value=[\'"]([^\'"]+)[\'"][^>]*toolText=[\'"]([^\'"]+)[\'"]',
+                dataset_xml
+            )
+            for value_str, tool_text in sets:
+                # toolText format: "Linux - 3.44% - Jan 2024"
+                match = re.search(r'(\w+ \d{4})$', tool_text.strip())
+                if match:
+                    month_label = match.group(1)
+                    val = self._parse_float(value_str)
+                    if month_label not in month_data:
+                        month_data[month_label] = {}
+                    month_data[month_label][os_name.lower()] = val
+
+        # Build data points — one per unique month
         data_points = []
-        for row in data_rows:
-            if len(row) < 2:
-                continue
-            date_str = self._parse_date(row[0].strip().strip('"'))
+        for month_label in sorted(month_data.keys()):
+            os_values = month_data[month_label]
+            date_str = self._parse_month_label(month_label)
             if not date_str:
                 continue
+
             linux = win = mac = chrome = other = 0.0
-            for col, raw in zip(headers[1:], row[1:]):
-                col_l = col.lower()
-                val = self._parse_float(raw)
-                if col_l in self._LINUX_COLUMNS:
+            for col, val in os_values.items():
+                if col in self._LINUX_COLUMNS:
                     linux += val
-                elif col_l in self._MAC_COLUMNS:
+                elif col in self._MAC_COLUMNS:
                     mac += val
-                elif col_l in self._CHROME_COLUMNS:
+                elif col in self._CHROME_COLUMNS:
                     chrome += val
-                elif any(col_l.startswith(p) for p in self._WIN_PREFIXES):
+                elif any(col.startswith(p) for p in self._WIN_PREFIXES):
                     win += val
                 else:
                     other += val
+
             if linux == 0 and win == 0:
                 continue
-            data_points.append(self._make_point(date_str, linux, win, mac, chrome, other))
+
+            details = {}
+            for col, val in os_values.items():
+                # Capitalize the OS name for display
+                display_name = col.replace("os x", "OS X").replace("chrome os", "Chrome OS")
+                if display_name in ("os x", "chrome os"):
+                    display_name = col.title()
+                details[display_name] = round(val, 2)
+
+            data_points.append({
+                "date":           date_str,
+                "linux_share":    round(linux,  2),
+                "windows_share":  round(win,    2),
+                "mac_share":      round(mac,    2),
+                "chromeos_share": round(chrome, 2),
+                "other_share":    round(other,  2),
+                "details":        details,
+            })
+
         return data_points
 
-    def _parse_aggregate(self, data_rows, period_date):
-        """Parse single-month aggregate rows (OS, share%) into one data point."""
-        if not period_date:
-            return []
-        linux = win = mac = chrome = other = 0.0
-        for row in data_rows:
-            if len(row) < 2:
-                continue
-            col_l = row[0].strip().strip('"').lower()
-            val = self._parse_float(row[1])
-            if col_l in self._LINUX_COLUMNS:
-                linux += val
-            elif col_l in self._MAC_COLUMNS:
-                mac += val
-            elif col_l in self._CHROME_COLUMNS:
-                chrome += val
-            elif any(col_l.startswith(p) for p in self._WIN_PREFIXES):
-                win += val
-            else:
-                other += val
-        if linux == 0 and win == 0:
-            return []
-        return [self._make_point(period_date, linux, win, mac, chrome, other)]
-
-    def _make_point(self, date_str, linux, win, mac, chrome, other):
-        return {
-            "date":           date_str,
-            "linux_share":    round(linux,  2),
-            "windows_share":  round(win,    2),
-            "mac_share":      round(mac,    2),
-            "chromeos_share": round(chrome, 2),
-            "other_share":    round(other,  2),
-            "details": {
-                "Linux":    round(linux,  2),
-                "Windows":  round(win,    2),
-                "macOS":    round(mac,    2),
-                "ChromeOS": round(chrome, 2),
-                "Other":    round(other,  2),
-            },
-        }
-
-    def _extract_period_from_header(self, header_text):
-        """Extract YYYY-MM-01 from 'Market Share Perc. (Jan 2026)'."""
-        import re
-        m = re.search(r'\((\w+ \d{4})\)', header_text)
-        if m:
-            return self._parse_date(m.group(1))
-        # Try "Feb 2026" directly
-        return self._parse_date(header_text.strip())
-
-    def _parse_date(self, date_str):
-        """Parse StatCounter date to YYYY-MM-01.
-
-        Handles:
-          - "2025-01"  → "2025-01-01"
-          - "Jan 25"   → "2025-01-01"
-          - "Jan 2025" → "2025-01-01"
-        """
-        if not date_str:
-            return None
-
-        # ISO YYYY-MM
-        try:
-            dt = datetime.strptime(date_str, "%Y-%m")
-            return dt.strftime("%Y-%m-01")
-        except ValueError:
-            pass
-
-        # "Jan 25" or "Jan 2025"
+    def _parse_month_label(self, month_label):
+        """Parse a month label like 'Jan 2024' to '2024-01-01'."""
         _MONTHS = {"jan":1,"feb":2,"mar":3,"apr":4,"may":5,"jun":6,
                    "jul":7,"aug":8,"sep":9,"oct":10,"nov":11,"dec":12}
-        parts = date_str.split()
+        parts = month_label.split()
         if len(parts) == 2:
             mon = parts[0].lower()[:3]
             yr_str = parts[1]
             if mon in _MONTHS:
                 year = int(yr_str) if len(yr_str) == 4 else 2000 + int(yr_str)
                 return f"{year:04d}-{_MONTHS[mon]:02d}-01"
-
         return None
 
     def _parse_float(self, value):

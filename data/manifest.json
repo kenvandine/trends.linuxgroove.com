@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-02T12:53:18Z",
+  "last_updated": "2026-08-02T15:55:54Z",
   "sources": {
     "steam": {
       "id": "steam",
@@ -106,11 +106,11 @@
     "statcounter": {
       "id": "statcounter",
       "name": "StatCounter Global Stats",
-      "description": "Desktop OS market share based on web traffic analysis",
+      "description": "Desktop OS market share based on web traffic analysis (worldwide)",
       "url": "https://gs.statcounter.com/",
       "methodology": "Aggregated web traffic from millions of websites globally",
       "covers": "desktop",
-      "region": "global",
+      "region": "worldwide",
       "files": [
         "2019-01",
         "2019-02",
@@ -208,6 +208,108 @@
       "date_range": {
         "from": "2019-01",
         "to": "2026-08"
+      }
+    },
+    "statcounter-us": {
+      "id": "statcounter-us",
+      "name": "StatCounter US",
+      "description": "Desktop OS market share based on web traffic analysis (United States)",
+      "url": "https://gs.statcounter.com/os-market-share/desktop/united-states-of-america",
+      "methodology": "Aggregated web traffic from millions of websites in the United States",
+      "covers": "desktop",
+      "region": "us",
+      "files": [
+        "2025-07",
+        "2025-08"
+      ],
+      "date_range": {
+        "from": "2025-07",
+        "to": "2025-08"
+      }
+    },
+    "statcounter-ca": {
+      "id": "statcounter-ca",
+      "name": "StatCounter Canada",
+      "description": "Desktop OS market share based on web traffic analysis (Canada)",
+      "url": "https://gs.statcounter.com/os-market-share/desktop/canada",
+      "methodology": "Aggregated web traffic from millions of websites in Canada",
+      "covers": "desktop",
+      "region": "ca",
+      "files": [
+        "2025-07",
+        "2025-08"
+      ],
+      "date_range": {
+        "from": "2025-07",
+        "to": "2025-08"
+      }
+    },
+    "statcounter-gb": {
+      "id": "statcounter-gb",
+      "name": "StatCounter UK",
+      "description": "Desktop OS market share based on web traffic analysis (United Kingdom)",
+      "url": "https://gs.statcounter.com/os-market-share/desktop/united-kingdom",
+      "methodology": "Aggregated web traffic from millions of websites in the United Kingdom",
+      "covers": "desktop",
+      "region": "gb",
+      "files": [
+        "2025-07",
+        "2025-08"
+      ],
+      "date_range": {
+        "from": "2025-07",
+        "to": "2025-08"
+      }
+    },
+    "statcounter-de": {
+      "id": "statcounter-de",
+      "name": "StatCounter Germany",
+      "description": "Desktop OS market share based on web traffic analysis (Germany)",
+      "url": "https://gs.statcounter.com/os-market-share/desktop/germany",
+      "methodology": "Aggregated web traffic from millions of websites in Germany",
+      "covers": "desktop",
+      "region": "de",
+      "files": [
+        "2025-07",
+        "2025-08"
+      ],
+      "date_range": {
+        "from": "2025-07",
+        "to": "2025-08"
+      }
+    },
+    "statcounter-na": {
+      "id": "statcounter-na",
+      "name": "StatCounter North America",
+      "description": "Desktop OS market share based on web traffic analysis (North America)",
+      "url": "https://gs.statcounter.com/os-market-share/desktop/north-america",
+      "methodology": "Aggregated web traffic from millions of websites in North America",
+      "covers": "desktop",
+      "region": "na",
+      "files": [
+        "2025-07",
+        "2025-08"
+      ],
+      "date_range": {
+        "from": "2025-07",
+        "to": "2025-08"
+      }
+    },
+    "statcounter-eu": {
+      "id": "statcounter-eu",
+      "name": "StatCounter Europe",
+      "description": "Desktop OS market share based on web traffic analysis (Europe)",
+      "url": "https://gs.statcounter.com/os-market-share/desktop/europe",
+      "methodology": "Aggregated web traffic from millions of websites in Europe",
+      "covers": "desktop",
+      "region": "eu",
+      "files": [
+        "2025-07",
+        "2025-08"
+      ],
+      "date_range": {
+        "from": "2025-07",
+        "to": "2025-08"
       }
     },
     "dap": {

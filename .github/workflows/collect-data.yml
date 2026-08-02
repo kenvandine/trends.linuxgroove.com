@@ -15,6 +15,19 @@ on:
           - ''
           - steam
           - statcounter
+          - statcounter-us
+          - statcounter-ca
+          - statcounter-gb
+          - statcounter-de
+          - statcounter-in
+          - statcounter-jp
+          - statcounter-br
+          - statcounter-na
+          - statcounter-eu
+          - statcounter-as
+          - statcounter-sa
+          - statcounter-af
+          - statcounter-oc
           - dap
           - cloudflare
           - stackoverflow
@@ -79,6 +92,28 @@ jobs:
             # hwsurvey page over to the new month.
             python3 -m src.main --source firefox
             python3 -m src.main --source steam
+          elif [ -z "$SOURCE" ] && [ "$SCHEDULE" = "0 8 1 * *" ]; then
+            # Monthly 1st-of-month run — all sources including all StatCounter regions
+            python3 -m src.main --source steam
+            python3 -m src.main --source statcounter
+            python3 -m src.main --source statcounter-us
+            python3 -m src.main --source statcounter-ca
+            python3 -m src.main --source statcounter-gb
+            python3 -m src.main --source statcounter-de
+            python3 -m src.main --source statcounter-in
+            python3 -m src.main --source statcounter-jp
+            python3 -m src.main --source statcounter-br
+            python3 -m src.main --source statcounter-na
+            python3 -m src.main --source statcounter-eu
+            python3 -m src.main --source statcounter-as
+            python3 -m src.main --source statcounter-sa
+            python3 -m src.main --source statcounter-af
+            python3 -m src.main --source statcounter-oc
+            python3 -m src.main --source dap
+            python3 -m src.main --source cloudflare
+            python3 -m src.main --source stackoverflow
+            python3 -m src.main --source jetbrains
+            python3 -m src.main --source firefox
           else
             python3 -m src.main $ARGS
           fi

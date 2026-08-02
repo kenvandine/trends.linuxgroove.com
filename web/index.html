@@ -407,6 +407,12 @@
       <div class="btn-row" id="source-chips"></div>
     </div>
 
+    <!-- Region filter (StatCounter only) -->
+    <div class="control-group" id="region-group" style="display:none">
+      <label>StatCounter Region</label>
+      <div class="btn-row" id="region-chips"></div>
+    </div>
+
     <!-- OS types -->
     <div class="control-group">
       <label>Operating Systems</label>
@@ -613,6 +619,24 @@ const SOURCE_CONFIG = {
   },
 };
 
+/* Region options for StatCounter */
+const REGION_CONFIG = {
+  all:   { label: "All Regions", chipColor: "hsl(145,65%,50%)" },
+  us:    { label: "US",          chipColor: "hsl(30,85%,58%)" },
+  ca:    { label: "Canada",      chipColor: "hsl(0,80%,55%)" },
+  gb:    { label: "UK",          chipColor: "hsl(210,85%,60%)" },
+  de:    { label: "Germany",     chipColor: "hsl(45,90%,55%)" },
+  in:    { label: "India",       chipColor: "hsl(25,90%,55%)" },
+  jp:    { label: "Japan",       chipColor: "hsl(350,85%,60%)" },
+  br:    { label: "Brazil",      chipColor: "hsl(120,70%,45%)" },
+  na:    { label: "N. America",  chipColor: "hsl(200,85%,55%)" },
+  eu:    { label: "Europe",      chipColor: "hsl(220,85%,55%)" },
+  as:    { label: "Asia",        chipColor: "hsl(50,90%,55%)" },
+  sa:    { label: "S. America",  chipColor: "hsl(100,70%,45%)" },
+  af:    { label: "Africa",      chipColor: "hsl(35,90%,55%)" },
+  oc:    { label: "Oceania",     chipColor: "hsl(180,70%,50%)" },
+};
+
 const OS_CONFIG = {
   linux:   { label: "Linux",   field: "linux_share",   dash: [] },
   windows: { label: "Windows", field: "windows_share", dash: [6, 3] },
@@ -631,6 +655,7 @@ let surveyChart        = null; // Chart.js instance (developer surveys)
 let surveyGapChart     = null; // Chart.js instance (developer survey gap)
 let activeMonths       = 0;    // 0 = all time
 let activeSources      = new Set(); // active market sources
+let activeRegion       = "all";  // "all" or a region code (us, ca, gb, de)
 let activeSurveySources = new Set(); // active survey sources
 let activeOSes         = new Set(["linux"]);
 let activeSurveyOSes   = new Set(["linux", "windows", "wsl"]);
@@ -713,6 +738,67 @@ function buildSourceChips() {
     chip.style.setProperty("--chip-color", cfg.chipColor);
     chip.innerHTML = `
       <span class="chip-dot" style="background:${cfg.chipColor}"></span>${cfg.label}`;
+    container.appendChild(chip);
+  });
+
+  // Build region chips if StatCounter region variants exist
+  const statcounterRegions = sourcesInData.filter(s =>
+    s.startsWith("StatCounter (") && s !== "StatCounter"
+  );
+  if (statcounterRegions.length > 0) {
+    document.getElementById("region-group").style.display = "";
+    buildRegionChips(statcounterRegions);
+  }
+}
+
+function buildRegionChips(regionSources) {
+  const container = document.getElementById("region-chips");
+  container.innerHTML = "";
+
+  // "All" chip
+  const allChip = document.createElement("span");
+  allChip.className = "chip active";
+  allChip.dataset.region = "all";
+  allChip.style.setProperty("--chip-color", REGION_CONFIG.all.chipColor);
+  allChip.innerHTML = `<span class="chip-dot" style="background:${REGION_CONFIG.all.chipColor}"></span>${REGION_CONFIG.all.label}`;
+  allChip.addEventListener("click", () => {
+    activeRegion = "all";
+    container.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
+    allChip.classList.add("active");
+    render();
+  });
+  container.appendChild(allChip);
+
+  // Individual region chips
+  regionSources.forEach(src => {
+    // Extract region code from source name
+    let regionCode = "us";
+    if (src.includes("Canada")) regionCode = "ca";
+    else if (src.includes("United Kingdom")) regionCode = "gb";
+    else if (src.includes("Germany")) regionCode = "de";
+    else if (src.includes("India")) regionCode = "in";
+    else if (src.includes("Japan")) regionCode = "jp";
+    else if (src.includes("Brazil")) regionCode = "br";
+    else if (src.includes("North America")) regionCode = "na";
+    else if (src.includes("Europe")) regionCode = "eu";
+    else if (src.includes("Asia")) regionCode = "as";
+    else if (src.includes("South America")) regionCode = "sa";
+    else if (src.includes("Africa")) regionCode = "af";
+    else if (src.includes("Oceania")) regionCode = "oc";
+    else if (src.includes("United States")) regionCode = "us";
+
+    const cfg = REGION_CONFIG[regionCode] || { label: src, chipColor: "#888" };
+    const chip = document.createElement("span");
+    chip.className = "chip";
+    chip.dataset.region = regionCode;
+    chip.style.setProperty("--chip-color", cfg.chipColor);
+    chip.innerHTML = `<span class="chip-dot" style="background:${cfg.chipColor}"></span>${cfg.label}`;
+    chip.addEventListener("click", () => {
+      activeRegion = regionCode;
+      container.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
+      chip.classList.add("active");
+      render();
+    });
     container.appendChild(chip);
   });
 }
@@ -890,6 +976,29 @@ function render() {
 
 function filterData() {
   let data = allData.filter(d => activeSources.has(d.source) && !SOURCE_CONFIG[d.source]?.survey);
+
+  // Apply region filter for StatCounter
+  if (activeRegion !== "all") {
+    data = data.filter(d => {
+      if (!d.source.startsWith("StatCounter")) return true;
+      if (activeRegion === "us" && d.source.includes("United States")) return true;
+      if (activeRegion === "ca" && d.source.includes("Canada")) return true;
+      if (activeRegion === "gb" && d.source.includes("United Kingdom")) return true;
+      if (activeRegion === "de" && d.source.includes("Germany")) return true;
+      if (activeRegion === "in" && d.source.includes("India")) return true;
+      if (activeRegion === "jp" && d.source.includes("Japan")) return true;
+      if (activeRegion === "br" && d.source.includes("Brazil")) return true;
+      if (activeRegion === "na" && d.source.includes("North America")) return true;
+      if (activeRegion === "eu" && d.source.includes("Europe")) return true;
+      if (activeRegion === "as" && d.source.includes("Asia")) return true;
+      if (activeRegion === "sa" && d.source.includes("South America")) return true;
+      if (activeRegion === "af" && d.source.includes("Africa")) return true;
+      if (activeRegion === "oc" && d.source.includes("Oceania")) return true;
+      if (activeRegion === "all" && d.source === "StatCounter") return true;
+      return false;
+    });
+  }
+
   return applyTimeframe(data);
 }
 
@@ -1112,6 +1221,12 @@ function resetView() {
   activeSources = new Set([...document.querySelectorAll(".chip[data-source]")].map(c => c.dataset.source));
   document.querySelectorAll(".chip[data-source]").forEach(c => c.classList.add("active"));
 
+  // Restore "All" region
+  activeRegion = "all";
+  document.querySelectorAll(".chip[data-region]").forEach(c =>
+    c.classList.toggle("active", c.dataset.region === "all")
+  );
+
   // Restore all survey sources
   activeSurveySources = new Set([...document.querySelectorAll(".chip[data-survey-source]")].map(c => c.dataset.surveySource));
   document.querySelectorAll(".chip[data-survey-source]").forEach(c => c.classList.add("active"));
@@ -1143,6 +1258,7 @@ function shareView() {
   params.set("sources", [...activeSources].join(","));
   params.set("os", [...activeOSes].join(","));
   params.set("months", activeMonths);
+  params.set("region", activeRegion);
   params.set("survey_sources", [...activeSurveySources].join(","));
   params.set("survey_os", [...activeSurveyOSes].join(","));
   const url = `${window.location.origin}${window.location.pathname}?${params}`;
@@ -1189,6 +1305,19 @@ function applyUrlParams() {
       document.querySelectorAll(".btn-time").forEach(b =>
         b.classList.toggle("active", parseInt(b.dataset.months, 10) === m)
       );
+    }
+  }
+
+  if (params.has("region")) {
+    const region = params.get("region");
+    if (region && region in REGION_CONFIG) {
+      activeRegion = region;
+      const container = document.getElementById("region-chips");
+      if (container) {
+        container.querySelectorAll(".chip").forEach(c => {
+          c.classList.toggle("active", c.dataset.region === region);
+        });
+      }
     }
   }
 

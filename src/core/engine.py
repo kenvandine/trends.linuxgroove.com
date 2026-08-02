@@ -17,7 +17,20 @@ class MarketTrendsEngine:
     def __init__(self):
         self.adapters = [
             SteamAdapter(),
-            StatCounterAdapter(),
+            StatCounterAdapter(),          # worldwide
+            StatCounterAdapter("US"),       # United States
+            StatCounterAdapter("CA"),       # Canada
+            StatCounterAdapter("GB"),       # United Kingdom
+            StatCounterAdapter("DE"),       # Germany
+            StatCounterAdapter("IN"),       # India
+            StatCounterAdapter("JP"),       # Japan
+            StatCounterAdapter("BR"),       # Brazil
+            StatCounterAdapter("na"),       # North America
+            StatCounterAdapter("eu"),       # Europe
+            StatCounterAdapter("as"),       # Asia
+            StatCounterAdapter("sa"),       # South America
+            StatCounterAdapter("af"),       # Africa
+            StatCounterAdapter("oc"),       # Oceania
             DAPAdapter(),
             CloudflareAdapter(),
             StackOverflowAdapter(),
@@ -35,7 +48,7 @@ class MarketTrendsEngine:
         Args:
             start_date: Optional start date (YYYY-MM-DD).
             end_date: Optional end date (YYYY-MM-DD).
-            source: Optional adapter name to collect from ('steam', 'statcounter', 'dap').
+            source: Optional adapter name to collect from ('steam', 'statcounter', 'statcounter-us', etc.).
         """
         print("Collecting data from sources...")
         if start_date:
@@ -43,7 +56,25 @@ class MarketTrendsEngine:
 
         adapters_to_run = self.adapters
         if source:
-            adapters_to_run = [a for a in self.adapters if a.name.lower() == source.lower()]
+            # Map source arg to adapter names
+            source_map = {
+                "statcounter": "StatCounter",
+                "statcounter-us": "StatCounter (United States)",
+                "statcounter-ca": "StatCounter (Canada)",
+                "statcounter-gb": "StatCounter (United Kingdom)",
+                "statcounter-de": "StatCounter (Germany)",
+                "statcounter-in": "StatCounter (India)",
+                "statcounter-jp": "StatCounter (Japan)",
+                "statcounter-br": "StatCounter (Brazil)",
+                "statcounter-na": "StatCounter (North America)",
+                "statcounter-eu": "StatCounter (Europe)",
+                "statcounter-as": "StatCounter (Asia)",
+                "statcounter-sa": "StatCounter (South America)",
+                "statcounter-af": "StatCounter (Africa)",
+                "statcounter-oc": "StatCounter (Oceania)",
+            }
+            target_name = source_map.get(source, source)
+            adapters_to_run = [a for a in self.adapters if a.name.lower() == target_name.lower()]
             if not adapters_to_run:
                 names = ", ".join(a.name.lower() for a in self.adapters)
                 print(f"Unknown adapter '{source}'. Available: {names}")

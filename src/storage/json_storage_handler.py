@@ -18,11 +18,101 @@ SOURCE_METADATA = {
     "statcounter": {
         "id": "statcounter",
         "name": "StatCounter Global Stats",
-        "description": "Desktop OS market share based on web traffic analysis",
+        "description": "Desktop OS market share based on web traffic analysis (worldwide)",
         "url": "https://gs.statcounter.com/",
         "methodology": "Aggregated web traffic from millions of websites globally",
         "covers": "desktop",
-        "region": "global",
+        "region": "worldwide",
+    },
+    "statcounter-us": {
+        "id": "statcounter-us",
+        "name": "StatCounter US",
+        "description": "Desktop OS market share based on web traffic analysis (United States)",
+        "url": "https://gs.statcounter.com/os-market-share/desktop/united-states-of-america",
+        "methodology": "Aggregated web traffic from millions of websites in the United States",
+        "covers": "desktop",
+        "region": "us",
+    },
+    "statcounter-ca": {
+        "id": "statcounter-ca",
+        "name": "StatCounter Canada",
+        "description": "Desktop OS market share based on web traffic analysis (Canada)",
+        "url": "https://gs.statcounter.com/os-market-share/desktop/canada",
+        "methodology": "Aggregated web traffic from millions of websites in Canada",
+        "covers": "desktop",
+        "region": "ca",
+    },
+    "statcounter-gb": {
+        "id": "statcounter-gb",
+        "name": "StatCounter UK",
+        "description": "Desktop OS market share based on web traffic analysis (United Kingdom)",
+        "url": "https://gs.statcounter.com/os-market-share/desktop/united-kingdom",
+        "methodology": "Aggregated web traffic from millions of websites in the United Kingdom",
+        "covers": "desktop",
+        "region": "gb",
+    },
+    "statcounter-de": {
+        "id": "statcounter-de",
+        "name": "StatCounter Germany",
+        "description": "Desktop OS market share based on web traffic analysis (Germany)",
+        "url": "https://gs.statcounter.com/os-market-share/desktop/germany",
+        "methodology": "Aggregated web traffic from millions of websites in Germany",
+        "covers": "desktop",
+        "region": "de",
+    },
+    "statcounter-na": {
+        "id": "statcounter-na",
+        "name": "StatCounter North America",
+        "description": "Desktop OS market share based on web traffic analysis (North America)",
+        "url": "https://gs.statcounter.com/os-market-share/desktop/north-america",
+        "methodology": "Aggregated web traffic from millions of websites in North America",
+        "covers": "desktop",
+        "region": "na",
+    },
+    "statcounter-eu": {
+        "id": "statcounter-eu",
+        "name": "StatCounter Europe",
+        "description": "Desktop OS market share based on web traffic analysis (Europe)",
+        "url": "https://gs.statcounter.com/os-market-share/desktop/europe",
+        "methodology": "Aggregated web traffic from millions of websites in Europe",
+        "covers": "desktop",
+        "region": "eu",
+    },
+    "statcounter-as": {
+        "id": "statcounter-as",
+        "name": "StatCounter Asia",
+        "description": "Desktop OS market share based on web traffic analysis (Asia)",
+        "url": "https://gs.statcounter.com/os-market-share/desktop/asia",
+        "methodology": "Aggregated web traffic from millions of websites in Asia",
+        "covers": "desktop",
+        "region": "as",
+    },
+    "statcounter-sa": {
+        "id": "statcounter-sa",
+        "name": "StatCounter South America",
+        "description": "Desktop OS market share based on web traffic analysis (South America)",
+        "url": "https://gs.statcounter.com/os-market-share/desktop/south-america",
+        "methodology": "Aggregated web traffic from millions of websites in South America",
+        "covers": "desktop",
+        "region": "sa",
+    },
+    "statcounter-af": {
+        "id": "statcounter-af",
+        "name": "StatCounter Africa",
+        "description": "Desktop OS market share based on web traffic analysis (Africa)",
+        "url": "https://gs.statcounter.com/os-market-share/desktop/africa",
+        "methodology": "Aggregated web traffic from millions of websites in Africa",
+        "covers": "desktop",
+        "region": "af",
+    },
+    "statcounter-oc": {
+        "id": "statcounter-oc",
+        "name": "StatCounter Oceania",
+        "description": "Desktop OS market share based on web traffic analysis (Oceania)",
+        "url": "https://gs.statcounter.com/os-market-share/desktop/oceania",
+        "methodology": "Aggregated web traffic from millions of websites in Oceania",
+        "covers": "desktop",
+        "region": "oc",
     },
     "dap": {
         "id": "dap",
@@ -86,6 +176,21 @@ class JSONStorageHandler:
         mapping = {
             "Steam": "steam",
             "StatCounter": "statcounter",
+            "StatCounter (US)": "statcounter",
+            "StatCounter (United States)": "statcounter",
+            "StatCounter (Canada)": "statcounter",
+            "StatCounter (UK)": "statcounter",
+            "StatCounter (United Kingdom)": "statcounter",
+            "StatCounter (Germany)": "statcounter",
+            "StatCounter (India)": "statcounter",
+            "StatCounter (Japan)": "statcounter",
+            "StatCounter (Brazil)": "statcounter",
+            "StatCounter (North America)": "statcounter",
+            "StatCounter (Europe)": "statcounter",
+            "StatCounter (Asia)": "statcounter",
+            "StatCounter (South America)": "statcounter",
+            "StatCounter (Africa)": "statcounter",
+            "StatCounter (Oceania)": "statcounter",
             "DAP": "dap",
             "Cloudflare": "cloudflare",
             "StackOverflow": "stackoverflow",
@@ -118,9 +223,11 @@ class JSONStorageHandler:
                 except (json.JSONDecodeError, IOError):
                     existing_data = []
 
-            # Replace any existing entry for the same date
+            # Replace any existing entry for the same source and date
+            source_key = point.get("source", "")
             date_key = point.get("date", "")
-            existing_data = [e for e in existing_data if e.get("date") != date_key]
+            existing_data = [e for e in existing_data
+                             if not (e.get("source") == source_key and e.get("date") == date_key)]
             existing_data.append(point)
 
             with open(file_path, "w") as f:
@@ -169,6 +276,105 @@ class JSONStorageHandler:
         }
 
         for source_id, meta in SOURCE_METADATA.items():
+            # Handle statcounter region variants — they share the statcounter dir
+            if source_id.startswith("statcounter"):
+                source_path = self.data_dir / "statcounter"
+                if not source_path.exists():
+                    continue
+
+                # Scan all files and extract unique source names
+                source_files = {}  # {source_name: [files]}
+                for file_path in sorted(source_path.iterdir()):
+                    if file_path.is_file() and file_path.suffix == ".json":
+                        try:
+                            with open(file_path, "r") as f:
+                                points = json.load(f)
+                            for p in points:
+                                src = p.get("source", "StatCounter")
+                                if src not in source_files:
+                                    source_files[src] = []
+                                if file_path.stem not in source_files[src]:
+                                    source_files[src].append(file_path.stem)
+                        except (json.JSONDecodeError, IOError):
+                            continue
+
+                for src_name, files in source_files.items():
+                    if not files:
+                        continue
+                    files.sort()
+                    # Find matching metadata - use specific matching rules
+                    src_meta = meta  # default to worldwide
+                    if src_name == "StatCounter":
+                        src_meta = SOURCE_METADATA["statcounter"]
+                    elif "United States" in src_name:
+                        src_meta = SOURCE_METADATA["statcounter-us"]
+                    elif "Canada" in src_name:
+                        src_meta = SOURCE_METADATA["statcounter-ca"]
+                    elif "United Kingdom" in src_name:
+                        src_meta = SOURCE_METADATA["statcounter-gb"]
+                    elif "Germany" in src_name:
+                        src_meta = SOURCE_METADATA["statcounter-de"]
+                    elif "India" in src_name:
+                        src_meta = SOURCE_METADATA["statcounter-in"]
+                    elif "Japan" in src_name:
+                        src_meta = SOURCE_METADATA["statcounter-jp"]
+                    elif "Brazil" in src_name:
+                        src_meta = SOURCE_METADATA["statcounter-br"]
+                    elif "North America" in src_name:
+                        src_meta = SOURCE_METADATA["statcounter-na"]
+                    elif "Europe" in src_name:
+                        src_meta = SOURCE_METADATA["statcounter-eu"]
+                    elif "Asia" in src_name:
+                        src_meta = SOURCE_METADATA["statcounter-as"]
+                    elif "South America" in src_name:
+                        src_meta = SOURCE_METADATA["statcounter-sa"]
+                    elif "Africa" in src_name:
+                        src_meta = SOURCE_METADATA["statcounter-af"]
+                    elif "Oceania" in src_name:
+                        src_meta = SOURCE_METADATA["statcounter-oc"]
+
+                    # Build a display name for the source_id key
+                    if src_name == "StatCounter":
+                        manifest_key = "statcounter"
+                    elif "United States" in src_name:
+                        manifest_key = "statcounter-us"
+                    elif "Canada" in src_name:
+                        manifest_key = "statcounter-ca"
+                    elif "United Kingdom" in src_name:
+                        manifest_key = "statcounter-gb"
+                    elif "Germany" in src_name:
+                        manifest_key = "statcounter-de"
+                    elif "India" in src_name:
+                        manifest_key = "statcounter-in"
+                    elif "Japan" in src_name:
+                        manifest_key = "statcounter-jp"
+                    elif "Brazil" in src_name:
+                        manifest_key = "statcounter-br"
+                    elif "North America" in src_name:
+                        manifest_key = "statcounter-na"
+                    elif "Europe" in src_name:
+                        manifest_key = "statcounter-eu"
+                    elif "Asia" in src_name:
+                        manifest_key = "statcounter-as"
+                    elif "South America" in src_name:
+                        manifest_key = "statcounter-sa"
+                    elif "Africa" in src_name:
+                        manifest_key = "statcounter-af"
+                    elif "Oceania" in src_name:
+                        manifest_key = "statcounter-oc"
+                    else:
+                        manifest_key = f"statcounter-{src_name.lower().replace(' ', '-')}"
+
+                    manifest["sources"][manifest_key] = {
+                        **src_meta,
+                        "files": files,
+                        "date_range": {
+                            "from": files[0],
+                            "to": files[-1],
+                        },
+                    }
+                continue
+
             source_path = self.data_dir / source_id
             if not source_path.exists():
                 continue
