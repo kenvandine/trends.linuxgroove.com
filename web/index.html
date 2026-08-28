@@ -420,6 +420,15 @@
       <div class="btn-row" id="region-chips"></div>
     </div>
 
+    <!-- Unknown handling (StatCounter only) - hidden by default, shown when StatCounter is active -->
+    <div class="control-group" id="unknown-group" style="display:none">
+      <label>StatCounter "Unknown"</label>
+      <div class="btn-row" id="unknown-chips">
+        <span class="chip active" data-unknown="include">Include</span>
+        <span class="chip" data-unknown="exclude">Exclude &amp; rescale</span>
+      </div>
+    </div>
+
     <!-- OS types -->
     <div class="control-group">
       <label>Operating Systems</label>
@@ -435,6 +444,9 @@
         </span>
         <span class="chip" data-os="wsl" style="--chip-color: hsl(185,65%,48%)">
           <span class="chip-dot" style="background:hsl(185,65%,48%)"></span>WSL
+        </span>
+        <span class="chip" data-os="unknown" style="--chip-color: hsl(0,0%,55%)">
+          <span class="chip-dot" style="background:hsl(0,0%,55%)"></span>Unknown
         </span>
       </div>
     </div>
@@ -647,11 +659,21 @@ const REGION_CONFIG = {
 };
 
 const OS_CONFIG = {
-  linux:   { label: "Linux",   field: "linux_share",   dash: [] },
-  windows: { label: "Windows", field: "windows_share", dash: [6, 3] },
-  mac:     { label: "macOS",   field: "mac_share",     dash: [2, 3] },
+  linux:   { label: "Linux",   field: "linux_share",   fieldAdj: "linux_share_adj",   dash: [] },
+  windows: { label: "Windows", field: "windows_share", fieldAdj: "windows_share_adj", dash: [6, 3] },
+  mac:     { label: "macOS",   field: "mac_share",     fieldAdj: "mac_share_adj",     dash: [2, 3] },
   wsl:     { label: "WSL",     field: "wsl_share",     dash: [4, 2] },
+  unknown: { label: "Unknown", field: "unknown_share", dash: [1, 3] },
 };
+
+// Resolves the data field to use for an OS key, honoring the "exclude
+// unknown" toggle (StatCounter only — other sources have no *_adj field
+// and simply fall back to their normal field).
+function osField(osKey) {
+  const cfg = OS_CONFIG[osKey];
+  if (!cfg) return null;
+  return (excludeUnknown && cfg.fieldAdj) ? cfg.fieldAdj : cfg.field;
+}
 
 /* ═══════════════════════════════════════════════════════════════════
    STATE
@@ -668,6 +690,7 @@ let activeRegion       = "ww";   // region code: "ww" = worldwide, or "us", "eu"
 let activeSurveySources = new Set(); // active survey sources
 let activeOSes         = new Set(["linux"]);
 let activeSurveyOSes   = new Set(["linux", "windows", "wsl"]);
+let excludeUnknown     = false; // StatCounter: rescale shares to exclude "Unknown"/"Other (dotted)"
 
 /* ═══════════════════════════════════════════════════════════════════
    INIT
@@ -776,8 +799,10 @@ function buildSourceChips() {
 
 function updateRegionVisibility() {
   const regionGroup = document.getElementById("region-group");
-  if (!regionGroup) return;
-  regionGroup.style.display = activeSources.has("StatCounter") ? "" : "none";
+  const unknownGroup = document.getElementById("unknown-group");
+  const show = activeSources.has("StatCounter") ? "" : "none";
+  if (regionGroup) regionGroup.style.display = show;
+  if (unknownGroup) unknownGroup.style.display = show;
 }
 
 function buildRegionChips(availableRegions) {
@@ -1064,15 +1089,16 @@ function buildDatasets(data, labels, osSet = activeOSes) {
     osSet.forEach(osKey => {
       const osCfg = OS_CONFIG[osKey];
       if (!osCfg) return;
+      const field = osField(osKey);
 
       // Check if any data point for this source has this field
-      const hasField = Object.values(byDate).some(d => d[osCfg.field] != null);
+      const hasField = Object.values(byDate).some(d => d[field] != null);
       if (!hasField) return;
 
       const color = cfg.colors[osKey] || "#888";
       const dataArr = labels.map(lbl => {
         const pt = byDate[lbl];
-        return pt?.[osCfg.field] ?? null;
+        return pt?.[field] ?? null;
       });
 
       datasets.push({
@@ -1127,8 +1153,10 @@ function renderGapChart(filtered, labels, chartInst, cardId, noDataId, osSet = a
 
     compareOSes.forEach(osKey => {
       const osCfg = OS_CONFIG[osKey];
+      const linuxField = osField("linux");
+      const field = osField(osKey);
       const hasData = Object.values(byDate).some(
-        d => d.linux_share != null && d[osCfg.field] != null
+        d => d[linuxField] != null && d[field] != null
       );
       if (!hasData) return;
 
@@ -1139,8 +1167,8 @@ function renderGapChart(filtered, labels, chartInst, cardId, noDataId, osSet = a
 
       const dataArr = labels.map(lbl => {
         const pt = byDate[lbl];
-        if (!pt || pt.linux_share == null || pt[osCfg.field] == null) return null;
-        return pt.linux_share - pt[osCfg.field];
+        if (!pt || pt[linuxField] == null || pt[field] == null) return null;
+        return pt[linuxField] - pt[field];
       });
 
       datasets.push({
@@ -1176,13 +1204,13 @@ function renderStats(data, headRowId, bodyId, osSet) {
   tbody.innerHTML = "";
 
   // Which OS fields actually have data in this dataset?
-  const allOsKeys     = ["linux", "windows", "mac", "wsl"];
-  const presentOsKeys = allOsKeys.filter(k => data.some(d => d[OS_CONFIG[k].field] != null));
+  const allOsKeys     = ["linux", "windows", "mac", "wsl", "unknown"];
+  const presentOsKeys = allOsKeys.filter(k => data.some(d => d[osField(k)] != null));
 
   // Delta columns: comparison OSes selected alongside Linux.
   // WSL is excluded — it's a Linux subsystem, not a competing platform.
   const deltaOsKeys = presentOsKeys.filter(
-    k => k !== "linux" && k !== "wsl" && osSet.has("linux") && osSet.has(k)
+    k => k !== "linux" && k !== "wsl" && k !== "unknown" && osSet.has("linux") && osSet.has(k)
   );
 
   const totalCols = 2 + presentOsKeys.length + 1 + deltaOsKeys.length;
@@ -1210,19 +1238,20 @@ function renderStats(data, headRowId, bodyId, osSet) {
       ? `StatCounter (${regionCfg?.label ?? "Worldwide"})`
       : cfg.label;
 
-    const linuxCur  = latest.linux_share ?? null;
-    const linuxPrev = prev?.linux_share ?? null;
+    const linuxField = osField("linux");
+    const linuxCur  = latest[linuxField] ?? null;
+    const linuxPrev = prev?.[linuxField] ?? null;
 
     const momDelta = (linuxCur != null && linuxPrev != null) ? (linuxCur - linuxPrev) : null;
     const momClass = momDelta == null ? "trend-flat" : momDelta > 0 ? "trend-up" : "trend-down";
     const momStr   = momDelta == null ? "—" : (momDelta > 0 ? "+" : "") + momDelta.toFixed(2) + "%";
 
     const osCells = presentOsKeys.map(k =>
-      `<td class="pct-cell">${pctCell(latest[OS_CONFIG[k].field] ?? null)}</td>`
+      `<td class="pct-cell">${pctCell(latest[osField(k)] ?? null)}</td>`
     ).join("");
 
     const deltaCells = deltaOsKeys.map(k => {
-      const field = OS_CONFIG[k].field;
+      const field = osField(k);
       return `<td class="pct-cell">${ppDeltaCell(linuxCur, latest[field] ?? null, linuxPrev, prev?.[field] ?? null)}</td>`;
     }).join("");
 
@@ -1285,6 +1314,12 @@ function resetView() {
     b.classList.toggle("active", parseInt(b.dataset.months, 10) === 0)
   );
 
+  // Restore "Include Unknown" (default StatCounter view)
+  excludeUnknown = false;
+  document.querySelectorAll("#unknown-chips .chip").forEach(c =>
+    c.classList.toggle("active", c.dataset.unknown === "include")
+  );
+
   history.replaceState(null, "", window.location.pathname);
   updateRegionVisibility();
   render();
@@ -1298,6 +1333,7 @@ function shareView() {
   params.set("region", activeRegion);
   params.set("survey_sources", [...activeSurveySources].join(","));
   params.set("survey_os", [...activeSurveyOSes].join(","));
+  params.set("exclude_unknown", excludeUnknown ? "1" : "0");
   const url = `${window.location.origin}${window.location.pathname}?${params}`;
 
   const btn = document.getElementById("btn-share");
@@ -1379,6 +1415,13 @@ function applyUrlParams() {
       );
     }
   }
+
+  if (params.has("exclude_unknown")) {
+    excludeUnknown = params.get("exclude_unknown") === "1";
+    document.querySelectorAll("#unknown-chips .chip").forEach(c =>
+      c.classList.toggle("active", c.dataset.unknown === (excludeUnknown ? "exclude" : "include"))
+    );
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -1440,6 +1483,16 @@ document.getElementById("os-chips").addEventListener("click", e => {
     activeOSes.add(os);
     chip.classList.add("active");
   }
+  render();
+});
+
+document.getElementById("unknown-chips").addEventListener("click", e => {
+  const chip = e.target.closest(".chip[data-unknown]");
+  if (!chip) return;
+  excludeUnknown = chip.dataset.unknown === "exclude";
+  document.querySelectorAll("#unknown-chips .chip").forEach(c =>
+    c.classList.toggle("active", c === chip)
+  );
   render();
 });
 

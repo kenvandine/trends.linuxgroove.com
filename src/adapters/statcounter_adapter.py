@@ -31,6 +31,19 @@ class StatCounterAdapter(BaseAdapter):
     _LINUX_COLUMNS = frozenset(["linux"])
     _CHROME_COLUMNS = frozenset(["chrome os"])
 
+    # StatCounter's own public dashboard (gs.statcounter.com/os-market-share)
+    # excludes these "not a real desktop OS" buckets entirely and rescales
+    # the remaining known OSes up to 100%. We report both views: the raw
+    # numbers (which include these as part of other_share/unknown_share) and
+    # an "_adj" (adjusted) set rescaled to match the public dashboard.
+    _EXCLUDE_COLUMNS = frozenset(["unknown", "other (dotted)"])
+
+    # StatCounter's own public dashboard (gs.statcounter.com/os-market-share)
+    # excludes these "not a real desktop OS" buckets entirely and rescales
+    # the remaining known OSes up to 100%. We match that behavior so our
+    # numbers agree with what's actually shown on statcounter.com.
+    _EXCLUDE_COLUMNS = frozenset(["unknown", "other (dotted)"])
+
     # Region code -> (region_name_for_url, region_hidden_value)
     REGION_MAP = {
         "ww":            ("Worldwide",           "ww"),
@@ -196,9 +209,11 @@ class StatCounterAdapter(BaseAdapter):
             if not date_str:
                 continue
 
-            linux = win = mac = chrome = other = 0.0
+            linux = win = mac = chrome = other = unknown = 0.0
             for col, val in os_values.items():
-                if col in self._LINUX_COLUMNS:
+                if col in self._EXCLUDE_COLUMNS:
+                    unknown += val
+                elif col in self._LINUX_COLUMNS:
                     linux += val
                 elif col in self._MAC_COLUMNS:
                     mac += val
@@ -211,6 +226,20 @@ class StatCounterAdapter(BaseAdapter):
 
             if linux == 0 and win == 0:
                 continue
+
+            # "_adj" fields rescale the known OSes up to 100% after dropping
+            # Unknown/Other (dotted) — matching what gs.statcounter.com's own
+            # dashboard displays. The raw fields keep Unknown folded into
+            # other_share/unknown_share for anyone who wants the unadjusted view.
+            known_total = linux + win + mac + chrome + other
+            if known_total > 0:
+                scale = 100.0 / known_total
+                linux_adj  = round(linux  * scale, 2)
+                win_adj    = round(win    * scale, 2)
+                mac_adj    = round(mac    * scale, 2)
+                chrome_adj = round(chrome * scale, 2)
+            else:
+                linux_adj = win_adj = mac_adj = chrome_adj = 0.0
 
             details = {}
             for col, val in os_values.items():
@@ -226,7 +255,12 @@ class StatCounterAdapter(BaseAdapter):
                 "windows_share":  round(win,    2),
                 "mac_share":      round(mac,    2),
                 "chromeos_share": round(chrome, 2),
-                "other_share":    round(other,  2),
+                "other_share":    round(other + unknown, 2),
+                "unknown_share":  round(unknown, 2),
+                "linux_share_adj":    linux_adj,
+                "windows_share_adj":  win_adj,
+                "mac_share_adj":      mac_adj,
+                "chromeos_share_adj": chrome_adj,
                 "details":        details,
             })
 

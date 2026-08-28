@@ -37,7 +37,9 @@ class BaseAdapter:
                 "details": item.get("details", {})
             }
             # Include optional OS share fields if present
-            for field in ("windows_share", "mac_share", "chromeos_share", "other_share", "wsl_share"):
+            for field in ("windows_share", "mac_share", "chromeos_share", "other_share", "wsl_share",
+                          "unknown_share", "linux_share_adj", "windows_share_adj", "mac_share_adj",
+                          "chromeos_share_adj"):
                 if field in item:
                     formatted_item[field] = item[field]
             formatted.append(formatted_item)
