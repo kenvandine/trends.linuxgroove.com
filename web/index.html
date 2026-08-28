@@ -173,6 +173,11 @@
       color: var(--text);
       border-color: var(--chip-color, var(--accent));
     }
+    .chip.disabled {
+      opacity: 0.2;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
     .chip-dot {
       width: 8px; height: 8px;
       border-radius: 50%;
@@ -1319,6 +1324,7 @@ function resetView() {
   document.querySelectorAll("#unknown-chips .chip").forEach(c =>
     c.classList.toggle("active", c.dataset.unknown === "include")
   );
+  syncUnknownOsChip();
 
   history.replaceState(null, "", window.location.pathname);
   updateRegionVisibility();
@@ -1421,6 +1427,7 @@ function applyUrlParams() {
     document.querySelectorAll("#unknown-chips .chip").forEach(c =>
       c.classList.toggle("active", c.dataset.unknown === (excludeUnknown ? "exclude" : "include"))
     );
+    syncUnknownOsChip();
   }
 }
 
@@ -1474,6 +1481,7 @@ document.getElementById("survey-os-chips").addEventListener("click", e => {
 document.getElementById("os-chips").addEventListener("click", e => {
   const chip = e.target.closest(".chip[data-os]");
   if (!chip) return;
+  if (chip.classList.contains("disabled")) return;
   const os = chip.dataset.os;
   if (activeOSes.has(os)) {
     if (activeOSes.size === 1) return; // keep at least one
@@ -1493,8 +1501,25 @@ document.getElementById("unknown-chips").addEventListener("click", e => {
   document.querySelectorAll("#unknown-chips .chip").forEach(c =>
     c.classList.toggle("active", c === chip)
   );
+  syncUnknownOsChip();
   render();
 });
+
+// The "Unknown" OS series only makes sense when Unknown isn't being
+// excluded/rescaled away — disable and deselect it otherwise.
+function syncUnknownOsChip() {
+  const chip = document.querySelector('.chip[data-os="unknown"]');
+  if (!chip) return;
+  chip.classList.toggle("disabled", excludeUnknown);
+  if (excludeUnknown && activeOSes.has("unknown")) {
+    activeOSes.delete("unknown");
+    chip.classList.remove("active");
+    if (activeOSes.size === 0) {
+      activeOSes.add("linux");
+      document.querySelector('.chip[data-os="linux"]')?.classList.add("active");
+    }
+  }
+}
 
 function toggleSource(src, chip) {
   if (activeSources.has(src)) {
