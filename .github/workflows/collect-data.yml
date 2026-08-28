@@ -15,6 +15,7 @@ on:
           - ''
           - steam
           - statcounter
+          - statcounter-all
           - statcounter-us
           - statcounter-ca
           - statcounter-gb
@@ -82,11 +83,17 @@ jobs:
           SCHEDULE="${{ github.event.schedule }}"
 
           ARGS=""
-          [ -n "$SOURCE" ]     && ARGS="$ARGS --source $SOURCE"
           [ -n "$RANGE_FROM" ] && ARGS="$ARGS --range-from $RANGE_FROM"
           [ -n "$RANGE_TO" ]   && ARGS="$ARGS --range-to $RANGE_TO"
 
-          if [ -z "$SOURCE" ] && [ "$SCHEDULE" = "0 8 * * 1" ]; then
+          STATCOUNTER_REGIONS="statcounter statcounter-us statcounter-ca statcounter-gb statcounter-de statcounter-in statcounter-jp statcounter-br statcounter-na statcounter-eu statcounter-as statcounter-sa statcounter-af statcounter-oc"
+
+          if [ "$SOURCE" = "statcounter-all" ]; then
+            # Manual dispatch — all StatCounter regions only
+            for src in $STATCOUNTER_REGIONS; do
+              python3 -m src.main --source "$src" $ARGS
+            done
+          elif [ -z "$SOURCE" ] && [ "$SCHEDULE" = "0 8 * * 1" ]; then
             # Weekly Monday run — Firefox, plus a Steam re-check in case the
             # monthly (1st-of-month) run landed before Valve rolled the
             # hwsurvey page over to the new month.
@@ -115,6 +122,7 @@ jobs:
             python3 -m src.main --source jetbrains
             python3 -m src.main --source firefox
           else
+            [ -n "$SOURCE" ] && ARGS="$ARGS --source $SOURCE"
             python3 -m src.main $ARGS
           fi
 
