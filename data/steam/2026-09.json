@@ -1,0 +1,25 @@
+[
+  {
+    "source": "Steam",
+    "date": "2026-09-01",
+    "linux_share": 3.05,
+    "details": {
+      "CachyOS 64 bit": 0.55,
+      "SteamOS Holo 64 bit": 0.53,
+      "Arch Linux 64 bit": 0.33,
+      "Linux Mint 22.3 64 bit": 0.27,
+      "Bazzite 64 bit": 0.21,
+      "Freedesktop SDK 25.08 (Flatpak runtime) 64 bit": 0.14,
+      "Ubuntu Core 24 64 bit": 0.09,
+      "Ubuntu 26.04.1 LTS 64 bit": 0.09,
+      "Fedora Linux 44 (KDE Plasma Desktop Edition) 64 bit": 0.09,
+      "Ubuntu 24.04.4 LTS 64 bit": 0.07,
+      "EndeavourOS Linux 64 bit": 0.06,
+      "Debian GNU/Linux 13 (trixie) 64 bit": 0.05,
+      "Nobara Linux 44 (KDE Plasma Desktop Edition) 64 bit": 0.05
+    },
+    "windows_share": 95.03,
+    "mac_share": 1.92,
+    "other_share": 0.0
+  }
+]

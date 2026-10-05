@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-10-01T14:55:32Z",
+    "last_updated": "2026-10-05T16:43:51Z",
     "sources": [
       "Cloudflare",
       "DAP",
@@ -25,7 +25,7 @@
     ],
     "date_range": {
       "from": "2018-12-31",
-      "to": "2026-09-21"
+      "to": "2026-09-28"
     },
     "fields": [
       "linux_share",
@@ -39825,6 +39825,29 @@
       "chromeos_share_adj": 5.37
     },
     {
+      "source": "Steam",
+      "date": "2026-09-01",
+      "linux_share": 3.05,
+      "details": {
+        "CachyOS 64 bit": 0.55,
+        "SteamOS Holo 64 bit": 0.53,
+        "Arch Linux 64 bit": 0.33,
+        "Linux Mint 22.3 64 bit": 0.27,
+        "Bazzite 64 bit": 0.21,
+        "Freedesktop SDK 25.08 (Flatpak runtime) 64 bit": 0.14,
+        "Ubuntu Core 24 64 bit": 0.09,
+        "Ubuntu 26.04.1 LTS 64 bit": 0.09,
+        "Fedora Linux 44 (KDE Plasma Desktop Edition) 64 bit": 0.09,
+        "Ubuntu 24.04.4 LTS 64 bit": 0.07,
+        "EndeavourOS Linux 64 bit": 0.06,
+        "Debian GNU/Linux 13 (trixie) 64 bit": 0.05,
+        "Nobara Linux 44 (KDE Plasma Desktop Edition) 64 bit": 0.05
+      },
+      "windows_share": 95.03,
+      "mac_share": 1.92,
+      "other_share": 0.0
+    },
+    {
       "source": "Firefox",
       "date": "2026-09-07",
       "linux_share": 6.37,
@@ -39861,6 +39884,19 @@
       },
       "windows_share": 85.14,
       "mac_share": 8.29,
+      "other_share": 0.0
+    },
+    {
+      "source": "Firefox",
+      "date": "2026-09-28",
+      "linux_share": 6.57,
+      "details": {
+        "Linux-6.x": 2.64,
+        "Linux-7.x": 2.7,
+        "Linux Other": 1.22
+      },
+      "windows_share": 85.15,
+      "mac_share": 8.28,
       "other_share": 0.0
     }
   ]
