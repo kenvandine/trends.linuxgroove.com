@@ -2,26 +2,26 @@
   {
     "source": "Firefox",
     "date": "2026-08-31",
-    "linux_share": 6.3,
+    "linux_share": 6.28,
     "details": {
       "Linux-6.x": 2.62,
-      "Linux-7.x": 2.49,
+      "Linux-7.x": 2.48,
       "Linux Other": 1.19
     },
-    "windows_share": 85.27,
+    "windows_share": 85.29,
     "mac_share": 8.43,
     "other_share": 0.0
   },
   {
     "source": "Firefox",
     "date": "2026-08-24",
-    "linux_share": 6.24,
+    "linux_share": 6.22,
     "details": {
       "Linux-6.x": 2.6,
-      "Linux-7.x": 2.47,
+      "Linux-7.x": 2.46,
       "Linux Other": 1.16
     },
-    "windows_share": 85.18,
+    "windows_share": 85.2,
     "mac_share": 8.59,
     "other_share": 0.0
   },

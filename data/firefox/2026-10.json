@@ -15,39 +15,39 @@
   {
     "source": "Firefox",
     "date": "2026-10-19",
-    "linux_share": 6.5,
+    "linux_share": 6.49,
     "details": {
       "Linux-6.x": 2.45,
-      "Linux-7.x": 2.84,
+      "Linux-7.x": 2.83,
       "Linux Other": 1.21
     },
-    "windows_share": 85.39,
+    "windows_share": 85.4,
     "mac_share": 8.11,
     "other_share": 0.0
   },
   {
     "source": "Firefox",
     "date": "2026-10-12",
-    "linux_share": 6.53,
+    "linux_share": 6.52,
     "details": {
-      "Linux-6.x": 2.55,
+      "Linux-6.x": 2.54,
       "Linux-7.x": 2.77,
       "Linux Other": 1.21
     },
-    "windows_share": 85.36,
+    "windows_share": 85.37,
     "mac_share": 8.11,
     "other_share": 0.0
   },
   {
     "source": "Firefox",
     "date": "2026-10-05",
-    "linux_share": 6.59,
+    "linux_share": 6.58,
     "details": {
-      "Linux-6.x": 2.61,
-      "Linux-7.x": 2.75,
+      "Linux-6.x": 2.6,
+      "Linux-7.x": 2.74,
       "Linux Other": 1.24
     },
-    "windows_share": 85.2,
+    "windows_share": 85.21,
     "mac_share": 8.21,
     "other_share": 0.0
   }
